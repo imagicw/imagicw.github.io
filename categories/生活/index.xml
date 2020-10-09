@@ -1,0 +1,44 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>生活 - 分类 - W Mus</title>
+        <link>https://www.imagicw.com/categories/%E7%94%9F%E6%B4%BB/</link>
+        <description>生活 - 分类 - W Mus</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>imagicw@hotmail.com (imagicw)</managingEditor>
+            <webMaster>imagicw@hotmail.com (imagicw)</webMaster><lastBuildDate>Fri, 28 Aug 2020 15:12:44 &#43;0800</lastBuildDate><atom:link href="https://www.imagicw.com/categories/%E7%94%9F%E6%B4%BB/" rel="self" type="application/rss+xml" /><item>
+    <title>记一次显卡维修经历</title>
+    <link>https://www.imagicw.com/2020/08/journal-of-repairing-graphics-card/</link>
+    <pubDate>Fri, 28 Aug 2020 15:12:44 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://www.imagicw.com/2020/08/journal-of-repairing-graphics-card/</guid>
+    <description><![CDATA[<p>周日去了 Apple Store 的售后，原因是之前一直以为是微信的原因导致电脑切换独立显卡时会黑屏数秒然后恢复显示。然而到了售后无论我如何捣腾，显卡切换却很正常，无法再现故障过程。估计是因为冷机的缘故，好在之前有录制故障视频，给工作人员看过之后，就拿去压力测试了。</p>
+<p>大约四个小时候告诉我，显卡的确有问题，已经无法输出画面了，帮我直接更换主板。</p>]]></description>
+</item><item>
+    <title>联合会员服务的一些担忧</title>
+    <link>https://www.imagicw.com/2020/08/concerned-about-vip-1-13/</link>
+    <pubDate>Tue, 18 Aug 2020 22:12:44 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://www.imagicw.com/2020/08/concerned-about-vip-1-13/</guid>
+    <description><![CDATA[昨天喜马拉雅推出了买1年会员送13个会员的活动，总价218，有包括腾讯视频、爱奇艺、京东PLUS、网抑云等会员服务。可以说这个价格超值了，喜]]></description>
+</item><item>
+    <title>剪头发这件事</title>
+    <link>https://www.imagicw.com/2020/08/hair-cut-angry/</link>
+    <pubDate>Mon, 17 Aug 2020 10:21:58 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://www.imagicw.com/2020/08/hair-cut-angry/</guid>
+    <description><![CDATA[周末去剪头发，因为想吃kfc的缘故，去了离kfc近的一家理发店理发。 很明确地跟理发师（自称总监）说要剪一个平头那样的短发，理发师像听不懂话的]]></description>
+</item><item>
+    <title>美国末日</title>
+    <link>https://www.imagicw.com/2020/08/the-last-of-us-game/</link>
+    <pubDate>Tue, 04 Aug 2020 18:05:18 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://www.imagicw.com/2020/08/the-last-of-us-game/</guid>
+    <description><![CDATA[<p>说来也奇怪，我不太喜欢玩恐怖游戏的，却在第一次购买PS4游戏的时候入手了「巫师3」和「The Last Of US」。</p>]]></description>
+</item><item>
+    <title>给博客换了主题</title>
+    <link>https://www.imagicw.com/2020/08/i-have-changed-my-blog-theme/</link>
+    <pubDate>Mon, 03 Aug 2020 17:40:50 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://www.imagicw.com/2020/08/i-have-changed-my-blog-theme/</guid>
+    <description><![CDATA[<p>今天将博客更换了新的主题，<del>因为用了ajax技术，访问起来更加丝般柔顺。布局更加简洁，唯一一个就是文章cover目前还是用的随机方案，以后尽量做一些cover出来吧。</del> 对不起，我又换了一个主题，之前那个主题的cover不是很灵活，在首页布局方面显得有些乱，所以换了这个aomori。</p>]]></description>
+</item></channel>
+</rss>

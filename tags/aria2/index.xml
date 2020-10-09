@@ -1,0 +1,28 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Aria2 - 标签 - W Mus</title>
+        <link>https://www.imagicw.com/tags/aria2/</link>
+        <description>Aria2 - 标签 - W Mus</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>imagicw@hotmail.com (imagicw)</managingEditor>
+            <webMaster>imagicw@hotmail.com (imagicw)</webMaster><lastBuildDate>Mon, 27 Mar 2017 20:31:02 &#43;0800</lastBuildDate><atom:link href="https://www.imagicw.com/tags/aria2/" rel="self" type="application/rss+xml" /><item>
+    <title>我是如何将路由器打造成我的下载中心的</title>
+    <link>https://www.imagicw.com/2017/03/how-i-made-my-hiwifi-into-download-center/</link>
+    <pubDate>Mon, 27 Mar 2017 20:31:02 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://www.imagicw.com/2017/03/how-i-made-my-hiwifi-into-download-center/</guid>
+    <description><![CDATA[<h2 id="前言">前言</h2>
+<p>本来购买极路由是为了改善无线质量的，后来仅仅改变无线质量已经不能满足我，加上我之前的电脑CPU和显卡陆续烧坏，闲置了几块硬盘，于是就想折腾起路由器来让我闲置硬盘用起来。</p>
+<p>本笔记主要是记录我如何折腾路由器的经历与心得。</p>
+<h2 id="准备">准备</h2>
+<ul>
+<li>极路由3（已开通开发者权限）</li>
+<li>网线一根</li>
+<li>电脑一台</li>
+<li>移动硬盘</li>
+</ul>
+<p><strong>极路由3需要在路由器界面申请开发者权限，这样才能使用ssh。请注意，开启ssh后会失去官方保修服务！请谨慎。</strong></p>
+<p>如何申请，请自行摸索或者百度谷歌Bing一下。</p>
+<p>我使用的平台是MacOS 10.12，其他平台操作方法类似。</p>
+<p><strong>刷机有风险，请小心开车。</strong></p>]]></description>
+</item></channel>
+</rss>
