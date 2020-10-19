@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>React &#43; antd &#43; koa &#43; typeORM 开发的学习笔记（持续更新） - W Mus</title><meta name="Description" content="W Mus"><meta property="og:title" content="React &#43; antd &#43; koa &#43; typeORM 开发的学习笔记（持续更新）" />
+<meta property="og:description" content="2周前，公司因为业务需要，要开发一个集装箱散货拼单系统。
+本次主要想不使用 php 语言，同时想要尝试目前主流的开发模式，所以最终选用了 react antd Pro 框架进行快速开发。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.imagicw.com/2020/09/dev-with-react-antd-koa-typeorm/" />
+<meta property="og:image" content="https://www.imagicw.com/logo.jpg"/>
+<meta property="article:published_time" content="2020-09-28T18:30:55+08:00" />
+<meta property="article:modified_time" content="2020-10-12T18:05:15+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://www.imagicw.com/logo.jpg"/>
+
+<meta name="twitter:title" content="React &#43; antd &#43; koa &#43; typeORM 开发的学习笔记（持续更新）"/>
+<meta name="twitter:description" content="2周前，公司因为业务需要，要开发一个集装箱散货拼单系统。
+本次主要想不使用 php 语言，同时想要尝试目前主流的开发模式，所以最终选用了 react antd Pro 框架进行快速开发。"/>
+<meta name="application-name" content="W Mus">
+<meta name="apple-mobile-web-app-title" content="W Mus"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://www.imagicw.com/2020/09/dev-with-react-antd-koa-typeorm/" /><link rel="prev" href="https://www.imagicw.com/2020/08/journal-of-repairing-graphics-card/" /><link rel="next" href="https://www.imagicw.com/2020/10/fullstackopen-notes/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "React + antd + koa + typeORM 开发的学习笔记（持续更新）",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/www.imagicw.com\/2020\/09\/dev-with-react-antd-koa-typeorm\/"
+        },"genre": "posts","keywords": "React, Koa, typeORM, antd","wordcount":  964 ,
+        "url": "https:\/\/www.imagicw.com\/2020\/09\/dev-with-react-antd-koa-typeorm\/","datePublished": "2020-09-28T18:30:55+08:00","dateModified": "2020-10-12T18:05:15+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "imagicw"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="W Mus">W Mus</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about/"> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="W Mus">W Mus</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="">关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">React &#43; antd &#43; koa &#43; typeORM 开发的学习笔记（持续更新）</h1><h2 class="single-subtitle">集装箱拼柜系统实战</h2><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://www.imagicw.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>imagicw</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E7%AC%94%E8%AE%B0/"><i class="far fa-folder fa-fw"></i>笔记</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-09-28">2020-09-28</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 964 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#前端">前端</a>
+          <ul>
+            <li><a href="#token-的处理">token 的处理</a></li>
+          </ul>
+        </li>
+        <li><a href="#后端">后端</a>
+          <ul>
+            <li><a href="#数据拆分">数据拆分</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>2周前，公司因为业务需要，要开发一个集装箱散货拼单系统。</p>
+<p>本次主要想不使用 <code>php</code> 语言，同时想要尝试目前主流的开发模式，所以最终选用了 <code>react</code> <code>antd Pro</code> 框架进行快速开发。</p>
+<p>理想是美好的，现实很骨感。这些框架对于我来说都是新的，第一周几乎都是在看框架手册、教程以及跟着入门教学一字一字码出来。</p>
+<p>中间绕了不少弯路，比如一开始直接上手 <code>antd Pro</code>，结果其中的代码逻辑一点都搞不明白。后来就降级从 <code>antd</code> 开始，看着官方写的教程一步一步进行下去，中间一半发现卡住了，后来发现教程版本是 <code>v3</code>，而我使用的是 <code>v4</code>，无奈，只好再各种翻阅资料。</p>
+<p>在一开始做前端的时候，我就一直很疑惑如何开发后端。翻阅了2天资料，以及按照按照网络上的教程，最终选用了 <code>koa</code> <code>typeORM</code> <code>mysql</code> 作为后端。</p>
+<p>以下主要记录在实战过程中犯的错以及解决的疑难问题。</p>
+<h3 id="前端">前端</h3>
+<h4 id="token-的处理">token 的处理</h4>
+<p>遇到的问题</p>
+<ul>
+<li>用户登出后，换了账号登陆，所有请求依然是上一个用户的 <code>token</code>。即使在控制台看到 <code>token</code> 已经改变。刷新页面可以解决。</li>
+<li>未对用户在线状态检验。</li>
+</ul>
+<p>第一个问题主要由于 <code>request</code> 设置问题引起的，原先代码看起来是判断token是否存在，实际上并不会每次都会检查。解决方案是使用了拦截器，每次请求的时候都会检查 <code>localStorage</code>。</p>
+<p>原先的代码</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">extend</span><span class="p">({</span>
+  <span class="nx">errorHandler</span><span class="p">,</span>
+  <span class="c1">// 默认错误处理
+</span><span class="c1"></span>  <span class="nx">credentials</span><span class="o">:</span> <span class="s1">&#39;include&#39;</span><span class="p">,</span> <span class="c1">// 默认请求是否带上cookie
+</span><span class="c1"></span>  <span class="nx">headers</span><span class="o">:</span> <span class="p">{</span>
+  	<span class="nx">Authorization</span><span class="o">:</span> <span class="nx">localStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="s1">&#39;token&#39;</span><span class="p">)</span><span class="o">?</span> <span class="sb">`Bearer </span><span class="si">${</span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="s1">&#39;token&#39;</span><span class="p">)</span><span class="si">}</span><span class="sb">`</span> <span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>改成拦截器的方式</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">extend</span><span class="p">({</span>
+  <span class="nx">errorHandler</span><span class="p">,</span>
+  <span class="c1">// 默认错误处理
+</span><span class="c1"></span>  <span class="nx">credentials</span><span class="o">:</span> <span class="s1">&#39;include&#39;</span><span class="p">,</span> <span class="c1">// 默认请求是否带上cookie
+</span><span class="c1"></span><span class="p">});</span>
+
+<span class="c1">// 此处为拦截器，每次发送请求之前判断能否取到token
+</span><span class="c1"></span><span class="nx">request</span><span class="p">.</span><span class="nx">interceptors</span><span class="p">.</span><span class="nx">request</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">async</span> <span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>  
+  <span class="k">if</span> <span class="p">(</span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="s1">&#39;token&#39;</span><span class="p">))</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="nx">headers</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="s1">&#39;Content-Type&#39;</span><span class="o">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">,</span>
+      <span class="nx">Accept</span><span class="o">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">,</span>
+      <span class="nx">Authorization</span><span class="o">:</span> <span class="sb">`Bearer </span><span class="si">${</span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="s1">&#39;token&#39;</span><span class="p">)</span><span class="si">}</span><span class="sb">`</span><span class="p">,</span>
+    <span class="p">};</span>
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="nx">url</span><span class="p">,</span>
+      <span class="nx">options</span><span class="o">:</span> <span class="p">{</span> <span class="p">...</span><span class="nx">options</span><span class="p">,</span> <span class="nx">headers</span> <span class="p">},</span>
+    <span class="p">};</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="nx">url</span><span class="p">,</span>
+    <span class="nx">options</span><span class="o">:</span> <span class="p">{</span> <span class="p">...</span><span class="nx">options</span> <span class="p">},</span>
+  <span class="p">};</span>
+<span class="p">});</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="后端">后端</h3>
+<h4 id="数据拆分">数据拆分</h4>
+<p>问题现象：遍历过程中在对数据库进行新增操作时，只保存最后一条信息或是保存多条与最后一条相同的信息。前者用了 <code>for of</code>，后者用了 <code>forEach</code>。</p>
+<p>问题代码：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">bulk</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">bulkRepository</span><span class="p">.</span><span class="nx">findOne</span><span class="p">(</span><span class="nx">bulkId</span><span class="p">);</span>
+
+<span class="kr">const</span> <span class="nx">newBulk</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Bulkdata</span><span class="p">();</span>
+
+<span class="k">for</span> <span class="p">(</span> <span class="kr">const</span> <span class="p">[</span><span class="nx">index</span><span class="p">,</span> <span class="nx">item</span><span class="p">]</span> <span class="k">of</span> <span class="nx">seperateQtys</span><span class="p">.</span><span class="nx">entries</span><span class="p">())</span>
+<span class="p">{</span>
+  <span class="nx">newBulk</span><span class="p">.</span><span class="nx">style</span> <span class="o">=</span> <span class="nx">bulk</span><span class="p">.</span><span class="nx">style</span><span class="p">;</span>
+  <span class="nx">newBulk</span><span class="p">.</span><span class="nx">po</span> <span class="o">=</span> <span class="nx">bulk</span><span class="p">.</span><span class="nx">po</span><span class="p">;</span>
+  <span class="nx">newBulk</span><span class="p">.</span><span class="nx">shippingNo</span> <span class="o">=</span> <span class="nx">bulk</span><span class="p">.</span><span class="nx">shippingNo</span><span class="p">;</span>
+  <span class="nx">newBulk</span><span class="p">.</span><span class="nx">handover</span> <span class="o">=</span> <span class="nx">bulk</span><span class="p">.</span><span class="nx">handover</span><span class="p">;</span>
+  <span class="nx">newBulk</span><span class="p">.</span><span class="nx">singleGross</span> <span class="o">=</span> <span class="nx">bulk</span><span class="p">.</span><span class="nx">singleGross</span><span class="p">;</span>
+  <span class="nx">newBulk</span><span class="p">.</span><span class="nx">singleVolume</span> <span class="o">=</span> <span class="nx">bulk</span><span class="p">.</span><span class="nx">singleVolume</span><span class="p">;</span>
+  <span class="nx">newBulk</span><span class="p">.</span><span class="nx">cartonQty</span> <span class="o">=</span> <span class="nx">bulk</span><span class="p">.</span><span class="nx">cartonQty</span><span class="p">;</span>
+  <span class="nx">newBulk</span><span class="p">.</span><span class="nx">cartonSize</span> <span class="o">=</span> <span class="nx">bulk</span><span class="p">.</span><span class="nx">cartonSize</span><span class="p">;</span>
+  <span class="nx">newBulk</span><span class="p">.</span><span class="nx">factory</span> <span class="o">=</span> <span class="nx">bulk</span><span class="p">.</span><span class="nx">factory</span><span class="p">;</span>
+  <span class="nx">newBulk</span><span class="p">.</span><span class="nx">merchandiser</span> <span class="o">=</span> <span class="nx">ctx</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">id</span><span class="p">;</span>
+  <span class="nx">newBulk</span><span class="p">.</span><span class="nx">country</span> <span class="o">=</span> <span class="nx">bulk</span><span class="p">.</span><span class="nx">country</span><span class="p">;</span>
+
+  <span class="nx">newBulk</span><span class="p">.</span><span class="nx">cartonQty</span> <span class="o">=</span> <span class="nx">item</span><span class="p">;</span>
+  <span class="nx">newBulk</span><span class="p">.</span><span class="nx">gross</span> <span class="o">=</span> <span class="nx">item</span> <span class="o">*</span> <span class="nx">bulk</span><span class="p">.</span><span class="nx">singleGross</span><span class="p">;</span>
+  <span class="nx">newBulk</span><span class="p">.</span><span class="nx">volume</span> <span class="o">=</span> <span class="nb">Number</span><span class="p">((</span><span class="nx">item</span> <span class="o">*</span> <span class="nx">bulk</span><span class="p">.</span><span class="nx">singleVolume</span><span class="p">).</span><span class="nx">toFixed</span><span class="p">(</span><span class="mi">5</span><span class="p">));</span>
+
+  <span class="k">if</span><span class="p">(</span><span class="nx">index</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span>
+  <span class="p">{</span>
+      <span class="nx">await</span> <span class="nx">bulkRepository</span><span class="p">.</span><span class="nx">update</span><span class="p">(</span><span class="nx">bulkId</span><span class="p">,</span> <span class="nx">newBulk</span><span class="p">);</span>
+  <span class="p">}</span>
+      <span class="k">else</span>
+  <span class="p">{</span>
+      <span class="kr">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">bulkRepository</span><span class="p">.</span><span class="nx">save</span><span class="p">(</span><span class="nx">newBulk</span><span class="p">);</span>
+      <span class="nx">await</span> <span class="nx">bulkRepository</span>
+          <span class="p">.</span><span class="nx">createQueryBuilder</span><span class="p">()</span>
+          <span class="p">.</span><span class="nx">relation</span><span class="p">(</span><span class="nx">Bulkdata</span><span class="p">,</span> <span class="s2">&#34;parentBulk&#34;</span><span class="p">)</span>
+          <span class="p">.</span><span class="k">of</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span>
+          <span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">bulkId</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>问题原因：因 <code>newBulk</code> 在循环之外创建，整个循环都是操作的同一个对象。</p>
+<p>解决方案：将 <code>new Bulkdata()</code> 操作放进循环内。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">bulk</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">bulkRepository</span><span class="p">.</span><span class="nx">findOne</span><span class="p">(</span><span class="nx">bulkId</span><span class="p">);</span>
+
+<span class="k">for</span> <span class="p">(</span> <span class="kr">const</span> <span class="p">[</span><span class="nx">index</span><span class="p">,</span> <span class="nx">item</span><span class="p">]</span> <span class="k">of</span> <span class="nx">seperateQtys</span><span class="p">.</span><span class="nx">entries</span><span class="p">())</span>
+<span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">newBulk</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Bulkdata</span><span class="p">();</span>
+
+  <span class="nx">newBulk</span><span class="p">.</span><span class="nx">style</span> <span class="o">=</span> <span class="nx">bulk</span><span class="p">.</span><span class="nx">style</span><span class="p">;</span>
+  <span class="c1">// 余下内容与之前相同
+</span><span class="c1"></span><span class="p">};</span>
+</code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2020-10-12</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://www.imagicw.com/2020/09/dev-with-react-antd-koa-typeorm/" data-title="React &#43; antd &#43; koa &#43; typeORM 开发的学习笔记（持续更新）" data-hashtags="React,Koa,typeORM,antd"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://www.imagicw.com/2020/09/dev-with-react-antd-koa-typeorm/" data-hashtag="React"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://www.imagicw.com/2020/09/dev-with-react-antd-koa-typeorm/" data-title="React &#43; antd &#43; koa &#43; typeORM 开发的学习笔记（持续更新）" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://www.imagicw.com/2020/09/dev-with-react-antd-koa-typeorm/" data-title="React &#43; antd &#43; koa &#43; typeORM 开发的学习笔记（持续更新）"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://www.imagicw.com/2020/09/dev-with-react-antd-koa-typeorm/" data-title="React &#43; antd &#43; koa &#43; typeORM 开发的学习笔记（持续更新）"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://www.imagicw.com/2020/09/dev-with-react-antd-koa-typeorm/" data-title="React &#43; antd &#43; koa &#43; typeORM 开发的学习笔记（持续更新）" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://www.imagicw.com/2020/09/dev-with-react-antd-koa-typeorm/" data-title="React &#43; antd &#43; koa &#43; typeORM 开发的学习笔记（持续更新）" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://www.imagicw.com/2020/09/dev-with-react-antd-koa-typeorm/" data-title="React &#43; antd &#43; koa &#43; typeORM 开发的学习笔记（持续更新）"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/react/">React</a>,&nbsp;<a href="/tags/koa/">Koa</a>,&nbsp;<a href="/tags/typeorm/">typeORM</a>,&nbsp;<a href="/tags/antd/">antd</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/2020/08/journal-of-repairing-graphics-card/" class="prev" rel="prev" title="记一次显卡维修经历"><i class="fas fa-angle-left fa-fw"></i>记一次显卡维修经历</a>
+            <a href="/2020/10/fullstackopen-notes/" class="next" rel="next" title="全栈公开课2020学习笔记">全栈公开课2020学习笔记<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="disqus_thread" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://disqus.com/?ref_noscript">Disqus</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.75.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2017 - 2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://www.imagicw.com" target="_blank">imagicw</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="https://imagicw.disqus.com/embed.js" defer></script><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'UA-92164716-1', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-92164716-1" async></script></body>
+</html>

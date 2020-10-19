@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>typeORM - 标签 - W Mus</title>
+        <link>https://www.imagicw.com/tags/typeorm/</link>
+        <description>typeORM - 标签 - W Mus</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>imagicw@hotmail.com (imagicw)</managingEditor>
+            <webMaster>imagicw@hotmail.com (imagicw)</webMaster><lastBuildDate>Mon, 28 Sep 2020 18:30:55 &#43;0800</lastBuildDate><atom:link href="https://www.imagicw.com/tags/typeorm/" rel="self" type="application/rss+xml" /><item>
+    <title>React &#43; antd &#43; koa &#43; typeORM 开发的学习笔记（持续更新）</title>
+    <link>https://www.imagicw.com/2020/09/dev-with-react-antd-koa-typeorm/</link>
+    <pubDate>Mon, 28 Sep 2020 18:30:55 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://www.imagicw.com/2020/09/dev-with-react-antd-koa-typeorm/</guid>
+    <description><![CDATA[<p>2周前，公司因为业务需要，要开发一个集装箱散货拼单系统。</p>
+<p>本次主要想不使用 <code>php</code> 语言，同时想要尝试目前主流的开发模式，所以最终选用了 <code>react</code> <code>antd Pro</code> 框架进行快速开发。</p>]]></description>
+</item></channel>
+</rss>
