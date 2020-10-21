@@ -81,12 +81,12 @@ oh 对，年底要对一年总结。
 
 近期因为开发公司的一个项目，接触到了 `react` 框架，所以打算以边学边记笔记的方式把这个公开课学完。
 
-- [x] Part 0 Web 应用的基础设施 `2 hours`
-- [x] Part 1 React 入门
+- [x] Part 0 Web 应用的基础设施 `2 hours - 20201018`
+- [x] Part 1 React 入门 `8 hours - 20201021`
 	- [x] a React 简介	`1 hours`
 	- [x] b Javascript  `1.5 hours`
 	- [x] c 组件状态，事件处理 `2.5 hours`
-	- [ ] d 深入 React 应用调试
+	- [x] d 深入 React 应用调试 `3 hours`
 - [ ] Part 2 与服务端通信
 
 
@@ -176,8 +176,9 @@ oh 对，年底要对一年总结。
 	- 09.21 - 09.27 / 3 times
 	- 09.28 - 09.30 / 2 times
 	
-- October (total 3)
+- October (total 6)
 	- 10.01 - 10.04 / 1 times
 	- 10.05 - 10.11 / 2 times
-	- 10.12 - 10.18 / 
+	- 10.12 - 10.18 / 3 times
+	- 10.19 - 10.25
 

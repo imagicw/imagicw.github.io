@@ -5,11 +5,11 @@
         <description>JavaScript - 标签 - W Mus</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>imagicw@hotmail.com (imagicw)</managingEditor>
             <webMaster>imagicw@hotmail.com (imagicw)</webMaster><lastBuildDate>Thu, 15 Oct 2020 10:20:55 &#43;0800</lastBuildDate><atom:link href="https://www.imagicw.com/tags/javascript/" rel="self" type="application/rss+xml" /><item>
-    <title>全栈公开课2020学习笔记</title>
-    <link>https://www.imagicw.com/2020/10/fullstackopen-notes/</link>
+    <title>全栈公开课2020学习笔记 01 - JavaScript 和 React</title>
+    <link>https://www.imagicw.com/2020/10/fullstackopen-javascript-and-react/</link>
     <pubDate>Thu, 15 Oct 2020 10:20:55 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://www.imagicw.com/2020/10/fullstackopen-notes/</guid>
+    <guid>https://www.imagicw.com/2020/10/fullstackopen-javascript-and-react/</guid>
     <description><![CDATA[本文是博主学习赫尔辛基大学的 全栈公开课2020 过程中的学习笔记，文章分类结构与课程会有些许不同，本文部分内容引用自原文。]]></description>
 </item></channel>
 </rss>

@@ -53,7 +53,7 @@ mtd -r write /tmp/breed-mt7620-hiwifi-hc5761.bin u-boot
 
 电脑会自动获取ip地址，我们通过浏览器访问 `192.168.1.1` 可以登录Breed Web恢复控制台，有了这个，我们就可以随意开车，不怕翻车啦！
 
-![Breed Web控制台](/img/2017/03/01-Breedweb-console.jpg) 
+![Breed Web控制台](01-Breedweb-console.jpg) 
 
 ---
 
@@ -71,7 +71,7 @@ mtd -r write /tmp/breed-mt7620-hiwifi-hc5761.bin u-boot
 
 下载完成后，进入Breed恢复控制台，选择「固件更新」，在右边「常规固件」下方勾选「固件」并上传刚刚下完的固件 `PandoraBox-ralink-mt7620-hc5861-2017-01-03-git-6c24a7a-squashfs-sysupgrade.bin`，同时勾选「自动重启」后点击「上传」按钮。
 
-![Breed Web 控制台](/img/2017/03/01-Breedweb-upgrade.jpg) 
+![Breed Web 控制台](01-Breedweb-upgrade.jpg) 
 
 重启完成后，等待更新成功。浏览器访问 `192.168.1.1` 即可进入路由器登录界面，Pandorabox的初始密码是 `admin`，输入密码后即可进入。
 
@@ -156,7 +156,7 @@ Samba共享是为了让网内的电脑能够方便地访问挂载的硬盘中的
 
 然后我们 `cd` 到 `/etc` 目录下，通过 `vi passwd` 命令来编辑用户表，按下 `i` 键即可编辑，在文本的最后一行加入以下内容后，保存即可。_（什么，你不知道怎么保存？那你只能请教百度谷歌Bing先生们了）_
 
-![passwd 文件](/img/2017/03/01-passwd.jpg) 
+![passwd 文件](01-passwd.jpg) 
 
 好了，这样我们就新建了一个叫imagicw的用户了，并赋予其 `用户组` 的权限。
 
@@ -170,7 +170,7 @@ smbpasswd imagicw 123456
 
 此时我们还需要在共享目录允许用户里填上 `imagicw` 才算设置完成。
 
-![passwd 文件](/img/2017/03/01-share-dir-settings.jpg) 
+![passwd 文件](01-share-dir-settings.jpg) 
 
 ---
 
@@ -188,13 +188,13 @@ smbpasswd imagicw 123456
 
 认证方式可选择 `用户名密码` 或者 `令牌` 的方式。
 
-![Aria2 全局设置](/img/2017/03/01-aria2-global-settings.jpg) 
+![Aria2 全局设置](01-aria2-global-settings.jpg) 
 
 **Aria2 文件及目录设置**
 
 我专门给硬盘设置了一个 `Downloads` 文件夹，便(qiang)于(po)管(zheng)理。
 
-![Aria2 文件及目录设置](/img/2017/03/01-aria2-files-settings.jpg) 
+![Aria2 文件及目录设置](01-aria2-files-settings.jpg) 
 
 ### UI
 
@@ -213,7 +213,7 @@ Aria2是轻量级的下载工具，基本上都是用命令行的方式下载，
 
 设置界面如下：
 
-![yaaw 设置](/img/2017/03/01-chrome-yaaw-settings.jpg) 
+![yaaw 设置](01-chrome-yaaw-settings.jpg) 
 
 ---
 
@@ -231,9 +231,9 @@ Aria2是轻量级的下载工具，基本上都是用命令行的方式下载，
 
 我使用的是花生壳的服务，按照下图设置。
 
-![DDNS 基本设置](/img/2017/03/01-ddns-settings.jpg) 
+![DDNS 基本设置](01-ddns-settings.jpg) 
 
-![DDNS 高级设置](/img/2017/03/01-ddns-advanced-settings.jpg) 
+![DDNS 高级设置](01-ddns-advanced-settings.jpg) 
 
 在计时器设定里面你可以设置更新周期，我设置了检查时间周期为`1小时`，强制更新周期是`72小时`。
 
@@ -249,9 +249,7 @@ Aria2是轻量级的下载工具，基本上都是用命令行的方式下载，
 
 虽然有些不太完满（LED的显示问题），但也无伤大雅。谨以此文，来安慰熬夜折腾的自己。
 
-
-link_refer:
-  -
-    url: https://www.binss.me/blog/install-openwrt-on-hiwifi-router/
-    title: 极路由刷OpenWrt最强攻略——从救砖、刷Breed、编译固件到安装配置
+{{< admonition info "参考" open >}}
+[极路由刷OpenWrt最强攻略——从救砖、刷Breed、编译固件到安装配置](https://www.binss.me/blog/install-openwrt-on-hiwifi-router/)
+{{< /admonition >}}
 
