@@ -298,7 +298,7 @@ npm start
 - 根元素可以使用空元素 `<></>`，这样在 Dom 树中不会有额外的 `<div>` 元素了。
 - **不要在组件内定义组件**，最大的问题是 React 在每次渲染时，会将内部的组件当作一个新的组件。这会导致 React 无法去优化组件。
 
-```react
+```jsx
 import React from 'react'
 import ReactDOM from 'react-dom'
 
@@ -334,7 +334,7 @@ JSX 是一种「类 XML」语言，所以每个标签都需要关闭。如 `<br>
 
 React 的核心理念就是通过将许多定制化的、可重用的组件组合成应用。有一个约定，就是应用的组件树顶部都要有一个 root 组件叫做 App。
 
-```react
+```jsx
 const Hello = () =>
 {
     return (
@@ -364,7 +364,7 @@ ReactDOM.render(<App />, document.getElementById('root'))
 
 先看一段代码
 
-```react
+```jsx
 const Hello = (props) =>
 {
     return (
@@ -377,7 +377,7 @@ const Hello = (props) =>
 
 我们给 `Hello` 组件设置了一个参数 props，它接收了一个对象，对象具有组件中所定义的所有`属性`对应的字段。
 
-```react
+```jsx
 const App = () =>
 {
     const name = 'W'
@@ -403,7 +403,7 @@ const App = () =>
 
 `bornYear` 函数可以访问 `Hello` 组件中所有的 `props`，不需要单独将 `props.age` 单独传参给 `bornYear`。
 
-```react
+```jsx
 const Hello = (props) =>
 {
     const bornYear = () =>
@@ -433,7 +433,7 @@ const Hello = (props) =>
 
 以下是常规的方法
 
-```react
+```jsx
 const props =
 {
     name: 'imagic',
@@ -462,7 +462,7 @@ const Hello = (props) =>
 
 解构可以更加方便的将对象的属性的值提取到单独的变量中：
 
-```react
+```jsx
 const props =
 {
     name: 'imagic',
@@ -479,7 +479,7 @@ const Hello = (props) =>
 
 也可以使用如下方法直接将属性值赋给变量：
 
-```react
+```jsx
 const Hello = ({ name, age }) =>
 ```
 
@@ -489,7 +489,7 @@ const Hello = ({ name, age }) =>
 
 *此处使用的是 `ReactDOM.render` 方法，不是重新渲染组件的推荐方法，以下只作为了解即可。*
 
-```react
+```jsx
 const App = (props) =>
 {
     const { counter } = props
@@ -508,7 +508,7 @@ ReactDOM.render(
 
 以上代码如果添加 `counter += 1` 命令，`App` 部件是不会重新渲染，我们需要再次调用 `ReactDOM.render` 的方法让组件重新渲染：
 
-```react
+```jsx
 const App = (props) =>
 {
     const { counter } = props
@@ -542,7 +542,7 @@ refresh()       // 第三次渲染，页面显示3
 
 以上的组件都不包含任何组件的状态「无状态组件」，可以通过 `React` 的 `state hook` 向组件添加状态。
 
-```react
+```jsx
 import React, { useState } from 'react'     // 引入 useState 函数
 import ReactDOM from 'react-dom'
 
@@ -582,7 +582,7 @@ ReactDOM.render(
 
 事件处理程序，是指（被注册为）在特定事件发生时进行调用。例如用户点击按钮产生的 `点击 Click` 事件。
 
-```react
+```jsx
 const App = () =>
 {
     const [ counter, setCounter ] = useState(0)
@@ -607,7 +607,7 @@ const App = () =>
 
 也可以直接在 onClick 属性的值直接定义事件处理函数：
 
-```react
+```jsx
 <button onClick={() => setCounter(counter +1)}>
     赞
 </button>
@@ -623,7 +623,7 @@ const App = () =>
 
 下述情况也不可以：
 
-```react
+```jsx
 <button onClick={console.log('按钮被点击')}按钮</button>
 ```
 
@@ -634,7 +634,7 @@ const App = () =>
 
 要注意的是，此处不能简略的写成如下：
 
-```react
+```jsx
 <button onClick={setCounter(counter +1)}>
     赞
 </button>
@@ -661,7 +661,7 @@ const App = () =>
 
 下面的例子中，应用的状态是放在 App 组件中的，并通过 props 将其传递给 App 中的子组件，例中为 `Display`  `Button` 组件。
 
-```react
+```jsx
 // 定义可复用的组件
 const Display = (props) =>
 {
@@ -726,7 +726,7 @@ const App = () =>
 
 重构 `Display` 组件
 
-```react
+```jsx
 // 原先定义的组件
 const Display = (props) =>
 {
@@ -741,7 +741,7 @@ const Display = ({ counter }) => <div>{counter}</div>
 
 重构 `Button` 组件
 
-```react
+```jsx
 // 原先定义的组件
 const Button = (props) =>
 {
@@ -766,7 +766,7 @@ const Button = ({ handleClick, text}) => <button onClick={handleClick}>{text}</b
 
 下面是使用复杂状态的案例
 
-```react
+```jsx
 const App = () =>
 {
     const [clicks, setClicks] = useState(
@@ -808,7 +808,7 @@ const App = () =>
 
 可以看到，点击 Left 按钮时，right 的值是不变的，同样的，点击 Right 按钮时， left 的值是不变的。此处使用展开语法来定义新的状态对象，使代码更简洁。
 
-```react
+```jsx
 const handleLeftClick = () =>
 {
     const newClicks =
@@ -831,7 +831,7 @@ const handleRightClick = () =>
 ```
 
 将对象分配给事件处理中的变量是没有必要的，上述代码可以简写成如下
-```react
+```jsx
 const handleLeftClick = () => setClicks({ ...clicks, left: clicks.left + 1 })
 
 const handleRightClick = () => setClicks({ ...clicks, right: clicks.right + 1 })
@@ -839,7 +839,7 @@ const handleRightClick = () => setClicks({ ...clicks, right: clicks.right + 1 })
 
 以下代码违反了 React 中状态不可以直接修改的原则，这会导致很多副作用，应杜绝这样的方式。
 
-```react
+```jsx
 const handleLeftClick = () =>
 {
     clicks.left++
@@ -857,7 +857,7 @@ const handleLeftClick = () =>
 
 下例使用了 `join` 方法，该数组将所有项目连接到一个字符串中，由作为函数参数传递的字符串「例中为一个空格」分隔。
 
-```react
+```jsx
 const App = () =>
 {
     const [left, setLeft] = useState(0)
@@ -892,7 +892,7 @@ const App = () =>
 
 下例将操作历史记录交由 `History` 组件来处理，使用 `if` 判断渲染历史记录。
 
-```react
+```jsx
 const History = (props) =>
 {
     if (props.allClicks.length === 0)
@@ -946,7 +946,7 @@ const App = () =>
 
 - 不能从循环、条件表达式或任何不适定义组件的函数的地方调用 `useState` 「同样的还有 `useEffect` 函数」。*这样做是为了确保Hook总是以相同的顺序调用，如果不是这样，应用的行为就会不规则。*
 
-```react
+```jsx
 const App = () =>
 {
     // 这里使用时没有问题的
@@ -983,7 +983,7 @@ const App = () =>
 
 使用返回函数的函数，将可以使用参数自定义的通用函数添加到不同组件的事件处理程序中。
 
-```react
+```jsx
 const hello = (who) =>
 {
     const handler = () => console.log('hello', who)
@@ -996,14 +996,14 @@ const hello = (who) =>
 
 这样我们就可以在不同组件中调用了。
 
-```react
+```jsx
 <button onClick={hello('imagic')}>imagic</button>
 <button onClick={hello('w')}>w</button>
 ```
 
 我们将 hello 函数重构一下
 
-```react
+```jsx
 // 省去 handler
 const hello = (who) =>
 {
@@ -1031,7 +1031,7 @@ const hello = (who) => () =>
 
 也可以这样使用
 
-```react
+```jsx
 const hello = (who) =>
 {
     console.log('hello', who)

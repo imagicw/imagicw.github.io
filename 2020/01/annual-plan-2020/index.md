@@ -88,6 +88,19 @@ oh 对，年底要对一年总结。
 	- [x] c 组件状态，事件处理 `2.5 hours`
 	- [x] d 深入 React 应用调试 `3 hours`
 - [ ] Part 2 与服务端通信
+	- [x] a 从渲染集合到模块学习 `52 minutes`
+	- [ ] b 表单
+	- [ ] c 从服务器获取数据
+	- [ ] d 在服务端将数据 Alert 出来
+	- [ ] e 给 React 应用加点样式
+- [ ] Part 3 
+- [ ] Part 4
+- [ ] Part 5
+- [ ] Part 6
+- [ ] Part 7
+- [ ] Part 8
+- [ ] Part 9
+- [ ] Part 10
 
 
 **阅读**
