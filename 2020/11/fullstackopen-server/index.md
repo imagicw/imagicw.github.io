@@ -2,11 +2,9 @@
 
 <!--more-->
 
-## 与服务器通信
-
 ### 从渲染集合到模块学习
 
-使用 VS Code 可以安装 React 的代码片段 Snippets，安装在[这里](https://marketplace.visualstudio.com/items?itemName=xabikos.ReactSnippets)
+使用 VS Code 可以安装 React 的代码片段 Snippets，安装在[这里](https://marketplace.visualstudio.com/items?itemName=xabikos.ReactSnippets)。
 
 善用 console.log 来进行调试，使用 `console.log('props value is', props)`，用 `,` 分隔而不是用 `+` 连接 object。
 

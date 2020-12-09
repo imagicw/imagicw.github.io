@@ -12,7 +12,7 @@
 <meta property="og:url" content="https://www.imagicw.com/2020/09/dev-with-react-antd-koa-typeorm/" />
 <meta property="og:image" content="https://www.imagicw.com/logo.jpg"/>
 <meta property="article:published_time" content="2020-09-28T18:30:55+08:00" />
-<meta property="article:modified_time" content="2020-10-21T16:16:32+08:00" />
+<meta property="article:modified_time" content="2020-12-09T17:20:03+08:00" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://www.imagicw.com/logo.jpg"/>
 
@@ -32,7 +32,7 @@
             "@type": "WebPage",
             "@id": "https:\/\/www.imagicw.com\/2020\/09\/dev-with-react-antd-koa-typeorm\/"
         },"genre": "posts","keywords": "React, Koa, typeORM, antd","wordcount":  964 ,
-        "url": "https:\/\/www.imagicw.com\/2020\/09\/dev-with-react-antd-koa-typeorm\/","datePublished": "2020-09-28T18:30:55+08:00","dateModified": "2020-10-21T16:16:32+08:00","publisher": {
+        "url": "https:\/\/www.imagicw.com\/2020\/09\/dev-with-react-antd-koa-typeorm\/","datePublished": "2020-09-28T18:30:55+08:00","dateModified": "2020-12-09T17:20:03+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -206,7 +206,7 @@
 </span><span class="c1"></span><span class="p">});</span>
 
 <span class="c1">// 此处为拦截器，每次发送请求之前判断能否取到token
-</span><span class="c1"></span><span class="nx">request</span><span class="p">.</span><span class="nx">interceptors</span><span class="p">.</span><span class="nx">request</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">async</span> <span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>  
+</span><span class="c1"></span><span class="nx">request</span><span class="p">.</span><span class="nx">interceptors</span><span class="p">.</span><span class="nx">request</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="kr">async</span> <span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>  
   <span class="k">if</span> <span class="p">(</span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="s1">&#39;token&#39;</span><span class="p">))</span> <span class="p">{</span>
     <span class="kr">const</span> <span class="nx">headers</span> <span class="o">=</span> <span class="p">{</span>
       <span class="s1">&#39;Content-Type&#39;</span><span class="o">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">,</span>
@@ -269,7 +269,7 @@
 </span><span class="lnt">36
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">bulk</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">bulkRepository</span><span class="p">.</span><span class="nx">findOne</span><span class="p">(</span><span class="nx">bulkId</span><span class="p">);</span>
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">bulk</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">bulkRepository</span><span class="p">.</span><span class="nx">findOne</span><span class="p">(</span><span class="nx">bulkId</span><span class="p">);</span>
 
 <span class="kr">const</span> <span class="nx">newBulk</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Bulkdata</span><span class="p">();</span>
 
@@ -293,12 +293,12 @@
 
   <span class="k">if</span><span class="p">(</span><span class="nx">index</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span>
   <span class="p">{</span>
-      <span class="nx">await</span> <span class="nx">bulkRepository</span><span class="p">.</span><span class="nx">update</span><span class="p">(</span><span class="nx">bulkId</span><span class="p">,</span> <span class="nx">newBulk</span><span class="p">);</span>
+      <span class="kr">await</span> <span class="nx">bulkRepository</span><span class="p">.</span><span class="nx">update</span><span class="p">(</span><span class="nx">bulkId</span><span class="p">,</span> <span class="nx">newBulk</span><span class="p">);</span>
   <span class="p">}</span>
       <span class="k">else</span>
   <span class="p">{</span>
-      <span class="kr">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">bulkRepository</span><span class="p">.</span><span class="nx">save</span><span class="p">(</span><span class="nx">newBulk</span><span class="p">);</span>
-      <span class="nx">await</span> <span class="nx">bulkRepository</span>
+      <span class="kr">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">bulkRepository</span><span class="p">.</span><span class="nx">save</span><span class="p">(</span><span class="nx">newBulk</span><span class="p">);</span>
+      <span class="kr">await</span> <span class="nx">bulkRepository</span>
           <span class="p">.</span><span class="nx">createQueryBuilder</span><span class="p">()</span>
           <span class="p">.</span><span class="nx">relation</span><span class="p">(</span><span class="nx">Bulkdata</span><span class="p">,</span> <span class="s2">&#34;parentBulk&#34;</span><span class="p">)</span>
           <span class="p">.</span><span class="k">of</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span>
@@ -322,7 +322,7 @@
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">bulk</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">bulkRepository</span><span class="p">.</span><span class="nx">findOne</span><span class="p">(</span><span class="nx">bulkId</span><span class="p">);</span>
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">bulk</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">bulkRepository</span><span class="p">.</span><span class="nx">findOne</span><span class="p">(</span><span class="nx">bulkId</span><span class="p">);</span>
 
 <span class="k">for</span> <span class="p">(</span> <span class="kr">const</span> <span class="p">[</span><span class="nx">index</span><span class="p">,</span> <span class="nx">item</span><span class="p">]</span> <span class="k">of</span> <span class="nx">seperateQtys</span><span class="p">.</span><span class="nx">entries</span><span class="p">())</span>
 <span class="p">{</span>
@@ -337,8 +337,8 @@
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>更新于 2020-10-21&nbsp;<a class="git-hash" href="https://github.com/imagicw/imagicw.github.io/commit/089a48c582b1949c2d52339768608dfe3bedf4a9" target="_blank" title="commit by imagic(wyw310@gmail.com) 089a48c582b1949c2d52339768608dfe3bedf4a9: 调整了文章图片存储位置">
-                                    <i class="fas fa-hashtag fa-fw"></i>089a48c</a></span>
+                <span>更新于 2020-12-09&nbsp;<a class="git-hash" href="https://github.com/imagicw/imagicw.github.io/commit/1708acacfa5e056d6354e9392d3b4ab37ed5abff" target="_blank" title="commit by imagicw(wyw310@gmail.com) 1708acacfa5e056d6354e9392d3b4ab37ed5abff: 修改了部分 tags">
+                                    <i class="fas fa-hashtag fa-fw"></i>1708aca</a></span>
             </div>
             <div class="post-info-license"></div>
         </div>
@@ -364,7 +364,7 @@
                 Please enable JavaScript to view the comments powered by <a href="https://disqus.com/?ref_noscript">Disqus</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.75.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.79.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2017 - 2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://www.imagicw.com" target="_blank">imagicw</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>

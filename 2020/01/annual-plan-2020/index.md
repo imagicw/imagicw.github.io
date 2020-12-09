@@ -87,13 +87,17 @@ oh 对，年底要对一年总结。
 	- [x] b Javascript  `1.5 hours`
 	- [x] c 组件状态，事件处理 `2.5 hours`
 	- [x] d 深入 React 应用调试 `3 hours`
-- [x] Part 2 与服务端通信 `? hours - 202011??`
+- [x] Part 2 与服务端通信 `10 hours 22 minites - 20201110`
 	- [x] a 从渲染集合到模块学习 `52 minutes`
 	- [x] b 表单 `2 hours`
 	- [x] c 从服务器获取数据 `3.5 hours`
 	- [x] d 在服务端将数据 Alert 出来 ` 3 hours`
-	- [x] e 给 React 应用加点样式 ` 1 housr`
-- [ ] Part 3 
+	- [x] e 给 React 应用加点样式 `1 hour`
+- [x] Part 3 用NodeJS和Express写服务端程序 `11 hours - 20201209 `
+	- [x] a Node.js 与 Express `2 hours`
+	- [x] b 把应用部署到网上 `1 hour`
+	- [x] c 将数据存入 MongoDB `7 hours`
+	- [x] d ESLint 与代码检查 `1 hour`
 - [ ] Part 4
 - [ ] Part 5
 - [ ] Part 6
@@ -159,7 +163,7 @@ oh 对，年底要对一年总结。
 报一个私教班，维持健康的身体。
 规律饮食，保持体重。
 
-已报 `2020.05.08开始`，基本保持每周2-4次的私教训练。
+已报 `2020.05.08 —— 2020.12.15`，基本保持每周2-4次的私教训练。
 
 - May (total 11)
 	- 05.04 - 05.10 / 2 times
@@ -196,6 +200,13 @@ oh 对，年底要对一年总结。
 	- 10.19 - 10.25 / 3 times
 	- 10.26 - 10.31 / 3 times
 
-- November
-	- 11.01 - 11.08 / 
+- November (total 12)
+	- 11.01 - 11.08 / 3 times
+	- 11.09 - 11.15 / 3 times
+	- 11.16 - 11.22 / 2 times
+	- 11.23 - 11.30 / 4 times
+
+- December
+	- 12.01 - 12.06 / 4 times
+	- 12.07 - 12.15 /
 
