@@ -35,7 +35,7 @@ const array = [1, 3, -3]    // 定义 array 变量
 
 array.push(9)               // 向 array 数组添加元素 数字9
 
-console.log(array.length)   // 数组 length 为4
+console.log(array.length)   // 数组 length 为 4
 console.log(array[1])       // 打印 array 的第 2 个元素 为 3
 
 // 遍历数组使用 forEach

@@ -1,10 +1,10 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Plan - 分类 - W Mus</title>
+        <title>计划 - 分类 - W Mus</title>
         <link>https://www.imagicw.com/categories/plan/</link>
-        <description>Plan - 分类 - W Mus</description>
+        <description>计划 - 分类 - W Mus</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>imagicw@hotmail.com (imagicw)</managingEditor>
-            <webMaster>imagicw@hotmail.com (imagicw)</webMaster><lastBuildDate>Thu, 02 Jan 2020 15:37:50 &#43;0800</lastBuildDate><atom:link href="https://www.imagicw.com/categories/plan/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>imagicw@hotmail.com (imagicw)</webMaster><atom:link href="https://www.imagicw.com/categories/plan/" rel="self" type="application/rss+xml" /><item>
     <title>2020年年度计划</title>
     <link>https://www.imagicw.com/2020/01/annual-plan-2020/</link>
     <pubDate>Thu, 02 Jan 2020 15:37:50 &#43;0800</pubDate>

@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Stock - 标签 - W Mus</title>
+        <link>https://www.imagicw.com/tags/stock/</link>
+        <description>Stock - 标签 - W Mus</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>imagicw@hotmail.com (imagicw)</managingEditor>
+            <webMaster>imagicw@hotmail.com (imagicw)</webMaster><lastBuildDate>Fri, 30 Oct 2020 10:20:55 &#43;0800</lastBuildDate><atom:link href="https://www.imagicw.com/tags/stock/" rel="self" type="application/rss+xml" /><item>
+    <title>Wyckoff 方法 - 入门指导</title>
+    <link>https://www.imagicw.com/2020/10/the-wyckoff-method-a-tutorial/</link>
+    <pubDate>Fri, 30 Oct 2020 10:20:55 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://www.imagicw.com/2020/10/the-wyckoff-method-a-tutorial/</guid>
+    <description><![CDATA[因博主学习需要，本文翻译自 StockCharts 的 「The Wyckoff Method - A Tutorial」 文章。]]></description>
+</item></channel>
+</rss>

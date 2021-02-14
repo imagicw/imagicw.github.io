@@ -93,12 +93,14 @@ oh 对，年底要对一年总结。
 	- [x] c 从服务器获取数据 `3.5 hours`
 	- [x] d 在服务端将数据 Alert 出来 ` 3 hours`
 	- [x] e 给 React 应用加点样式 `1 hour`
-- [x] Part 3 用NodeJS和Express写服务端程序 `11 hours - 20201209 `
+- [x] Part 3 用NodeJS和Express写服务端程序 `11 hours - 20201209`
 	- [x] a Node.js 与 Express `2 hours`
 	- [x] b 把应用部署到网上 `1 hour`
 	- [x] c 将数据存入 MongoDB `7 hours`
 	- [x] d ESLint 与代码检查 `1 hour`
 - [ ] Part 4
+	- [x] a 从后端结构到测试入门 `1.5 hours`
+	- [ ] b 测试后端应用 `2 + `
 - [ ] Part 5
 - [ ] Part 6
 - [ ] Part 7
@@ -158,7 +160,7 @@ oh 对，年底要对一年总结。
 
 ## 身心计划
 
-**锻炼**
+**锻炼** ✅ 完成
 
 报一个私教班，维持健康的身体。
 规律饮食，保持体重。
@@ -206,7 +208,8 @@ oh 对，年底要对一年总结。
 	- 11.16 - 11.22 / 2 times
 	- 11.23 - 11.30 / 4 times
 
-- December
+- December (total 8)
 	- 12.01 - 12.06 / 4 times
-	- 12.07 - 12.15 /
+	- 12.07 - 12.15 / 4 times
 
+**TOTAL 82, ¥ 11,500, ¥ 141 per lesson**

@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Node - 标签 - W Mus</title>
+        <link>https://www.imagicw.com/tags/node/</link>
+        <description>Node - 标签 - W Mus</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>imagicw@hotmail.com (imagicw)</managingEditor>
+            <webMaster>imagicw@hotmail.com (imagicw)</webMaster><lastBuildDate>Wed, 16 Dec 2020 17:30:00 &#43;0800</lastBuildDate><atom:link href="https://www.imagicw.com/tags/node/" rel="self" type="application/rss+xml" /><item>
+    <title>全栈公开课2020学习笔记 04 - 测试 Express 服务端程序, 以及用户管理</title>
+    <link>https://www.imagicw.com/2020/12/fullstackopen-test/</link>
+    <pubDate>Wed, 16 Dec 2020 17:30:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://www.imagicw.com/2020/12/fullstackopen-test/</guid>
+    <description><![CDATA[本文是博主学习赫尔辛基大学的 全栈公开课2020 过程中的学习笔记，文章分类结构与课程会有些许不同，本文部分内容引用自原文。]]></description>
+</item></channel>
+</rss>
