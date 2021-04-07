@@ -4,7 +4,14 @@
         <link>https://www.imagicw.com/posts/</link>
         <description>所有文章 | W Mus</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>imagicw@hotmail.com (imagicw)</managingEditor>
-            <webMaster>imagicw@hotmail.com (imagicw)</webMaster><lastBuildDate>Tue, 16 Mar 2021 16:23:50 &#43;0800</lastBuildDate><atom:link href="https://www.imagicw.com/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>imagicw@hotmail.com (imagicw)</webMaster><lastBuildDate>Fri, 02 Apr 2021 16:00:00 &#43;0800</lastBuildDate><atom:link href="https://www.imagicw.com/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>一些琐事</title>
+    <link>https://www.imagicw.com/2021/04/studing-training-learning/</link>
+    <pubDate>Fri, 02 Apr 2021 16:00:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://www.imagicw.com/2021/04/studing-training-learning/</guid>
+    <description><![CDATA[今天突然在想一个问题「完美和不完美」。 在很多时候我都在追求一定的完美，在选择学习资料上、数据整理方案、程序的算法逻辑等等，总会考虑很多，是否]]></description>
+</item><item>
     <title>《稻香》乐队Cover</title>
     <link>https://www.imagicw.com/2021/03/dao-xiang-cover/</link>
     <pubDate>Tue, 16 Mar 2021 16:23:50 &#43;0800</pubDate>
@@ -70,13 +77,5 @@
     <guid>https://www.imagicw.com/2020/09/dev-with-react-antd-koa-typeorm/</guid>
     <description><![CDATA[<p>2周前，公司因为业务需要，要开发一个集装箱散货拼单系统。</p>
 <p>本次主要想不使用 <code>php</code> 语言，同时想要尝试目前主流的开发模式，所以最终选用了 <code>react</code> <code>antd Pro</code> 框架进行快速开发。</p>]]></description>
-</item><item>
-    <title>记一次显卡维修经历</title>
-    <link>https://www.imagicw.com/2020/08/journal-of-repairing-graphics-card/</link>
-    <pubDate>Fri, 28 Aug 2020 15:12:44 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://www.imagicw.com/2020/08/journal-of-repairing-graphics-card/</guid>
-    <description><![CDATA[<p>周日去了 Apple Store 的售后，原因是之前一直以为是微信的原因导致电脑切换独立显卡时会黑屏数秒然后恢复显示。然而到了售后无论我如何捣腾，显卡切换却很正常，无法再现故障过程。估计是因为冷机的缘故，好在之前有录制故障视频，给工作人员看过之后，就拿去压力测试了。</p>
-<p>大约四个小时候告诉我，显卡的确有问题，已经无法输出画面了，帮我直接更换主板。</p>]]></description>
 </item></channel>
 </rss>
