@@ -72,12 +72,11 @@
     <guid>https://www.imagicw.com/2020/10/fullstackopen-javascript-and-react/</guid>
     <description><![CDATA[本文是博主学习赫尔辛基大学的 全栈公开课2020 过程中的学习笔记，文章分类结构与课程会有些许不同，本文部分内容引用自原文。]]></description>
 </item><item>
-    <title>React &#43; antd &#43; koa &#43; typeORM 开发的学习笔记（持续更新）</title>
-    <link>https://www.imagicw.com/2020/09/dev-with-react-antd-koa-typeorm/</link>
-    <pubDate>Mon, 28 Sep 2020 18:30:55 &#43;0800</pubDate>
+    <title>树莓派的笔记</title>
+    <link>https://www.imagicw.com/2020/10/raspberry-notes/</link>
+    <pubDate>Tue, 06 Oct 2020 19:58:00 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://www.imagicw.com/2020/09/dev-with-react-antd-koa-typeorm/</guid>
-    <description><![CDATA[<p>2周前，公司因为业务需要，要开发一个集装箱散货拼单系统。</p>
-<p>本次主要想不使用 <code>php</code> 语言，同时想要尝试目前主流的开发模式，所以最终选用了 <code>react</code> <code>antd Pro</code> 框架进行快速开发。</p>]]></description>
+    <guid>https://www.imagicw.com/2020/10/raspberry-notes/</guid>
+    <description><![CDATA[因为近期开发学习需要一台服务器，正好手头有闲置的树莓派3B+，所以就打算利用起来。运行环境 ubuntu 20.04.1 64位 以下是一些备忘以及遇到的问题便记录了下来]]></description>
 </item></channel>
 </rss>

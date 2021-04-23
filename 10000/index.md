@@ -23,4 +23,8 @@
 
 暂无
 
-<script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="imagicw" data-description="Support me on Buy me a coffee!" data-message="Buy W a Coffee." data-color="#FFDD00" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+## 咖啡补给站
+
+谢谢你的☕️！
+
+<a href="https://www.buymeacoffee.com/imagicw"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=imagicw&button_colour=2e97bd&font_colour=ffffff&font_family=Cookie&outline_colour=ffffff&coffee_colour=FFDD00"></a>
