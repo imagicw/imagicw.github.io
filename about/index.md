@@ -14,9 +14,3 @@
 ## 教练，我想打个盹！
 
 Zzz...
-
-## 咖啡补给站
-
-谢谢你的☕️！
-
-<a href="https://www.buymeacoffee.com/imagicw"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=imagicw&button_colour=2e97bd&font_colour=ffffff&font_family=Cookie&outline_colour=ffffff&coffee_colour=FFDD00"></a>

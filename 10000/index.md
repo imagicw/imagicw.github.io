@@ -12,7 +12,8 @@
 | 计划        |  累计时间  |   更新日期   |  进度  |
 |:----       |:------:|:-----------:|:------:|
 | 🎸 吉他     | 16小时  | 2021.04.07 |  ![](https://img.shields.io/badge/%E5%AE%8C%E6%88%90-16%2f10000-blue)|
-| 📖 阅读     | 29小时 4分钟  | 2021.03.24 |  ![](https://img.shields.io/badge/%E5%AE%8C%E6%88%90-29%2f10000-blue)|
+| 🥁 架子鼓     | 1小时 15分钟  | 2021.05.09 |  ![](https://img.shields.io/badge/%E5%AE%8C%E6%88%90-1%2f10000-blue)|
+| 📖 阅读     | 29小时 46分钟  | 2021.05.09 |  ![](https://img.shields.io/badge/%E5%AE%8C%E6%88%90-29%2f10000-blue)|
 
 
 ## 搁置的计划
@@ -22,9 +23,3 @@
 ## 放弃的计划
 
 暂无
-
-## 咖啡补给站
-
-谢谢你的☕️！
-
-<a href="https://www.buymeacoffee.com/imagicw"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=imagicw&button_colour=2e97bd&font_colour=ffffff&font_family=Cookie&outline_colour=ffffff&coffee_colour=FFDD00"></a>
