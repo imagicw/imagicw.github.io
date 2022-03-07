@@ -1,0 +1,1919 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>全栈公开课2020学习笔记 01 - JavaScript 和 React - Λ.W.log</title><meta name="Description" content="本文是博主学习赫尔辛基大学的 全栈公开课2020 过程中的学习笔记，文章分类结构与课程会有些许不同，本文部分内容引用自原文。"><meta property="og:title" content="全栈公开课2020学习笔记 01 - JavaScript 和 React" />
+<meta property="og:description" content="本文是博主学习赫尔辛基大学的 全栈公开课2020 过程中的学习笔记，文章分类结构与课程会有些许不同，本文部分内容引用自原文。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://x.awo.design/2020/10/fullstackopen-javascript-and-react/" /><meta property="og:image" content="https://x.awo.design/img/W.jpg"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-10-15T10:20:55+08:00" />
+<meta property="article:modified_time" content="2020-10-16T18:22:55+08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://x.awo.design/img/W.jpg"/>
+
+<meta name="twitter:title" content="全栈公开课2020学习笔记 01 - JavaScript 和 React"/>
+<meta name="twitter:description" content="本文是博主学习赫尔辛基大学的 全栈公开课2020 过程中的学习笔记，文章分类结构与课程会有些许不同，本文部分内容引用自原文。"/>
+<meta name="application-name" content="Λ.W.log">
+<meta name="apple-mobile-web-app-title" content="Λ.W.log"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://x.awo.design/2020/10/fullstackopen-javascript-and-react/" /><link rel="prev" href="https://x.awo.design/2020/10/raspberry-notes/" /><link rel="next" href="https://x.awo.design/2020/11/fullstackopen-server/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.055364f5be272caa092b0e6654c165828707f8ab971e2656383a6d6392bc345e.css" integrity="sha256-BVNk9b4nLKoJKw5mVMFlgocH&#43;KuXHiZWODptY5K8NF4="><link rel="stylesheet" href="/css/style.min.1e2694bed152fa2922dbe909a441838ed693d88b1330f97485bfa8ed78da42df.css" integrity="sha256-HiaUvtFS&#43;iki2&#43;kJpEGDjtaT2IsTMPl0hb&#43;o7XjaQt8="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.876d023d9d10c97941b80c3b03e2a5b94631ff7a4af9cee5604a6a2d39718d84.css" integrity="sha256-h20CPZ0QyXlBuAw7A&#43;KluUYx/3pK&#43;c7lYEpqLTlxjYQ="><link rel="stylesheet" href="/lib/animate/animate.min.3c770e90f98eb21b0c042fafb49755af93306fbaf42e449524f94fae9fc83295.css" integrity="sha256-PHcOkPmOshsMBC&#43;vtJdVr5Mwb7r0LkSVJPlPrp/IMpU="><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "全栈公开课2020学习笔记 01 - JavaScript 和 React",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/x.awo.design\/2020\/10\/fullstackopen-javascript-and-react\/"
+        },"genre": "posts","keywords": "React, JavaScript","wordcount":  7664 ,
+        "url": "https:\/\/x.awo.design\/2020\/10\/fullstackopen-javascript-and-react\/","datePublished": "2020-10-15T10:20:55+08:00","dateModified": "2020-10-16T18:22:55+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "imagicw"
+            },"description": "本文是博主学习赫尔辛基大学的 全栈公开课2020 过程中的学习笔记，文章分类结构与课程会有些许不同，本文部分内容引用自原文。"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Λ.W.log">Λ.W.log</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/categories/notes"> 笔记 </a><a class="menu-item" href="/games/"> 游戏 </a><a class="menu-item" href="/10000/"> 一万次悲伤 </a><a class="menu-item" href="/about/"> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Λ.W.log">Λ.W.log</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/categories/notes" title="">笔记</a><a class="menu-item" href="/games/" title="">游戏</a><a class="menu-item" href="/10000/" title="">一万次悲伤</a><a class="menu-item" href="/about/" title="">关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">全栈公开课2020学习笔记 01 - JavaScript 和 React</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://awo.design" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>imagicw</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/notes/"><i class="far fa-folder fa-fw"></i>笔记</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-10-15">2020-10-15</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 7664 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 16 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#javascript">JavaScript</a>
+      <ul>
+        <li><a href="#认识-javascript">认识 Javascript</a>
+          <ul>
+            <li><a href="#variables-变量">Variables 变量</a></li>
+            <li><a href="#array-数组">Array 数组</a></li>
+            <li><a href="#objects-对象">Objects 对象</a></li>
+            <li><a href="#functions-函数">Functions 函数</a></li>
+            <li><a href="#object-method-and-this-对象方法以及-this关键字">Object method and &ldquo;this&rdquo; 对象方法以及“ this”关键字</a></li>
+            <li><a href="#classes-类">Classes 类</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#react">React</a>
+      <ul>
+        <li><a href="#认识-react">认识 React</a>
+          <ul>
+            <li><a href="#安装-react">安装 React</a></li>
+            <li><a href="#component-组件">Component 组件</a></li>
+            <li><a href="#jsx">JSX</a></li>
+            <li><a href="#multiple-component-多组件">Multiple Component 多组件</a></li>
+            <li><a href="#props-passing-data-to-components-props-向组件传递数据">Props: passing data to components Props: 向组件传递数据</a></li>
+          </ul>
+        </li>
+        <li><a href="#组件状态事件处理">组件状态，事件处理</a>
+          <ul>
+            <li><a href="#component-helper-functions-组件辅助函数">Component helper functions 组件辅助函数</a></li>
+            <li><a href="#desctructuring-解构">Desctructuring 解构</a></li>
+            <li><a href="#page-re-rendering-页面重渲染">Page re-rendering 页面重渲染</a></li>
+            <li><a href="#stateful-conmponent-有状态组件">Stateful conmponent 有状态组件</a></li>
+            <li><a href="#event-handling-事件处理">Event handling 事件处理</a>
+              <ul>
+                <li><a href="#event-handler-is-a-function-事件处理是一个函数">Event handler is a function 事件处理是一个函数</a></li>
+              </ul>
+            </li>
+            <li><a href="#passing-state-to-child-components-将状态传递给子组件">Passing state to child components 将状态传递给子组件</a></li>
+            <li><a href="#changes-in-state-cause-rerendering-状态的改变导致重新渲染">Changes in state cause rerendering 状态的改变导致重新渲染</a></li>
+            <li><a href="#refactoring-the-components-重构组件">Refactoring the components 重构组件</a></li>
+          </ul>
+        </li>
+        <li><a href="#深入-react-应用调试">深入 React 应用调试</a>
+          <ul>
+            <li><a href="#complext-state-复杂状态">Complext state 复杂状态</a></li>
+            <li><a href="#handling-arrays-处理数组">Handling arrays 处理数组</a></li>
+            <li><a href="#conditional-rendering-条件渲染">Conditional rendering 条件渲染</a></li>
+            <li><a href="#debugging-react-applications-调试-react-应用">Debugging React applications 调试 React 应用</a></li>
+            <li><a href="#rules-of-hooks-hook的规则">Rules of Hooks Hook的规则</a></li>
+            <li><a href="#function-that-returns-a-function-返回函数的函数">Function that returns a function 返回函数的函数</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><div class="details admonition info open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-info-circle fa-fw"></i>关于笔记内容<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">本文是博主学习赫尔辛基大学的 <a href="https://fullstackopen.com/" target="_blank" rel="noopener noreffer">全栈公开课2020</a> 过程中的学习笔记，文章分类结构与课程会有些许不同，本文部分内容引用自原文。</div>
+        </div>
+    </div>
+<h2 id="javascript">JavaScript</h2>
+<h3 id="认识-javascript">认识 Javascript</h3>
+<p>JavaScript 标准的正式名称是ECMAScript。 目前最新的版本是2019年6月发布的，名为ECMAScript 2019 ，即ES10。</p>
+<h4 id="variables-变量">Variables 变量</h4>
+<p>JavaScript中有 <code>const</code> <code>let</code> <code>var</code> 这几种定义变量的方法，其中 <code>const</code> 实际上是定义了一个常量，也就是其值不能再修改。 <code>let</code> 定义了一个普通的变量。 <code>var</code> 在很长一段时间里，是 JavaScript的唯一定义变量的方法，其余两种是在 ES6 版本添加的。在一些特定情况，var 的工作方式与大多数语言中的变量定义相比是十分不同的。所以不建议使用 <code>var</code>。</p>
+<p>值得注意的是 <code>let</code> 声明一个块作用域的<strong>局部变量</strong>，<strong>在该块区域以外是无法被调用的</strong>。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="kd">let</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">200</span>
+
+<span class="nx">b</span> <span class="o">+=</span> <span class="mi">10</span>          <span class="c1">// console.log(b) -&gt; 210
+</span><span class="c1"></span><span class="nx">b</span> <span class="o">=</span> <span class="s1">&#39;你好&#39;</span>       <span class="c1">// console.log(b) -&gt; 你好
+</span><span class="c1"></span><span class="nx">a</span> <span class="o">=</span> <span class="mi">1000</span>        <span class="c1">// 报错
+</span></code></pre></td></tr></table>
+</div>
+</div><h4 id="array-数组">Array 数组</h4>
+<p>数组可以使用 <code>const</code> 定义，因为数组是一个对象，而且数组的变量总是指向这同一个对象，当添加新元素的时，数组的内容也将发生变化。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">array</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">]</span>    <span class="c1">// 定义 array 变量
+</span><span class="c1"></span>
+<span class="nx">array</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>               <span class="c1">// 向 array 数组添加元素 数字9
+</span><span class="c1"></span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">array</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span>   <span class="c1">// 数组 length 为 4
+</span><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">array</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>       <span class="c1">// 打印 array 的第 2 个元素 为 3
+</span><span class="c1"></span>
+<span class="c1">// 遍历数组使用 forEach
+</span><span class="c1"></span>
+<span class="nx">array</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">value</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span>      <span class="c1">// 将数组所有内容依次打印出来 1, 3, -3, 9
+</span><span class="c1"></span><span class="p">})</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><p>上述案例中使用的是 push 方法将新元素添加到数组中。在使用 React 时，经常使用函数式编程的技巧。函数编程范型的一个特点，就是使用不可变的数据结构。在React代码中，最好使用concat方法，因为它不向数组中添加元素，而是创建一个新数组，新数组中包含了旧数组和新的元素。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">array</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">]</span>
+<span class="kr">const</span> <span class="nx">array2</span> <span class="o">=</span> <span class="nx">array</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="c1">// 此时 array 没有改变
+</span><span class="c1">// array2 为 [1, 3, -3, 5]
+</span></code></pre></td></tr></table>
+</div>
+</div><p><code>array.concat(5)</code> 这种方法调用不会向 <code>array</code> 数组添加新的元素，而是直接返回一个包含 <code>array</code> 以及 <code>concat</code> 的元素的一个新数组。</p>
+<p><code>map</code> 方法遍历</p>
+<p>以下案例使用了 <code>map</code> 方法创建了一个新数组，将 <code>array</code> 的每一个元素作为函数的入参来创建新的元素。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">array3</span> <span class="o">=</span> <span class="nx">array</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">value</span> <span class="p">=&gt;</span> <span class="nx">value</span> <span class="o">*</span> <span class="mi">10</span><span class="p">)</span>
+<span class="c1">// array3 为 [10, 30, -30]
+</span></code></pre></td></tr></table>
+</div>
+</div><p><code>map</code> 方法还可以将数组转换成完全不同的内容，下例将 array 的整数值转换成了包含 HTML 字符串的数组。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">array4</span> <span class="o">=</span> <span class="nx">array</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">value</span> <span class="p">=&gt;</span> <span class="s1">&#39;&lt;li&gt;&#39;</span> <span class="o">+</span> <span class="nx">value</span> <span class="o">+</span> <span class="s1">&#39;&lt;/li&gt;&#39;</span><span class="p">)</span>
+<span class="c1">// array4 为 [&#39;&lt;li&gt;1&lt;/li&gt;&#39;, &#39;&lt;li&gt;3&lt;/li&gt;&#39;, &#39;&lt;li&gt;-3&lt;/li&gt;&#39;]
+</span></code></pre></td></tr></table>
+</div>
+</div><p>数组中的单个元素可以使用<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment" target="_blank" rel="noopener noreffer">解构赋值</a>赋给变量。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">array</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;apple&#39;</span><span class="p">,</span> <span class="s1">&#39;banana&#39;</span><span class="p">,</span> <span class="s1">&#39;cherry&#39;</span><span class="p">,</span> <span class="s1">&#39;durian&#39;</span><span class="p">,</span> <span class="s1">&#39;fig&#39;</span><span class="p">]</span>
+<span class="kr">const</span> <span class="p">[</span><span class="nx">fruit1</span><span class="p">,</span> <span class="nx">fruit2</span><span class="p">,</span> <span class="p">...</span> <span class="nx">restFruit</span><span class="p">]</span> <span class="o">=</span> <span class="nx">array</span>
+
+<span class="c1">// fruit1 为 apple
+</span><span class="c1">// fruit2 为 banana
+</span><span class="c1">// restFruit 为 [cherry, durian, fig]
+</span></code></pre></td></tr></table>
+</div>
+</div><h4 id="objects-对象">Objects 对象</h4>
+<p>定义对象的不同方式</p>
+<ul>
+<li>对象字面量 (Object Literals)，使用大括号 {}</li>
+<li>使用句点 .</li>
+<li>使用中括号 []</li>
+</ul>
+<p>对象属性的值可以是任何类型：<code>整数</code> <code>字符串</code> <code>数组</code> <code>对象</code>等。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="c1">// 对象字面量
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">object</span> <span class="o">=</span>
+<span class="p">{</span>
+    <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;imagic&#39;</span><span class="p">,</span>
+    <span class="nx">age</span><span class="o">:</span> <span class="mi">100</span><span class="p">,</span>
+    <span class="nx">company</span><span class="o">:</span>
+    <span class="p">{</span>
+        <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;BBC&#39;</span><span class="p">,</span>
+        <span class="nx">location</span><span class="o">:</span> <span class="s1">&#39;UK&#39;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="nx">devices</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;iPhone&#39;</span><span class="p">,</span><span class="s1">&#39;MacBook Pro&#39;</span><span class="p">,</span> <span class="s1">&#39;raspberry&#39;</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="c1">// 句点方式 和 中括号
+</span><span class="c1"></span>
+<span class="c1">// 引用
+</span><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">object</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span>            <span class="c1">// 打印出 imagic
+</span><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">object</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">])</span>         <span class="c1">// 打印出 imagic
+</span><span class="c1"></span>
+<span class="c1">// 添加
+</span><span class="c1"></span><span class="nx">object</span><span class="p">.</span><span class="nx">address</span> <span class="o">=</span> <span class="s1">&#39;221B Baker Street&#39;</span>
+<span class="nx">object</span><span class="p">[</span><span class="s1">&#39;nick name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;carrot&#39;</span>      <span class="c1">// 因为 nick name 中间有空格，只能使用中括号 [] 来完成。
+</span></code></pre></td></tr></table>
+</div>
+</div><h4 id="functions-函数">Functions 函数</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="c1">// 定义函数
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">sum</span> <span class="o">=</span> <span class="p">(</span><span class="nx">num1</span><span class="p">,</span> <span class="nx">num2</span><span class="p">)</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="nx">num1</span> <span class="o">+</span> <span class="nx">num2</span>
+<span class="p">}</span>
+
+<span class="c1">// 调用函数
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">sum</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>    <span class="c1">// result 为 13
+</span></code></pre></td></tr></table>
+</div>
+</div><p>如果只有一个参数，我们可以在定义中去掉括号</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">square</span> <span class="o">=</span> <span class="nx">num</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="nx">p</span> <span class="o">*</span> <span class="nx">p</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>如果函数只包含一个表达式，则不需要大括号。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">square</span> <span class="o">=</span> <span class="nx">num</span> <span class="p">=&gt;</span> <span class="nx">num</span> <span class="o">*</span> <span class="nx">num</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>这个方式在操作数组时特别方便。如数组的 <code>map</code> 方法。</p>
+<p>箭头函数是随 ES6 一起添加到 JavaScript. 在之前定义函数的唯一方法是使用 <code>function</code>。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="c1">// 定义函数
+</span><span class="c1"></span><span class="kd">function</span> <span class="nx">square</span><span class="p">(</span><span class="nx">num1</span><span class="p">,</span> <span class="nx">num2</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="nx">num</span> <span class="o">*</span> <span class="nx">num2</span>
+<span class="p">}</span>
+
+<span class="c1">// 函数表达式方法
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">average</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">num1</span><span class="p">,</span> <span class="nx">num2</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span><span class="nx">num1</span> <span class="o">+</span> <span class="nx">num2</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="object-method-and-this-对象方法以及-this关键字">Object method and &ldquo;this&rdquo; 对象方法以及“ this”关键字</h4>
+<p>箭头函数和使用 function 关键字的函数，在涉及到 this 关键字（指向对象本身）的行为上，有很大的不同。</p>
+<p>function 方法</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">object</span> <span class="o">=</span>
+<span class="p">{</span>
+    <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;imagic&#39;</span><span class="p">,</span>
+    <span class="nx">age</span><span class="o">:</span> <span class="mi">100</span><span class="p">,</span>
+    <span class="nx">greet</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Hi, I am &#39;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nx">object</span><span class="p">.</span><span class="nx">greet</span><span class="p">()</span>  <span class="c1">// 打印出 &#39;Hi, I am imagic&#39;
+</span><span class="c1"></span>
+<span class="c1">// 也可以在对象创建之后再赋值给对象
+</span><span class="c1"></span><span class="nx">object</span><span class="p">.</span><span class="nx">growOlder</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">age</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">object</span><span class="p">.</span><span class="nx">age</span><span class="p">)</span>     <span class="c1">// 打印出 100
+</span><span class="c1"></span><span class="nx">object</span><span class="p">.</span><span class="nx">growOlder</span><span class="p">()</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">object</span><span class="p">.</span><span class="nx">age</span><span class="p">)</span>     <span class="c1">// 打印出 101
+</span></code></pre></td></tr></table>
+</div>
+</div><p>对象中定义的 <code>greet</code> 方法可以通过赋值给变量的方法引用，但是要注意以下情况：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">object</span><span class="p">.</span><span class="nx">greet</span><span class="p">()</span>      <span class="c1">// 打印出 &#39;Hi, I am imagic&#39;
+</span><span class="c1"></span>
+<span class="kr">const</span> <span class="nx">referenceToGreet</span> <span class="o">=</span> <span class="nx">object</span><span class="p">.</span><span class="nx">greet</span><span class="p">()</span>
+<span class="nx">referenceToGreet</span><span class="p">()</span>  <span class="c1">// 打印出 &#39;Hi, I am undefined&#39;
+</span></code></pre></td></tr></table>
+</div>
+</div><p>这是因为通过引用调用 <code>referenceToGreet()</code> 方法时，该方法不认识 <code>this</code> 是什么。与其他语言相反，在 JavaScript 中，<code>this</code> 的值是根据 方法如何调用来定义的。</p>
+<p>当通过引用调用该方法时，<code>this</code> 的值就变成了所谓的全局对象，这并不是我们所想要的结果。所以在开发时要尽量避免使用 <code>this</code> 来避免潜在的问题。</p>
+<p>消除由 <code>this</code> 引起的问题的方法有几种办法：</p>
+<ul>
+<li>使用 setTimeout 方法</li>
+<li>使用 bind 方法</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">setTimeout</span><span class="p">(</span><span class="nx">object</span><span class="p">.</span><span class="nx">greet</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>当使用 <code>setTimeout</code> 来调用 <code>object.greet</code> 方法时，实际上是 JavaScript 引擎在调用该方法，此时的 <code>this</code> 是指向的是全局对象。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">setTimeout</span><span class="p">(</span><span class="nx">object</span><span class="p">.</span><span class="nx">greet</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">object</span><span class="p">),</span> <span class="mi">1000</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>使用了 <code>bind</code> 方法创建了一个新函数，它将 <code>this</code> 绑定指向到了 <code>object</code>，这与方法的调用位置和方式无关。</p>
+<p>使用箭头函数可以解决与 <code>this</code> 相关的一系列问题。 但是，<strong>它不能当做对象的方法来使用</strong>，因为那样的话 <code>this</code> 就不起作用了。</p>
+<h4 id="classes-类">Classes 类</h4>
+<p>JavaScript 中并没有像面向对象程序语言中的类机制。 然而，JavaScript 中的一些新特性使得它能够「模拟」面向对象中的类。</p>
+<p>与 ES6 一起引入到 JavaScript 中的类语法，它在很大程度上简化了 JavaScript 中的类(或者说像是类)的定义。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="c1">// 定义名为 Person 的 class
+</span><span class="c1"></span><span class="kr">class</span> <span class="nx">Person</span>
+<span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="nx">age</span>
+    <span class="p">}</span>
+    <span class="nx">greet</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Hi, I am &#39;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// 创建两个 Person 对象
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">imagic</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Person</span><span class="p">(</span><span class="s1">&#39;imagic&#39;</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="nx">imagic</span><span class="p">.</span><span class="nx">greet</span><span class="p">()</span>      <span class="c1">// &#39;Hi, I am imagic&#39;
+</span><span class="c1"></span>
+<span class="kr">const</span> <span class="nx">w</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Person</span><span class="p">(</span><span class="s1">&#39;W&#39;</span><span class="p">,</span> <span class="mi">99</span><span class="p">)</span>
+<span class="nx">w</span><span class="p">.</span><span class="nx">greet</span><span class="p">()</span>           <span class="c1">// &#39;Hi, I am W&#39;
+</span></code></pre></td></tr></table>
+</div>
+</div><p>在语法方面，类以及由它们创建的对象非常类似于 Java 的类和对象。 它们的行为也非常类似于 Java 对象。 但在本质上，它们仍然是基于 JavaScript 的原型继承的对象。 这两个对象的类型实际上都是 Object，因为 JavaScript 实质上只定义了Boolean，Null，Undefined，Number，String，Symbol，BigInt，以及 Object几种类型。</p>
+<div class="details admonition tip">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw"></i>更加了解 JavaScript<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>Mozillas <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript" target="_blank" rel="noopener noreffer">重新认识 JavaScript</a></p>
+<p>深入了解 JavaScript <a href="https://github.com/getify/You-Dont-Know-JS" target="_blank" rel="noopener noreffer">You Dont Know JS</a></p>
+</div>
+        </div>
+    </div>
+<hr>
+<h2 id="react">React</h2>
+<h3 id="认识-react">认识 React</h3>
+<p>React 是一个用于构建用户界面的 JavaScript 库。<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+<h4 id="安装-react">安装 React</h4>
+<p>以下默认系统已经安装了 <code>node</code>，如果无法按照以下命令操作，请查看 <code>node</code> 版本是否需要更新。</p>
+<p>在 <code>终端 terminal</code> 使用 <code>create-react-app</code> 工具创建 React 应用。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">npx create-react-app project
+<span class="nb">cd</span> project
+</code></pre></td></tr></table>
+</div>
+</div><p>以上创建了 <code>project</code> 应用，并进入了它的目录，使用以下命令运行这个应用。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">npm start
+</code></pre></td></tr></table>
+</div>
+</div><p>默认情况下访问应用的地址为 <code>localhost:3000</code>。</p>
+<h4 id="component-组件">Component 组件</h4>
+<ul>
+<li>React 组件命名<strong>必须首字母大写</strong>。</li>
+<li>React 组件内容<strong>只能有一个根元素</strong>。（虽然可以使用创建组件数组的方式来规避这个问题，但会使代码看起来不好看，所以不使用）</li>
+<li>根元素可以使用空元素 <code>&lt;&gt;&lt;/&gt;</code>，这样在 Dom 树中不会有额外的 <code>&lt;div&gt;</code> 元素了。</li>
+<li><strong>不要在组件内定义组件</strong>，最大的问题是 React 在每次渲染时，会将内部的组件当作一个新的组件。这会导致 React 无法去优化组件。</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="kr">import</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span>
+<span class="kr">import</span> <span class="nx">ReactDOM</span> <span class="nx">from</span> <span class="s1">&#39;react-dom&#39;</span>
+
+<span class="c1">// 定义 App 组件
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">App</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+    <span class="kr">const</span> <span class="nx">now</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">()</span>
+    <span class="kr">const</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">10</span>
+    <span class="kr">const</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">20</span>
+
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="nx">Hello</span> <span class="nx">world</span><span class="p">,</span> <span class="nx">it</span> <span class="nx">is</span> <span class="p">{</span><span class="nx">now</span><span class="p">.</span><span class="nx">toString</span><span class="p">()}&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+                <span class="p">{</span><span class="nx">a</span><span class="p">}</span> <span class="nx">plus</span> <span class="p">{</span><span class="nx">b</span><span class="p">}</span> <span class="nx">is</span> <span class="p">{</span><span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">}</span>
+            <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c1">// 将组件 App 渲染到 id 为 &#39;root&#39; 的 div 中，该元素在 public/index.html 中定义。
+</span><span class="c1"></span><span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">render</span><span class="p">(&lt;</span><span class="nt">App</span> <span class="p">/&gt;,</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;root&#39;</span><span class="p">))</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="jsx">JSX</h4>
+<p>React 组件的布局大部分使用 JSX 编写的，JSX 和 HTML 非常相似，React 组件返回的 JSX 会被编译成 JavaScript。</p>
+<p>JSX 是一种「类 XML」语言，所以每个标签都需要关闭。如 <code>&lt;br&gt;</code> 必须写成 <code>&lt;br /&gt;</code>。</p>
+<h4 id="multiple-component-多组件">Multiple Component 多组件</h4>
+<p>React 的核心理念就是通过将许多定制化的、可重用的组件组合成应用。有一个约定，就是应用的组件树顶部都要有一个 root 组件叫做 App。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="kr">const</span> <span class="nx">Hello</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="nx">你好</span><span class="err">，</span><span class="nx">世界</span><span class="err">！</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kr">const</span> <span class="nx">App</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">欢迎</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">Hello</span> <span class="p">/&gt;</span>
+            <span class="c1">// Hello 组件可以重复使用 
+</span><span class="c1"></span>            <span class="p">&lt;</span><span class="nt">Hello</span> <span class="p">/&gt;</span>
+            <span class="p">&lt;</span><span class="nt">Hello</span> <span class="p">/&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">render</span><span class="p">(&lt;</span><span class="nt">App</span> <span class="p">/&gt;,</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;root&#39;</span><span class="p">))</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="props-passing-data-to-components-props-向组件传递数据">Props: passing data to components Props: 向组件传递数据</h4>
+<p>先看一段代码</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="kr">const</span> <span class="nx">Hello</span> <span class="o">=</span> <span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="nx">你好</span><span class="err">，</span><span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">age</span><span class="p">}</span> <span class="nx">岁的</span> <span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">name</span><span class="p">}&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">)</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>我们给 <code>Hello</code> 组件设置了一个参数 props，它接收了一个对象，对象具有组件中所定义的所有<code>属性</code>对应的字段。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="kr">const</span> <span class="nx">App</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+    <span class="kr">const</span> <span class="nx">name</span> <span class="o">=</span> <span class="s1">&#39;W&#39;</span>
+    <span class="kr">const</span> <span class="nx">age</span> <span class="o">=</span> <span class="mi">100</span>
+
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">欢迎</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">Hello</span> <span class="na">name</span><span class="o">=</span><span class="s">&#39;imagic&#39;</span> <span class="na">age</span><span class="o">=</span><span class="p">{</span><span class="mi">100</span><span class="p">}</span> <span class="p">/&gt;</span>
+            <span class="p">&lt;</span><span class="nt">Hello</span> <span class="na">name</span><span class="o">=</span><span class="p">{</span><span class="nx">name</span><span class="p">}</span> <span class="na">age</span><span class="o">=</span><span class="p">{</span><span class="nx">age</span><span class="o">+</span><span class="mi">100</span><span class="p">}</span> <span class="p">/&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">)</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><code>props</code> 的值可以是字符串，也可以是 JavaScript 表达式的结果。如果是表达式，则需要用花括号<code>{}</code>括起来。</p>
+<h3 id="组件状态事件处理">组件状态，事件处理</h3>
+<h4 id="component-helper-functions-组件辅助函数">Component helper functions 组件辅助函数</h4>
+<p>组件辅助函数实际上是在另一个函数中定义的，这个函数是用来定义组件的行为的。</p>
+<p><code>bornYear</code> 函数可以访问 <code>Hello</code> 组件中所有的 <code>props</code>，不需要单独将 <code>props.age</code> 单独传参给 <code>bornYear</code>。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="kr">const</span> <span class="nx">Hello</span> <span class="o">=</span> <span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+    <span class="kr">const</span> <span class="nx">bornYear</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span>
+    <span class="p">{</span>
+        <span class="kr">const</span> <span class="nx">yearNow</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">().</span><span class="nx">getFullYear</span><span class="p">()</span>
+        <span class="k">return</span> <span class="nx">yearNow</span> <span class="o">-</span> <span class="nx">props</span><span class="p">.</span><span class="nx">age</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+                <span class="nx">Hellp</span> <span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">name</span><span class="p">},</span> <span class="nx">you</span> <span class="nx">are</span> <span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">age</span><span class="p">}</span> <span class="nx">years</span> <span class="nx">old</span><span class="p">.</span>
+            <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+                <span class="nx">So</span> <span class="nx">you</span> <span class="nx">were</span> <span class="nx">probably</span> <span class="nx">born</span> <span class="k">in</span> <span class="p">{</span><span class="nx">bornYear</span><span class="p">()}</span>
+            <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">)</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="desctructuring-解构">Desctructuring 解构</h4>
+<p>结构是 ES6 规范中添加的一个特性，它允许我们在赋值时从对象和数组中解构出值。</p>
+<p>使用解构的方法可以将属性直接赋值给变量，从而简化组件。</p>
+<p>以下是常规的方法</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="kr">const</span> <span class="nx">props</span> <span class="o">=</span>
+<span class="p">{</span>
+    <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;imagic&#39;</span><span class="p">,</span>
+    <span class="nx">age</span><span class="o">:</span> <span class="mi">100</span>
+<span class="p">}</span>
+
+<span class="kr">const</span> <span class="nx">Hello</span> <span class="o">=</span> <span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+    <span class="kr">const</span> <span class="nx">name</span> <span class="o">=</span> <span class="nx">props</span><span class="p">.</span><span class="nx">name</span>
+    <span class="kr">const</span> <span class="nx">age</span> <span class="o">=</span> <span class="nx">props</span><span class="p">.</span><span class="nx">age</span>
+
+    <span class="kr">const</span> <span class="nx">bornYear</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">().</span><span class="nx">getFullYear</span><span class="p">()</span> <span class="o">-</span> <span class="nx">age</span>
+
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+                <span class="nx">Hellp</span> <span class="p">{</span><span class="nx">name</span><span class="p">},</span> <span class="nx">you</span> <span class="nx">are</span> <span class="p">{</span><span class="nx">age</span><span class="p">}</span> <span class="nx">years</span> <span class="nx">old</span><span class="p">.</span>
+            <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+                <span class="nx">So</span> <span class="nx">you</span> <span class="nx">were</span> <span class="nx">probably</span> <span class="nx">born</span> <span class="k">in</span> <span class="p">{</span><span class="nx">bornYear</span><span class="p">()}</span>
+            <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">)</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>解构可以更加方便的将对象的属性的值提取到单独的变量中：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="kr">const</span> <span class="nx">props</span> <span class="o">=</span>
+<span class="p">{</span>
+    <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;imagic&#39;</span><span class="p">,</span>
+    <span class="nx">age</span><span class="o">:</span> <span class="mi">100</span>
+<span class="p">}</span>
+
+<span class="kr">const</span> <span class="nx">Hello</span> <span class="o">=</span> <span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+    <span class="kr">const</span> <span class="p">{</span> <span class="nx">name</span><span class="p">,</span> <span class="nx">age</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">props</span>
+    <span class="kr">const</span> <span class="nx">bornYear</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">().</span><span class="nx">getFullYear</span><span class="p">()</span> <span class="o">-</span><span class="nx">age</span>
+    <span class="c1">// 以下与上述案例相同，省略
+</span><span class="c1"></span><span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>也可以使用如下方法直接将属性值赋给变量：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="kr">const</span> <span class="nx">Hello</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">name</span><span class="p">,</span> <span class="nx">age</span> <span class="p">})</span> <span class="p">=&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="page-re-rendering-页面重渲染">Page re-rendering 页面重渲染</h4>
+<p>页面初次渲染之后，外观是不会变化的，所以如果需要页面变化，则需要将页面重新渲染。</p>
+<p><em>此处使用的是 <code>ReactDOM.render</code> 方法，不是重新渲染组件的推荐方法，以下只作为了解即可。</em></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="kr">const</span> <span class="nx">App</span> <span class="o">=</span> <span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+    <span class="kr">const</span> <span class="p">{</span> <span class="nx">counter</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">props</span>
+    <span class="k">return</span><span class="p">(</span>
+        <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;{</span><span class="nx">counter</span><span class="p">}&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">counter</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
+    <span class="p">&lt;</span><span class="nt">App</span> <span class="na">counter</span><span class="o">=</span><span class="p">{</span><span class="nx">counter</span><span class="p">}</span> <span class="p">/&gt;,</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;root&#39;</span><span class="p">)</span>
+<span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>以上代码如果添加 <code>counter += 1</code> 命令，<code>App</code> 部件是不会重新渲染，我们需要再次调用 <code>ReactDOM.render</code> 的方法让组件重新渲染：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="kr">const</span> <span class="nx">App</span> <span class="o">=</span> <span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+    <span class="kr">const</span> <span class="p">{</span> <span class="nx">counter</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">props</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;{</span><span class="nx">counter</span><span class="p">}&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">counter</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="kr">const</span> <span class="nx">refresh</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+    <span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
+        <span class="p">&lt;</span><span class="nt">App</span> <span class="na">counter</span><span class="o">=</span><span class="p">{</span><span class="nx">counter</span><span class="p">}</span> <span class="p">/&gt;,</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;root&#39;</span><span class="p">)</span>
+    <span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nx">refresh</span><span class="p">()</span>       <span class="c1">// 第一次渲染，页面显示 1
+</span><span class="c1"></span><span class="nx">counter</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="nx">refresh</span><span class="p">()</span>       <span class="c1">// 第二次渲染，页面显示 2
+</span><span class="c1"></span><span class="nx">counter</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="nx">refresh</span><span class="p">()</span>       <span class="c1">// 第三次渲染，页面显示3  
+</span></code></pre></td></tr></table>
+</div>
+</div><p>由上面可以看到，页面渲染了3次，页面从1变到了3，因为渲染速度较快，很难注意到1和2。如果想要看到看到1变到3的过程，我们可以使用 <code>setInterval</code> 或者 <code>setTimeout</code> 的方法增加延迟。</p>
+<p><strong>不推荐使用这样的方法重新渲染，下面有更好的方法可以实现。</strong></p>
+<h4 id="stateful-conmponent-有状态组件">Stateful conmponent 有状态组件</h4>
+<p>以上的组件都不包含任何组件的状态「无状态组件」，可以通过 <code>React</code> 的 <code>state hook</code> 向组件添加状态。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="kr">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">useState</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span>     <span class="c1">// 引入 useState 函数
+</span><span class="c1"></span><span class="kr">import</span> <span class="nx">ReactDOM</span> <span class="nx">from</span> <span class="s1">&#39;react-dom&#39;</span>
+
+<span class="kr">const</span> <span class="nx">App</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+    <span class="cm">/**
+</span><span class="cm">     *  使用 useState 函数并解构赋值将元素分配给 counter 和 setCounter 两个变量
+</span><span class="cm">     *  counter 变量被赋予初始值 state 为 0
+</span><span class="cm">     *  setCounter 被分配给一个函数，该函数用于修改 state，也就是用来修改 counter 的值
+</span><span class="cm">     */</span>
+    <span class="kr">const</span> <span class="p">[</span> <span class="nx">counter</span><span class="p">,</span> <span class="nx">setCounter</span> <span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+
+    <span class="cm">/**
+</span><span class="cm">     *  设置1秒后调用 setCounter 函数
+</span><span class="cm">     *  将 counter + 1 赋值给 counter
+</span><span class="cm">     */</span>
+    <span class="nx">setTimeout</span><span class="p">(</span>
+        <span class="p">()</span> <span class="p">=&gt;</span> <span class="nx">setCounter</span><span class="p">(</span><span class="nx">counter</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span>
+        <span class="mi">1000</span>
+    <span class="p">)</span>
+
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;{</span><span class="nx">counter</span><span class="p">}&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
+    <span class="p">&lt;</span><span class="nt">App</span> <span class="p">/&gt;,</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;root&#39;</span><span class="p">)</span>
+<span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>当 1 秒后调用 setCounter 时，React 会重新渲染这个组件，此时 <code>counter</code> 由原先的值变为 <code>counter + 1</code>，也就是由 0 变为 1 ，然后 <code>setTimeout</code> 继续倒数 1 秒，接着第二次调用 <code>setCounter</code>，然后 <code>counter</code> 又会变为 2，如此往复。</p>
+<h4 id="event-handling-事件处理">Event handling 事件处理</h4>
+<p>事件处理程序，是指（被注册为）在特定事件发生时进行调用。例如用户点击按钮产生的 <code>点击 Click</code> 事件。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="kr">const</span> <span class="nx">App</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+    <span class="kr">const</span> <span class="p">[</span> <span class="nx">counter</span><span class="p">,</span> <span class="nx">setCounter</span> <span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="kr">const</span> <span class="nx">handleClick</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span>
+    <span class="p">{</span>
+        <span class="nx">setCounter</span><span class="p">(</span><span class="nx">counter</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="p">&lt;&gt;</span>
+            <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span><span class="nx">Like</span> <span class="p">{</span><span class="nx">counter</span><span class="p">}&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="o">=</span><span class="p">{</span> <span class="nx">handleClick</span> <span class="p">}&gt;</span>
+                <span class="nx">赞</span>
+            <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+        <span class="p">&lt;/&gt;</span>
+    <span class="p">)</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>按钮的 <code>onClick</code> 调用了 <code>handleClick</code> 函数，每次点击 <code>赞</code> 按钮都会调用 <code>handleClick</code> 函数，也就是 <code>Click</code> 事件都会 <code>setCounter</code> 将 <code>counter</code> 的值 +1。</p>
+<p>也可以直接在 onClick 属性的值直接定义事件处理函数：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="p">=&gt;</span> <span class="nx">setCounter</span><span class="p">(</span><span class="nx">counter</span> <span class="o">+</span><span class="mi">1</span><span class="p">)}&gt;</span>
+    <span class="nx">赞</span>
+<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h5 id="event-handler-is-a-function-事件处理是一个函数">Event handler is a function 事件处理是一个函数</h5>
+<p>事件处理是一个函数，也就意味着我们不能将事件处理程序作出以下的定义：</p>
+<ul>
+<li>定义为一个字符串，如 <code>&lt;button onClick=&quot;字符串...&quot;&gt;按钮&lt;/button&gt;</code></li>
+<li>计算结果，如 <code>&lt;button onClick=&quot;counter + 1&quot;&gt;👍&lt;/button&gt;</code></li>
+<li>赋值，如 <code>&lt;button onClick=&quot;counter = 0&quot;&gt;重置&lt;/button&gt;</code></li>
+</ul>
+<p>下述情况也不可以：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;按钮被点击&#39;</span><span class="p">)}</span><span class="na">按钮</span><span class="err">&lt;/</span><span class="na">button</span><span class="p">&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>当这个组件渲染出来时，<code>按钮被点击</code> 会在 console 控制台被打印出来，但点击按钮后不会发生任何事情，<code>console.log</code> 函数调用只在渲染组件时被执行。</p>
+<p>这里的问题是，我们的事件处理被定义为 function call，这意味着事件处理程序实际上被分配了函数返回的值，而 console.log 的返回值是undefined。</p>
+<p>要注意的是，此处不能简略的写成如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">setCounter</span><span class="p">(</span><span class="nx">counter</span> <span class="o">+</span><span class="mi">1</span><span class="p">)}&gt;</span>
+    <span class="nx">赞</span>
+<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>当我们点击后，应用会奔溃并报错 <code>Error: Too many re-renders. .....</code>。</p>
+<p>这是因为事件处理器被定义成了一个函数调用，在很多情况下这是可行的，但是在特殊情况下就不行了。</p>
+<p>这样的情况是因为，页面第一次渲染的时候，它执行的函数调用 <code>setCounter(0+1)</code>，并将组件状态的值改成了1。这就导致组件重新渲染，重新渲染又会执行 <code>setCounter</code> 函数，导致组件状态发生变化，然后重新渲染，这样就进入了一个无限循环，导致 <code>React</code> 报错。</p>
+<p>要使 <code>setCounter(counter +1)</code> 在事件处理程序中正常被调用，可以使用钩子函数，将组件改成 <code>&lt;button onClick={() =&gt; setCounter(counter +1)}&gt;赞&lt;/button&gt;</code>。但在按钮中单独定义时间处理函数不是一个好方法。</p>
+<p>所以，最好的方式还是将事件处理程序分离成单独的函数，就跟最初那样定义一个 <code>handleClick</code> 函数并在组件内调用。</p>
+<h4 id="passing-state-to-child-components-将状态传递给子组件">Passing state to child components 将状态传递给子组件</h4>
+<blockquote>
+<p>Often, several components need to reflect the same changing data. We recommend lifting the shared state up to their closest common ancestor.</p>
+</blockquote>
+<p><a href="https://zh-hans.reactjs.org/docs/lifting-state-up.html" target="_blank" rel="noopener noreffer">状态提升</a> 是编写可复用、跨应用、跨项目的 React 组件的最佳方式。React 的数据流是自上而下的。</p>
+<p>下面的例子中，应用的状态是放在 App 组件中的，并通过 props 将其传递给 App 中的子组件，例中为 <code>Display</code>  <code>Button</code> 组件。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="c1">// 定义可复用的组件
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">Display</span> <span class="o">=</span> <span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span><span class="nx">Like</span> <span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">counter</span><span class="p">}&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kr">const</span> <span class="nx">Button</span> <span class="o">=</span> <span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">handleClick</span><span class="p">}&gt;</span>
+            <span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">text</span><span class="p">}</span>
+        <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span> 
+    <span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kr">const</span> <span class="nx">App</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+    <span class="kr">const</span> <span class="p">[</span> <span class="nx">counter</span><span class="p">,</span> <span class="nx">setCounter</span> <span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="kr">const</span> <span class="nx">increaseByOne</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="nx">setCounter</span><span class="p">(</span><span class="nx">counter</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="kr">const</span> <span class="nx">decreaseByOne</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="nx">setCounter</span><span class="p">(</span><span class="nx">counter</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="kr">const</span> <span class="nx">setToZero</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="nx">setCounter</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="p">&lt;&gt;</span>
+            <span class="p">&lt;</span><span class="nt">Display</span> <span class="na">counter</span><span class="o">=</span><span class="p">{</span><span class="nx">counter</span><span class="p">}</span> <span class="p">/&gt;</span>
+            <span class="p">&lt;</span><span class="nt">Button</span>
+                <span class="na">handleClick</span><span class="o">=</span><span class="p">{</span><span class="nx">increaseByOne</span><span class="p">}</span>
+                <span class="na">text</span><span class="o">=</span><span class="s">&#39;👍&#39;</span>
+            <span class="p">/&gt;</span>
+            <span class="p">&lt;</span><span class="nt">Button</span>
+                <span class="na">handleClick</span><span class="o">=</span><span class="p">{</span><span class="nx">setToZero</span><span class="p">}</span>
+                <span class="na">text</span><span class="o">=</span><span class="s">&#39;归零&#39;</span>
+            <span class="p">/&gt;</span>
+            <span class="p">&lt;</span><span class="nt">Button</span>
+                <span class="na">handleClick</span><span class="o">=</span><span class="p">{</span><span class="nx">decreaseByOne</span><span class="p">}</span>
+                <span class="na">text</span><span class="o">=</span><span class="s">&#39;👎&#39;</span>
+            <span class="p">/&gt;</span>
+        <span class="p">&lt;/&gt;</span>
+    <span class="p">)</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="changes-in-state-cause-rerendering-状态的改变导致重新渲染">Changes in state cause rerendering 状态的改变导致重新渲染</h4>
+<p>上例 App 在执行时的流程如下</p>
+<ul>
+<li>应用启动，执行 App 中的代码 &gt; useState hook 创建了 <code>counter</code> 的初始值。</li>
+<li>渲染 <code>Display</code> <code>Button</code> 组件，页面显示 <code>counter</code> 的初始值 <code>0</code> 以及将 <code>increaseByOne</code> <code>setToZero</code> <code>decreaseByOne</code> 分别与3个 <code>Button</code> 组件的 <code>onClick</code> 事件绑定。</li>
+<li>当单击一个按钮时，事件处理程序使用 <code>setCounter</code> 函数更改 App 组件状态。</li>
+<li>调用一个改变状态的函数使组件重新渲染。
+<ul>
+<li>点击 <code>👍</code> 按钮，将 <code>counter</code> 值改为 <code>1</code> 并重新渲染 App 组件，同时子组件也会重新渲染。</li>
+<li><code>Display</code> 接收到 <code>counter</code> 的值，并显示 <code>1</code>。</li>
+<li><code>Button</code> 接收到事件处理程序并与之绑定</li>
+</ul>
+</li>
+</ul>
+<h4 id="refactoring-the-components-重构组件">Refactoring the components 重构组件</h4>
+<p>将上例组件进行重构，简化代码。</p>
+<p>重构 <code>Display</code> 组件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="c1">// 原先定义的组件
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">Display</span> <span class="o">=</span> <span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;{</span><span class="nx">props</span><span class="p">.</span><span class="nx">counter</span><span class="p">}&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c1">// 重构
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">Display</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">counter</span> <span class="p">})</span> <span class="p">=&gt;</span> <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;{</span><span class="nx">counter</span><span class="p">}&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>重构 <code>Button</code> 组件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="c1">// 原先定义的组件
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">Button</span> <span class="o">=</span> <span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">handleClick</span><span class="p">}&gt;</span>
+            <span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">text</span><span class="p">}</span>
+        <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span> 
+    <span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c1">// 重构
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">Button</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">handleClick</span><span class="p">,</span> <span class="nx">text</span><span class="p">})</span> <span class="p">=&gt;</span> <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">handleClick</span><span class="p">}&gt;{</span><span class="nx">text</span><span class="p">}&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="深入-react-应用调试">深入 React 应用调试</h3>
+<h4 id="complext-state-复杂状态">Complext state 复杂状态</h4>
+<p>大多数情况，复杂的状态<strong>最简单和最好的方法</strong>是多次使用 <code>useState</code> 函数来创建单独的状态。</p>
+<p>关于使用单个和多个变量的情况，可以查阅官方FAQ：<a href="https://zh-hans.reactjs.org/docs/hooks-faq.html#should-i-use-one-or-many-state-variables" target="_blank" rel="noopener noreffer">我应该使用单个还是多个 state 变量？</a></p>
+<p>下面是使用复杂状态的案例</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="kr">const</span> <span class="nx">App</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+    <span class="kr">const</span> <span class="p">[</span><span class="nx">clicks</span><span class="p">,</span> <span class="nx">setClicks</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span>
+    <span class="p">{</span>
+        <span class="nx">left</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="nx">right</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="p">})</span>
+
+    <span class="kr">const</span> <span class="nx">handleLeftClick</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span>
+    <span class="p">{</span>
+        <span class="kr">const</span> <span class="nx">newClicks</span> <span class="o">=</span> 
+        <span class="p">{</span>
+            <span class="nx">left</span><span class="o">:</span> <span class="nx">clicks</span><span class="p">.</span><span class="nx">left</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="nx">right</span><span class="o">:</span> <span class="nx">clicks</span><span class="p">.</span><span class="nx">right</span><span class="p">,</span>
+        <span class="p">}</span>
+        <span class="nx">setClicks</span><span class="p">(</span><span class="nx">newClicks</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="kr">const</span> <span class="nx">handleRightClick</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span>
+    <span class="p">{</span>
+        <span class="kr">const</span> <span class="nx">newClicks</span> <span class="o">=</span> 
+        <span class="p">{</span>
+            <span class="nx">left</span><span class="o">:</span> <span class="nx">clicks</span><span class="p">.</span><span class="nx">left</span><span class="p">,</span>
+            <span class="nx">right</span><span class="o">:</span> <span class="nx">clicks</span><span class="p">.</span><span class="nx">right</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="p">}</span>
+        <span class="nx">setClicks</span><span class="p">(</span><span class="nx">newClicks</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="p">&lt;&gt;</span>
+            <span class="p">{</span><span class="nx">clicks</span><span class="p">.</span><span class="nx">left</span><span class="p">}</span>
+            <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">handleLeftClick</span><span class="p">}&gt;</span><span class="nx">Left</span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">handleRightClick</span><span class="p">}&gt;</span><span class="nx">Right</span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+            <span class="p">{</span><span class="nx">clicks</span><span class="p">.</span><span class="nx">right</span><span class="p">}</span>
+        <span class="p">&lt;/&gt;</span>
+    <span class="p">)</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>可以看到，点击 Left 按钮时，right 的值是不变的，同样的，点击 Right 按钮时， left 的值是不变的。此处使用展开语法来定义新的状态对象，使代码更简洁。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="kr">const</span> <span class="nx">handleLeftClick</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+    <span class="kr">const</span> <span class="nx">newClicks</span> <span class="o">=</span>
+    <span class="p">{</span>
+        <span class="p">...</span><span class="nx">clicks</span><span class="p">,</span>
+        <span class="nx">left</span><span class="o">:</span> <span class="nx">clicks</span><span class="p">.</span><span class="nx">left</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="nx">setClicks</span><span class="p">(</span><span class="nx">newClicks</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kr">const</span> <span class="nx">handleRightClick</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+    <span class="kr">const</span> <span class="nx">newClicks</span> <span class="o">=</span>
+    <span class="p">{</span>
+        <span class="p">...</span><span class="nx">clicks</span><span class="p">,</span>
+        <span class="nx">right</span><span class="o">:</span> <span class="nx">clicks</span><span class="p">.</span><span class="nx">right</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="nx">setClicks</span><span class="p">(</span><span class="nx">newClicks</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>将对象分配给事件处理中的变量是没有必要的，上述代码可以简写成如下</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="kr">const</span> <span class="nx">handleLeftClick</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="nx">setClicks</span><span class="p">({</span> <span class="p">...</span><span class="nx">clicks</span><span class="p">,</span> <span class="nx">left</span><span class="o">:</span> <span class="nx">clicks</span><span class="p">.</span><span class="nx">left</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">})</span>
+
+<span class="kr">const</span> <span class="nx">handleRightClick</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="nx">setClicks</span><span class="p">({</span> <span class="p">...</span><span class="nx">clicks</span><span class="p">,</span> <span class="nx">right</span><span class="o">:</span> <span class="nx">clicks</span><span class="p">.</span><span class="nx">right</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">})</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>以下代码违反了 React 中状态不可以直接修改的原则，这会导致很多副作用，应杜绝这样的方式。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="kr">const</span> <span class="nx">handleLeftClick</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+    <span class="nx">clicks</span><span class="p">.</span><span class="nx">left</span><span class="o">++</span>
+    <span class="nx">setClicks</span><span class="p">(</span><span class="nx">clicks</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="handling-arrays-处理数组">Handling arrays 处理数组</h4>
+<p>下例增加了点击历史记录的功能，需要添加一个新的状态。使用 <code>useState([])</code> 初始化该数组。</p>
+<p>使用 <code>concat</code> 方法向数组中添加元素，该方法不改变现有数组，而是返回数组的新副本，并将元素添加到数组中。</p>
+<p>虽然 <code>push</code> 方法也可以向数组添加元素，但因 React 组件的状态不能直接更改，所以不推荐这样使用。</p>
+<p>下例使用了 <code>join</code> 方法，该数组将所有项目连接到一个字符串中，由作为函数参数传递的字符串「例中为一个空格」分隔。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="kr">const</span> <span class="nx">App</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+    <span class="kr">const</span> <span class="p">[</span><span class="nx">left</span><span class="p">,</span> <span class="nx">setLeft</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="kr">const</span> <span class="p">[</span><span class="nx">right</span><span class="p">,</span> <span class="nx">setRight</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="kr">const</span> <span class="p">[</span><span class="nx">allClicks</span><span class="p">,</span> <span class="nx">setAll</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">([])</span>
+
+    <span class="kr">const</span> <span class="nx">handleLeftClick</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span>
+    <span class="p">{</span>
+        <span class="nx">setAll</span><span class="p">(</span><span class="nx">allClicks</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="s1">&#39;点击了Left&#39;</span><span class="p">))</span>
+        <span class="nx">setLeft</span><span class="p">(</span><span class="nx">left</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="kr">const</span> <span class="nx">handleRightClick</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span>
+    <span class="p">{</span>
+        <span class="nx">setAll</span><span class="p">(</span><span class="nx">allClicks</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="s1">&#39;点击了Right&#39;</span><span class="p">))</span>
+        <span class="nx">setRight</span><span class="p">(</span><span class="nx">right</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+            <span class="p">{</span><span class="nx">left</span><span class="p">}</span>
+            <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">handleLeftClick</span><span class="p">}&gt;</span><span class="nx">left</span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">handleRightClick</span><span class="p">}&gt;</span><span class="nx">right</span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+            <span class="p">{</span><span class="nx">right</span><span class="p">}</span>
+            <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;{</span><span class="nx">allClicks</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)}&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">)</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="conditional-rendering-条件渲染">Conditional rendering 条件渲染</h4>
+<p>下例将操作历史记录交由 <code>History</code> 组件来处理，使用 <code>if</code> 判断渲染历史记录。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="kr">const</span> <span class="nx">History</span> <span class="o">=</span> <span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">props</span><span class="p">.</span><span class="nx">allClicks</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+                <span class="nx">暂无操作历史</span>
+            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+            <span class="nx">操作历史</span><span class="err">：</span><span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">allClicks</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)}</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kr">const</span> <span class="nx">App</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> 
+<span class="p">{</span>
+    <span class="c1">// ... 同上例
+</span><span class="c1"></span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+            <span class="p">{</span><span class="nx">left</span><span class="p">}</span>
+            <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">handleLeftClick</span><span class="p">}&gt;</span><span class="nx">left</span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">handleRightClick</span><span class="p">}&gt;</span><span class="nx">right</span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+            <span class="p">{</span><span class="nx">right</span><span class="p">}</span>
+            <span class="p">&lt;</span><span class="nt">History</span> <span class="na">allClicks</span><span class="o">=</span><span class="p">{</span><span class="nx">allClicks</span><span class="p">}</span> <span class="p">/&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">)</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>可以看出，<code>allClicks</code> 为空数组的时候，<code>History</code> 组件将会渲染 <em>暂无操作历史</em> 的内容，其他情况下，将会渲染操作历史。</p>
+<h4 id="debugging-react-applications-调试-react-应用">Debugging React applications 调试 React 应用</h4>
+<ul>
+<li>web 开发第一原则
+<ul>
+<li>始终打开浏览器开发控制台</li>
+<li>尤其是 Console 选项卡应该始终处于打开状态，除非有特定的原因需要查看另一个选项卡。</li>
+</ul>
+</li>
+<li>保持代码和网页同时打开</li>
+<li>编译失败时，应立即找到并修复问题</li>
+<li>不能正常工作时，可以使用 <code>console.log</code> 来查看。<code>console.log('props value is', props)</code> 与 <code>props</code> 不要使用 + 号，因为这样会打印出 <code>props value is [object object]</code>。</li>
+<li>也可在代码中写入 <code>debugger</code>，chrome 开发者控制台会在执行到该代码时暂停。</li>
+<li><code>debugger</code> 还可以使用在 Source 选项卡右侧找到空间一行一行地执行代码。</li>
+<li>通过在 Sources 选项卡中添加断点，您还可以在不使用 <code>debugger</code> 命令的情况下访问调试器。</li>
+<li>在 Chrome 安装 React developer tools 扩展，可以用来检查不同的React 元素，以及它的属性、状态。</li>
+</ul>
+<h4 id="rules-of-hooks-hook的规则">Rules of Hooks Hook的规则</h4>
+<ul>
+<li>不能从循环、条件表达式或任何不适定义组件的函数的地方调用 <code>useState</code> 「同样的还有 <code>useEffect</code> 函数」。<em>这样做是为了确保Hook总是以相同的顺序调用，如果不是这样，应用的行为就会不规则。</em></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="kr">const</span> <span class="nx">App</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+    <span class="c1">// 这里使用时没有问题的
+</span><span class="c1"></span>    <span class="kr">const</span> <span class="p">[</span><span class="nx">age</span><span class="p">,</span> <span class="nx">setAge</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="p">(</span> <span class="nx">age</span> <span class="o">&gt;</span> <span class="mi">10</span> <span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// 这里使用时没有效果的
+</span><span class="c1"></span>        <span class="kr">const</span> <span class="p">[</span><span class="nx">range</span><span class="p">,</span> <span class="nx">setRange</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="s1">&#39;少年&#39;</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="k">for</span> <span class="p">(</span> <span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">age</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// 这里依然无效
+</span><span class="c1"></span>        <span class="kr">const</span> <span class="p">[</span><span class="nx">nothing</span><span class="p">,</span> <span class="nx">setNothing</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="kr">const</span> <span class="nx">notGood</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span>
+    <span class="p">{</span>
+        <span class="c1">// 这里也不行
+</span><span class="c1"></span>        <span class="kr">const</span> <span class="p">[</span><span class="nx">x</span><span class="p">,</span> <span class="nx">setX</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="c1">// ...
+</span><span class="c1"></span>    <span class="p">)</span>
+<span class="p">}</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="function-that-returns-a-function-返回函数的函数">Function that returns a function 返回函数的函数</h4>
+<p>定义事件处理程序的另外一种方法是使用返回函数的函数。因为函数返回的是函数，所以事件处理程序是可以使用这个函数。</p>
+<p>使用返回函数的函数，将可以使用参数自定义的通用函数添加到不同组件的事件处理程序中。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="kr">const</span> <span class="nx">hello</span> <span class="o">=</span> <span class="p">(</span><span class="nx">who</span><span class="p">)</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+    <span class="kr">const</span> <span class="nx">handler</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="nx">who</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="nx">handler</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>当 React 渲染时， <code>&lt;button onClick={hello('world')}&gt;button&lt;/button&gt;</code> 本质上会被转换成 <code>&lt;button onClick={()=&gt; console.log('hello', 'world')}&gt;button&lt;/button&gt;</code>。</p>
+<p>这样我们就可以在不同组件中调用了。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">hello</span><span class="p">(</span><span class="s1">&#39;imagic&#39;</span><span class="p">)}&gt;</span><span class="nx">imagic</span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">hello</span><span class="p">(</span><span class="s1">&#39;w&#39;</span><span class="p">)}&gt;</span><span class="nx">w</span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>我们将 hello 函数重构一下</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="c1">// 省去 handler
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">hello</span> <span class="o">=</span> <span class="p">(</span><span class="nx">who</span><span class="p">)</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="p">()</span> <span class="p">=&gt;</span>
+    <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="nx">who</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// 再来
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">hello</span> <span class="o">=</span> <span class="p">(</span><span class="nx">who</span><span class="p">)</span> <span class="p">=&gt;</span>
+    <span class="p">()</span> <span class="p">=&gt;</span>
+    <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="nx">who</span><span class="p">)</span>
+    <span class="p">}</span>
+
+<span class="c1">// 将上放再紧凑一些
+</span><span class="c1"></span>
+<span class="kr">const</span> <span class="nx">hello</span> <span class="o">=</span> <span class="p">(</span><span class="nx">who</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">()</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="nx">who</span><span class="p">)</span>
+<span class="p">}</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><p>也可以这样使用</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="kr">const</span> <span class="nx">hello</span> <span class="o">=</span> <span class="p">(</span><span class="nx">who</span><span class="p">)</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="nx">who</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>相应的，事件处理程序需要按照如下设置，这么做的原因在 <em>事件处理是一个函数</em> 章节说过了。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">&lt;button onClick={() =&gt; hello(&#39;imagic&#39;)}&gt;
+    imagic
+&lt;/button&gt;
+</code></pre></td></tr></table>
+</div>
+</div><div class="details admonition tip">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw"></i>更加了解 React<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>React <a href="https://zh-hans.reactjs.org/docs/hello-world.html" target="_blank" rel="noopener noreffer">官方文档</a></p>
+<p><a href="https://egghead.io/" target="_blank" rel="noopener noreffer">Egghead.io 课程</a></p>
+</div>
+        </div>
+    </div>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p><a href="https://zh-hans.reactjs.org/" target="_blank" rel="noopener noreffer">React 官方中文文档</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2020-10-16</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://x.awo.design/2020/10/fullstackopen-javascript-and-react/" data-title="全栈公开课2020学习笔记 01 - JavaScript 和 React" data-hashtags="React,JavaScript"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://x.awo.design/2020/10/fullstackopen-javascript-and-react/" data-hashtag="React"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://x.awo.design/2020/10/fullstackopen-javascript-and-react/" data-title="全栈公开课2020学习笔记 01 - JavaScript 和 React" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://x.awo.design/2020/10/fullstackopen-javascript-and-react/" data-title="全栈公开课2020学习笔记 01 - JavaScript 和 React"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://x.awo.design/2020/10/fullstackopen-javascript-and-react/" data-title="全栈公开课2020学习笔记 01 - JavaScript 和 React"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://x.awo.design/2020/10/fullstackopen-javascript-and-react/" data-title="全栈公开课2020学习笔记 01 - JavaScript 和 React"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/react/">React</a>,&nbsp;<a href="/tags/javascript/">JavaScript</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/2020/10/raspberry-notes/" class="prev" rel="prev" title="树莓派的笔记"><i class="fas fa-angle-left fa-fw"></i>树莓派的笔记</a>
+            <a href="/2020/11/fullstackopen-server/" class="next" rel="next" title="全栈公开课2020学习笔记 02 - 与服务器通信">全栈公开课2020学习笔记 02 - 与服务器通信<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="disqus_thread" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://disqus.com/?ref_noscript">Disqus</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.92.2">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2017 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://awo.design" target="_blank">imagicw</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.4710034e669c7ff17f823f9ba12cf8a36582d65b007f79cbc4a3c11d7db2e4ca.css" integrity="sha256-RxADTmacf/F/gj&#43;boSz4o2WC1lsAf3nLxKPBHX2y5Mo="><link rel="stylesheet" href="/lib/katex/copy-tex.min.bf9ff4137fec38f6255419e142d0883c9c52090885d746f80eee12b273d9b3e0.css" integrity="sha256-v5/0E3/sOPYlVBnhQtCIPJxSCQiF10b4Du4SsnPZs&#43;A="><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.cd0d0b6e50ff01ff2f3a9a70d7cfb66a7c6cb9acf7a566325568be6d3bd31fc4.css" integrity="sha256-zQ0LblD/Af8vOppw18&#43;2anxsuaz3pWYyVWi&#43;bTvTH8Q="><script type="text/javascript" src="https://imagicw.disqus.com/embed.js" defer></script><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.bcff85fb5e00d68802850b393ac7792c997f722f536f38e26638c46dca8e5eb6.js" integrity="sha256-vP&#43;F&#43;14A1ogChQs5Osd5LJl/ci9TbzjiZjjEbcqOXrY="></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.615590a2ca2b667afa7c02ef396f5500b62e22795ddbb46448f90494605d09a5.js" integrity="sha256-YVWQosorZnr6fALvOW9VALYuInld27RkSPkElGBdCaU="></script><script type="text/javascript" src="/lib/lunr/lunr.min.df84a2d58ea594c04a3371b48d020b55ea10284c2ec636e4e331965d7313e29b.js" integrity="sha256-34Si1Y6llMBKM3G0jQILVeoQKEwuxjbk4zGWXXMT4ps="></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.115461812ca5b093f9bcc2f15d2693a6c90e8fe38dabf2375e5f18e1c348d97c.js" integrity="sha256-EVRhgSylsJP5vMLxXSaTpskOj&#43;ONq/I3Xl8Y4cNI2Xw="></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.b3aab24bd69b746d28f433f4a82ecfa1556a75ba5ef9f4caa2bcc7ab8d327c14.js" integrity="sha256-s6qyS9abdG0o9DP0qC7PoVVqdbpe&#43;fTKorzHq40yfBQ="></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.fb649fcae62177dfe63e67081ddceb830b5ce1f05a4184e9bbb7d87ac4b8f4e5.js" integrity="sha256-&#43;2SfyuYhd9/mPmcIHdzrgwtc4fBaQYTpu7fYesS49OU="></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.8a7739925f4c03586479852df840b7061948832a7fda30c8c812d2ea4dd4c4f2.js" integrity="sha256-inc5kl9MA1hkeYUt&#43;EC3BhlIgyp/2jDIyBLS6k3UxPI="></script><script type="text/javascript" src="/lib/sharer/sharer.min.9c88f86c7f0820287113f6236200459832693656e80d7556cc80a93dfbd45813.js" integrity="sha256-nIj4bH8IIChxE/YjYgBFmDJpNlboDXVWzICpPfvUWBM="></script><script type="text/javascript" src="/lib/katex/katex.min.17f5dd6b9f123dd7140abfb18521b3f4c036cd004f6f40121182a8865f140877.js" integrity="sha256-F/Xda58SPdcUCr&#43;xhSGz9MA2zQBPb0ASEYKohl8UCHc="></script><script type="text/javascript" src="/lib/katex/auto-render.min.f74776a677f0d2be0af0264058f928e2ba455d0b19bc985304660d922a43a6b2.js" integrity="sha256-90d2pnfw0r4K8CZAWPko4rpFXQsZvJhTBGYNkipDprI="></script><script type="text/javascript" src="/lib/katex/copy-tex.min.2ab2237329021bc443986c8327f6e61357fb68a54e5d233d224023718c02207d.js" integrity="sha256-KrIjcykCG8RDmGyDJ/bmE1f7aKVOXSM9IkAjcYwCIH0="></script><script type="text/javascript" src="/lib/katex/mhchem.min.5cea356d6025c5a2f18c454c83ec5674dbb04fab1cd1d75569e77788c6b6f888.js" integrity="sha256-XOo1bWAlxaLxjEVMg&#43;xWdNuwT6sc0ddVaed3iMa2&#43;Ig="></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.e55842a856a6d829feca3c3ad736c136b6c7549e9247274f78aa296259e06e24.js" integrity="sha256-5VhCqFam2Cn&#43;yjw61zbBNrbHVJ6SRydPeKopYlngbiQ="></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":12},"comment":{},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.f51938f3065a40ee841bcb558e4330e31fd26c0ea55343fff8770b88b0319a3c.js" integrity="sha256-9Rk48wZaQO6EG8tVjkMw4x/SbA6lU0P/&#43;HcLiLAxmjw="></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'UA-92164716-1', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-92164716-1" async></script></body>
+</html>

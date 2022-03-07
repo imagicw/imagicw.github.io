@@ -1,0 +1,1680 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>全栈公开课2020学习笔记 03 - 用 NodeJS 和 Express 写服务端程序 - Λ.W.log</title><meta name="Description" content="本文是博主学习赫尔辛基大学的 全栈公开课2020 过程中的学习笔记，文章分类结构与课程会有些许不同，本文部分内容引用自原文。"><meta property="og:title" content="全栈公开课2020学习笔记 03 - 用 NodeJS 和 Express 写服务端程序" />
+<meta property="og:description" content="本文是博主学习赫尔辛基大学的 全栈公开课2020 过程中的学习笔记，文章分类结构与课程会有些许不同，本文部分内容引用自原文。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://x.awo.design/2020/12/fullstackopen-nodejs-express/" /><meta property="og:image" content="https://x.awo.design/img/W.jpg"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-12-09T17:30:00+08:00" />
+<meta property="article:modified_time" content="2020-12-09T17:30:00+08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://x.awo.design/img/W.jpg"/>
+
+<meta name="twitter:title" content="全栈公开课2020学习笔记 03 - 用 NodeJS 和 Express 写服务端程序"/>
+<meta name="twitter:description" content="本文是博主学习赫尔辛基大学的 全栈公开课2020 过程中的学习笔记，文章分类结构与课程会有些许不同，本文部分内容引用自原文。"/>
+<meta name="application-name" content="Λ.W.log">
+<meta name="apple-mobile-web-app-title" content="Λ.W.log"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://x.awo.design/2020/12/fullstackopen-nodejs-express/" /><link rel="prev" href="https://x.awo.design/2020/11/fullstackopen-server/" /><link rel="next" href="https://x.awo.design/2021/01/annual-report-2020/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.055364f5be272caa092b0e6654c165828707f8ab971e2656383a6d6392bc345e.css" integrity="sha256-BVNk9b4nLKoJKw5mVMFlgocH&#43;KuXHiZWODptY5K8NF4="><link rel="stylesheet" href="/css/style.min.1e2694bed152fa2922dbe909a441838ed693d88b1330f97485bfa8ed78da42df.css" integrity="sha256-HiaUvtFS&#43;iki2&#43;kJpEGDjtaT2IsTMPl0hb&#43;o7XjaQt8="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.876d023d9d10c97941b80c3b03e2a5b94631ff7a4af9cee5604a6a2d39718d84.css" integrity="sha256-h20CPZ0QyXlBuAw7A&#43;KluUYx/3pK&#43;c7lYEpqLTlxjYQ="><link rel="stylesheet" href="/lib/animate/animate.min.3c770e90f98eb21b0c042fafb49755af93306fbaf42e449524f94fae9fc83295.css" integrity="sha256-PHcOkPmOshsMBC&#43;vtJdVr5Mwb7r0LkSVJPlPrp/IMpU="><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "全栈公开课2020学习笔记 03 - 用 NodeJS 和 Express 写服务端程序",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/x.awo.design\/2020\/12\/fullstackopen-nodejs-express\/"
+        },"genre": "posts","keywords": "React, JavaScript","wordcount":  7911 ,
+        "url": "https:\/\/x.awo.design\/2020\/12\/fullstackopen-nodejs-express\/","datePublished": "2020-12-09T17:30:00+08:00","dateModified": "2020-12-09T17:30:00+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "imagicw"
+            },"description": "本文是博主学习赫尔辛基大学的 全栈公开课2020 过程中的学习笔记，文章分类结构与课程会有些许不同，本文部分内容引用自原文。"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Λ.W.log">Λ.W.log</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/categories/notes"> 笔记 </a><a class="menu-item" href="/games/"> 游戏 </a><a class="menu-item" href="/10000/"> 一万次悲伤 </a><a class="menu-item" href="/about/"> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Λ.W.log">Λ.W.log</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/categories/notes" title="">笔记</a><a class="menu-item" href="/games/" title="">游戏</a><a class="menu-item" href="/10000/" title="">一万次悲伤</a><a class="menu-item" href="/about/" title="">关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">全栈公开课2020学习笔记 03 - 用 NodeJS 和 Express 写服务端程序</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://awo.design" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>imagicw</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/notes/"><i class="far fa-folder fa-fw"></i>笔记</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-12-09">2020-12-09</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 7911 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 16 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#nodejs-与-express">Node.js 与 Express</a>
+          <ul>
+            <li><a href="#简易服务器">简易服务器</a></li>
+            <li><a href="#web-and-express">Web and express</a></li>
+            <li><a href="#nodemon">nodemon</a></li>
+            <li><a href="#rest">REST</a></li>
+            <li><a href="#fetching-a-single-resource-获取一个单一资源">Fetching a single resource 获取一个单一资源</a></li>
+            <li><a href="#deleting-resources-删除资源">Deleting Resources 删除资源</a></li>
+            <li><a href="#receiving-data-接收数据">Receiving data 接收数据</a></li>
+            <li><a href="#about-http-request-types">About HTTP request types</a>
+              <ul>
+                <li><a href="#安全safety">安全「safety」</a></li>
+                <li><a href="#幂等idempotencehttpsdevelopermozillaorgzh-cndocsglossarye5b982e7ad89"><a href="https://developer.mozilla.org/zh-CN/docs/Glossary/%E5%B9%82%E7%AD%89">幂等「idempotence」</a></a></li>
+              </ul>
+            </li>
+            <li><a href="#middleware-中间件">Middleware 中间件</a></li>
+          </ul>
+        </li>
+        <li><a href="#将应用部署到网上">将应用部署到网上</a>
+          <ul>
+            <li><a href="#same-origin-policy-and-cors-同源政策和-cors">Same origin policy and CORS 同源政策和 CORS</a></li>
+            <li><a href="#application-to-the-internet-将应用部署到网上">Application to the Internet 将应用部署到网上</a></li>
+            <li><a href="#frontend-production-build-前端生产构建">Frontend production build 前端生产构建</a></li>
+            <li><a href="#serving-static-files-from-the-backend-从后端服务部署静态文件">Serving static files from the backend 从后端服务部署静态文件</a></li>
+            <li><a href="#streamlining-deploying-of-the-frontend-流程化前端部署">Streamlining deploying of the frontend 流程化前端部署</a></li>
+            <li><a href="#proxy-代理">Proxy 代理</a></li>
+          </ul>
+        </li>
+        <li><a href="#将数据存入-mongodb">将数据存入 MongoDB</a>
+          <ul>
+            <li><a href="#debugging-node-applications-调试-node-应用">Debugging Node applications 调试 Node 应用</a></li>
+            <li><a href="#mongodb">MongoDB</a></li>
+            <li><a href="#schema">Schema</a></li>
+            <li><a href="#creating-and-saving-objects-创建和保存对象">Creating and saving objects 创建和保存对象</a></li>
+            <li><a href="#fetching-objects-from-the-database-从服务器获取对象">Fetching objects from the database 从服务器获取对象</a></li>
+            <li><a href="#backend-connected-to-a-database-后端连接到数据库">Backend connected to a database 后端连接到数据库</a></li>
+            <li><a href="#database-configuration-into-its-own-module-数据库逻辑配置到单独的模块">Database configuration into its own module 数据库逻辑配置到单独的模块</a></li>
+            <li><a href="#using-database-in-route-handlers-在路由处理程序中使用数据库">Using database in route handlers 在路由处理程序中使用数据库</a></li>
+            <li><a href="#verifying-frontend-and-backend-integration-验证前端和后端的集成">Verifying frontend and backend integration 验证前端和后端的集成</a></li>
+            <li><a href="#error-handling-错误处理">Error handling 错误处理</a></li>
+            <li><a href="#moving-error-handling-into-middleware-将错误处理移入中间件">Moving error handling into middleware 将错误处理移入中间件</a></li>
+            <li><a href="#the-order-of-middleware-loading-中间件加载的顺序">The order of middleware loading 中间件加载的顺序</a></li>
+            <li><a href="#other-operations-其他操作">Other operations 其他操作</a></li>
+          </ul>
+        </li>
+        <li><a href="#eslint-与代码检查">ESLint 与代码检查</a>
+          <ul>
+            <li><a href="#promise-chaining-承诺链">Promise chaining 承诺链</a></li>
+            <li><a href="#deploying-the-database-backend-to-production-将数据库后端部署到生产环境">Deploying the database backend to production 将数据库后端部署到生产环境</a></li>
+            <li><a href="#lint">Lint</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h3 id="nodejs-与-express">Node.js 与 Express</h3>
+<p>前端浏览器还不支持 JavaScript 的最新特性，所以在浏览器运行的代码是 <a href="https://babeljs.io/" target="_blank" rel="noopener noreffer">babel</a> 转译过的，而在后端运行 JavaScript 的情况是使用 Node ，而 Node 支持大部分最新的 JavaScript 特性，所以后端代码不需要转译。</p>
+<p>npm 来源于 Node 生态，是管理 JavaScript 包的工具。</p>
+<p>一般情况在终端使用 <code>node index.js</code> 即可启动项目，但最好的做法是在项目的 <code>package.json</code> 中定义脚本：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="c1">// ...
+</span><span class="c1"></span>  <span class="nt">&#34;script&#34;</span><span class="p">:</span>
+  <span class="p">{</span>
+    <span class="nt">&#34;start&#34;</span><span class="p">:</span> <span class="s2">&#34;node index.js&#34;</span><span class="p">,</span>
+    <span class="c1">// ...
+</span><span class="c1"></span>  <span class="p">},</span>
+  <span class="c1">// ...
+</span><span class="c1"></span><span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>之后只要在项目根目录使用 <code>npm start</code> 即可启用项目。</p>
+<h4 id="简易服务器">简易服务器</h4>
+<p>该部分仅作了解即可，在实际项目中这样的方式太麻烦。主流的方式是使用例如 Express 这类的库。</p>
+<p>新建一个项目，在根目录使用 <code>npm init</code> 来初始化项目，创建 <code>index.js</code> ：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">http</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;http&#39;</span><span class="p">)</span>
+
+<span class="kr">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">http</span><span class="p">.</span><span class="nx">createServer</span><span class="p">((</span><span class="nx">request</span><span class="p">,</span> <span class="nx">response</span><span class="p">)</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+  <span class="nx">response</span><span class="p">.</span><span class="nx">writeHead</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="p">{</span> <span class="s1">&#39;Content-Type&#39;</span><span class="o">:</span> <span class="s1">&#39;text/plain&#39;</span> <span class="p">})</span>
+  <span class="nx">response</span><span class="p">.</span><span class="nx">end</span><span class="p">(</span><span class="s1">&#39;Hello World&#39;</span><span class="p">)</span>
+<span class="p">})</span>
+
+<span class="kr">const</span> <span class="nx">PORT</span> <span class="o">=</span> <span class="mi">3001</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="nx">PORT</span><span class="p">)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`服务器运行在 </span><span class="si">${</span><span class="nx">PORT</span><span class="si">}</span><span class="sb"> 端口`</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>通过 <code>npm start</code> 即可启动服务器，通过浏览器即可访问 http://localhost:3001。</p>
+<p>如服务器提供的数据是 json，需要将 <code>Content-Type</code> 改为 <code>application/json</code>。输出的数组需要进行 <code>JSON.stringify(array)</code> 处理。</p>
+<p>Node.js 使用了 <a href="https://en.wikipedia.org/wiki/CommonJS" target="_blank" rel="noopener noreffer">CommonJS</a>，还不支持 ES6 模块，所以不能使用 <code>import http from 'http'</code>。</p>
+<h4 id="web-and-express">Web and express</h4>
+<p>在项目根目录安装 <code>npm install express</code>。因为使用了 <code>npm</code> 来安装，所以会自动在项目 <code>package.json</code> 添加 <code>express</code> 依赖：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="c1">// ...
+</span><span class="c1"></span>  <span class="nt">&#34;dependencies&#34;</span><span class="p">:</span>
+  <span class="p">{</span>
+    <span class="nt">&#34;express&#34;</span><span class="p">:</span> <span class="s2">&#34;^4.17.1&#34;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><code>^4.17.1</code> 限制了该项目支持的 <code>express</code> 的最低版本。</p>
+<p>让原先 <code>index.js</code> 使用 <code>express</code> 库。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;express&#39;</span><span class="p">)</span>
+<span class="kr">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">()</span>
+
+<span class="kd">let</span> <span class="nx">notes</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="c1">// 略
+</span><span class="c1"></span><span class="p">]</span>
+
+<span class="c1">// 定义路由
+</span><span class="c1">// 处理对应用 &#39;/&#39; 的 HTTP GET 请求
+</span><span class="c1"></span><span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+  <span class="c1">// response 响应请求，返回 &lt;h1&gt;Hello World!&lt;/h1&gt;。express 会自动设置 Content-Type 为 text/html，状态码 200
+</span><span class="c1"></span>  <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="s1">&#39;&lt;h1&gt;Hello World!&lt;/h1&gt;&#39;</span><span class="p">)</span>
+<span class="p">})</span>
+
+<span class="c1">// 处理对应用 &#39;/api/notes&#39; 的 HTTP GET 请求
+</span><span class="c1"></span><span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/api/notes&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+  <span class="c1">// response 响应请求，返回 json 数据。express 会自动设置 Content-Type 为 application/json，状态码 200
+</span><span class="c1"></span>  <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">(</span><span class="nx">notes</span><span class="p">)</span>
+<span class="p">})</span>
+
+<span class="c1">// 服务器运行端口
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">PORT</span> <span class="o">=</span> <span class="mi">3001</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="nx">PORT</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`服务器运行在 </span><span class="si">${</span><span class="nx">PORT</span><span class="si">}</span><span class="sb"> 端口`</span><span class="p">)</span>
+<span class="p">})</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="nodemon">nodemon</h4>
+<p>通过使用 <code>nodemon</code>，可以使应用在开发过程中由于代码的修改而自动重启服务，从而避免每次修改完代码后都需要重新 <code>npm start</code> 项目。</p>
+<p>通过 <code>npm install nodemon --save-dev</code> 在项目中添加开发依赖，会在 <code>package.json</code> 的开发依赖中定义。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="c1">//...
+</span><span class="c1"></span>  <span class="nt">&#34;dependencies&#34;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&#34;express&#34;</span><span class="p">:</span> <span class="s2">&#34;^4.17.1&#34;</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="nt">&#34;devDependencies&#34;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&#34;nodemon&#34;</span><span class="p">:</span> <span class="s2">&#34;^2.0.2&#34;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>开发依赖是在开发时需要用到的而在生产环境中用不到的依赖。</p>
+<p>使用方法还是在 <code>package.json</code> 的增加脚本，而后通过 <code>npm run dev</code> 来启动，这于 <code>start</code> 和 <code>test</code> 不同，需要在命令中加入 <code>run</code>。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="c1">// ..
+</span><span class="c1"></span>  <span class="nt">&#34;scripts&#34;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&#34;start&#34;</span><span class="p">:</span> <span class="s2">&#34;node index.js&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;dev&#34;</span><span class="p">:</span> <span class="s2">&#34;nodemon index.js&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;test&#34;</span><span class="p">:</span> <span class="s2">&#34;echo \&#34;Error: no test specified\&#34; &amp;&amp; exit 1&#34;</span>
+  <span class="p">},</span>
+  <span class="c1">// ..
+</span><span class="c1"></span><span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="rest">REST</h4>
+<blockquote>
+<p>在 RESTful thinking 中称为 resource。 每个 resource 都有一个相关联的 URL，这个 URL 是资源的唯一地址。</p>
+<p>一个约定是结合 resource 类型名称和 resource 的唯一标识符来创建 resource 唯一的地址。</p>
+</blockquote>
+<p>假设根目录为 <code>/api</code>，那么笔记的集合则是 <code>/api/notes</code> ，单个笔记则是 <code>/api/notes/10</code>。</p>
+<p>对资源又可以进行不同的操作，以下表格可以粗略地定义为 REST 所指的 <a href="https://en.wikipedia.org/wiki/Representational_state_transfer#Architectural_constraints" target="_blank" rel="noopener noreffer">统一接口 uniform interface</a>：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">URL</th>
+<th style="text-align:left">Verb</th>
+<th style="text-align:left">functionality</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">notes</td>
+<td style="text-align:left">GET</td>
+<td style="text-align:left">获取整个 resources 集合</td>
+</tr>
+<tr>
+<td style="text-align:left">notes</td>
+<td style="text-align:left">POST</td>
+<td style="text-align:left">根据 request 的数据创建新 resource</td>
+</tr>
+<tr>
+<td style="text-align:left">notes/10</td>
+<td style="text-align:left">GET</td>
+<td style="text-align:left">获取指定的 resource</td>
+</tr>
+<tr>
+<td style="text-align:left">notes/10</td>
+<td style="text-align:left">DELETE</td>
+<td style="text-align:left">删除指定的 resource</td>
+</tr>
+<tr>
+<td style="text-align:left">notes/10</td>
+<td style="text-align:left">PUT</td>
+<td style="text-align:left">根据 request 的数据修改指定的整个 resource</td>
+</tr>
+<tr>
+<td style="text-align:left">notes/10</td>
+<td style="text-align:left">PATCH</td>
+<td style="text-align:left">根据 request 的数据修改指定的 resource 的部分数据</td>
+</tr>
+</tbody>
+</table>
+<p><em>REST API 可以当作为是一种约定，而非一种标准</em>，世界上大多数 REST API 都不符合 Fielding 在其论文中概述的原始标准。所以在编写 API 时要有一致性，以便系统进行合作。</p>
+<h4 id="fetching-a-single-resource-获取一个单一资源">Fetching a single resource 获取一个单一资源</h4>
+<p>我们约定的单个笔记的唯一地址是 <code>notes/10</code>，其中 10 是笔记的唯一 id 号。通过冒号语法为路由定义参数：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="c1">// 处理对应 api/notes/id 的路由，其中 id 可以为任意字符串
+</span><span class="c1"></span><span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/api/notes/:id&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+  <span class="c1">// 从 request 中获得 id 参数，并将 id 更改为 number
+</span><span class="c1"></span>  <span class="kr">const</span> <span class="nx">id</span> <span class="o">=</span> <span class="nb">Number</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">id</span><span class="p">)</span>
+  <span class="kr">const</span> <span class="nx">note</span> <span class="o">=</span> <span class="nx">notes</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">note</span> <span class="p">=&gt;</span> <span class="nx">note</span><span class="p">.</span><span class="nx">id</span> <span class="o">===</span> <span class="nx">id</span><span class="p">)</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="nx">note</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">(</span><span class="nx">note</span><span class="p">)</span>
+  <span class="p">}</span>
+  <span class="k">else</span>
+  <span class="p">{</span>
+    <span class="c1">// 笔记不存在则返回 404 状态码
+</span><span class="c1"></span>    <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mi">404</span><span class="p">).</span><span class="nx">end</span><span class="p">()</span>
+  <span class="p">}</span>
+<span class="p">})</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="deleting-resources-删除资源">Deleting Resources 删除资源</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">app</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="s1">&#39;/api/notes/:id&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">id</span> <span class="o">=</span> <span class="nb">Number</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">id</span><span class="p">)</span>
+  <span class="nx">notes</span> <span class="o">=</span> <span class="nx">notes</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">note</span> <span class="p">=&gt;</span> <span class="nx">note</span><span class="p">.</span><span class="nx">id</span> <span class="o">!==</span> <span class="nx">id</span><span class="p">)</span>
+
+  <span class="c1">// 返回 204 状态码
+</span><span class="c1"></span>  <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mi">204</span><span class="p">).</span><span class="nx">end</span><span class="p">()</span>
+<span class="p">})</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="receiving-data-接收数据">Receiving data 接收数据</h4>
+<p>向 <code>/api/notes</code> 发送 HTTP POST 请求，并以 JSON 格式在 request body 中发送新笔记的信息，需要使用到 express json-parser，它与命令 <code>app.use(express.json())</code> 一起使用。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;express&#39;</span><span class="p">)</span>
+<span class="kr">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">()</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">express</span><span class="p">.</span><span class="nx">json</span><span class="p">())</span>
+
+<span class="kr">const</span> <span class="nx">generateId</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">maxId</span> <span class="o">=</span> <span class="nx">notes</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span>
+    <span class="o">?</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">max</span><span class="p">(...</span><span class="nx">notes</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">note</span> <span class="p">=&gt;</span> <span class="nx">note</span><span class="p">.</span><span class="nx">id</span><span class="p">))</span> <span class="c1">// 使用展开语法将 notes 中所有的 id 都展开出来
+</span><span class="c1"></span>    <span class="o">:</span> <span class="mi">0</span>
+  <span class="k">return</span> <span class="nx">maxId</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="p">}</span>
+
+<span class="c1">// ...
+</span><span class="c1"></span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s1">&#39;/api/notes&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">body</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">body</span><span class="p">.</span><span class="nx">content</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="c1">// 使用 return 返回 400 状态码以及错误提示并阻止代码继续执行
+</span><span class="c1"></span>    <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mi">400</span><span class="p">).</span><span class="nx">json</span><span class="p">(</span>
+    <span class="p">{</span>
+      <span class="nx">error</span><span class="o">:</span> <span class="s1">&#39;内容缺失&#39;</span>
+    <span class="p">})</span>
+  <span class="p">}</span>
+
+  <span class="kr">const</span> <span class="nx">note</span> <span class="o">=</span>
+  <span class="p">{</span>
+    <span class="nx">content</span><span class="o">:</span> <span class="nx">body</span><span class="p">.</span><span class="nx">content</span><span class="p">,</span>
+    <span class="nx">important</span><span class="o">:</span> <span class="nx">body</span><span class="p">.</span><span class="nx">important</span> <span class="o">||</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nx">data</span><span class="o">:</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(),</span>
+    <span class="nx">id</span><span class="o">:</span> <span class="nx">generateId</span><span class="p">(),</span>
+  <span class="p">}</span>
+
+  <span class="nx">notes</span> <span class="o">=</span> <span class="nx">notes</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">note</span><span class="p">)</span>
+
+  <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">(</span><span class="nx">note</span><span class="p">)</span>
+<span class="p">})</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>像 DELETE、POST 等操作，在浏览器上不是很方便执行，使用 Postman 应用或者 VS Code REST client 插件来操作即可。</p>
+<p>如果 POST 请求出现错误，需要检查 Postman 或者 REST client 插件是否将 POST 数据的 <code>Content-Type</code> 设置为 <code>application/json</code>。</p>
+<h4 id="about-http-request-types">About HTTP request types</h4>
+<p>HTTP 标准讨论了与请求类型相关的两个属性，安全「safety」 和 幂等性「idempotence」 。</p>
+<h5 id="安全safety">安全「safety」</h5>
+<p>HTTP GET 请求应该是满足安全性的：</p>
+<blockquote>
+<p>In particular, the convention has been established that the GET and HEAD methods SHOULD NOT have the significance of taking an action other than retrieval. These methods ought to be considered &ldquo;safe&rdquo;.</p>
+</blockquote>
+<p>安全性意味着执行请求不能在服务器中引起任何<strong>副作用「side effect」</strong>。 副作用是指数据库的状态<strong>不能因请求而改变</strong>，响应<strong>只能</strong>返回服务器上已经存在的数据。</p>
+<p>无法保证 GET 请求是安全的，这实际上是 HTTP 标准的建议。通过遵守 API 中的 RESTful 原则，GET 请求实际上总是以一种安全的方式使用。</p>
+<p>HTTP 标准还定义了 <a href="https://www.w3.org/protocols/rfc2616/rfc2616-sec9.html#sec9.4" target="_blank" rel="noopener noreffer">HEAD</a>， 实际上，HEAD 应该像 GET 一样工作，但是它只返回状态码和响应头。 当您发出 HEAD 请求时，不会返回响应主体。</p>
+<h5 id="幂等idempotencehttpsdevelopermozillaorgzh-cndocsglossarye5b982e7ad89"><a href="https://developer.mozilla.org/zh-CN/docs/Glossary/%E5%B9%82%E7%AD%89" target="_blank" rel="noopener noreffer">幂等「idempotence」</a></h5>
+<p>除了 POST 以外的所有 HTTP 请求都是幂等的，这意味着，如果一个请求有副作用，那么无论发送多少次请求，结果都应该是相同的。</p>
+<blockquote>
+<p>Methods can also have the property of &ldquo;idempotence&rdquo; in that (aside from error or expiration issues) the side-effects of N &gt; 0 identical requests is the same as for a single request. The methods GET, HEAD, PUT and DELETE share this property.</p>
+</blockquote>
+<p>POST 是唯一的不安全也不幂等的 HTTP 请求类型。发送多个 POST 请求，可以产生多条内容。</p>
+<h4 id="middleware-中间件">Middleware 中间件</h4>
+<p>中间件是可用于处理请求和响应对象的函数。可以从请求对象中存储的请求中获取原始数据，将其解析为一个 JavaScript 对象，并将其作为一个新的属性、body 分配给请求对象。</p>
+<p>可以使用多个中间件，会按照顺序一个一个地执行。</p>
+<p>中间件是一个接收三个参数的函数：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">requestLogger</span> <span class="o">=</span> <span class="p">(</span><span class="nx">request</span><span class="p">,</span> <span class="nx">response</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Method: &#39;</span><span class="p">,</span> <span class="nx">request</span><span class="p">.</span><span class="nx">method</span><span class="p">)</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Path: &#39;</span><span class="p">,</span> <span class="nx">request</span><span class="p">.</span><span class="nx">path</span><span class="p">)</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Body: &#39;</span><span class="p">,</span> <span class="nx">request</span><span class="p">.</span><span class="nx">body</span><span class="p">)</span>
+  <span class="nx">next</span><span class="p">()</span> <span class="c1">// 调用作为参数传递的下一个函数。 函数将控制权交给下一个中间件。
+</span><span class="c1"></span><span class="p">}</span>
+
+<span class="c1">// 使用方法
+</span><span class="c1"></span><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">express</span><span class="p">.</span><span class="nx">json</span><span class="p">())</span> <span class="c1">// 获得 body 内容，保证 requestLogger 能够得到 request.body 内容
+</span><span class="c1"></span><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">requestLogger</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>中间件函数按照与 express 服务器对象的使用方法一起使用的顺序调用。 如果我们希望在调用路由事件处理程序之前执行路由，则必须在路由之前使用中间件函数。相反的，中间件函数放在路由之后，使中间件在没有路由处理 HTTP 请求的时候调用。</p>
+<h3 id="将应用部署到网上">将应用部署到网上</h3>
+<h4 id="same-origin-policy-and-cors-同源政策和-cors">Same origin policy and CORS 同源政策和 CORS</h4>
+<blockquote>
+<p>Cross-origin resource sharing (CORS) is a mechanism that allows restricted resources (e.g. fonts) on a web page to be requested from another domain outside the domain from which the first resource was served. A web page may freely embed cross-origin images, stylesheets, scripts, iframes, and videos. Certain &ldquo;cross-domain&rdquo; requests, notably Ajax requests, are forbidden by default by the same-origin security policy. Cross-origin resource sharing.</p>
+<p><em>—— 维基百科</em></p>
+</blockquote>
+<p><a href="https://developer.mozilla.org/en-us/docs/web/security/same-origin_policy" target="_blank" rel="noopener noreffer">同源策略</a> 和 <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS" target="_blank" rel="noopener noreffer">CORS</a> 是 Web 应用的通用原则。</p>
+<p>在 Node 项目中可以使用 <code>cors</code> 中间件来允许来自其他的请求。</p>
+<p>通过 <code>npm install cors</code> 来安装。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">cors</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;cors&#39;</span><span class="p">)</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">cors</span><span class="p">())</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="application-to-the-internet-将应用部署到网上">Application to the Internet 将应用部署到网上</h4>
+<p>使用 <a href="https://www.heroku.com/" target="_blank" rel="noopener noreffer">Heroku</a> 来部署应用。</p>
+<p>在项目根目录新建 <code>Procfile</code> 文件，在文件内填写 <code>web: npm start</code> 来告诉 Heroku 如何启动应用。</p>
+<p>将应用的 <code>index.js</code> 中端口改为环境变量：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">PORT</span> <span class="o">=</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">PORT</span> <span class="o">||</span> <span class="mi">3001</span>
+<span class="c1">// ...
+</span></code></pre></td></tr></table>
+</div>
+</div><p>在应用内创建 git 仓库，并使用 git 方式或者 ssh 方式将应用部署至 Heroku 上，方法同其他 git 方式，VS code 集成了 git 功能，可以直接使用，需要注意的是，<code>git push</code> 时候，需要的是 Heroku 的 Access API 而不是用户密码。</p>
+<h4 id="frontend-production-build-前端生产构建">Frontend production build 前端生产构建</h4>
+<p>目前为止，应用处于开发模式中运行，简言之就是「人类可读」的环境，在部署应用时，我们需要将应用创建一个<a href="https://zh-hans.reactjs.org/docs/optimizing-performance.html#use-the-production-build" target="_blank" rel="noopener noreffer">生产构建</a>或为生产而优化的版本，也就是「机器可读」的环境。</p>
+<p><code>create-react-app</code> 创建的应用可以使用 <code>npm build</code> 命令来构建。</p>
+<blockquote>
+<p>通过在应用根目录运行这个命令，将会创建一个名为build 的目录(其中包含应用中唯一的 HTML 文件index. HTML) ，其中包含目录 static。 应用的 JavaScript 代码的 <a href="https://en.wikipedia.org/wiki/minification_%28programming%29" target="_blank" rel="noopener noreffer">Minified</a> 版本将生成到 static 目录。 即使应用代码位于多个文件中，所有的 JavaScript 都将被缩小到一个文件中。 实际上，来自所有应用依赖项的所有代码也将缩小到这个单一文件中。</p>
+</blockquote>
+<h4 id="serving-static-files-from-the-backend-从后端服务部署静态文件">Serving static files from the backend 从后端服务部署静态文件</h4>
+<p>将前端构建的 <code>build</code> 文件夹复制到后端应用的根目录，通过 express 的内置的 static 中间件来现实前端构建的内容。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">express</span><span class="p">.</span><span class="kr">static</span><span class="p">(</span><span class="s1">&#39;build&#39;</span><span class="p">))</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>当 express 收到 HTTP GET 请求时，它会首先检查 build 目录是否包含与请求地址对应的文件，并返回相应的内容。</p>
+<p>这样的方式采用了前后端在一起的方式，所以可以将前端的 <code>baseUrl</code> 改成相对路径 <code>/api/notes</code> 即可。</p>
+<p>在确保生产环境在本地正常之后，将生产构建 <code>git push</code> 至 Heroku 完成部署。</p>
+<h4 id="streamlining-deploying-of-the-frontend-流程化前端部署">Streamlining deploying of the frontend 流程化前端部署</h4>
+<p>通过更改后端 <code>package.json</code> 的 scripts 来实现流程化构建，以下直接引用了教材内容，一般来说根据项目实际情况来填写这些 scripts</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&#34;scripts&#34;</span><span class="p">:</span> <span class="p">{</span>
+     <span class="c1">//...
+</span><span class="c1"></span>    <span class="nt">&#34;build:ui&#34;</span><span class="p">:</span> <span class="s2">&#34;rm -rf build &amp;&amp; cd ../../osa2/materiaali/notes-new &amp;&amp; npm run build --prod &amp;&amp; cp -r build ../../../osa3/notes-backend/&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;deploy&#34;</span><span class="p">:</span> <span class="s2">&#34;git push heroku main&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;deploy:full&#34;</span><span class="p">:</span> <span class="s2">&#34;npm run build:ui &amp;&amp; git add . &amp;&amp; git commit -m uibuild &amp;&amp; npm run deploy&#34;</span><span class="p">,</span>    
+    <span class="nt">&#34;logs:prod&#34;</span><span class="p">:</span> <span class="s2">&#34;heroku logs --tail&#34;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="proxy-代理">Proxy 代理</h4>
+<p>在前端开发时，因为之前将 <code>baseUrl</code> 更改成后端的相对路径，所以在开发模式运行前端内容时，并不能获取到准确的为止，所以此时需要通过代理，将相对路径的请求转发至后端服务器。</p>
+<p>在 <code>package.json</code> 增加 <code>proxy</code> 代理设置来转发。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="c1">// ...
+</span><span class="c1"></span>  <span class="nt">&#34;scripts&#34;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="c1">// ...
+</span><span class="c1"></span>  <span class="p">},</span>
+  <span class="nt">&#34;proxy&#34;</span><span class="p">:</span> <span class="s2">&#34;http://localhost:3001&#34;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>方法的一个劣势，是前端部署的复杂程度。 部署新版本需要生成新的前端生产构建并将其复制到后端存储库。 这使得创建一个自动化的<a href="https://martinfowler.com/bliki/DeploymentPipeline.html" target="_blank" rel="noopener noreffer">部署管道</a>变得更加困难。 部署管道是指通过不同的测试和质量检查将代码从开发人员的计算机转移到生产环境的自动化控制的方法。</p>
+</blockquote>
+<h3 id="将数据存入-mongodb">将数据存入 MongoDB</h3>
+<h4 id="debugging-node-applications-调试-node-应用">Debugging Node applications 调试 Node 应用</h4>
+<p>将数据 <code>console.log</code> 到控制台是一种可靠的方法。</p>
+<p>使用 VS Code 的代码调试器，在软件的 Run 菜单下选择 Add Configuration&hellip; 来配置 debug 的设置，选择代码使用的环境 Node.js 会自动生成配置文件，然后选择 Start Debugging 开始调试。</p>
+<p>使用 Google Dev Tools 调试应用，在控制台使用 <code>node --inspect index.js</code> 进行调试，也可以在 Console 控制台点击 Node logo 开启。<em>系统需要全局安装 Node，如果只是在项目中安装 Node 是使用命令，也不显示 Node logo 的</em></p>
+<p><strong>质疑一切，出现 bug 时，逐一排除所有的可能性，将 bug 修复后再继续编写代码。</strong></p>
+<h4 id="mongodb">MongoDB</h4>
+<p>MongoDB 不同于 MySQL 等其他关系数据库，它时<a href="https://zh.wikipedia.org/wiki/%E9%9D%A2%E5%90%91%E6%96%87%E6%AA%94%E7%9A%84%E6%95%B8%E6%93%9A%E5%BA%AB" target="_blank" rel="noopener noreffer">文档数据库</a>，它通常被归类为 <a href="https://zh.wikipedia.org/wiki/NoSQL" target="_blank" rel="noopener noreffer">NoSQL</a></p>
+<p>使用 <a href="https://www.mongodb.com/cloud/Atlas" target="_blank" rel="noopener noreffer">MongoDB Atlas</a> 为应用提供数据存储服务，也可以在本地创建 MongoDB。</p>
+<p>使用 Mongoose 库来代替 MongoDB 官方的驱动程序操作数据库会非常方便。Mongoose 可以被描述为 <code>ODM(Object Document Mapper)</code>，它可以非常简单的将 JavaScript 对象保存为 Mongo 文档。</p>
+<p>在项目中使用 <code>npm install mongoose</code> 安装 Mongoose。</p>
+<p>新增 <code>mongo.js</code> 用于与数据库的连接：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">mongoose</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;mongoose&#39;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="p">(</span> <span class="nx">process</span><span class="p">.</span><span class="nx">argv</span><span class="p">.</span><span class="nx">length</span> <span class="o">&lt;</span> <span class="mi">3</span> <span class="p">)</span>
+<span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;请提供连接数据库的密码：node mongo.js &lt;passowrd&gt;&#39;</span><span class="p">)</span>
+  <span class="nx">process</span><span class="p">.</span><span class="nx">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kr">const</span> <span class="nx">password</span> <span class="o">=</span> <span class="nx">process</span><span class="p">.</span><span class="nx">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+
+<span class="kr">const</span> <span class="nx">url</span> <span class="o">=</span> <span class="sb">`mongodb+srv://fullstack:</span><span class="si">${</span><span class="nx">password</span><span class="si">}</span><span class="sb">@cluster0-ostce.mongodb.net/test?retryWrites=true`</span>
+
+<span class="nx">mongoose</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span>
+  <span class="nx">url</span><span class="p">,</span>
+  <span class="p">{</span>
+    <span class="nx">useNewUrlParser</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nx">useUnifiedTopology</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nx">useFindAndModify</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nx">useCreateIndex</span><span class="o">:</span> <span class="kc">true</span>
+  <span class="p">}</span>
+<span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>可以通过修改 url 中的 test 来更改数据库名称，如果数据库中没有这个数据库，它会在连接成功后自动添加。</p>
+<h4 id="schema">Schema</h4>
+<p>以下定义了笔记的 <a href="http://mongoosejs.com/docs/guide.html" target="_blank" rel="noopener noreffer">Schema</a> 模式和匹配的 <a href="http://mongoosejs.com/docs/models.html" target="_blank" rel="noopener noreffer">Model</a> 模型。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="c1">// mongo.js
+</span><span class="c1">// ...
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">noteSchema</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">mongoose</span><span class="p">.</span><span class="nx">Schema</span><span class="p">(</span>
+  <span class="p">{</span>
+    <span class="nx">content</span><span class="o">:</span> <span class="nb">String</span><span class="p">,</span>
+    <span class="nx">date</span><span class="o">:</span> <span class="nb">Date</span><span class="p">,</span>
+    <span class="nx">important</span><span class="o">:</span> <span class="nb">Boolean</span><span class="p">,</span>
+  <span class="p">}</span>
+<span class="p">)</span>
+
+<span class="kr">const</span> <span class="nx">Note</span> <span class="o">=</span> <span class="nx">mongoose</span><span class="p">.</span><span class="nx">model</span><span class="p">(</span><span class="s1">&#39;Note&#39;</span><span class="p">,</span> <span class="nx">noteSchema</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Schema 告诉 Mongoose 如何将 note 对象存储在数据库中。</p>
+<blockquote>
+<p>在 Note 模型定义中，第一个 &ldquo;Note&rdquo; 参数是模型的单数名。集合的名称将是小写的复数 notes，因为 Mongoose 约定是当模式以单数（例如 Note）引用集合时自动将其命名为复数（例如 notes）。</p>
+<p>像 Mongo 这样的文档数据库是 schemaaless，这意味着数据库本身并不关心存储在数据库中的数据的结构。 可以在同一集合中存储具有完全不同字段的文档。</p>
+<p>Mongoose 背后的思想是，存储在数据库中的数据在 application 级别上被赋予一个 schema，该模式定义了存储在任何给定集合中的文档的形状。</p>
+</blockquote>
+<h4 id="creating-and-saving-objects-创建和保存对象">Creating and saving objects 创建和保存对象</h4>
+<p>在 Node Model 模型的帮助下，创建新的 Note 非常简单：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="c1">// mongo.js
+</span><span class="c1">// ...
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">note</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Note</span><span class="p">(</span>
+  <span class="p">{</span>
+    <span class="nx">content</span><span class="o">:</span> <span class="s1">&#39;新的 note&#39;</span><span class="p">,</span>
+    <span class="nx">date</span><span class="o">:</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(),</span>
+    <span class="nx">important</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="p">}</span>
+<span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>模型是所谓的构造函数 constructor function，它根据提供的参数创建新的 JavaScript 对象。 由于对象是使用模型的构造函数创建的，因此它们具有模型的所有属性，其中包括将对象保存到数据库的方法。</p>
+</blockquote>
+<p>通过 <code>save()</code> 方法来保存新的 <code>note</code>：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="c1">// mongo.js
+</span><span class="c1">// ...
+</span><span class="c1"></span><span class="nx">note</span><span class="p">.</span><span class="nx">save</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="nx">result</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;保存成功&#39;</span><span class="p">)</span>
+  <span class="c1">// 关闭数据库连接，否则程序无法完成它的执行。
+</span><span class="c1"></span>  <span class="nx">mongoose</span><span class="p">.</span><span class="nx">connection</span><span class="p">.</span><span class="nx">close</span><span class="p">()</span>
+<span class="p">})</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="fetching-objects-from-the-database-从服务器获取对象">Fetching objects from the database 从服务器获取对象</h4>
+<p>使用 <code>find()</code> 方法来获取：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="c1">// mongo.js
+</span><span class="c1">// ...
+</span><span class="c1"></span><span class="nx">Note</span><span class="p">.</span><span class="nx">find</span><span class="p">({}).</span><span class="nx">then</span><span class="p">(</span><span class="nx">result</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+  <span class="nx">result</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">note</span> <span class="p">=&gt;</span>
+  <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">note</span><span class="p">)</span>
+  <span class="p">})</span>
+  <span class="nx">mongoose</span><span class="p">.</span><span class="nx">connection</span><span class="p">.</span><span class="nx">close</span><span class="p">()</span>
+<span class="p">})</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><code>find({})</code> 方法中 <code>{}</code> 是空对象，表示没有检索条件，数据库会返回所有结果。</p>
+<p><code>find({ important: true })</code> 使用这样的条件将会返回所有重要的笔记。</p>
+<h4 id="backend-connected-to-a-database-后端连接到数据库">Backend connected to a database 后端连接到数据库</h4>
+<p>使用与上方相同的方法，将数据库连接的代码添加到 index.js 中去，<strong>注意，若数据库密码不从 <code>process</code> 中得到，而直接保存在 <code>url</code> 中，切勿将带有密码的文件提交至 Github</strong>，并将路由调整如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">route</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/api/notes/&#39;</span><span class="p">,(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+  <span class="nx">Note</span><span class="p">.</span><span class="nx">find</span><span class="p">({}).</span><span class="nx">then</span><span class="p">(</span><span class="nx">notes</span> <span class="p">=&gt;</span>
+  <span class="p">{</span>
+    <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">(</span><span class="nx">notes</span><span class="p">)</span>
+  <span class="p">})</span>
+<span class="p">})</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>如果不想要返回 <code>_id</code> 和 <code>__v</code> 字段，通过 Schema 的 toJSON 方法来修改，如下：</p>
+<p><strong>注意一点，mongo 的 <code>_id</code> 字段看起来像个 <code>String 类型</code>，但它其实是个对象</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">noteSchema</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;toJSON&#39;</span><span class="p">,</span>
+<span class="p">{</span>
+  <span class="nx">transform</span><span class="o">:</span> <span class="p">(</span><span class="nb">document</span><span class="p">,</span> <span class="nx">returnedObject</span><span class="p">)</span> <span class="p">=&gt;</span>
+  <span class="p">{</span>
+    <span class="nx">returnedObject</span><span class="p">.</span><span class="nx">id</span> <span class="o">=</span> <span class="nx">returnedObject</span><span class="p">.</span><span class="nx">_id</span><span class="p">.</span><span class="nx">toString</span><span class="p">()</span> <span class="c1">// _id 字段是对象，需要 toString 方法来转换成 String
+</span><span class="c1"></span>    <span class="k">delete</span> <span class="nx">returnedObject</span><span class="p">.</span><span class="nx">_id</span><span class="p">;</span>
+    <span class="k">delete</span> <span class="nx">returnedObject</span><span class="p">.</span><span class="nx">__v</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">})</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="database-configuration-into-its-own-module-数据库逻辑配置到单独的模块">Database configuration into its own module 数据库逻辑配置到单独的模块</h4>
+<p>便于维护及管理，将数据库逻辑配置到单独的模块是较好的选择。</p>
+<p>在项目根目录下创建 <code>models</code> 文件夹，并在该文件夹下新建 <code>note.js</code> 文件：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">mongoose</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;mongoose&#39;</span><span class="p">)</span>
+
+<span class="kr">const</span> <span class="nx">url</span> <span class="o">=</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">MONGODB_URI</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;正在连接&#39;</span><span class="p">,</span> <span class="nx">url</span><span class="p">)</span>
+
+<span class="nx">mongoose</span><span class="p">.</span><span class="nx">connect</span>
+<span class="p">(</span>
+  <span class="nx">url</span><span class="p">,</span>
+  <span class="p">{</span>
+    <span class="nx">useNewUrlParser</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nx">useUnifiedTopology</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nx">useFindAndModify</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nx">useCreateIndex</span><span class="o">:</span> <span class="kc">true</span>
+  <span class="p">}</span>
+<span class="p">)</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">result</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;成功连接 MongoDB&#39;</span><span class="p">)</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)=&gt;</span>
+<span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;连接 MongoDB 失败：&#39;</span><span class="p">,</span> <span class="nx">error</span><span class="p">.</span><span class="nx">message</span><span class="p">)</span>
+<span class="p">})</span>
+
+<span class="kr">const</span> <span class="nx">noteSchema</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">mongoose</span><span class="p">.</span><span class="nx">Schema</span><span class="p">({</span>
+  <span class="nx">content</span><span class="o">:</span> <span class="nb">String</span><span class="p">,</span>
+  <span class="nx">date</span><span class="o">:</span> <span class="nb">Date</span><span class="p">,</span>
+  <span class="nx">important</span><span class="o">:</span> <span class="nb">Boolean</span><span class="p">,</span>
+<span class="p">})</span>
+
+<span class="nx">noteSchema</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;toJSON&#39;</span><span class="p">,</span> <span class="p">{</span>
+  <span class="nx">transform</span><span class="o">:</span> <span class="p">(</span><span class="nb">document</span><span class="p">,</span> <span class="nx">returnedObject</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">returnedObject</span><span class="p">.</span><span class="nx">id</span> <span class="o">=</span> <span class="nx">returnedObject</span><span class="p">.</span><span class="nx">_id</span><span class="p">.</span><span class="nx">toString</span><span class="p">()</span>
+    <span class="k">delete</span> <span class="nx">returnedObject</span><span class="p">.</span><span class="nx">_id</span>
+    <span class="k">delete</span> <span class="nx">returnedObject</span><span class="p">.</span><span class="nx">__v</span>
+  <span class="p">}</span>
+<span class="p">})</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">mongoose</span><span class="p">.</span><span class="nx">model</span><span class="p">(</span><span class="s1">&#39;Note&#39;</span><span class="p">,</span> <span class="nx">noteSchema</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>此处定义 <code>Note</code> modules 与定义 ES6 模块方式略有不同。</p>
+<blockquote>
+<p>模块的公共接口是通过将值设置为 module.exports 变量来定义的。 我们将该值设置为 Note 模型。模块内部定义的其他东西，比如变量 mongoose 和 url 对于模块的用户来说是不可访问的或者不可见的。</p>
+</blockquote>
+<p>在 <code>index.js</code> 中导入 <code>note</code> 模块即可：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">Note</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./models/note&#39;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>将数据库的 <code>url</code> 直接编入代码中不是一个安全的选择，将它设置为环境变量 <code>MONGODB_URI</code> 传递给应用会更合适。</p>
+<p>定义环境变量的方式有很多种：</p>
+<ul>
+<li>在启动时定义。 <em>在 <code>package.json</code> 中添加 <code>scripts</code></em></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="s2">&#34;mongodb&#34;</span><span class="err">:</span> <span class="s2">&#34;MONGODB_URI=address_here npm run dev&#34;</span><span class="err">,</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>更复杂的方法是使用 <code>dotenv</code> 库</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">npm install dotenv
+</code></pre></td></tr></table>
+</div>
+</div><p>在项目根目录新建 <code>.env</code> 文件，环境变量在改文件内定义。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">MONGODB_URI=&#39;mongodb+srv://fullstack:passwordhere@icluster.fmdqa.mongodb.net/note-app?retryWrites=true&amp;w=majority&#39;
+PORT=3001
+</code></pre></td></tr></table>
+</div>
+</div><p>在 <code>.gitignore</code> 中添加 <code>.env</code> 条目来避免将环境变量上传至 github，并在 <code>index.js</code> 第一行添加 <code>require('dotenv'.config)</code> 命令来使用 <code>.env</code> 中的环境变量。引用环境变量的方法与普通环境变量一样 <code>process.env.MONGODB_URI</code>。</p>
+<h4 id="using-database-in-route-handlers-在路由处理程序中使用数据库">Using database in route handlers 在路由处理程序中使用数据库</h4>
+<p>添加一条新笔记：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">app</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s1">&#39;/api/notes&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">body</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="nx">body</span><span class="p">.</span><span class="nx">content</span> <span class="o">===</span> <span class="kc">undefined</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mi">400</span><span class="p">).</span><span class="nx">json</span><span class="p">({</span> <span class="nx">error</span><span class="o">:</span> <span class="s1">&#39;提交的内容缺失&#39;</span> <span class="p">})</span>
+  <span class="p">}</span>
+
+  <span class="c1">// 使用 Note 构造函数创建 Note 对象
+</span><span class="c1"></span>  <span class="kr">const</span> <span class="nx">note</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Note</span><span class="p">({</span>
+    <span class="nx">content</span><span class="o">:</span> <span class="nx">body</span><span class="p">.</span><span class="nx">content</span><span class="p">,</span>
+    <span class="nx">important</span><span class="o">:</span> <span class="nx">body</span><span class="p">.</span><span class="nx">important</span> <span class="o">||</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nx">date</span><span class="o">:</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(),</span>
+  <span class="p">})</span>
+
+  <span class="nx">note</span><span class="p">.</span><span class="nx">save</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="nx">saveNote</span> <span class="p">=&gt;</span>
+  <span class="p">{</span>
+    <span class="c1">// 操作成功时才发送 response
+</span><span class="c1"></span>    <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">(</span><span class="nx">saveNote</span><span class="p">)</span>
+  <span class="p">})</span>
+<span class="p">})</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>使用 mongoose 的 <code>findById</code> 方法获取单独一条笔记：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/api/notes/:id&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+  <span class="nx">note</span><span class="p">.</span><span class="nx">findById</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">id</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">note</span> <span class="p">=&gt;</span>
+  <span class="p">{</span>
+    <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">(</span><span class="nx">note</span><span class="p">)</span>
+  <span class="p">})</span>
+<span class="p">})</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="verifying-frontend-and-backend-integration-验证前端和后端的集成">Verifying frontend and backend integration 验证前端和后端的集成</h4>
+<p>使用 POSTMAN 或者其他工具来测试后端。</p>
+<h4 id="error-handling-错误处理">Error handling 错误处理</h4>
+<p>通过 <code>.catch</code> 方法来捕获错误。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/api/notes/:id&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+  <span class="nx">Note</span><span class="p">.</span><span class="nx">findById</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">id</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">then</span><span class="p">(</span> <span class="nx">note</span> <span class="p">=&gt;</span>
+    <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">note</span><span class="p">)</span>
+      <span class="p">{</span>
+        <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">(</span><span class="nx">note</span><span class="p">)</span>
+      <span class="p">}</span>
+      <span class="k">else</span>
+      <span class="p">{</span>
+        <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mi">404</span><span class="p">).</span><span class="nx">end</span><span class="p">()</span>
+      <span class="p">}</span>
+    <span class="p">})</span>
+    <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">error</span> <span class="p">=&gt;</span>
+    <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
+      <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mi">500</span><span class="p">).</span><span class="nx">end</span><span class="p">()</span>
+    <span class="p">})</span>
+<span class="p">})</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>当请求指定 id 的笔记不存在时，服务器会返回 404 错误，当给出的 id 是一个奇怪的参数时， <code>findById</code> 方法会抛出一个错误，导致 <code>Promise</code> 返回 <code>rejected</code>，因此会触发 <code>catch</code> 代码中的函数，也就是 <em>500 internal server error</em>。</p>
+<p>实际上当 id 格式不正确会触发 <code>catch</code> 的代码，那么将这个错误定义为 <code>400 bad request</code> 比较符合对错误的描述。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">error</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
+  <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mi">400</span><span class="p">).</span><span class="nx">send</span><span class="p">({</span> <span class="nx">error</span><span class="o">:</span> <span class="s1">&#39;请求错误，id 格式不正确&#39;</span> <span class="p">})</span>
+<span class="p">})</span>
+</code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>调用错误处理程序的原因可能与您预期的完全不同。 如果您将错误记录到控制台，您可以避免冗长和令人沮丧的调试会话。</p>
+</blockquote>
+<h4 id="moving-error-handling-into-middleware-将错误处理移入中间件">Moving error handling into middleware 将错误处理移入中间件</h4>
+<p>上述代码是在单个路由内编写了错误处理程序，这是一种方法。在单个位置实现所有的错误处理，是一个比较好的方法。</p>
+<blockquote>
+<p>如果我们以后想要将与错误相关的数据报告给外部的错误跟踪系统，比如 <a href="https://sentry.io/welcome/" target="_blank" rel="noopener noreffer">Sentry</a>，那么这么做就特别有用。</p>
+</blockquote>
+<p>在路由中，使用 <code>next</code> 函数向下传递错误，<code>next</code> 函数作为第三个参数传递给处理程序。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/api/notes/:id&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">request</span><span class="p">,</span> <span class="nx">response</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+  <span class="nx">Note</span><span class="p">.</span><span class="nx">findById</span><span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">id</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">note</span> <span class="p">=&gt;</span>
+  <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">note</span><span class="p">)</span>
+    <span class="p">{</span>
+      <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">(</span><span class="nx">note</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+      <span class="nx">response</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mi">404</span><span class="p">).</span><span class="nx">end</span><span class="p">()</span>
+    <span class="p">}</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">error</span> <span class="p">=&gt;</span> <span class="nx">next</span><span class="p">(</span><span class="nx">error</span><span class="p">))</span>
+<span class="p">})</span>
+</code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>将向前传递的错误作为参数给 <code>next</code> 函数。 如果在没有参数的情况下调用 <code>next</code>，那么执行将简单地转移到下一个路由或中间件上。 如果使用参数调用  <code>next</code> 函数，那么执行将继续到 error 处理程序中间件。</p>
+</blockquote>
+<p>Express 的 <code>errorHandler</code> 是一种中间件，它定义了一个接受 4 个参数的函数：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">errorHandler</span> <span class="o">=</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">request</span><span class="p">,</span> <span class="nx">response</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">.</span><span class="nx">message</span><span class="p">)</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="nx">error</span><span class="p">.</span><span class="nx">name</span> <span class="o">===</span> <span class="s1">&#39;CastError&#39;</span> <span class="o">&amp;&amp;</span> <span class="nx">error</span><span class="p">.</span><span class="nx">kind</span> <span class="o">===</span> <span class="s1">&#39;ObjectId&#39;</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">response</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mi">400</span><span class="p">).</span><span class="nx">send</span><span class="p">({</span> <span class="nx">error</span><span class="o">:</span> <span class="s1">&#39;请求错误，id 格式不正确&#39;</span> <span class="p">})</span>
+  <span class="p">}</span>
+
+  <span class="nx">next</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">errorHandler</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><code>errorHandler</code> 将会检查错误是否是 <em>CastError</em> 错误以及种类是否是 <em>ObjectId</em>，如果是将会返回 400 错误以及错误消息。如果不是，中间件将会转发错误至缺省的 Express 错误处理程序。</p>
+<h4 id="the-order-of-middleware-loading-中间件加载的顺序">The order of middleware loading 中间件加载的顺序</h4>
+<p>中间件的执行顺序与通过 <code>app.use</code> 函数加载到 Express 顺序相同*「自上而下」*。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">express</span><span class="p">.</span><span class="kr">static</span><span class="p">(</span><span class="s1">&#39;build&#39;</span><span class="p">))</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">express</span><span class="p">.</span><span class="nx">json</span><span class="p">)</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">logger</span><span class="p">)</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s1">&#39;api/notes&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">body</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span>
+  <span class="c1">// ...
+</span><span class="c1"></span><span class="p">})</span>
+
+<span class="c1">// ...
+</span><span class="c1"></span>
+<span class="kr">const</span> <span class="nx">unknownEndpoint</span> <span class="o">=</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+  <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mi">404</span><span class="p">).</span><span class="nx">send</span><span class="p">({</span> <span class="nx">error</span><span class="o">:</span> <span class="s1">&#39;访问的页面不存在&#39;</span> <span class="p">})</span>
+<span class="p">}</span>
+
+<span class="c1">// 访问不存在页面的处理程序
+</span><span class="c1"></span><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">unknownEndpoint</span><span class="p">)</span>
+
+<span class="kr">const</span> <span class="nx">errorHandler</span> <span class="o">=</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="c1">// ...
+</span><span class="c1"></span><span class="p">}</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">errorHandler</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>如果 <code>app.use(express.json())</code> 放在了 <code>app.post</code> 路由下面，那么 <code>express.json()</code> 将会在路由之后执行，这意味着 <code>app.post</code> 中的 <code>body</code> 无法正确地获得数据，因为 <code>req.body</code> 是 undefined。</p>
+<h4 id="other-operations-其他操作">Other operations 其他操作</h4>
+<p><code>findByIdAndRemove</code> 方法及 <code>findByIdAndUpdate</code> 方法。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">app</span><span class="p">.</span><span class="nx">put</span><span class="p">(</span><span class="s1">&#39;/api/notes/:id&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">request</span><span class="p">,</span> <span class="nx">response</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">body</span> <span class="o">=</span> <span class="nx">request</span><span class="p">.</span><span class="nx">body</span>
+
+  <span class="kr">const</span> <span class="nx">note</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">content</span><span class="o">:</span> <span class="nx">body</span><span class="p">.</span><span class="nx">content</span><span class="p">,</span>
+    <span class="nx">important</span><span class="o">:</span> <span class="nx">body</span><span class="p">.</span><span class="nx">important</span><span class="p">,</span>
+  <span class="p">}</span>
+
+  <span class="nx">Note</span><span class="p">.</span><span class="nx">findByIdAndUpdate</span><span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span> <span class="nx">note</span><span class="p">,</span> <span class="p">{</span> <span class="k">new</span><span class="o">:</span> <span class="kc">true</span> <span class="p">})</span>
+    <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">updatedNote</span> <span class="p">=&gt;</span> <span class="p">{</span>
+      <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">(</span><span class="nx">updatedNote</span><span class="p">)</span>
+    <span class="p">})</span>
+    <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">error</span> <span class="p">=&gt;</span> <span class="nx">next</span><span class="p">(</span><span class="nx">error</span><span class="p">))</span>
+<span class="p">})</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>在 <code>findByIdAndUpdate</code> 方法中使用了可选参数 <code>{ new: true }</code>，这样 <code>updateedNote</code> 接收到的是修改后的文档。默认情况下 <code>updatedNote</code> 接收到的是原始未修改的文档。这点要注意。</p>
+<h3 id="eslint-与代码检查">ESLint 与代码检查</h3>
+<p>先前在路由中检查笔记的有效性，如果没有数据，将返回 400 错误信息以及错误信息「提交的内容缺失」：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">app</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s1">&#39;/api/notes&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">body</span> <span class="o">=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="nx">body</span><span class="p">.</span><span class="nx">content</span> <span class="o">===</span> <span class="kc">undefined</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mi">400</span><span class="p">).</span><span class="nx">json</span><span class="p">({</span> <span class="nx">error</span><span class="o">:</span> <span class="s1">&#39;提交的内容缺失&#39;</span> <span class="p">})</span>
+  <span class="p">}</span>
+  <span class="c1">// ...
+</span><span class="c1"></span><span class="p">})</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>在数据存储到数据库之前验证数据的一个更好的方法是使用 mongoose 提供的 <a href="https://mongoosejs.com/docs/validation.html" target="_blank" rel="noopener noreffer">validation</a> 功能。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">noteSchema</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">mongoose</span><span class="p">.</span><span class="nx">Schema</span><span class="p">(</span>
+  <span class="p">{</span>
+    <span class="nx">content</span><span class="o">:</span>
+    <span class="p">{</span>
+      <span class="nx">type</span><span class="o">:</span> <span class="nb">String</span><span class="p">,</span>   <span class="c1">// 字符串
+</span><span class="c1"></span>      <span class="nx">minLength</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>   <span class="c1">// 最小长度 5 字符
+</span><span class="c1"></span>      <span class="nx">required</span><span class="o">:</span> <span class="kc">true</span>  <span class="c1">// 必填
+</span><span class="c1"></span>    <span class="p">},</span>
+    <span class="nx">date</span><span class="o">:</span>
+    <span class="p">{</span>
+      <span class="nx">type</span><span class="o">:</span> <span class="nb">Date</span><span class="p">,</span>     <span class="c1">// 日期
+</span><span class="c1"></span>      <span class="nx">required</span><span class="o">:</span> <span class="kc">true</span>  <span class="c1">// 必填
+</span><span class="c1"></span>    <span class="p">},</span>
+    <span class="nx">important</span><span class="o">:</span> <span class="nb">Boolean</span>  <span class="c1">// 布尔值
+</span><span class="c1"></span>  <span class="p">}</span>
+<span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>minlength 和 required 验证器是内置的 ，由 Mongoose 提供。如果没有一个内置的验证器满足我们的需求的话，Mongoose 允许我们创建新的验证器自定义验证器。</p>
+</blockquote>
+<p>在 <code>errorHandler</code> 中间件增加 <code>validation</code> 的判断：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">errorHandler</span> <span class="o">=</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">.</span><span class="nx">name</span> <span class="o">===</span> <span class="s1">&#39;CastError&#39;</span> <span class="o">&amp;&amp;</span> <span class="nx">err</span><span class="p">.</span><span class="nx">kind</span> <span class="o">===</span> <span class="s1">&#39;ObjectId&#39;</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mi">400</span><span class="p">).</span><span class="nx">send</span><span class="p">({</span> <span class="nx">error</span><span class="o">:</span> <span class="s1">&#39;error id&#39;</span> <span class="p">})</span>
+  <span class="p">}</span>
+  <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">.</span><span class="nx">name</span> <span class="o">===</span> <span class="s1">&#39;ValidationError&#39;</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mi">400</span><span class="p">).</span><span class="nx">json</span><span class="p">({</span> <span class="nx">error</span><span class="o">:</span> <span class="nx">err</span><span class="p">.</span><span class="nx">message</span> <span class="p">})</span>
+  <span class="p">}</span>
+
+  <span class="nx">next</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="promise-chaining-承诺链">Promise chaining 承诺链</h4>
+<p>教材所讲的是承诺链的概念，所用的案例并不是很典型，引用作者的话：</p>
+<blockquote>
+<p>在这个例子中，承诺链没有提供多少好处。 但要是有许多必须按顺序进行的异步操作，情况就会发生变化……在本课程的下一章节中，我们将学习 JavaScript 中的async/await 语法，这将使编写后续的异步操作变得容易得多。</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">note</span><span class="p">.</span><span class="nx">save</span><span class="p">()</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">()</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">()</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">()</span>
+<span class="p">.</span><span class="k">catch</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><code>.then</code> 返回了一个 <code>Promise</code>，通过多个 <code>.then</code> 方法组成了 <code>Promise Chaining</code>。</p>
+<p>如同 then 的字面意思，代码是依次执行的。</p>
+<h4 id="deploying-the-database-backend-to-production-将数据库后端部署到生产环境">Deploying the database backend to production 将数据库后端部署到生产环境</h4>
+<p>略</p>
+<h4 id="lint">Lint</h4>
+<p>Lint 是什么？</p>
+<blockquote>
+<p>Generically, lint or a linter is any tool that detects and flags errors in programming languages, including stylistic errors. The term lint-like behavior is sometimes applied to the process of flagging suspicious language usage. Lint-like tools generally perform static analysis of source code.</p>
+<p>通常，lint 或 linter 是检测和标记编程语言中的错误，包括文本错误的一种工具。 lint-like 这个术语有时用于标记可疑的语言使用情况。 类似 lint 的工具通常对源代码执行静态分析。</p>
+</blockquote>
+<blockquote>
+<p>在像 Java 这样的编译静态类型语言中，像 NetBeans 这样的 IDE 可以指出代码中的错误，甚至那些不仅仅是编译错误的错误。 执行静态分析的额外工具，如检查样式 ，可以用来扩展 IDE 的功能，也指出与样式有关的问题，如缩进。</p>
+</blockquote>
+<blockquote>
+<p>在 JavaScript 的世界里，目前主要的静态分析工具又名 「linting」是 <a href="https://eslint.org/" target="_blank" rel="noopener noreffer">ESlint</a>。</p>
+</blockquote>
+<p>安装 ESlint 作为开发依赖：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">npm install eslint --save-dev
+</code></pre></td></tr></table>
+</div>
+</div><p>初始化默认设置：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">node_modules/.bin/eslint --init
+</code></pre></td></tr></table>
+</div>
+</div><figure><img src="https://fullstackopen.com/static/ba1423527692484103dcb2b7374eeb01/5a190/52be.png"/>
+</figure>
+
+<p>该配置将保存在 <code>.eslintrc.js</code> 文件中。</p>
+<p>可根据习惯修改规则，比如使用 2 个 space。</p>
+<p>检查验证方式：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">node_modules/.bin/eslint index.js
+</code></pre></td></tr></table>
+</div>
+</div><p>为 linting 创建一个单独的脚本</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="c1">// ...
+</span><span class="c1"></span>  <span class="nt">&#34;scripts&#34;</span><span class="p">:</span>
+  <span class="p">{</span>
+    <span class="nt">&#34;start&#34;</span><span class="p">:</span> <span class="s2">&#34;node index.js&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;dev&#34;</span><span class="p">:</span> <span class="s2">&#34;nodemon index.js&#34;</span><span class="p">,</span>
+    <span class="c1">// ...
+</span><span class="c1"></span>    <span class="nt">&#34;lint&#34;</span><span class="p">:</span> <span class="s2">&#34;eslint .&#34;</span>
+  <span class="p">},</span>
+  <span class="c1">// ...
+</span><span class="c1"></span><span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>在根目录新建 <code>.eslintignore</code> 并增加想要忽略检查的文件。</p>
+<p>安装 <code>eslint-plugin</code> 来替代使用命令检查代码中的错误，ESlint 插件会将不符合规则的代码使用红色波浪线标记出来。</p>
+<p>ESlint 有大量的<a href="https://eslint.org/docs/rules/" target="_blank" rel="noopener noreffer">规则</a>， 通过在 <code>.eslintrc.js</code> 文件中编辑增加规则即可。</p>
+<blockquote>
+<p>许多公司定义了通过 ESlint 配置文件在整个组织中执行的编码标准。 建议不要一遍又一遍地使用重造轮子，从别人的项目中采用现成的配置到自己的项目中可能是一个好主意。 最近，很多项目都采用了 Airbnb 的 Javascript 风格指南，使用了 Airbnb 的 <a href="https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb" target="_blank" rel="noopener noreffer">ESlint</a> 。</p>
+</blockquote></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2020-12-09</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://x.awo.design/2020/12/fullstackopen-nodejs-express/" data-title="全栈公开课2020学习笔记 03 - 用 NodeJS 和 Express 写服务端程序" data-hashtags="React,JavaScript"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://x.awo.design/2020/12/fullstackopen-nodejs-express/" data-hashtag="React"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://x.awo.design/2020/12/fullstackopen-nodejs-express/" data-title="全栈公开课2020学习笔记 03 - 用 NodeJS 和 Express 写服务端程序" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://x.awo.design/2020/12/fullstackopen-nodejs-express/" data-title="全栈公开课2020学习笔记 03 - 用 NodeJS 和 Express 写服务端程序"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://x.awo.design/2020/12/fullstackopen-nodejs-express/" data-title="全栈公开课2020学习笔记 03 - 用 NodeJS 和 Express 写服务端程序"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://x.awo.design/2020/12/fullstackopen-nodejs-express/" data-title="全栈公开课2020学习笔记 03 - 用 NodeJS 和 Express 写服务端程序"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/react/">React</a>,&nbsp;<a href="/tags/javascript/">JavaScript</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/2020/11/fullstackopen-server/" class="prev" rel="prev" title="全栈公开课2020学习笔记 02 - 与服务器通信"><i class="fas fa-angle-left fa-fw"></i>全栈公开课2020学习笔记 02 - 与服务器通信</a>
+            <a href="/2021/01/annual-report-2020/" class="next" rel="next" title="2020年年度总结">2020年年度总结<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="disqus_thread" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://disqus.com/?ref_noscript">Disqus</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.92.2">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2017 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://awo.design" target="_blank">imagicw</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.4710034e669c7ff17f823f9ba12cf8a36582d65b007f79cbc4a3c11d7db2e4ca.css" integrity="sha256-RxADTmacf/F/gj&#43;boSz4o2WC1lsAf3nLxKPBHX2y5Mo="><link rel="stylesheet" href="/lib/katex/copy-tex.min.bf9ff4137fec38f6255419e142d0883c9c52090885d746f80eee12b273d9b3e0.css" integrity="sha256-v5/0E3/sOPYlVBnhQtCIPJxSCQiF10b4Du4SsnPZs&#43;A="><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.cd0d0b6e50ff01ff2f3a9a70d7cfb66a7c6cb9acf7a566325568be6d3bd31fc4.css" integrity="sha256-zQ0LblD/Af8vOppw18&#43;2anxsuaz3pWYyVWi&#43;bTvTH8Q="><script type="text/javascript" src="https://imagicw.disqus.com/embed.js" defer></script><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.bcff85fb5e00d68802850b393ac7792c997f722f536f38e26638c46dca8e5eb6.js" integrity="sha256-vP&#43;F&#43;14A1ogChQs5Osd5LJl/ci9TbzjiZjjEbcqOXrY="></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.615590a2ca2b667afa7c02ef396f5500b62e22795ddbb46448f90494605d09a5.js" integrity="sha256-YVWQosorZnr6fALvOW9VALYuInld27RkSPkElGBdCaU="></script><script type="text/javascript" src="/lib/lunr/lunr.min.df84a2d58ea594c04a3371b48d020b55ea10284c2ec636e4e331965d7313e29b.js" integrity="sha256-34Si1Y6llMBKM3G0jQILVeoQKEwuxjbk4zGWXXMT4ps="></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.115461812ca5b093f9bcc2f15d2693a6c90e8fe38dabf2375e5f18e1c348d97c.js" integrity="sha256-EVRhgSylsJP5vMLxXSaTpskOj&#43;ONq/I3Xl8Y4cNI2Xw="></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.b3aab24bd69b746d28f433f4a82ecfa1556a75ba5ef9f4caa2bcc7ab8d327c14.js" integrity="sha256-s6qyS9abdG0o9DP0qC7PoVVqdbpe&#43;fTKorzHq40yfBQ="></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.fb649fcae62177dfe63e67081ddceb830b5ce1f05a4184e9bbb7d87ac4b8f4e5.js" integrity="sha256-&#43;2SfyuYhd9/mPmcIHdzrgwtc4fBaQYTpu7fYesS49OU="></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.8a7739925f4c03586479852df840b7061948832a7fda30c8c812d2ea4dd4c4f2.js" integrity="sha256-inc5kl9MA1hkeYUt&#43;EC3BhlIgyp/2jDIyBLS6k3UxPI="></script><script type="text/javascript" src="/lib/sharer/sharer.min.9c88f86c7f0820287113f6236200459832693656e80d7556cc80a93dfbd45813.js" integrity="sha256-nIj4bH8IIChxE/YjYgBFmDJpNlboDXVWzICpPfvUWBM="></script><script type="text/javascript" src="/lib/katex/katex.min.17f5dd6b9f123dd7140abfb18521b3f4c036cd004f6f40121182a8865f140877.js" integrity="sha256-F/Xda58SPdcUCr&#43;xhSGz9MA2zQBPb0ASEYKohl8UCHc="></script><script type="text/javascript" src="/lib/katex/auto-render.min.f74776a677f0d2be0af0264058f928e2ba455d0b19bc985304660d922a43a6b2.js" integrity="sha256-90d2pnfw0r4K8CZAWPko4rpFXQsZvJhTBGYNkipDprI="></script><script type="text/javascript" src="/lib/katex/copy-tex.min.2ab2237329021bc443986c8327f6e61357fb68a54e5d233d224023718c02207d.js" integrity="sha256-KrIjcykCG8RDmGyDJ/bmE1f7aKVOXSM9IkAjcYwCIH0="></script><script type="text/javascript" src="/lib/katex/mhchem.min.5cea356d6025c5a2f18c454c83ec5674dbb04fab1cd1d75569e77788c6b6f888.js" integrity="sha256-XOo1bWAlxaLxjEVMg&#43;xWdNuwT6sc0ddVaed3iMa2&#43;Ig="></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.e55842a856a6d829feca3c3ad736c136b6c7549e9247274f78aa296259e06e24.js" integrity="sha256-5VhCqFam2Cn&#43;yjw61zbBNrbHVJ6SRydPeKopYlngbiQ="></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":12},"comment":{},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.f51938f3065a40ee841bcb558e4330e31fd26c0ea55343fff8770b88b0319a3c.js" integrity="sha256-9Rk48wZaQO6EG8tVjkMw4x/SbA6lU0P/&#43;HcLiLAxmjw="></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'UA-92164716-1', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-92164716-1" async></script></body>
+</html>
