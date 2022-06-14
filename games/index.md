@@ -75,6 +75,8 @@ BOSS 战很有意思，各个武器我拳套和流亡刀用的多一点，其他
 
 ### UNCHARTED: DRAKE'S FORTUNE / 神秘海域：德雷克船长的宝藏
 
+{{<figure src="/img/games/Uncharted-Drakes-Fortune.jpg" title="UNCHARTED: DRAKE'S FORTUNE">}}
+
 **「主观评分」：** 7/10
 
 **「游玩平台」：** PS4

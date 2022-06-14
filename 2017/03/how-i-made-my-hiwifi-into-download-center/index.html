@@ -72,7 +72,7 @@
             <a href="/" title="Λ.W.log">Λ.W.log</a>
         </div>
         <div class="menu">
-            <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/categories/notes"> 笔记 </a><a class="menu-item" href="/games/"> 游戏 </a><a class="menu-item" href="/10000/"> 一万次悲伤 </a><a class="menu-item" href="/about/"> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/categories/notes"> 笔记 </a><a class="menu-item" href="/books/"> 阅读 </a><a class="menu-item" href="/games/"> 游戏 </a><a class="menu-item" href="/10000/"> 一万次悲伤 </a><a class="menu-item" href="/about/"> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
                         <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
                         <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
                             <i class="fas fa-search fa-fw"></i>
@@ -115,7 +115,7 @@
                     <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
                         取消
                     </a>
-                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/categories/notes" title="">笔记</a><a class="menu-item" href="/games/" title="">游戏</a><a class="menu-item" href="/10000/" title="">一万次悲伤</a><a class="menu-item" href="/about/" title="">关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/categories/notes" title="">笔记</a><a class="menu-item" href="/books/" title="">阅读</a><a class="menu-item" href="/games/" title="">游戏</a><a class="menu-item" href="/10000/" title="">一万次悲伤</a><a class="menu-item" href="/about/" title="">关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
                 <i class="fas fa-adjust fa-fw"></i>
             </a></div>
     </div>
@@ -225,18 +225,18 @@
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">//连接路由器
-ssh -p 22 root@10.0.0.1
-
-//进入tmp目录
-cd /tmp
-
-//下载固件
-wget http://breed.hackpascal.net/breed-mt7620-hiwifi-hc5861.bin
-
-//安装u-boot
-mtd -r write /tmp/breed-mt7620-hiwifi-hc5761.bin u-boot
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">//连接路由器
+</span></span><span class="line"><span class="cl">ssh -p 22 root@10.0.0.1
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">//进入tmp目录
+</span></span><span class="line"><span class="cl">cd /tmp
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">//下载固件
+</span></span><span class="line"><span class="cl">wget http://breed.hackpascal.net/breed-mt7620-hiwifi-hc5861.bin
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">//安装u-boot
+</span></span><span class="line"><span class="cl">mtd -r write /tmp/breed-mt7620-hiwifi-hc5761.bin u-boot
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>此时，终端会显示 <code>Rebooting</code>，等待重启完毕后再切断路由器电源，按住路由器 <code>reset</code> 按钮后接通电源，等待路由器电源灯连续闪烁后松开 <code>reset</code>。</p>
 <p>电脑会自动获取ip地址，我们通过浏览器访问 <code>192.168.1.1</code> 可以登录Breed Web恢复控制台，有了这个，我们就可以随意开车，不怕翻车啦！</p>
@@ -322,43 +322,43 @@ mtd -r write /tmp/breed-mt7620-hiwifi-hc5761.bin u-boot
 </span><span class="lnt">36
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">[global]
-	netbios name = |NAME| 
-	display charset = |CHARSET|
-	interfaces = |INTERFACES|
-	server string = |DESCRIPTION|
-	unix charset = |CHARSET|
-	workgroup = |WORKGROUP|
-	browseable = yes
-	deadtime = 30
-	domain master = |MASTER|
-	encrypt passwords = true
-	enable core files = no
-#	guest account = nobody
-#	guest ok = yes
-	invalid users = root
-	local master = yes
-	load printers = no
-	map to guest = Bad User
-	max protocol = SMB2
-	min receivefile size = 16384
-	null passwords = yes
-	obey pam restrictions = yes
-	os level = 250 
-	lm announce = yes
-	lm interval = 10 
-	dns proxy = no
-	passdb backend = smbpasswd
-	preferred master = yes
-	printable = no
-	security = user
-	smb encrypt = disabled
-	smb passwd file = /etc/samba/smbpasswd
-	socket options = TCP_NODELAY IPTOS_LOWDELAY
-	syslog = 2
-	use sendfile = yes
-	writeable = yes
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[global]
+</span></span><span class="line"><span class="cl">	netbios name = |NAME| 
+</span></span><span class="line"><span class="cl">	display charset = |CHARSET|
+</span></span><span class="line"><span class="cl">	interfaces = |INTERFACES|
+</span></span><span class="line"><span class="cl">	server string = |DESCRIPTION|
+</span></span><span class="line"><span class="cl">	unix charset = |CHARSET|
+</span></span><span class="line"><span class="cl">	workgroup = |WORKGROUP|
+</span></span><span class="line"><span class="cl">	browseable = yes
+</span></span><span class="line"><span class="cl">	deadtime = 30
+</span></span><span class="line"><span class="cl">	domain master = |MASTER|
+</span></span><span class="line"><span class="cl">	encrypt passwords = true
+</span></span><span class="line"><span class="cl">	enable core files = no
+</span></span><span class="line"><span class="cl">#	guest account = nobody
+</span></span><span class="line"><span class="cl">#	guest ok = yes
+</span></span><span class="line"><span class="cl">	invalid users = root
+</span></span><span class="line"><span class="cl">	local master = yes
+</span></span><span class="line"><span class="cl">	load printers = no
+</span></span><span class="line"><span class="cl">	map to guest = Bad User
+</span></span><span class="line"><span class="cl">	max protocol = SMB2
+</span></span><span class="line"><span class="cl">	min receivefile size = 16384
+</span></span><span class="line"><span class="cl">	null passwords = yes
+</span></span><span class="line"><span class="cl">	obey pam restrictions = yes
+</span></span><span class="line"><span class="cl">	os level = 250 
+</span></span><span class="line"><span class="cl">	lm announce = yes
+</span></span><span class="line"><span class="cl">	lm interval = 10 
+</span></span><span class="line"><span class="cl">	dns proxy = no
+</span></span><span class="line"><span class="cl">	passdb backend = smbpasswd
+</span></span><span class="line"><span class="cl">	preferred master = yes
+</span></span><span class="line"><span class="cl">	printable = no
+</span></span><span class="line"><span class="cl">	security = user
+</span></span><span class="line"><span class="cl">	smb encrypt = disabled
+</span></span><span class="line"><span class="cl">	smb passwd file = /etc/samba/smbpasswd
+</span></span><span class="line"><span class="cl">	socket options = TCP_NODELAY IPTOS_LOWDELAY
+</span></span><span class="line"><span class="cl">	syslog = 2
+</span></span><span class="line"><span class="cl">	use sendfile = yes
+</span></span><span class="line"><span class="cl">	writeable = yes
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="添加用户">添加用户</h4>
 <p>那么，禁用了root和访客访问，我怎么通过网络共享连接到硬盘呢？</p>
@@ -380,8 +380,8 @@ mtd -r write /tmp/breed-mt7620-hiwifi-hc5761.bin u-boot
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">smbpasswd imagicw 123456
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">smbpasswd imagicw 123456
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>即可完成添加用户 <code>imagicw</code>，后面的数字就是密码。</p>
 <p>此时我们还需要在共享目录允许用户里填上 <code>imagicw</code> 才算设置完成。</p>
@@ -506,7 +506,7 @@ mtd -r write /tmp/breed-mt7620-hiwifi-hc5761.bin u-boot
                 Please enable JavaScript to view the comments powered by <a href="https://disqus.com/?ref_noscript">Disqus</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.92.2">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.100.2">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2017 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://awo.design" target="_blank">imagicw</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>
@@ -516,7 +516,7 @@ mtd -r write /tmp/breed-mt7620-hiwifi-hc5761.bin u-boot
             </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
                 <i class="fas fa-comment fa-fw"></i>
             </a>
-        </div><link rel="stylesheet" href="/lib/katex/katex.min.4710034e669c7ff17f823f9ba12cf8a36582d65b007f79cbc4a3c11d7db2e4ca.css" integrity="sha256-RxADTmacf/F/gj&#43;boSz4o2WC1lsAf3nLxKPBHX2y5Mo="><link rel="stylesheet" href="/lib/katex/copy-tex.min.bf9ff4137fec38f6255419e142d0883c9c52090885d746f80eee12b273d9b3e0.css" integrity="sha256-v5/0E3/sOPYlVBnhQtCIPJxSCQiF10b4Du4SsnPZs&#43;A="><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.cd0d0b6e50ff01ff2f3a9a70d7cfb66a7c6cb9acf7a566325568be6d3bd31fc4.css" integrity="sha256-zQ0LblD/Af8vOppw18&#43;2anxsuaz3pWYyVWi&#43;bTvTH8Q="><script type="text/javascript" src="https://imagicw.disqus.com/embed.js" defer></script><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.bcff85fb5e00d68802850b393ac7792c997f722f536f38e26638c46dca8e5eb6.js" integrity="sha256-vP&#43;F&#43;14A1ogChQs5Osd5LJl/ci9TbzjiZjjEbcqOXrY="></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.615590a2ca2b667afa7c02ef396f5500b62e22795ddbb46448f90494605d09a5.js" integrity="sha256-YVWQosorZnr6fALvOW9VALYuInld27RkSPkElGBdCaU="></script><script type="text/javascript" src="/lib/lunr/lunr.min.df84a2d58ea594c04a3371b48d020b55ea10284c2ec636e4e331965d7313e29b.js" integrity="sha256-34Si1Y6llMBKM3G0jQILVeoQKEwuxjbk4zGWXXMT4ps="></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.115461812ca5b093f9bcc2f15d2693a6c90e8fe38dabf2375e5f18e1c348d97c.js" integrity="sha256-EVRhgSylsJP5vMLxXSaTpskOj&#43;ONq/I3Xl8Y4cNI2Xw="></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.b3aab24bd69b746d28f433f4a82ecfa1556a75ba5ef9f4caa2bcc7ab8d327c14.js" integrity="sha256-s6qyS9abdG0o9DP0qC7PoVVqdbpe&#43;fTKorzHq40yfBQ="></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.fb649fcae62177dfe63e67081ddceb830b5ce1f05a4184e9bbb7d87ac4b8f4e5.js" integrity="sha256-&#43;2SfyuYhd9/mPmcIHdzrgwtc4fBaQYTpu7fYesS49OU="></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.8a7739925f4c03586479852df840b7061948832a7fda30c8c812d2ea4dd4c4f2.js" integrity="sha256-inc5kl9MA1hkeYUt&#43;EC3BhlIgyp/2jDIyBLS6k3UxPI="></script><script type="text/javascript" src="/lib/sharer/sharer.min.9c88f86c7f0820287113f6236200459832693656e80d7556cc80a93dfbd45813.js" integrity="sha256-nIj4bH8IIChxE/YjYgBFmDJpNlboDXVWzICpPfvUWBM="></script><script type="text/javascript" src="/lib/katex/katex.min.17f5dd6b9f123dd7140abfb18521b3f4c036cd004f6f40121182a8865f140877.js" integrity="sha256-F/Xda58SPdcUCr&#43;xhSGz9MA2zQBPb0ASEYKohl8UCHc="></script><script type="text/javascript" src="/lib/katex/auto-render.min.f74776a677f0d2be0af0264058f928e2ba455d0b19bc985304660d922a43a6b2.js" integrity="sha256-90d2pnfw0r4K8CZAWPko4rpFXQsZvJhTBGYNkipDprI="></script><script type="text/javascript" src="/lib/katex/copy-tex.min.2ab2237329021bc443986c8327f6e61357fb68a54e5d233d224023718c02207d.js" integrity="sha256-KrIjcykCG8RDmGyDJ/bmE1f7aKVOXSM9IkAjcYwCIH0="></script><script type="text/javascript" src="/lib/katex/mhchem.min.5cea356d6025c5a2f18c454c83ec5674dbb04fab1cd1d75569e77788c6b6f888.js" integrity="sha256-XOo1bWAlxaLxjEVMg&#43;xWdNuwT6sc0ddVaed3iMa2&#43;Ig="></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.e55842a856a6d829feca3c3ad736c136b6c7549e9247274f78aa296259e06e24.js" integrity="sha256-5VhCqFam2Cn&#43;yjw61zbBNrbHVJ6SRydPeKopYlngbiQ="></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":12},"comment":{},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.f51938f3065a40ee841bcb558e4330e31fd26c0ea55343fff8770b88b0319a3c.js" integrity="sha256-9Rk48wZaQO6EG8tVjkMw4x/SbA6lU0P/&#43;HcLiLAxmjw="></script><script type="text/javascript">
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.4710034e669c7ff17f823f9ba12cf8a36582d65b007f79cbc4a3c11d7db2e4ca.css" integrity="sha256-RxADTmacf/F/gj&#43;boSz4o2WC1lsAf3nLxKPBHX2y5Mo="><link rel="stylesheet" href="/lib/katex/copy-tex.min.bf9ff4137fec38f6255419e142d0883c9c52090885d746f80eee12b273d9b3e0.css" integrity="sha256-v5/0E3/sOPYlVBnhQtCIPJxSCQiF10b4Du4SsnPZs&#43;A="><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.cd0d0b6e50ff01ff2f3a9a70d7cfb66a7c6cb9acf7a566325568be6d3bd31fc4.css" integrity="sha256-zQ0LblD/Af8vOppw18&#43;2anxsuaz3pWYyVWi&#43;bTvTH8Q="><script type="text/javascript" src="https://imagicw.disqus.com/embed.js" defer></script><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.bcff85fb5e00d68802850b393ac7792c997f722f536f38e26638c46dca8e5eb6.js" integrity="sha256-vP&#43;F&#43;14A1ogChQs5Osd5LJl/ci9TbzjiZjjEbcqOXrY="></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.615590a2ca2b667afa7c02ef396f5500b62e22795ddbb46448f90494605d09a5.js" integrity="sha256-YVWQosorZnr6fALvOW9VALYuInld27RkSPkElGBdCaU="></script><script type="text/javascript" src="/lib/lunr/lunr.min.df84a2d58ea594c04a3371b48d020b55ea10284c2ec636e4e331965d7313e29b.js" integrity="sha256-34Si1Y6llMBKM3G0jQILVeoQKEwuxjbk4zGWXXMT4ps="></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.4f78b6fca08719cbcfbcb9756da397efaf2e0701df9aa8a8c22c1595d07bdc91.js" integrity="sha256-T3i2/KCHGcvPvLl1baOX768uBwHfmqiowiwVldB73JE="></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.d8ddd4d489d4ab7b0aac9bde3a7cf6d97a304383b7738af9569c8fdb37ca100a.js" integrity="sha256-2N3U1InUq3sKrJveOnz22XowQ4O3c4r5VpyP2zfKEAo="></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.fb649fcae62177dfe63e67081ddceb830b5ce1f05a4184e9bbb7d87ac4b8f4e5.js" integrity="sha256-&#43;2SfyuYhd9/mPmcIHdzrgwtc4fBaQYTpu7fYesS49OU="></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.8a7739925f4c03586479852df840b7061948832a7fda30c8c812d2ea4dd4c4f2.js" integrity="sha256-inc5kl9MA1hkeYUt&#43;EC3BhlIgyp/2jDIyBLS6k3UxPI="></script><script type="text/javascript" src="/lib/sharer/sharer.min.9c88f86c7f0820287113f6236200459832693656e80d7556cc80a93dfbd45813.js" integrity="sha256-nIj4bH8IIChxE/YjYgBFmDJpNlboDXVWzICpPfvUWBM="></script><script type="text/javascript" src="/lib/katex/katex.min.17f5dd6b9f123dd7140abfb18521b3f4c036cd004f6f40121182a8865f140877.js" integrity="sha256-F/Xda58SPdcUCr&#43;xhSGz9MA2zQBPb0ASEYKohl8UCHc="></script><script type="text/javascript" src="/lib/katex/auto-render.min.f74776a677f0d2be0af0264058f928e2ba455d0b19bc985304660d922a43a6b2.js" integrity="sha256-90d2pnfw0r4K8CZAWPko4rpFXQsZvJhTBGYNkipDprI="></script><script type="text/javascript" src="/lib/katex/copy-tex.min.2ab2237329021bc443986c8327f6e61357fb68a54e5d233d224023718c02207d.js" integrity="sha256-KrIjcykCG8RDmGyDJ/bmE1f7aKVOXSM9IkAjcYwCIH0="></script><script type="text/javascript" src="/lib/katex/mhchem.min.5cea356d6025c5a2f18c454c83ec5674dbb04fab1cd1d75569e77788c6b6f888.js" integrity="sha256-XOo1bWAlxaLxjEVMg&#43;xWdNuwT6sc0ddVaed3iMa2&#43;Ig="></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.e55842a856a6d829feca3c3ad736c136b6c7549e9247274f78aa296259e06e24.js" integrity="sha256-5VhCqFam2Cn&#43;yjw61zbBNrbHVJ6SRydPeKopYlngbiQ="></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":12},"comment":{},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.f51938f3065a40ee841bcb558e4330e31fd26c0ea55343fff8770b88b0319a3c.js" integrity="sha256-9Rk48wZaQO6EG8tVjkMw4x/SbA6lU0P/&#43;HcLiLAxmjw="></script><script type="text/javascript">
             window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
             gtag('config', 'UA-92164716-1', { 'anonymize_ip': true });
         </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-92164716-1" async></script></body>

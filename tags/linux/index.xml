@@ -29,18 +29,18 @@
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="c1"># 修改用户名 ubuntu 为 imagic</span>
-usermod -l imagic ubuntu
-
-<span class="c1"># 修改组名 ubuntu 为 imagic</span>
-groupmod -n imagic ubuntu
-
-<span class="c1"># 更改 ubuntu 的 home 目录为 imagic</span>
-mv /home/ubuntu /home/imagic
-
-<span class="c1"># 修改 /etc/passwd 中 imagic 的 home 的位置</span>
-usermod -d /home/imagic imagic
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># 修改用户名 ubuntu 为 imagic</span>
+</span></span><span class="line"><span class="cl">usermod -l imagic ubuntu
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 修改组名 ubuntu 为 imagic</span>
+</span></span><span class="line"><span class="cl">groupmod -n imagic ubuntu
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 更改 ubuntu 的 home 目录为 imagic</span>
+</span></span><span class="line"><span class="cl">mv /home/ubuntu /home/imagic
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 修改 /etc/passwd 中 imagic 的 home 的位置</span>
+</span></span><span class="line"><span class="cl">usermod -d /home/imagic imagic
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>在 sudoers 将 ubuntu 的信息修改成 <code>imagic ALL=(ALL) NOPASSWD: ALL</code> 。</p>
 <h3 id="mongodb-社区版">mongoDB 社区版</h3>
@@ -57,15 +57,15 @@ usermod -d /home/imagic imagic
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="c1"># 导入MongoDB 公共 GPG 密钥 mongodb5.0 不支持 armv7</span>
-wget -qO - https://www.mongodb.org/static/pgp/server-4.4.asc <span class="p">|</span> sudo apt-key add -
-
-// 添加 mongodb 软件源
-<span class="nb">echo</span> <span class="s2">&#34;deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/4.4 multiverse&#34;</span> <span class="p">|</span> sudo tee /etc/apt/sources.list.d/mongodb-org-4.4.list
-
-sudo apt-get update
-sudo apt-get install mongodb-org
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># 导入MongoDB 公共 GPG 密钥 mongodb5.0 不支持 armv7</span>
+</span></span><span class="line"><span class="cl">wget -qO - https://www.mongodb.org/static/pgp/server-4.4.asc <span class="p">|</span> sudo apt-key add -
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">// 添加 mongodb 软件源
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/4.4 multiverse&#34;</span> <span class="p">|</span> sudo tee /etc/apt/sources.list.d/mongodb-org-4.4.list
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">sudo apt-get update
+</span></span><span class="line"><span class="cl">sudo apt-get install mongodb-org
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>需要安装指定版本的 mongoDB 则使用如下命令</p>
 <div class="highlight"><div class="chroma">
@@ -73,8 +73,8 @@ sudo apt-get install mongodb-org
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">sudo apt-get install -y mongodb-org<span class="o">=</span>4.4.1 mongodb-org-server<span class="o">=</span>4.4.1 mongodb-org-shell<span class="o">=</span>4.4.1 mongodb-org-mongos<span class="o">=</span>4.4.1 mongodb-org-tools<span class="o">=</span>4.4.1
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo apt-get install -y mongodb-org<span class="o">=</span>4.4.1 mongodb-org-server<span class="o">=</span>4.4.1 mongodb-org-shell<span class="o">=</span>4.4.1 mongodb-org-mongos<span class="o">=</span>4.4.1 mongodb-org-tools<span class="o">=</span>4.4.1
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="运行">运行</h4>
 <div class="highlight"><div class="chroma">
@@ -86,12 +86,12 @@ sudo apt-get install mongodb-org
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="c1"># 启动、重启、停止、状态</span>
-sudo service mongod start
-sudo service mongod restart
-sudo service mongod stop
-sudo service mongod status
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># 启动、重启、停止、状态</span>
+</span></span><span class="line"><span class="cl">sudo service mongod start
+</span></span><span class="line"><span class="cl">sudo service mongod restart
+</span></span><span class="line"><span class="cl">sudo service mongod stop
+</span></span><span class="line"><span class="cl">sudo service mongod status
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="移除">移除</h4>
 <div class="highlight"><div class="chroma">
@@ -103,12 +103,12 @@ sudo service mongod status
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="c1"># 移除</span>
-sudo apt-get purge mongodb-org*
-<span class="c1">## 删除数据库及日志</span>
-sudo rm -r /var/log/mongodb
-sudo rm -r /var/lib/mongodb
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># 移除</span>
+</span></span><span class="line"><span class="cl">sudo apt-get purge mongodb-org*
+</span></span><span class="line"><span class="cl"><span class="c1">## 删除数据库及日志</span>
+</span></span><span class="line"><span class="cl">sudo rm -r /var/log/mongodb
+</span></span><span class="line"><span class="cl">sudo rm -r /var/lib/mongodb
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -157,50 +157,50 @@ sudo rm -r /var/lib/mongodb
 </span><span class="lnt">43
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">
-curl -sL https://deb.nodesource.com/setup_14.x <span class="p">|</span> sudo bash -  
-
-
-<span class="c1">#tcp</span>
-iptables -t nat -N clash
-iptables -t nat -A clash -d 0.0.0.0/8 -j RETURN
-iptables -t nat -A clash -d 10.0.0.0/8 -j RETURN
-iptables -t nat -A clash -d 127.0.0.0/8 -j RETURN
-iptables -t nat -A clash -d 169.254.0.0/16 -j RETURN
-iptables -t nat -A clash -d 172.16.0.0/12 -j RETURN
-iptables -t nat -A clash -d 192.168.0.0/16 -j RETURN
-iptables -t nat -A clash -d 224.0.0.0/4 -j RETURN
-iptables -t nat -A clash -d 240.0.0.0/4 -j RETURN
-iptables -t nat -A clash -d 10.0.0.3 -j RETURN
-iptables -t nat -A clash -p tcp -j REDIRECT --to-port <span class="m">7892</span>
-iptables -t nat -I PREROUTING -p tcp -d 8.8.8.8 -j REDIRECT --to-port <span class="m">7892</span>
-iptables -t nat -I PREROUTING -p tcp -d 8.8.4.4 -j REDIRECT --to-port <span class="m">7892</span>
-iptables -t nat -A PREROUTING -p tcp -j clash
-iptables -t nat -A OUTPUT -p tcp -d 198.18.0.0/16 -j REDIRECT --to-port <span class="m">7892</span>
-
-<span class="c1">#udp</span>
-ip rule add fwmark <span class="m">1</span> table <span class="m">100</span>
-ip route add <span class="nb">local</span> default dev lo table <span class="m">100</span>
-iptables -t mangle -N clash
-iptables -t mangle -A clash -d 0.0.0.0/8 -j RETURN
-iptables -t mangle -A clash -d 10.0.0.0/8 -j RETURN
-iptables -t mangle -A clash -d 127.0.0.0/8 -j RETURN
-iptables -t mangle -A clash -d 169.254.0.0/16 -j RETURN
-iptables -t mangle -A clash -d 172.16.0.0/12 -j RETURN
-iptables -t mangle -A clash -d 192.168.0.0/16 -j RETURN
-iptables -t mangle -A clash -d 224.0.0.0/4 -j RETURN
-iptables -t mangle -A clash -d 240.0.0.0/4 -j RETURN
-iptables -t mangle -A clash -d 10.0.0.3 -j RETURN
-iptables -t mangle -A clash -p udp -j TPROXY --on-port <span class="m">7892</span> --tproxy-mark <span class="m">1</span>
-iptables -t mangle -A OUTPUT -p udp -d 198.18.0.0/16 -j MARK --set-mark <span class="m">1</span>
-iptables -t mangle -A PREROUTING -p udp -j clash
-iptables -t nat -N CLASH_DNS
-iptables -t nat -F CLASH_DNS 
-iptables -t nat -A CLASH_DNS -p udp -j REDIRECT --to-port <span class="m">1053</span>
-iptables -t nat -I OUTPUT -p udp --dport <span class="m">53</span> -j CLASH_DNS
-iptables -t nat -I PREROUTING -p udp --dport <span class="m">53</span> -j REDIRECT --to <span class="m">1053</span>
-iptables -t nat -A CLASH -d 240.0.0.0/4 -j RETURN
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">curl -sL https://deb.nodesource.com/setup_14.x <span class="p">|</span> sudo bash -  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#tcp</span>
+</span></span><span class="line"><span class="cl">iptables -t nat -N clash
+</span></span><span class="line"><span class="cl">iptables -t nat -A clash -d 0.0.0.0/8 -j RETURN
+</span></span><span class="line"><span class="cl">iptables -t nat -A clash -d 10.0.0.0/8 -j RETURN
+</span></span><span class="line"><span class="cl">iptables -t nat -A clash -d 127.0.0.0/8 -j RETURN
+</span></span><span class="line"><span class="cl">iptables -t nat -A clash -d 169.254.0.0/16 -j RETURN
+</span></span><span class="line"><span class="cl">iptables -t nat -A clash -d 172.16.0.0/12 -j RETURN
+</span></span><span class="line"><span class="cl">iptables -t nat -A clash -d 192.168.0.0/16 -j RETURN
+</span></span><span class="line"><span class="cl">iptables -t nat -A clash -d 224.0.0.0/4 -j RETURN
+</span></span><span class="line"><span class="cl">iptables -t nat -A clash -d 240.0.0.0/4 -j RETURN
+</span></span><span class="line"><span class="cl">iptables -t nat -A clash -d 10.0.0.3 -j RETURN
+</span></span><span class="line"><span class="cl">iptables -t nat -A clash -p tcp -j REDIRECT --to-port <span class="m">7892</span>
+</span></span><span class="line"><span class="cl">iptables -t nat -I PREROUTING -p tcp -d 8.8.8.8 -j REDIRECT --to-port <span class="m">7892</span>
+</span></span><span class="line"><span class="cl">iptables -t nat -I PREROUTING -p tcp -d 8.8.4.4 -j REDIRECT --to-port <span class="m">7892</span>
+</span></span><span class="line"><span class="cl">iptables -t nat -A PREROUTING -p tcp -j clash
+</span></span><span class="line"><span class="cl">iptables -t nat -A OUTPUT -p tcp -d 198.18.0.0/16 -j REDIRECT --to-port <span class="m">7892</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#udp</span>
+</span></span><span class="line"><span class="cl">ip rule add fwmark <span class="m">1</span> table <span class="m">100</span>
+</span></span><span class="line"><span class="cl">ip route add <span class="nb">local</span> default dev lo table <span class="m">100</span>
+</span></span><span class="line"><span class="cl">iptables -t mangle -N clash
+</span></span><span class="line"><span class="cl">iptables -t mangle -A clash -d 0.0.0.0/8 -j RETURN
+</span></span><span class="line"><span class="cl">iptables -t mangle -A clash -d 10.0.0.0/8 -j RETURN
+</span></span><span class="line"><span class="cl">iptables -t mangle -A clash -d 127.0.0.0/8 -j RETURN
+</span></span><span class="line"><span class="cl">iptables -t mangle -A clash -d 169.254.0.0/16 -j RETURN
+</span></span><span class="line"><span class="cl">iptables -t mangle -A clash -d 172.16.0.0/12 -j RETURN
+</span></span><span class="line"><span class="cl">iptables -t mangle -A clash -d 192.168.0.0/16 -j RETURN
+</span></span><span class="line"><span class="cl">iptables -t mangle -A clash -d 224.0.0.0/4 -j RETURN
+</span></span><span class="line"><span class="cl">iptables -t mangle -A clash -d 240.0.0.0/4 -j RETURN
+</span></span><span class="line"><span class="cl">iptables -t mangle -A clash -d 10.0.0.3 -j RETURN
+</span></span><span class="line"><span class="cl">iptables -t mangle -A clash -p udp -j TPROXY --on-port <span class="m">7892</span> --tproxy-mark <span class="m">1</span>
+</span></span><span class="line"><span class="cl">iptables -t mangle -A OUTPUT -p udp -d 198.18.0.0/16 -j MARK --set-mark <span class="m">1</span>
+</span></span><span class="line"><span class="cl">iptables -t mangle -A PREROUTING -p udp -j clash
+</span></span><span class="line"><span class="cl">iptables -t nat -N CLASH_DNS
+</span></span><span class="line"><span class="cl">iptables -t nat -F CLASH_DNS 
+</span></span><span class="line"><span class="cl">iptables -t nat -A CLASH_DNS -p udp -j REDIRECT --to-port <span class="m">1053</span>
+</span></span><span class="line"><span class="cl">iptables -t nat -I OUTPUT -p udp --dport <span class="m">53</span> -j CLASH_DNS
+</span></span><span class="line"><span class="cl">iptables -t nat -I PREROUTING -p udp --dport <span class="m">53</span> -j REDIRECT --to <span class="m">1053</span>
+</span></span><span class="line"><span class="cl">iptables -t nat -A CLASH -d 240.0.0.0/4 -j RETURN
+</span></span></code></pre></td></tr></table>
 </div>
 </div>]]></description>
 </item></channel>

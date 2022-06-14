@@ -46,7 +46,7 @@
             <a href="/" title="Λ.W.log">Λ.W.log</a>
         </div>
         <div class="menu">
-            <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/categories/notes"> 笔记 </a><a class="menu-item" href="/games/"> 游戏 </a><a class="menu-item" href="/10000/"> 一万次悲伤 </a><a class="menu-item" href="/about/"> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/categories/notes"> 笔记 </a><a class="menu-item" href="/books/"> 阅读 </a><a class="menu-item" href="/games/"> 游戏 </a><a class="menu-item" href="/10000/"> 一万次悲伤 </a><a class="menu-item" href="/about/"> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
                         <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
                         <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
                             <i class="fas fa-search fa-fw"></i>
@@ -89,7 +89,7 @@
                     <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
                         取消
                     </a>
-                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/categories/notes" title="">笔记</a><a class="menu-item" href="/games/" title="">游戏</a><a class="menu-item" href="/10000/" title="">一万次悲伤</a><a class="menu-item" href="/about/" title="">关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/categories/notes" title="">笔记</a><a class="menu-item" href="/books/" title="">阅读</a><a class="menu-item" href="/games/" title="">游戏</a><a class="menu-item" href="/10000/" title="">一万次悲伤</a><a class="menu-item" href="/about/" title="">关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
                 <i class="fas fa-adjust fa-fw"></i>
             </a></div>
     </div>
@@ -208,50 +208,50 @@
 </span><span class="lnt">43
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="kr">import</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span>
-<span class="kr">import</span> <span class="nx">ReactDOM</span> <span class="nx">from</span> <span class="s1">&#39;react-dom&#39;</span>
-
-<span class="kr">const</span> <span class="nx">notes</span> <span class="o">=</span> <span class="p">[</span>
-  <span class="p">{</span>
-    <span class="nx">id</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="nx">content</span><span class="o">:</span> <span class="s1">&#39;我喜欢 react&#39;</span><span class="p">,</span>
-    <span class="nx">date</span><span class="o">:</span> <span class="s1">&#39;2020-10-29T15:17:10.098Z&#39;</span><span class="p">,</span>
-    <span class="nx">important</span><span class="o">:</span> <span class="kc">true</span>
-  <span class="p">},</span>
-  <span class="p">{</span>
-    <span class="nx">id</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-    <span class="nx">content</span><span class="o">:</span> <span class="s1">&#39;启动电脑开VS，欢迎来到编程世界。&#39;</span><span class="p">,</span>
-    <span class="nx">date</span><span class="o">:</span> <span class="s1">&#39;2020-10-29T15:18:26.092Z&#39;</span><span class="p">,</span>
-    <span class="nx">important</span><span class="o">:</span> <span class="kc">false</span>
-  <span class="p">},</span>
-  <span class="p">{</span>
-    <span class="nx">id</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
-    <span class="nx">content</span><span class="o">:</span> <span class="s1">&#39;GET 和 POST 是 HTTP 协议中最重要的方法&#39;</span><span class="p">,</span>
-    <span class="nx">important</span><span class="o">:</span> <span class="kc">true</span>
-  <span class="p">}</span>
-<span class="p">]</span>
-
-<span class="kr">const</span> <span class="nx">App</span> <span class="o">=</span> <span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">=&gt;</span>
-<span class="p">{</span>
-  <span class="kr">const</span> <span class="p">{</span> <span class="nx">notes</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">props</span>
-
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">笔记</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;{</span><span class="nx">notes</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">content</span><span class="p">}&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;{</span><span class="nx">notes</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nx">content</span><span class="p">}&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;{</span><span class="nx">notes</span><span class="p">[</span><span class="mi">2</span><span class="p">].</span><span class="nx">content</span><span class="p">}&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-      <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-  <span class="p">)</span>
-<span class="p">}</span>
-
-<span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
-  <span class="p">&lt;</span><span class="nt">App</span> <span class="na">notes</span><span class="o">=</span><span class="p">{</span><span class="nx">notes</span><span class="p">}</span> <span class="p">/&gt;,</span>
-  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;root&#39;</span><span class="p">)</span>
-<span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">ReactDOM</span> <span class="nx">from</span> <span class="s1">&#39;react-dom&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">notes</span> <span class="o">=</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">id</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">content</span><span class="o">:</span> <span class="s1">&#39;我喜欢 react&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">date</span><span class="o">:</span> <span class="s1">&#39;2020-10-29T15:17:10.098Z&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">important</span><span class="o">:</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">id</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">content</span><span class="o">:</span> <span class="s1">&#39;启动电脑开VS，欢迎来到编程世界。&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">date</span><span class="o">:</span> <span class="s1">&#39;2020-10-29T15:18:26.092Z&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">important</span><span class="o">:</span> <span class="kc">false</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">id</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">content</span><span class="o">:</span> <span class="s1">&#39;GET 和 POST 是 HTTP 协议中最重要的方法&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">important</span><span class="o">:</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">App</span> <span class="o">=</span> <span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">=&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="p">{</span> <span class="nx">notes</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">props</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">笔记</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;{</span><span class="nx">notes</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">content</span><span class="p">}&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;{</span><span class="nx">notes</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nx">content</span><span class="p">}&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;{</span><span class="nx">notes</span><span class="p">[</span><span class="mi">2</span><span class="p">].</span><span class="nx">content</span><span class="p">}&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">App</span> <span class="na">notes</span><span class="o">=</span><span class="p">{</span><span class="nx">notes</span><span class="p">}</span> <span class="p">/&gt;,</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;root&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>以上 notes 数组仅有三个对象，可以通过引用一个<em>硬编码的索引号</em>来访问数组中对象。</p>
 <p>使用 <code>map</code> 函数从数组对象生成 React 元素。</p>
@@ -260,8 +260,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="nx">notes</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">note</span> <span class="p">=&gt;</span> <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;{</span><span class="nx">note</span><span class="p">.</span><span class="nx">content</span><span class="p">}&lt;/</span><span class="nt">li</span><span class="p">&gt;)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="nx">notes</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">note</span> <span class="p">=&gt;</span> <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;{</span><span class="nx">note</span><span class="p">.</span><span class="nx">content</span><span class="p">}&lt;/</span><span class="nt">li</span><span class="p">&gt;)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>通过这样的方法可以生成 li 元素的数组。</p>
 <div class="highlight"><div class="chroma">
@@ -273,12 +273,12 @@
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="p">[</span>
-  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span><span class="nx">我喜欢</span> <span class="nx">react</span><span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;,</span>
-  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span><span class="nx">启动电脑开VS</span><span class="err">，</span><span class="nx">欢迎来到编程世界</span><span class="err">。</span><span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;,</span>
-  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span><span class="nx">GET</span> <span class="nx">和</span> <span class="nx">POST</span> <span class="nx">是</span> <span class="nx">HTTP</span> <span class="nx">协议中最重要的方法</span><span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;,</span>
-<span class="p">]</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="p">[</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span><span class="nx">我喜欢</span> <span class="nx">react</span><span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;,</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span><span class="nx">启动电脑开VS</span><span class="err">，</span><span class="nx">欢迎来到编程世界</span><span class="err">。</span><span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;,</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span><span class="nx">GET</span> <span class="nx">和</span> <span class="nx">POST</span> <span class="nx">是</span> <span class="nx">HTTP</span> <span class="nx">协议中最重要的方法</span><span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;,</span>
+</span></span><span class="line"><span class="cl"><span class="p">]</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>现在重构之前的代码，如下:</p>
 <div class="highlight"><div class="chroma">
@@ -300,22 +300,22 @@
 </span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="kr">const</span> <span class="nx">App</span> <span class="o">=</span> <span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">=&gt;</span>
-<span class="p">{</span>
-  <span class="kr">const</span> <span class="p">{</span> <span class="nx">notes</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">props</span>
-
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">笔记</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
-        <span class="p">{</span><span class="nx">notes</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span>
-          <span class="nx">note</span> <span class="p">=&gt;</span> <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;{</span><span class="nx">note</span><span class="p">.</span><span class="nx">content</span><span class="p">}&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-        <span class="p">)}</span>
-      <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-  <span class="p">)</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">App</span> <span class="o">=</span> <span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">=&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="p">{</span> <span class="nx">notes</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">props</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">笔记</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span><span class="nx">notes</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">          <span class="nx">note</span> <span class="p">=&gt;</span> <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;{</span><span class="nx">note</span><span class="p">.</span><span class="nx">content</span><span class="p">}&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">)}</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><code>map</code> 的工作方式</p>
 <div class="highlight"><div class="chroma">
@@ -324,9 +324,9 @@
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="kr">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">notes</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">note</span> <span class="p">=&gt;</span> <span class="nx">note</span><span class="p">.</span><span class="nx">id</span><span class="p">)</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span>     <span class="c1">// 打印出 [1,2,3]
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">notes</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">note</span> <span class="p">=&gt;</span> <span class="nx">note</span><span class="p">.</span><span class="nx">id</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span>     <span class="c1">// 打印出 [1,2,3]
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>使用 <code>map</code> 方法会创建一个新数组，其元素是从原始数组通过 mapping 映射创建的，映射的逻辑是使用作为 <code>map</code> 方法传递进去的函数。</p>
 <p>这个函数是</p>
@@ -342,15 +342,15 @@
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="c1">// 紧凑形式
-</span><span class="c1"></span><span class="nx">note</span> <span class="p">=&gt;</span> <span class="nx">note</span><span class="p">.</span><span class="nx">id</span>
-
-<span class="c1">// 以上函数的完整形式
-</span><span class="c1"></span><span class="p">(</span><span class="nx">note</span><span class="p">)</span> <span class="p">=&gt;</span>
-<span class="p">{</span>
-  <span class="k">return</span> <span class="nx">note</span><span class="p">.</span><span class="nx">id</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="c1">// 紧凑形式
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">note</span> <span class="p">=&gt;</span> <span class="nx">note</span><span class="p">.</span><span class="nx">id</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 以上函数的完整形式
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">(</span><span class="nx">note</span><span class="p">)</span> <span class="p">=&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="nx">note</span><span class="p">.</span><span class="nx">id</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>该函数获取一个 note 对象作为参数，然后番位其 id 字段的值。</p>
 <h4 id="key-attribute-key属性">Key attribute Key属性</h4>
@@ -376,24 +376,24 @@
 </span><span class="lnt">17
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="kr">const</span> <span class="nx">App</span> <span class="o">=</span> <span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">=&gt;</span>
-<span class="p">{</span>
-  <span class="kr">const</span> <span class="p">{</span> <span class="nx">notes</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">props</span>
-
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">笔记</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
-        <span class="p">{</span><span class="nx">notes</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">note</span> <span class="p">=&gt;</span>
-          <span class="p">&lt;</span><span class="nt">li</span> <span class="na">key</span><span class="o">=</span><span class="p">{</span><span class="nx">note</span><span class="p">.</span><span class="nx">id</span><span class="p">}&gt;</span>
-            <span class="p">{</span><span class="nx">note</span><span class="p">.</span><span class="nx">content</span><span class="p">}</span>
-          <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-        <span class="p">)}</span>
-      <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-  <span class="p">)</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">App</span> <span class="o">=</span> <span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">=&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="p">{</span> <span class="nx">notes</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">props</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">笔记</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span><span class="nx">notes</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">note</span> <span class="p">=&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="p">&lt;</span><span class="nt">li</span> <span class="na">key</span><span class="o">=</span><span class="p">{</span><span class="nx">note</span><span class="p">.</span><span class="nx">id</span><span class="p">}&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">{</span><span class="nx">note</span><span class="p">.</span><span class="nx">content</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">          <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">)}</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>虽然说可以使用数组的索引作为键，避免控制台报错，<strong>但这仍然可能会导致意想不到的问题。</strong>，这有<a href="https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318" target="_blank" rel="noopener noreffer">问题案例</a></p>
 <div class="highlight"><div class="chroma">
@@ -407,14 +407,14 @@
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="c1">// 不要这样做
-</span><span class="c1"></span><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
-  <span class="p">{</span><span class="nx">notes</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">note</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="p">=&gt;</span>
-    <span class="p">&lt;</span><span class="nt">li</span> <span class="na">key</span><span class="o">=</span><span class="p">{</span><span class="nx">index</span><span class="p">}&gt;</span>
-      <span class="p">{</span><span class="nx">note</span><span class="p">.</span><span class="nx">content</span><span class="p">}</span>
-    <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-  <span class="p">)}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="c1">// 不要这样做
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span><span class="nx">notes</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">note</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="p">=&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">li</span> <span class="na">key</span><span class="o">=</span><span class="p">{</span><span class="nx">index</span><span class="p">}&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span><span class="nx">note</span><span class="p">.</span><span class="nx">content</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">)}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="refactoring-modules-重构模块">Refactoring modules 重构模块</h4>
 <p>将 App 重构，使得 App 更简洁易用。</p>
@@ -443,28 +443,28 @@
 </span><span class="lnt">21
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="c1">// 新增 Note 组件
-</span><span class="c1"></span><span class="kr">const</span> <span class="nx">Note</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">note</span> <span class="p">})</span> <span class="p">=&gt;</span>
-<span class="p">{</span>
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;{</span><span class="nx">note</span><span class="p">.</span><span class="nx">content</span><span class="p">}&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-  <span class="p">)</span>
-<span class="p">}</span>
-
-<span class="kr">const</span> <span class="nx">App</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">notes</span> <span class="p">})</span> <span class="p">=&gt;</span>
-<span class="p">{</span>
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">笔记</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
-        <span class="p">{</span><span class="nx">notes</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">note</span> <span class="p">=&gt;</span>
-          <span class="p">&lt;</span><span class="nt">Note</span> <span class="na">key</span><span class="o">=</span><span class="p">{</span><span class="nx">note</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span> <span class="na">note</span><span class="o">=</span><span class="p">{</span><span class="nx">note</span><span class="p">}</span> <span class="p">/&gt;</span>
-        <span class="p">)}</span>
-      <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-  <span class="p">)</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="c1">// 新增 Note 组件
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">Note</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">note</span> <span class="p">})</span> <span class="p">=&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;{</span><span class="nx">note</span><span class="p">.</span><span class="nx">content</span><span class="p">}&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">App</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">notes</span> <span class="p">})</span> <span class="p">=&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">笔记</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span><span class="nx">notes</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">note</span> <span class="p">=&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="p">&lt;</span><span class="nt">Note</span> <span class="na">key</span><span class="o">=</span><span class="p">{</span><span class="nx">note</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span> <span class="na">note</span><span class="o">=</span><span class="p">{</span><span class="nx">note</span><span class="p">}</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">)}</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><strong>此处要注意，这样必须在 Note 组件定义 key 属性，而不是在 li 标签定义。</strong></p>
 <p>通常来说，在较小型的应用中，组件一般放在 <code>src/components</code> 目录下，一般约定按照组件名称来命名文件。</p>
@@ -483,17 +483,17 @@
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="kr">import</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span>
-
-<span class="kr">const</span> <span class="nx">Note</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">note</span> <span class="p">})</span> <span class="p">=&gt;</span>
-<span class="p">{</span>
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;{</span><span class="nx">note</span><span class="p">.</span><span class="nx">content</span><span class="p">}&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-  <span class="p">)</span>
-<span class="p">}</span>
-
-<span class="kr">export</span> <span class="k">default</span> <span class="nx">Note</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">Note</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">note</span> <span class="p">})</span> <span class="p">=&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;{</span><span class="nx">note</span><span class="p">.</span><span class="nx">content</span><span class="p">}&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="nx">Note</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>最后一行 <code>export</code> 是在声明模块，即变量 Note。</p>
 <p>那么在使用这个组件的文件中，使用 import 方法来使用这个模块。</p>
@@ -509,15 +509,15 @@
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="kr">import</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span>
-<span class="kr">import</span> <span class="nx">ReactDom</span> <span class="nx">from</span> <span class="s1">&#39;react-dom&#39;</span>
-<span class="kr">import</span> <span class="nx">Note</span> <span class="nx">from</span> <span class="s1">&#39;./components/Note&#39;</span>
-
-<span class="kr">const</span> <span class="nx">App</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">notes</span> <span class="p">})</span> <span class="p">=&gt;</span>
-<span class="p">{</span>
-  <span class="c1">// ...
-</span><span class="c1"></span><span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">ReactDom</span> <span class="nx">from</span> <span class="s1">&#39;react-dom&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">Note</span> <span class="nx">from</span> <span class="s1">&#39;./components/Note&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">App</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">notes</span> <span class="p">})</span> <span class="p">=&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// ...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>导入自己的组件时，它们的位置必须给出导入文件的相对路径。 <code>'./components/Note'</code></p>
 <p>开头的 <code>.</code> 是指当前工作目录，因此引入文件的位置是当前目录下的 components 文件夹中的 Node.js 文件，其中 <code>.js</code> 可以省略。</p>
@@ -565,45 +565,45 @@
 </span><span class="lnt">38
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="kr">const</span> <span class="nx">App</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">notes</span> <span class="p">})</span> <span class="p">=&gt;</span>
-<span class="p">{</span>
-  <span class="kr">const</span> <span class="p">[</span><span class="nx">notes</span><span class="p">,</span> <span class="nx">setNotes</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="nx">notes</span><span class="p">)</span>
-  <span class="kr">const</span> <span class="p">[</span><span class="nx">newNote</span><span class="p">,</span> <span class="nx">setNewNote</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="s1">&#39;a new note...&#39;</span><span class="p">)</span>
-
-  <span class="kr">const</span> <span class="nx">addNote</span> <span class="o">=</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">=&gt;</span>
-  <span class="p">{</span>
-    <span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">()</span> <span class="c1">// 阻止事件的默认操作
-</span><span class="c1"></span>
-    <span class="kr">const</span> <span class="nx">noteObject</span> <span class="o">=</span>
-    <span class="p">{</span>
-      <span class="nx">id</span><span class="o">:</span> <span class="nx">notes</span><span class="p">.</span><span class="nx">length</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="nx">content</span><span class="o">:</span> <span class="nx">newNote</span><span class="p">,</span>
-      <span class="nx">date</span><span class="o">:</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">().</span><span class="nx">toISOString</span><span class="p">(),</span>
-      <span class="nx">important</span><span class="o">:</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">0.5</span><span class="p">,</span>
-    <span class="p">}</span>
-
-    <span class="nx">setNotes</span><span class="p">(</span><span class="nx">notes</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">noteObject</span><span class="p">))</span> <span class="c1">// 使用 concat 方法来新建
-</span><span class="c1"></span>    <span class="nx">setNewNote</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
-  <span class="p">}</span>
-
-  <span class="kr">const</span> <span class="nx">handleNoteChange</span> <span class="o">=</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">setNewNote</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span>
-
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">笔记</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
-        <span class="p">{</span><span class="nx">notes</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">note</span> <span class="p">=&gt;</span>
-          <span class="p">&lt;</span><span class="nt">Note</span> <span class="na">key</span><span class="o">=</span><span class="p">{</span><span class="nx">note</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span> <span class="na">note</span><span class="o">=</span><span class="p">{</span><span class="nx">note</span><span class="p">}</span> <span class="p">/&gt;</span>
-        <span class="p">)}</span>
-      <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">form</span> <span class="na">onSubmit</span><span class="o">=</span><span class="p">{</span><span class="nx">addNote</span><span class="p">}&gt;</span>
-        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">value</span><span class="o">=</span><span class="p">{</span><span class="nx">newNote</span><span class="p">}</span> <span class="na">onChange</span><span class="o">=</span><span class="p">{</span><span class="nx">handleNoteChange</span><span class="p">}</span> <span class="p">/&gt;</span>
-        <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;submit&#34;</span><span class="p">&gt;</span><span class="nx">save</span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-      <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-  <span class="p">)</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">App</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">notes</span> <span class="p">})</span> <span class="p">=&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="p">[</span><span class="nx">notes</span><span class="p">,</span> <span class="nx">setNotes</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="nx">notes</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="p">[</span><span class="nx">newNote</span><span class="p">,</span> <span class="nx">setNewNote</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="s1">&#39;a new note...&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">addNote</span> <span class="o">=</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">=&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">()</span> <span class="c1">// 阻止事件的默认操作
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">noteObject</span> <span class="o">=</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">id</span><span class="o">:</span> <span class="nx">notes</span><span class="p">.</span><span class="nx">length</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">content</span><span class="o">:</span> <span class="nx">newNote</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">date</span><span class="o">:</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">().</span><span class="nx">toISOString</span><span class="p">(),</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">important</span><span class="o">:</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">0.5</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nx">setNotes</span><span class="p">(</span><span class="nx">notes</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">noteObject</span><span class="p">))</span> <span class="c1">// 使用 concat 方法来新建
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">setNewNote</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">handleNoteChange</span> <span class="o">=</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">setNewNote</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">笔记</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span><span class="nx">notes</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">note</span> <span class="p">=&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="p">&lt;</span><span class="nt">Note</span> <span class="na">key</span><span class="o">=</span><span class="p">{</span><span class="nx">note</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span> <span class="na">note</span><span class="o">=</span><span class="p">{</span><span class="nx">note</span><span class="p">}</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">)}</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">form</span> <span class="na">onSubmit</span><span class="o">=</span><span class="p">{</span><span class="nx">addNote</span><span class="p">}&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">value</span><span class="o">=</span><span class="p">{</span><span class="nx">newNote</span><span class="p">}</span> <span class="na">onChange</span><span class="o">=</span><span class="p">{</span><span class="nx">handleNoteChange</span><span class="p">}</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;submit&#34;</span><span class="p">&gt;</span><span class="nx">save</span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>其中注意点 <code>&lt;input /&gt;</code> 组件中，如果只有 <code>value={newNote}</code> 属性受控，将会导致 <code>input</code> 组件渲染成一个只读元素，这将正确的修改 <code>input</code> 的value，必须搭配 <code>onChange={handleNoteChange}</code> 才能正确控制 <code>input</code> 元素的状态。相反的，如果只有 <code>onChange={handleNoteChange}</code> 而没有 <code>value={newNote}</code>，那样 <code>setNewNote('')</code> 将不会重置 <code>input</code> 元素的值。</p>
 <h4 id="filtering-displayed-elements-过滤显示的元素">Filtering Displayed Elements 过滤显示的元素</h4>
@@ -654,38 +654,38 @@
 </span><span class="lnt">31
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="kr">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">useState</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span> 
-<span class="kr">import</span> <span class="nx">Note</span> <span class="nx">from</span> <span class="s1">&#39;./components/Note&#39;</span>
-
-<span class="kr">const</span> <span class="nx">App</span> <span class="o">=</span> <span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-  <span class="kr">const</span> <span class="p">[</span><span class="nx">notes</span><span class="p">,</span> <span class="nx">setNotes</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="nx">props</span><span class="p">.</span><span class="nx">notes</span><span class="p">)</span> 
-  <span class="kr">const</span> <span class="p">[</span><span class="nx">newNote</span><span class="p">,</span> <span class="nx">setNewNote</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
-  <span class="kr">const</span> <span class="p">[</span><span class="nx">showAll</span><span class="p">,</span> <span class="nx">setShowAll</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
-
-  <span class="c1">// ...
-</span><span class="c1"></span>
-  <span class="kr">const</span> <span class="nx">notesToShow</span> <span class="o">=</span> <span class="nx">showAll</span>
-    <span class="o">?</span> <span class="nx">notes</span>
-    <span class="o">:</span> <span class="nx">notes</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">note</span> <span class="p">=&gt;</span> <span class="nx">note</span><span class="p">.</span><span class="nx">important</span><span class="p">)</span> <span class="c1">// 因为 note.important 本身是布尔值，所以省略了 &#39;=== true&#39; 的判断
-</span><span class="c1"></span>
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">Notes</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="p">=&gt;</span> <span class="nx">setShowAll</span><span class="p">(</span><span class="o">!</span><span class="nx">showAll</span><span class="p">)}&gt;</span>
-          <span class="nx">show</span> <span class="p">{</span><span class="nx">showAll</span> <span class="o">?</span> <span class="s1">&#39;显示重要&#39;</span> <span class="o">:</span> <span class="s1">&#39;显示全部&#39;</span> <span class="p">}</span>
-        <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
-        <span class="p">{</span><span class="nx">notesToShow</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">note</span> <span class="p">=&gt;</span>
-          <span class="p">&lt;</span><span class="nt">Note</span> <span class="na">key</span><span class="o">=</span><span class="p">{</span><span class="nx">note</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span> <span class="na">note</span><span class="o">=</span><span class="p">{</span><span class="nx">note</span><span class="p">}</span> <span class="p">/&gt;</span>
-        <span class="p">)}</span>
-      <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
-      <span class="c1">// ...        
-</span><span class="c1"></span>    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-  <span class="p">)</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">useState</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span> 
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">Note</span> <span class="nx">from</span> <span class="s1">&#39;./components/Note&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">App</span> <span class="o">=</span> <span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="p">[</span><span class="nx">notes</span><span class="p">,</span> <span class="nx">setNotes</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="nx">props</span><span class="p">.</span><span class="nx">notes</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="p">[</span><span class="nx">newNote</span><span class="p">,</span> <span class="nx">setNewNote</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="p">[</span><span class="nx">showAll</span><span class="p">,</span> <span class="nx">setShowAll</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// ...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">notesToShow</span> <span class="o">=</span> <span class="nx">showAll</span>
+</span></span><span class="line"><span class="cl">    <span class="o">?</span> <span class="nx">notes</span>
+</span></span><span class="line"><span class="cl">    <span class="o">:</span> <span class="nx">notes</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">note</span> <span class="p">=&gt;</span> <span class="nx">note</span><span class="p">.</span><span class="nx">important</span><span class="p">)</span> <span class="c1">// 因为 note.important 本身是布尔值，所以省略了 &#39;=== true&#39; 的判断
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">Notes</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="p">=&gt;</span> <span class="nx">setShowAll</span><span class="p">(</span><span class="o">!</span><span class="nx">showAll</span><span class="p">)}&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="nx">show</span> <span class="p">{</span><span class="nx">showAll</span> <span class="o">?</span> <span class="s1">&#39;显示重要&#39;</span> <span class="o">:</span> <span class="s1">&#39;显示全部&#39;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span><span class="nx">notesToShow</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">note</span> <span class="p">=&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="p">&lt;</span><span class="nt">Note</span> <span class="na">key</span><span class="o">=</span><span class="p">{</span><span class="nx">note</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span> <span class="na">note</span><span class="o">=</span><span class="p">{</span><span class="nx">note</span><span class="p">}</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">)}</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="c1">// ...        
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>通过三目运算符判断 <code>showAll</code> 的状态来过滤需要显示的数据以及按钮的值。</p>
 <h3 id="从服务器获取数据">从服务器获取数据</h3>
@@ -719,29 +719,29 @@
 </span><span class="lnt">22
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
-  <span class="nt">&#34;notes&#34;</span><span class="p">:</span> <span class="p">[</span>
-    <span class="p">{</span>
-      <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="nt">&#34;content&#34;</span><span class="p">:</span> <span class="s2">&#34;我喜欢 react&#34;</span><span class="p">,</span>
-      <span class="nt">&#34;date&#34;</span><span class="p">:</span> <span class="s2">&#34;2020-10-29T15:17:10.098Z&#34;</span><span class="p">,</span>
-      <span class="nt">&#34;important&#34;</span><span class="p">:</span> <span class="kc">true</span>
-    <span class="p">},</span>
-    <span class="p">{</span>
-      <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="nt">&#34;content&#34;</span><span class="p">:</span> <span class="s2">&#34;启动电脑开VS，欢迎来到编程世界。&#34;</span><span class="p">,</span>
-      <span class="nt">&#34;date&#34;</span><span class="p">:</span> <span class="s2">&#34;2020-10-29T15:18:26.092Z&#34;</span><span class="p">,</span>
-      <span class="nt">&#34;important&#34;</span><span class="p">:</span> <span class="kc">false</span>
-    <span class="p">},</span>
-    <span class="p">{</span>
-      <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
-      <span class="nt">&#34;content&#34;</span><span class="p">:</span> <span class="s2">&#34;GET 和 POST 是 HTTP 协议中最重要的方法&#34;</span><span class="p">,</span>
-      <span class="nt">&#34;date&#34;</span><span class="p">:</span> <span class="s2">&#34;2020-10-29T15:17:10.098Z&#34;</span><span class="p">,</span>
-      <span class="nt">&#34;important&#34;</span><span class="p">:</span> <span class="kc">true</span>
-    <span class="p">}</span>
-  <span class="p">]</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;notes&#34;</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;content&#34;</span><span class="p">:</span> <span class="s2">&#34;我喜欢 react&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;date&#34;</span><span class="p">:</span> <span class="s2">&#34;2020-10-29T15:17:10.098Z&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;important&#34;</span><span class="p">:</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;content&#34;</span><span class="p">:</span> <span class="s2">&#34;启动电脑开VS，欢迎来到编程世界。&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;date&#34;</span><span class="p">:</span> <span class="s2">&#34;2020-10-29T15:18:26.092Z&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;important&#34;</span><span class="p">:</span> <span class="kc">false</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;content&#34;</span><span class="p">:</span> <span class="s2">&#34;GET 和 POST 是 HTTP 协议中最重要的方法&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;date&#34;</span><span class="p">:</span> <span class="s2">&#34;2020-10-29T15:17:10.098Z&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;important&#34;</span><span class="p">:</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>为什么使用 3001 端口？是因为前端 React 程序占用了 3000 端口，所以将 <code>json-server</code> 设定为 3001 端口。</p>
 <p>可以通过 http://localhost:3001/notes 来访问 <code>db.json</code> 的 <code>notes</code> 数据了。</p>
@@ -766,19 +766,19 @@
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">xhttp</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">()</span>
-
-<span class="nx">xhttp</span><span class="p">.</span><span class="nx">onreadystatechange</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span>
-<span class="p">{</span>
-  <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">==</span> <span class="mi">4</span> <span class="o">&amp;&amp;</span> <span class="k">this</span><span class="p">.</span><span class="nx">status</span> <span class="o">==</span> <span class="mi">200</span><span class="p">)</span>
-  <span class="p">{</span>
-    <span class="kr">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">responseText</span><span class="p">)</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="nx">xhttp</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="s1">&#39;/data.json&#39;</span><span class="p">,</span> <span class="kc">true</span><span class="p">)</span>
-<span class="nx">xhttp</span><span class="p">.</span><span class="nx">send</span><span class="p">()</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">xhttp</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">xhttp</span><span class="p">.</span><span class="nx">onreadystatechange</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">==</span> <span class="mi">4</span> <span class="o">&amp;&amp;</span> <span class="k">this</span><span class="p">.</span><span class="nx">status</span> <span class="o">==</span> <span class="mi">200</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">responseText</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">xhttp</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="s1">&#39;/data.json&#39;</span><span class="p">,</span> <span class="kc">true</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nx">xhttp</span><span class="p">.</span><span class="nx">send</span><span class="p">()</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>以上将事件处理程序注册到 xhttp 对象，当 xhttp 的状态发生改变时执行。XHR 请求是<strong>异步执行</strong>，并非自上而下的同步执行。</p>
 <p>JavaScript 引擎，或者运行环境，遵循<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/EventLoop" target="_blank" rel="noopener noreffer">异步模型</a>。原则上所有的 IO 操作「除了一些特例」都以非阻塞方式执行。这意味着代码执行在调用 IO 函数之后立即继续，而不需要等待它返回。</p>
@@ -826,41 +826,41 @@
 </span><span class="lnt">34
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
-  <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;notes&#34;</span><span class="p">,</span>
-  <span class="nt">&#34;version&#34;</span><span class="p">:</span> <span class="s2">&#34;0.1.0&#34;</span><span class="p">,</span>
-  <span class="nt">&#34;private&#34;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="nt">&#34;dependencies&#34;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&#34;@testing-library/jest-dom&#34;</span><span class="p">:</span> <span class="s2">&#34;^4.2.4&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;@testing-library/react&#34;</span><span class="p">:</span> <span class="s2">&#34;^9.4.0&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;@testing-library/user-event&#34;</span><span class="p">:</span> <span class="s2">&#34;^7.2.1&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;react&#34;</span><span class="p">:</span> <span class="s2">&#34;^16.12.0&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;react-dom&#34;</span><span class="p">:</span> <span class="s2">&#34;^16.12.0&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;react-scripts&#34;</span><span class="p">:</span> <span class="s2">&#34;3.3.0&#34;</span>
-  <span class="p">},</span>
-  <span class="nt">&#34;scripts&#34;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&#34;start&#34;</span><span class="p">:</span> <span class="s2">&#34;react-scripts start&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;build&#34;</span><span class="p">:</span> <span class="s2">&#34;react-scripts build&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;test&#34;</span><span class="p">:</span> <span class="s2">&#34;react-scripts test&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;eject&#34;</span><span class="p">:</span> <span class="s2">&#34;react-scripts eject&#34;</span>
-  <span class="p">},</span>
-  <span class="nt">&#34;eslintConfig&#34;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&#34;extends&#34;</span><span class="p">:</span> <span class="s2">&#34;react-app&#34;</span>
-  <span class="p">},</span>
-  <span class="nt">&#34;browserslist&#34;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&#34;production&#34;</span><span class="p">:</span> <span class="p">[</span>
-      <span class="s2">&#34;&gt;0.2%&#34;</span><span class="p">,</span>
-      <span class="s2">&#34;not dead&#34;</span><span class="p">,</span>
-      <span class="s2">&#34;not op_mini all&#34;</span>
-    <span class="p">],</span>
-    <span class="nt">&#34;development&#34;</span><span class="p">:</span> <span class="p">[</span>
-      <span class="s2">&#34;last 1 chrome version&#34;</span><span class="p">,</span>
-      <span class="s2">&#34;last 1 firefox version&#34;</span><span class="p">,</span>
-      <span class="s2">&#34;last 1 safari version&#34;</span>
-    <span class="p">]</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;notes&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;version&#34;</span><span class="p">:</span> <span class="s2">&#34;0.1.0&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;private&#34;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;dependencies&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;@testing-library/jest-dom&#34;</span><span class="p">:</span> <span class="s2">&#34;^4.2.4&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;@testing-library/react&#34;</span><span class="p">:</span> <span class="s2">&#34;^9.4.0&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;@testing-library/user-event&#34;</span><span class="p">:</span> <span class="s2">&#34;^7.2.1&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;react&#34;</span><span class="p">:</span> <span class="s2">&#34;^16.12.0&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;react-dom&#34;</span><span class="p">:</span> <span class="s2">&#34;^16.12.0&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;react-scripts&#34;</span><span class="p">:</span> <span class="s2">&#34;3.3.0&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;scripts&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;start&#34;</span><span class="p">:</span> <span class="s2">&#34;react-scripts start&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;build&#34;</span><span class="p">:</span> <span class="s2">&#34;react-scripts build&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;test&#34;</span><span class="p">:</span> <span class="s2">&#34;react-scripts test&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;eject&#34;</span><span class="p">:</span> <span class="s2">&#34;react-scripts eject&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;eslintConfig&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;extends&#34;</span><span class="p">:</span> <span class="s2">&#34;react-app&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;browserslist&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;production&#34;</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">      <span class="s2">&#34;&gt;0.2%&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="s2">&#34;not dead&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="s2">&#34;not op_mini all&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;development&#34;</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">      <span class="s2">&#34;last 1 chrome version&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="s2">&#34;last 1 firefox version&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="s2">&#34;last 1 safari version&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">]</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>dependencies 定义了该项目所需要的依赖或外部库。</p>
 <p>安装依赖也非常方便，在项目根目录使用终端 <code>npm install axios</code> 命令即可。</p>
@@ -879,17 +879,17 @@
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="err">}</span>
-  <span class="s2">&#34;dependencies&#34;</span><span class="err">:</span> <span class="p">{</span>
-    <span class="c1">// ...
-</span><span class="c1"></span>    <span class="nt">&#34;axios&#34;</span><span class="p">:</span> <span class="s2">&#34;^0.19.2&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;react&#34;</span><span class="p">:</span> <span class="s2">&#34;^16.12.0&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;react-dom&#34;</span><span class="p">:</span> <span class="s2">&#34;^16.12.0&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;react-scripts&#34;</span><span class="p">:</span> <span class="s2">&#34;3.3.0&#34;</span>
-  <span class="p">}</span><span class="err">,</span>
-  <span class="c1">// ...
-</span><span class="c1"></span><span class="err">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="err">}</span>
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;dependencies&#34;</span><span class="err">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// ...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nt">&#34;axios&#34;</span><span class="p">:</span> <span class="s2">&#34;^0.19.2&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;react&#34;</span><span class="p">:</span> <span class="s2">&#34;^16.12.0&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;react-dom&#34;</span><span class="p">:</span> <span class="s2">&#34;^16.12.0&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;react-scripts&#34;</span><span class="p">:</span> <span class="s2">&#34;3.3.0&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span><span class="err">,</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// ...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="err">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>如何安装开发依赖？开发依赖是在开发中提供帮助，实际项目并不需要它。</p>
 <div class="highlight"><div class="chroma">
@@ -897,8 +897,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">npm install json-server --save-dev
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">npm install json-server --save-dev
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>以上安装了 JSON 服务器，在 <code>package.json</code> 中增加 <code>server</code> script 来帮助我们快速启动 JSON 服务器。</p>
 <div class="highlight"><div class="chroma">
@@ -915,17 +915,17 @@
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
-  <span class="c1">// ... 
-</span><span class="c1"></span>  <span class="nt">&#34;scripts&#34;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&#34;start&#34;</span><span class="p">:</span> <span class="s2">&#34;react-scripts start&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;build&#34;</span><span class="p">:</span> <span class="s2">&#34;react-scripts build&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;test&#34;</span><span class="p">:</span> <span class="s2">&#34;react-scripts test&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;eject&#34;</span><span class="p">:</span> <span class="s2">&#34;react-scripts eject&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;server&#34;</span><span class="p">:</span> <span class="s2">&#34;json-server -p3001 --watch db.json&#34;</span>
-  <span class="p">},</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// ... 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nt">&#34;scripts&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;start&#34;</span><span class="p">:</span> <span class="s2">&#34;react-scripts start&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;build&#34;</span><span class="p">:</span> <span class="s2">&#34;react-scripts build&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;test&#34;</span><span class="p">:</span> <span class="s2">&#34;react-scripts test&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;eject&#34;</span><span class="p">:</span> <span class="s2">&#34;react-scripts eject&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;server&#34;</span><span class="p">:</span> <span class="s2">&#34;json-server -p3001 --watch db.json&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>这样可以通过 <code>npm run server</code> 来启动 JSON 服务器了。</p>
 <h4 id="axios-and-promises">Axios and promises</h4>
@@ -941,14 +941,14 @@
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="kr">import</span> <span class="nx">axios</span> <span class="nx">from</span> <span class="s1">&#39;axios&#39;</span>
-
-<span class="kr">const</span> <span class="nx">promise</span> <span class="o">=</span> <span class="nx">axios</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;http://localhost:3001/notes&#39;</span><span class="p">)</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">promise</span><span class="p">)</span>
-
-<span class="kr">const</span> <span class="nx">promise2</span> <span class="o">=</span> <span class="nx">axios</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;http://localhost:3001/foobar&#39;</span><span class="p">)</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">promise2</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">axios</span> <span class="nx">from</span> <span class="s1">&#39;axios&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">promise</span> <span class="o">=</span> <span class="nx">axios</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;http://localhost:3001/notes&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">promise</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">promise2</span> <span class="o">=</span> <span class="nx">axios</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;http://localhost:3001/foobar&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">promise2</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>由于 JSON 服务器中仅有 notes 数据，所以访问 http://localhost:3000 控制台会有报错，如下：</p>
 <figure><img src="https://fullstackopen.com/static/823a2e7f414c99cb849a42470e4f372d/5a190/16b.png"/>
@@ -981,13 +981,13 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="kr">const</span> <span class="nx">promise</span> <span class="o">=</span> <span class="nx">axios</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;http://localhost:3001/notes&#39;</span><span class="p">)</span>
-
-<span class="nx">promise</span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="p">=&gt;</span>
-<span class="p">{</span>
-  <span class="kr">const</span> <span class="nx">notes</span> <span class="o">=</span> <span class="nx">response</span><span class="p">.</span><span class="nx">data</span>
-<span class="p">})</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">promise</span> <span class="o">=</span> <span class="nx">axios</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;http://localhost:3001/notes&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">promise</span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="p">=&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">notes</span> <span class="o">=</span> <span class="nx">response</span><span class="p">.</span><span class="nx">data</span>
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>JavaScript 运行时环境调用由 <code>then</code> 方法注册的回调函数，并提供一个 <code>response</code> 对象作为参数。<code>response</code> 对象包含与 HTTP GET 请求响应相关的所有基本数据，也包括返回的 data、status code 和 headers。</p>
 <p>通常情况下，没有必要将 promise 对象存储在一个变量中，而且将 <code>then</code> 链接到 axios 方法中也是很常用的。所以重构代码如下：</p>
@@ -1001,13 +1001,13 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="nx">axios</span>
-  <span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;http://localhost:3001/notes&#39;</span><span class="p">)</span>
-  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="p">=&gt;</span>
-  <span class="p">{</span>
-    <span class="kr">const</span> <span class="nx">notes</span> <span class="o">=</span> <span class="nx">response</span><span class="p">.</span><span class="nx">data</span>
-  <span class="p">})</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="nx">axios</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;http://localhost:3001/notes&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="p">=&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">notes</span> <span class="o">=</span> <span class="nx">response</span><span class="p">.</span><span class="nx">data</span>
+</span></span><span class="line"><span class="cl">  <span class="p">})</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>服务器返回的数据是纯文本，基本上只有一个长字符串。 Axios 库仍然能够将数据解析为一个 JavaScript 数组，因为服务器使用 <code>content-type</code> 头指定数据格式为 <code>application/json; charset=utf-8</code>。</p>
 <div class="highlight"><div class="chroma">
@@ -1027,20 +1027,20 @@
 </span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="kr">import</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span>
-<span class="kr">import</span> <span class="nx">ReactDOM</span> <span class="nx">from</span> <span class="s1">&#39;react-dom&#39;</span>
-<span class="kr">import</span> <span class="nx">App</span> <span class="nx">from</span> <span class="s1">&#39;./App&#39;</span>
-
-<span class="kr">import</span> <span class="nx">axios</span> <span class="nx">from</span> <span class="s1">&#39;axios&#39;</span>
-
-<span class="nx">axios</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;http://localhost:3001/notes&#39;</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="p">=&gt;</span> <span class="p">{</span>
-  <span class="kr">const</span> <span class="nx">notes</span> <span class="o">=</span> <span class="nx">response</span><span class="p">.</span><span class="nx">data</span>
-  <span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
-    <span class="p">&lt;</span><span class="nt">App</span> <span class="na">notes</span><span class="o">=</span><span class="p">{</span><span class="nx">notes</span><span class="p">}</span> <span class="p">/&gt;,</span>
-    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;root&#39;</span><span class="p">)</span>
-  <span class="p">)</span>
-<span class="p">})</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">ReactDOM</span> <span class="nx">from</span> <span class="s1">&#39;react-dom&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">App</span> <span class="nx">from</span> <span class="s1">&#39;./App&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">axios</span> <span class="nx">from</span> <span class="s1">&#39;axios&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">axios</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;http://localhost:3001/notes&#39;</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">notes</span> <span class="o">=</span> <span class="nx">response</span><span class="p">.</span><span class="nx">data</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">App</span> <span class="na">notes</span><span class="o">=</span><span class="p">{</span><span class="nx">notes</span><span class="p">}</span> <span class="p">/&gt;,</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;root&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>以上方法向本地服务器请求数据并渲染，虽然也能够执行，但它只有在将整个 App 组件渲染完成后才会得到成功的 response。而且 <code>axios.get</code> 命令应该放在组件中的哪个位置也是个问题。</p>
 <p>这样的方法不是很好，在实际开发中会遇到很多问题。</p>
@@ -1083,33 +1083,33 @@
 </span><span class="lnt">26
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="kr">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">useState</span><span class="p">,</span> <span class="nx">useEffect</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span>
-<span class="kr">import</span> <span class="nx">axios</span> <span class="nx">from</span> <span class="s1">&#39;axios&#39;</span>
-<span class="kr">import</span> <span class="nx">Note</span> <span class="nx">from</span> <span class="s1">&#39;./components/Note&#39;</span>
-
-<span class="kr">const</span> <span class="nx">App</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span>
-<span class="p">{</span>
-  <span class="kr">const</span> <span class="p">[</span><span class="nx">notes</span><span class="p">,</span> <span class="nx">setNotes</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">([])</span>
-  <span class="kr">const</span> <span class="p">[</span><span class="nx">newNote</span><span class="p">,</span> <span class="nx">setNewNote</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
-  <span class="kr">const</span> <span class="p">[</span><span class="nx">showAll</span><span class="p">,</span> <span class="nx">setShowAll</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
-
-  <span class="nx">useEffect</span><span class="p">(()=&gt;</span>
-  <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;effect&#39;</span><span class="p">)</span>
-    <span class="nx">axios</span>
-      <span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;http://localhost:3001/notes&#39;</span><span class="p">)</span>
-      <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="p">=&gt;</span>
-      <span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;promise 兑现&#39;</span><span class="p">)</span>
-        <span class="nx">setNotes</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">)</span>
-      <span class="p">})</span>
-  <span class="p">},</span> <span class="p">[])</span>
-
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;render&#39;</span><span class="p">,</span> <span class="nx">notes</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span> <span class="s1">&#39;笔记&#39;</span><span class="p">)</span>
-
-  <span class="c1">// ...
-</span><span class="c1"></span><span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">useState</span><span class="p">,</span> <span class="nx">useEffect</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">axios</span> <span class="nx">from</span> <span class="s1">&#39;axios&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">Note</span> <span class="nx">from</span> <span class="s1">&#39;./components/Note&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">App</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="p">[</span><span class="nx">notes</span><span class="p">,</span> <span class="nx">setNotes</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">([])</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="p">[</span><span class="nx">newNote</span><span class="p">,</span> <span class="nx">setNewNote</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="p">[</span><span class="nx">showAll</span><span class="p">,</span> <span class="nx">setShowAll</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="nx">useEffect</span><span class="p">(()=&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;effect&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">axios</span>
+</span></span><span class="line"><span class="cl">      <span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;http://localhost:3001/notes&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="p">=&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;promise 兑现&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">setNotes</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="p">})</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span> <span class="p">[])</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;render&#39;</span><span class="p">,</span> <span class="nx">notes</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span> <span class="s1">&#39;笔记&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// ...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>执行上述代码后，控制台会依次显示以下内容：</p>
 <div class="highlight"><div class="chroma">
@@ -1120,11 +1120,11 @@
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="nx">render</span> <span class="mi">0</span> <span class="nx">笔记</span>
-<span class="nx">effect</span>
-<span class="nx">promise</span> <span class="nx">fulfilled</span>
-<span class="nx">render</span> <span class="mi">3</span> <span class="nx">笔记</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="nx">render</span> <span class="mi">0</span> <span class="nx">笔记</span>
+</span></span><span class="line"><span class="cl"><span class="nx">effect</span>
+</span></span><span class="line"><span class="cl"><span class="nx">promise</span> <span class="nx">fulfilled</span>
+</span></span><span class="line"><span class="cl"><span class="nx">render</span> <span class="mi">3</span> <span class="nx">笔记</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><code>useEffect</code> 函数一共有2个参数，第一个是函数本身，根据文档描述：</p>
 <blockquote>
@@ -1137,8 +1137,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="nx">useEffect</span><span class="p">(</span><span class="kd">function</span><span class="p">,</span> <span class="p">[])</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="nx">useEffect</span><span class="p">(</span><span class="kd">function</span><span class="p">,</span> <span class="p">[])</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="the-development-runtime-environment">The development runtime environment</h4>
 <p>目前为止项目的运行环境情况如下图：</p>
@@ -1176,25 +1176,25 @@
 </span><span class="lnt">18
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="nx">addNote</span> <span class="o">=</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">=&gt;</span>
-<span class="p">{</span>
-  <span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">()</span>
-  <span class="kr">const</span> <span class="nx">newObject</span> <span class="o">=</span> 
-  <span class="p">{</span>
-    <span class="nx">content</span><span class="o">:</span> <span class="nx">newNote</span><span class="p">,</span>
-    <span class="nx">date</span><span class="o">:</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(),</span>
-    <span class="nx">important</span><span class="o">:</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">0.5</span><span class="p">,</span>
-  <span class="p">}</span>
-
-  <span class="nx">axios</span>
-    <span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s1">&#39;http://localhost:3001/notes&#39;</span><span class="p">,</span> <span class="nx">newObject</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="p">=&gt;</span>
-    <span class="p">{</span>
-      <span class="nx">setNotes</span><span class="p">(</span><span class="nx">notes</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">))</span>
-      <span class="nx">setNewNote</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
-    <span class="p">})</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="nx">addNote</span> <span class="o">=</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">=&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">newObject</span> <span class="o">=</span> 
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">content</span><span class="o">:</span> <span class="nx">newNote</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">date</span><span class="o">:</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(),</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">important</span><span class="o">:</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">0.5</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="nx">axios</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s1">&#39;http://localhost:3001/notes&#39;</span><span class="p">,</span> <span class="nx">newObject</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="p">=&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">setNotes</span><span class="p">(</span><span class="nx">notes</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">setNewNote</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">})</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>在 <code>POST</code> 请求中发送的数据是一个 JavaScript 对象，axios 自动懂得为 <code>Content-Type</code> 头设置适当的 <code>application/json</code> 值。</p>
 <p>通过 Chrome 开发工具的 Network 选项卡检查 HTTP 请求来查看是否符合预期。</p>
@@ -1216,18 +1216,18 @@
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="kr">const</span> <span class="nx">Note</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">note</span><span class="p">,</span> <span class="nx">toggleImportance</span> <span class="p">})</span> <span class="p">=&gt;</span>
-<span class="p">{</span>
-  <span class="kr">const</span> <span class="nx">label</span> <span class="o">=</span> <span class="nx">note</span><span class="p">.</span><span class="nx">important</span> <span class="o">?</span> <span class="s1">&#39;设置为不重要&#39;</span> <span class="o">:</span> <span class="s1">&#39;设置为重要&#39;</span>
-
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
-      <span class="p">{</span><span class="nx">note</span><span class="p">.</span><span class="nx">content</span><span class="p">}</span>
-      <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">toggleImportance</span><span class="p">}&gt;{</span><span class="nx">label</span><span class="p">}&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-  <span class="p">)</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">Note</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">note</span><span class="p">,</span> <span class="nx">toggleImportance</span> <span class="p">})</span> <span class="p">=&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">label</span> <span class="o">=</span> <span class="nx">note</span><span class="p">.</span><span class="nx">important</span> <span class="o">?</span> <span class="s1">&#39;设置为不重要&#39;</span> <span class="o">:</span> <span class="s1">&#39;设置为重要&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span><span class="nx">note</span><span class="p">.</span><span class="nx">content</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">toggleImportance</span><span class="p">}&gt;{</span><span class="nx">label</span><span class="p">}&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>在 App 组件增加事件处理程序 <code>toggleImportance</code>：</p>
 <div class="highlight"><div class="chroma">
@@ -1278,51 +1278,51 @@
 </span><span class="lnt">44
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="kr">const</span> <span class="nx">App</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span>
-<span class="p">{</span>
-  <span class="kr">const</span> <span class="p">[</span><span class="nx">notes</span><span class="p">,</span> <span class="nx">setNote</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">([])</span>
-  <span class="kr">const</span> <span class="p">[</span><span class="nx">newNote</span><span class="p">,</span> <span class="nx">setNewNote</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
-  <span class="kr">const</span> <span class="p">[</span><span class="nx">showAll</span><span class="p">,</span> <span class="nx">setShowAll</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
-
-  <span class="c1">// ...
-</span><span class="c1"></span>
-  <span class="kr">const</span> <span class="nx">toggleImportance</span> <span class="o">=</span> <span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">=&gt;</span>
-  <span class="p">{</span>
-    <span class="kr">const</span> <span class="nx">url</span> <span class="o">=</span> <span class="sb">`http://localhost:3001/notes/</span><span class="si">${</span><span class="nx">id</span><span class="si">}</span><span class="sb">`</span>
-    <span class="kr">const</span> <span class="nx">note</span> <span class="o">=</span> <span class="nx">notes</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">note</span> <span class="p">=&gt;</span> <span class="nx">note</span><span class="p">.</span><span class="nx">id</span> <span class="o">===</span> <span class="nx">id</span><span class="p">)</span>
-    <span class="kr">const</span> <span class="nx">changeNote</span> <span class="o">=</span> <span class="p">{</span> <span class="p">...</span><span class="nx">note</span><span class="p">,</span> <span class="nx">important</span><span class="o">:</span> <span class="o">!</span><span class="nx">note</span><span class="p">.</span><span class="nx">important</span> <span class="p">}</span>
-
-    <span class="nx">axios</span>
-      <span class="p">.</span><span class="nx">put</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="nx">changeNote</span><span class="p">)</span>
-      <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="p">=&gt;</span>
-      <span class="p">{</span>
-        <span class="nx">setNotes</span><span class="p">(</span><span class="nx">notes</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">note</span> <span class="p">=&gt;</span> <span class="nx">note</span><span class="p">.</span><span class="nx">id</span> <span class="o">!==</span> <span class="nx">id</span> <span class="o">?</span> <span class="nx">note</span> <span class="o">:</span> <span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">))</span>
-      <span class="p">})</span>
-  <span class="p">}</span>
-
-  <span class="c1">// ...
-</span><span class="c1"></span>
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">笔记</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="p">=&gt;</span> <span class="nx">setShowAll</span><span class="p">(</span><span class="o">!</span><span class="nx">showAll</span><span class="p">)}&gt;</span>
-          <span class="nx">show</span> <span class="p">{</span><span class="nx">showAll</span> <span class="o">?</span> <span class="s1">&#39;显示重要&#39;</span> <span class="o">:</span> <span class="s1">&#39;显示全部&#39;</span> <span class="p">}</span>
-      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
-        <span class="p">{</span><span class="nx">noteToShow</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">note</span><span class="p">)</span> <span class="p">=&gt;</span>
-          <span class="p">&lt;</span><span class="nt">Note</span>
-            <span class="na">key</span><span class="o">=</span><span class="p">{</span><span class="nx">note</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span>
-            <span class="na">note</span><span class="o">=</span><span class="p">{</span><span class="nx">note</span><span class="p">}</span>
-            <span class="na">toggleImportance</span><span class="o">=</span><span class="p">{()</span> <span class="p">=&gt;</span> <span class="nx">toggleImportance</span><span class="p">(</span><span class="nx">note</span><span class="p">.</span><span class="nx">id</span><span class="p">)}</span>
-          <span class="p">/&gt;</span>
-        <span class="p">)}</span>
-      <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
-      <span class="c1">// ...
-</span><span class="c1"></span>    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-  <span class="p">)</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">App</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="p">[</span><span class="nx">notes</span><span class="p">,</span> <span class="nx">setNote</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">([])</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="p">[</span><span class="nx">newNote</span><span class="p">,</span> <span class="nx">setNewNote</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="p">[</span><span class="nx">showAll</span><span class="p">,</span> <span class="nx">setShowAll</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// ...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">toggleImportance</span> <span class="o">=</span> <span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">=&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">url</span> <span class="o">=</span> <span class="sb">`http://localhost:3001/notes/</span><span class="si">${</span><span class="nx">id</span><span class="si">}</span><span class="sb">`</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">note</span> <span class="o">=</span> <span class="nx">notes</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">note</span> <span class="p">=&gt;</span> <span class="nx">note</span><span class="p">.</span><span class="nx">id</span> <span class="o">===</span> <span class="nx">id</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">changeNote</span> <span class="o">=</span> <span class="p">{</span> <span class="p">...</span><span class="nx">note</span><span class="p">,</span> <span class="nx">important</span><span class="o">:</span> <span class="o">!</span><span class="nx">note</span><span class="p">.</span><span class="nx">important</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nx">axios</span>
+</span></span><span class="line"><span class="cl">      <span class="p">.</span><span class="nx">put</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="nx">changeNote</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="p">=&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">setNotes</span><span class="p">(</span><span class="nx">notes</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">note</span> <span class="p">=&gt;</span> <span class="nx">note</span><span class="p">.</span><span class="nx">id</span> <span class="o">!==</span> <span class="nx">id</span> <span class="o">?</span> <span class="nx">note</span> <span class="o">:</span> <span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">      <span class="p">})</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// ...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">笔记</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="p">=&gt;</span> <span class="nx">setShowAll</span><span class="p">(</span><span class="o">!</span><span class="nx">showAll</span><span class="p">)}&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="nx">show</span> <span class="p">{</span><span class="nx">showAll</span> <span class="o">?</span> <span class="s1">&#39;显示重要&#39;</span> <span class="o">:</span> <span class="s1">&#39;显示全部&#39;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span><span class="nx">noteToShow</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">note</span><span class="p">)</span> <span class="p">=&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="p">&lt;</span><span class="nt">Note</span>
+</span></span><span class="line"><span class="cl">            <span class="na">key</span><span class="o">=</span><span class="p">{</span><span class="nx">note</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="na">note</span><span class="o">=</span><span class="p">{</span><span class="nx">note</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="na">toggleImportance</span><span class="o">=</span><span class="p">{()</span> <span class="p">=&gt;</span> <span class="nx">toggleImportance</span><span class="p">(</span><span class="nx">note</span><span class="p">.</span><span class="nx">id</span><span class="p">)}</span>
+</span></span><span class="line"><span class="cl">          <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">)}</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="c1">// ...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>通过 <code>PUT</code> 方法把对应 <code>id</code> 的 <code>note</code> 修改，修改成重要或是不重要。并通过回调函数将组件内的 <code>Notes</code> 状态更新。</p>
 <h4 id="extracting-communication-with-the-backend-into-a-separate-module">Extracting communication with the backend into a separate module</h4>
@@ -1346,21 +1346,21 @@
 </span><span class="lnt">14
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="kr">import</span> <span class="nx">axios</span> <span class="nx">from</span> <span class="s1">&#39;axios&#39;</span>
-
-<span class="kr">const</span> <span class="nx">baseUrl</span> <span class="o">=</span> <span class="s1">&#39;http://localhost:3001/notes&#39;</span>
-
-<span class="kr">const</span> <span class="nx">getAll</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="nx">axios</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">baseUrl</span><span class="p">)</span>
-<span class="kr">const</span> <span class="nx">create</span> <span class="o">=</span> <span class="p">(</span><span class="nx">newObject</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">axios</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="nx">baseUrl</span><span class="p">,</span> <span class="nx">newObject</span><span class="p">)</span>
-<span class="kr">const</span> <span class="nx">update</span> <span class="o">=</span> <span class="p">(</span><span class="nx">id</span><span class="p">,</span> <span class="nx">newObject</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">axios</span><span class="p">.</span><span class="nx">put</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">baseUrl</span><span class="si">}</span><span class="sb">/</span><span class="si">${</span><span class="nx">id</span><span class="si">}</span><span class="sb">`</span><span class="p">,</span> <span class="nx">newObject</span><span class="p">)</span>
-
-<span class="kr">export</span> <span class="k">default</span>
-<span class="p">{</span>
-  <span class="nx">getAll</span><span class="o">:</span> <span class="nx">getAll</span><span class="p">,</span>
-  <span class="nx">create</span><span class="o">:</span> <span class="nx">create</span><span class="p">,</span>
-  <span class="nx">update</span><span class="o">:</span> <span class="nx">update</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">axios</span> <span class="nx">from</span> <span class="s1">&#39;axios&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">baseUrl</span> <span class="o">=</span> <span class="s1">&#39;http://localhost:3001/notes&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">getAll</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="nx">axios</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">baseUrl</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">create</span> <span class="o">=</span> <span class="p">(</span><span class="nx">newObject</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">axios</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="nx">baseUrl</span><span class="p">,</span> <span class="nx">newObject</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">update</span> <span class="o">=</span> <span class="p">(</span><span class="nx">id</span><span class="p">,</span> <span class="nx">newObject</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">axios</span><span class="p">.</span><span class="nx">put</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">baseUrl</span><span class="si">}</span><span class="sb">/</span><span class="si">${</span><span class="nx">id</span><span class="si">}</span><span class="sb">`</span><span class="p">,</span> <span class="nx">newObject</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">getAll</span><span class="o">:</span> <span class="nx">getAll</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">create</span><span class="o">:</span> <span class="nx">create</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">update</span><span class="o">:</span> <span class="nx">update</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>修改 App.js</p>
 <div class="highlight"><div class="chroma">
@@ -1419,59 +1419,59 @@
 </span><span class="lnt">52
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="c1">// ...
-</span><span class="c1"></span><span class="kr">import</span> <span class="nx">noteService</span> <span class="nx">from</span> <span class="s1">&#39;./services/notes&#39;</span>
-
-<span class="kr">const</span> <span class="nx">App</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span>
-<span class="p">{</span>
-  <span class="c1">// ...
-</span><span class="c1"></span>
-  <span class="nx">useEffect</span><span class="p">(()</span> <span class="p">=&gt;</span>
-  <span class="p">{</span>
-    <span class="nx">noteService</span>
-      <span class="p">.</span><span class="nx">getAll</span><span class="p">()</span>
-      <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="p">=&gt;</span>
-      <span class="p">{</span>
-        <span class="nx">setNotes</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">)</span>
-      <span class="p">})</span>
-  <span class="p">},</span> <span class="p">[])</span>
-
-  <span class="kr">const</span> <span class="nx">toggleImportance</span> <span class="o">=</span> <span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">=&gt;</span>
-  <span class="p">{</span>
-    <span class="kr">const</span> <span class="nx">note</span> <span class="o">=</span> <span class="nx">notes</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">note</span> <span class="p">=&gt;</span> <span class="nx">note</span><span class="p">.</span><span class="nx">id</span> <span class="o">===</span> <span class="nx">id</span><span class="p">)</span>
-    <span class="kr">const</span> <span class="nx">changeNote</span> <span class="o">=</span> <span class="p">{</span> <span class="p">...</span><span class="nx">note</span><span class="p">,</span> <span class="nx">important</span><span class="o">:</span> <span class="o">!</span><span class="nx">note</span><span class="p">.</span><span class="nx">important</span> <span class="p">}</span>
-
-    <span class="nx">noteService</span>
-      <span class="p">.</span><span class="nx">update</span><span class="p">(</span><span class="nx">id</span><span class="p">,</span> <span class="nx">changeNote</span><span class="p">)</span>
-      <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="p">=&gt;</span>
-      <span class="p">{</span>
-        <span class="nx">setNotes</span><span class="p">(</span><span class="nx">notes</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">note</span> <span class="p">=&gt;</span> <span class="nx">note</span><span class="p">.</span><span class="nx">id</span> <span class="o">!==</span> <span class="nx">id</span> <span class="o">?</span> <span class="nx">note</span> <span class="o">:</span> <span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">))</span>
-      <span class="p">})</span>
-  <span class="p">}</span>
-
-  <span class="kr">const</span> <span class="nx">addNote</span> <span class="o">=</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">=&gt;</span>
-  <span class="p">{</span>
-    <span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">()</span>
-    <span class="kr">const</span> <span class="nx">noteObject</span> <span class="o">=</span> <span class="p">{</span>
-      <span class="nx">content</span><span class="o">:</span> <span class="nx">newNote</span><span class="p">,</span>
-      <span class="nx">date</span><span class="o">:</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">().</span><span class="nx">toISOString</span><span class="p">(),</span>
-      <span class="nx">important</span><span class="o">:</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mf">0.5</span>
-    <span class="p">}</span>
-
-    <span class="nx">noteService</span>
-      <span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">noteObject</span><span class="p">)</span>
-      <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="p">=&gt;</span> <span class="p">{</span>
-        <span class="nx">setNotes</span><span class="p">(</span><span class="nx">notes</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">))</span>
-        <span class="nx">setNewNote</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
-      <span class="p">})</span>
-  <span class="p">}</span>
-
-  <span class="c1">// ...
-</span><span class="c1"></span> 
-<span class="p">}</span>
-
-<span class="kr">export</span> <span class="k">default</span> <span class="nx">App</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="c1">// ...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">import</span> <span class="nx">noteService</span> <span class="nx">from</span> <span class="s1">&#39;./services/notes&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">App</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// ...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">  <span class="nx">useEffect</span><span class="p">(()</span> <span class="p">=&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">noteService</span>
+</span></span><span class="line"><span class="cl">      <span class="p">.</span><span class="nx">getAll</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">      <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="p">=&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">setNotes</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="p">})</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span> <span class="p">[])</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">toggleImportance</span> <span class="o">=</span> <span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">=&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">note</span> <span class="o">=</span> <span class="nx">notes</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">note</span> <span class="p">=&gt;</span> <span class="nx">note</span><span class="p">.</span><span class="nx">id</span> <span class="o">===</span> <span class="nx">id</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">changeNote</span> <span class="o">=</span> <span class="p">{</span> <span class="p">...</span><span class="nx">note</span><span class="p">,</span> <span class="nx">important</span><span class="o">:</span> <span class="o">!</span><span class="nx">note</span><span class="p">.</span><span class="nx">important</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nx">noteService</span>
+</span></span><span class="line"><span class="cl">      <span class="p">.</span><span class="nx">update</span><span class="p">(</span><span class="nx">id</span><span class="p">,</span> <span class="nx">changeNote</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="p">=&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">setNotes</span><span class="p">(</span><span class="nx">notes</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">note</span> <span class="p">=&gt;</span> <span class="nx">note</span><span class="p">.</span><span class="nx">id</span> <span class="o">!==</span> <span class="nx">id</span> <span class="o">?</span> <span class="nx">note</span> <span class="o">:</span> <span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">      <span class="p">})</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">addNote</span> <span class="o">=</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">=&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">noteObject</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">content</span><span class="o">:</span> <span class="nx">newNote</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">date</span><span class="o">:</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">().</span><span class="nx">toISOString</span><span class="p">(),</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">important</span><span class="o">:</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mf">0.5</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nx">noteService</span>
+</span></span><span class="line"><span class="cl">      <span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">noteObject</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">setNotes</span><span class="p">(</span><span class="nx">notes</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">setNewNote</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="p">})</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// ...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span> 
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="nx">App</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>如果整个 App <strong>只使用</strong> <code>response</code> 对象的 <code>response.data</code> 属性，那么可以使用如下方法会更好一些。</p>
 <p><code>services/note.js</code> 做如下修改；</p>
@@ -1486,14 +1486,14 @@
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="kr">const</span> <span class="nx">getAll</span><span class="p">()</span> <span class="p">=&gt;</span>
-<span class="p">{</span>
-  <span class="kr">const</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">axios</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">baseUrl</span><span class="p">)</span>
-  <span class="k">return</span> <span class="nx">request</span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="p">=&gt;</span> <span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">)</span>
-<span class="p">}</span>
-
-<span class="c1">// 其余方法以此类推
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">getAll</span><span class="p">()</span> <span class="p">=&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">axios</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">baseUrl</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="nx">request</span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="p">=&gt;</span> <span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 其余方法以此类推
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>相应的 App 组件里对应的 service 也要做修改：</p>
 <div class="highlight"><div class="chroma">
@@ -1506,13 +1506,13 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="nx">noteService</span>
-  <span class="p">.</span><span class="nx">getAll</span><span class="p">()</span>
-  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">initialNotes</span> <span class="p">=&gt;</span>
-  <span class="p">{</span>
-    <span class="nx">setNotes</span><span class="p">(</span><span class="nx">initialNotes</span><span class="p">)</span>
-  <span class="p">})</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="nx">noteService</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nx">getAll</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">initialNotes</span> <span class="p">=&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">setNotes</span><span class="p">(</span><span class="nx">initialNotes</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">})</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><code>getAll</code> 函数返回了一个 Promise， 当 HTTP 请求成功时，Promise 将返回从后端响应中发送回来的数据。</p>
 <blockquote>
@@ -1532,13 +1532,13 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="kr">export</span> <span class="k">default</span>
-<span class="p">{</span>
-  <span class="nx">getAll</span><span class="o">:</span> <span class="nx">getAll</span><span class="p">,</span>
-  <span class="nx">create</span><span class="o">:</span> <span class="nx">create</span><span class="p">,</span>
-  <span class="nx">update</span><span class="o">:</span> <span class="nx">update</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">getAll</span><span class="o">:</span> <span class="nx">getAll</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">create</span><span class="o">:</span> <span class="nx">create</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">update</span><span class="o">:</span> <span class="nx">update</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>在对象定义中，冒号左侧的标签是对象的键，而它右侧的标签是在模块内部定义的 variables。</p>
 <p>由于键和赋值变量是相同的，同时也因 ES6 引入到 JavaScript 中，可以简化成如下：</p>
@@ -1547,8 +1547,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="kr">export</span> <span class="k">default</span> <span class="p">{</span> <span class="nx">getAll</span><span class="p">,</span> <span class="nx">create</span><span class="p">,</span> <span class="nx">update</span> <span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="p">{</span> <span class="nx">getAll</span><span class="p">,</span> <span class="nx">create</span><span class="p">,</span> <span class="nx">update</span> <span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="promises-and-errors">Promises and errors</h4>
 <p>使用 <code>catch</code> 方法来处理 Promise 是 reject 的状态的情况。</p>
@@ -1566,17 +1566,17 @@
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="nx">axios</span>
-  <span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;http://localhost:3001/foobar&#39;</span><span class="p">)</span>
-  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="p">=&gt;</span>
-  <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;请求成功&#39;</span><span class="p">)</span>
-  <span class="p">})</span>
-  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">error</span> <span class="p">=&gt;</span>
-  <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;请求失败&#39;</span><span class="p">)</span>
-  <span class="p">})</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="nx">axios</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;http://localhost:3001/foobar&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="p">=&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;请求成功&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">})</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">error</span> <span class="p">=&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;请求失败&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">})</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>通常 <code>catch</code> 方法置于 <a href="https://javascript.info/promise-chaining" target="_blank" rel="noopener noreffer">Promise 链</a>的更深处来使用，如下：</p>
 <div class="highlight"><div class="chroma">
@@ -1591,15 +1591,15 @@
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="nx">axios</span>
-  <span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">baseUrl</span><span class="p">)</span>
-  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="p">=&gt;</span> <span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">)</span>
-  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">changeNote</span> <span class="p">=&gt;</span>
-  <span class="p">{</span>
-    <span class="c1">// ...
-</span><span class="c1"></span>  <span class="p">})</span>
-  <span class="p">.</span><span class="nx">cartch</span><span class="p">(</span><span class="nx">error</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;请求失败&#39;</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="nx">axios</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">baseUrl</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="p">=&gt;</span> <span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">changeNote</span> <span class="p">=&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// ...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="p">})</span>
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nx">cartch</span><span class="p">(</span><span class="nx">error</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;请求失败&#39;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>修改原先 App 组件</p>
 <div class="highlight"><div class="chroma">
@@ -1621,22 +1621,22 @@
 </span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="kr">const</span> <span class="nx">toggleImportanceOf</span> <span class="o">=</span> <span class="nx">id</span> <span class="p">=&gt;</span> <span class="p">{</span>
-  <span class="kr">const</span> <span class="nx">note</span> <span class="o">=</span> <span class="nx">notes</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">n</span> <span class="p">=&gt;</span> <span class="nx">n</span><span class="p">.</span><span class="nx">id</span> <span class="o">===</span> <span class="nx">id</span><span class="p">)</span>
-  <span class="kr">const</span> <span class="nx">changedNote</span> <span class="o">=</span> <span class="p">{</span> <span class="p">...</span><span class="nx">note</span><span class="p">,</span> <span class="nx">important</span><span class="o">:</span> <span class="o">!</span><span class="nx">note</span><span class="p">.</span><span class="nx">important</span> <span class="p">}</span>
-
-  <span class="nx">noteService</span>
-    <span class="p">.</span><span class="nx">update</span><span class="p">(</span><span class="nx">id</span><span class="p">,</span> <span class="nx">changedNote</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">returnedNote</span> <span class="p">=&gt;</span> <span class="p">{</span>
-      <span class="nx">setNotes</span><span class="p">(</span><span class="nx">notes</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">note</span> <span class="p">=&gt;</span> <span class="nx">note</span><span class="p">.</span><span class="nx">id</span> <span class="o">!==</span> <span class="nx">id</span> <span class="o">?</span> <span class="nx">note</span> <span class="o">:</span> <span class="nx">returnedNote</span><span class="p">))</span>
-    <span class="p">})</span>
-    <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">error</span> <span class="p">=&gt;</span> <span class="p">{</span>
-      <span class="nx">alert</span><span class="p">(</span>
-        <span class="sb">`未找到该条 &#39;</span><span class="si">${</span><span class="nx">note</span><span class="p">.</span><span class="nx">content</span><span class="si">}</span><span class="sb">&#39; 笔记，可能已从服务器删除。`</span>
-      <span class="p">)</span>
-      <span class="nx">setNotes</span><span class="p">(</span><span class="nx">notes</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">n</span> <span class="p">=&gt;</span> <span class="nx">n</span><span class="p">.</span><span class="nx">id</span> <span class="o">!==</span> <span class="nx">id</span><span class="p">))</span>
-    <span class="p">})</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">toggleImportanceOf</span> <span class="o">=</span> <span class="nx">id</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">note</span> <span class="o">=</span> <span class="nx">notes</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">n</span> <span class="p">=&gt;</span> <span class="nx">n</span><span class="p">.</span><span class="nx">id</span> <span class="o">===</span> <span class="nx">id</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">changedNote</span> <span class="o">=</span> <span class="p">{</span> <span class="p">...</span><span class="nx">note</span><span class="p">,</span> <span class="nx">important</span><span class="o">:</span> <span class="o">!</span><span class="nx">note</span><span class="p">.</span><span class="nx">important</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="nx">noteService</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="nx">update</span><span class="p">(</span><span class="nx">id</span><span class="p">,</span> <span class="nx">changedNote</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">returnedNote</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">setNotes</span><span class="p">(</span><span class="nx">notes</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">note</span> <span class="p">=&gt;</span> <span class="nx">note</span><span class="p">.</span><span class="nx">id</span> <span class="o">!==</span> <span class="nx">id</span> <span class="o">?</span> <span class="nx">note</span> <span class="o">:</span> <span class="nx">returnedNote</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="p">})</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">error</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">alert</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="sb">`未找到该条 &#39;</span><span class="si">${</span><span class="nx">note</span><span class="p">.</span><span class="nx">content</span><span class="si">}</span><span class="sb">&#39; 笔记，可能已从服务器删除。`</span>
+</span></span><span class="line"><span class="cl">      <span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">setNotes</span><span class="p">(</span><span class="nx">notes</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">n</span> <span class="p">=&gt;</span> <span class="nx">n</span><span class="p">.</span><span class="nx">id</span> <span class="o">!==</span> <span class="nx">id</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="p">})</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="给-react-应用加点样式">给 React 应用加点样式</h3>
 <ul>
@@ -1649,8 +1649,8 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="kr">import</span> <span class="s1">&#39;./index.css&#39;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="kr">import</span> <span class="s1">&#39;./index.css&#39;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>之后在 <code>index.css</code> 添加相关样式即可。常规 html 文件在元素中使用 <code>class</code> 属性来对应样式表的类选择器，而 react 中需要使用 <code>className</code> 来对应。</p>
 <div class="highlight"><div class="chroma">
@@ -1669,19 +1669,19 @@
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="kr">const</span> <span class="nx">Note</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">note</span><span class="p">,</span> <span class="nx">toggleImportance</span> <span class="p">})</span> <span class="p">=&gt;</span> <span class="p">{</span>
-  <span class="kr">const</span> <span class="nx">label</span> <span class="o">=</span> <span class="nx">note</span><span class="p">.</span><span class="nx">important</span> 
-    <span class="o">?</span> <span class="s1">&#39;设置为不重要&#39;</span>
-    <span class="o">:</span> <span class="s1">&#39;设置为重要&#39;</span><span class="p">;</span>
-
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="p">&lt;</span><span class="nt">li</span> <span class="na">className</span><span class="o">=</span><span class="s">&#39;note&#39;</span><span class="p">&gt;</span>
-      <span class="p">{</span><span class="nx">note</span><span class="p">.</span><span class="nx">content</span><span class="p">}</span> 
-      <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">toggleImportance</span><span class="p">}&gt;{</span><span class="nx">label</span><span class="p">}&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-  <span class="p">)</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">Note</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">note</span><span class="p">,</span> <span class="nx">toggleImportance</span> <span class="p">})</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">label</span> <span class="o">=</span> <span class="nx">note</span><span class="p">.</span><span class="nx">important</span> 
+</span></span><span class="line"><span class="cl">    <span class="o">?</span> <span class="s1">&#39;设置为不重要&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">:</span> <span class="s1">&#39;设置为重要&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">li</span> <span class="na">className</span><span class="o">=</span><span class="s">&#39;note&#39;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span><span class="nx">note</span><span class="p">.</span><span class="nx">content</span><span class="p">}</span> 
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">toggleImportance</span><span class="p">}&gt;{</span><span class="nx">label</span><span class="p">}&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>内联样式的使用方法如下：</p>
 <p>需要注意的是，内联样式中<strong>无法使用</strong> <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/Pseudo-classes" target="_blank" rel="noopener noreffer">伪类 pseudo-classes</a>。</p>
@@ -1702,20 +1702,20 @@
 </span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="kr">const</span> <span class="nx">Footer</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
-  <span class="kr">const</span> <span class="nx">footerStyle</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="nx">color</span><span class="o">:</span> <span class="s1">&#39;green&#39;</span><span class="p">,</span>
-    <span class="nx">fontStyle</span><span class="o">:</span> <span class="s1">&#39;italic&#39;</span><span class="p">,</span>
-    <span class="nx">fontSize</span><span class="o">:</span> <span class="mi">16</span>
-  <span class="p">}</span>
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="p">{</span><span class="nx">footerStyle</span><span class="p">}&gt;</span>
-      <span class="p">&lt;</span><span class="nt">br</span> <span class="p">/&gt;</span>
-      <span class="p">&lt;</span><span class="nt">em</span><span class="p">&gt;</span><span class="nx">footer</span> <span class="nx">content</span><span class="p">&lt;/</span><span class="nt">em</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span> 
-  <span class="p">)</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">Footer</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">footerStyle</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">color</span><span class="o">:</span> <span class="s1">&#39;green&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">fontStyle</span><span class="o">:</span> <span class="s1">&#39;italic&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">fontSize</span><span class="o">:</span> <span class="mi">16</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="p">{</span><span class="nx">footerStyle</span><span class="p">}&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">br</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">em</span><span class="p">&gt;</span><span class="nx">footer</span> <span class="nx">content</span><span class="p">&lt;/</span><span class="nt">em</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span> 
+</span></span><span class="line"><span class="cl">  <span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><blockquote>
 <p>内联样式和其他一些将样式添加到 React 组件的方法完全违背了旧的惯例。 传统上，将 CSS 与内容(HTML)和功能(JavaScript)解耦被认为是最佳实践。 根据这个古老的思想流派，我们的目标是将 CSS、 HTML 和 JavaScript 编写到它们各自的文件中。</p>
@@ -1751,7 +1751,7 @@
                 Please enable JavaScript to view the comments powered by <a href="https://disqus.com/?ref_noscript">Disqus</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.92.2">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.100.2">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2017 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://awo.design" target="_blank">imagicw</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>
@@ -1761,7 +1761,7 @@
             </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
                 <i class="fas fa-comment fa-fw"></i>
             </a>
-        </div><link rel="stylesheet" href="/lib/katex/katex.min.4710034e669c7ff17f823f9ba12cf8a36582d65b007f79cbc4a3c11d7db2e4ca.css" integrity="sha256-RxADTmacf/F/gj&#43;boSz4o2WC1lsAf3nLxKPBHX2y5Mo="><link rel="stylesheet" href="/lib/katex/copy-tex.min.bf9ff4137fec38f6255419e142d0883c9c52090885d746f80eee12b273d9b3e0.css" integrity="sha256-v5/0E3/sOPYlVBnhQtCIPJxSCQiF10b4Du4SsnPZs&#43;A="><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.cd0d0b6e50ff01ff2f3a9a70d7cfb66a7c6cb9acf7a566325568be6d3bd31fc4.css" integrity="sha256-zQ0LblD/Af8vOppw18&#43;2anxsuaz3pWYyVWi&#43;bTvTH8Q="><script type="text/javascript" src="https://imagicw.disqus.com/embed.js" defer></script><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.bcff85fb5e00d68802850b393ac7792c997f722f536f38e26638c46dca8e5eb6.js" integrity="sha256-vP&#43;F&#43;14A1ogChQs5Osd5LJl/ci9TbzjiZjjEbcqOXrY="></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.615590a2ca2b667afa7c02ef396f5500b62e22795ddbb46448f90494605d09a5.js" integrity="sha256-YVWQosorZnr6fALvOW9VALYuInld27RkSPkElGBdCaU="></script><script type="text/javascript" src="/lib/lunr/lunr.min.df84a2d58ea594c04a3371b48d020b55ea10284c2ec636e4e331965d7313e29b.js" integrity="sha256-34Si1Y6llMBKM3G0jQILVeoQKEwuxjbk4zGWXXMT4ps="></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.115461812ca5b093f9bcc2f15d2693a6c90e8fe38dabf2375e5f18e1c348d97c.js" integrity="sha256-EVRhgSylsJP5vMLxXSaTpskOj&#43;ONq/I3Xl8Y4cNI2Xw="></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.b3aab24bd69b746d28f433f4a82ecfa1556a75ba5ef9f4caa2bcc7ab8d327c14.js" integrity="sha256-s6qyS9abdG0o9DP0qC7PoVVqdbpe&#43;fTKorzHq40yfBQ="></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.fb649fcae62177dfe63e67081ddceb830b5ce1f05a4184e9bbb7d87ac4b8f4e5.js" integrity="sha256-&#43;2SfyuYhd9/mPmcIHdzrgwtc4fBaQYTpu7fYesS49OU="></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.8a7739925f4c03586479852df840b7061948832a7fda30c8c812d2ea4dd4c4f2.js" integrity="sha256-inc5kl9MA1hkeYUt&#43;EC3BhlIgyp/2jDIyBLS6k3UxPI="></script><script type="text/javascript" src="/lib/sharer/sharer.min.9c88f86c7f0820287113f6236200459832693656e80d7556cc80a93dfbd45813.js" integrity="sha256-nIj4bH8IIChxE/YjYgBFmDJpNlboDXVWzICpPfvUWBM="></script><script type="text/javascript" src="/lib/katex/katex.min.17f5dd6b9f123dd7140abfb18521b3f4c036cd004f6f40121182a8865f140877.js" integrity="sha256-F/Xda58SPdcUCr&#43;xhSGz9MA2zQBPb0ASEYKohl8UCHc="></script><script type="text/javascript" src="/lib/katex/auto-render.min.f74776a677f0d2be0af0264058f928e2ba455d0b19bc985304660d922a43a6b2.js" integrity="sha256-90d2pnfw0r4K8CZAWPko4rpFXQsZvJhTBGYNkipDprI="></script><script type="text/javascript" src="/lib/katex/copy-tex.min.2ab2237329021bc443986c8327f6e61357fb68a54e5d233d224023718c02207d.js" integrity="sha256-KrIjcykCG8RDmGyDJ/bmE1f7aKVOXSM9IkAjcYwCIH0="></script><script type="text/javascript" src="/lib/katex/mhchem.min.5cea356d6025c5a2f18c454c83ec5674dbb04fab1cd1d75569e77788c6b6f888.js" integrity="sha256-XOo1bWAlxaLxjEVMg&#43;xWdNuwT6sc0ddVaed3iMa2&#43;Ig="></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.e55842a856a6d829feca3c3ad736c136b6c7549e9247274f78aa296259e06e24.js" integrity="sha256-5VhCqFam2Cn&#43;yjw61zbBNrbHVJ6SRydPeKopYlngbiQ="></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":12},"comment":{},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.f51938f3065a40ee841bcb558e4330e31fd26c0ea55343fff8770b88b0319a3c.js" integrity="sha256-9Rk48wZaQO6EG8tVjkMw4x/SbA6lU0P/&#43;HcLiLAxmjw="></script><script type="text/javascript">
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.4710034e669c7ff17f823f9ba12cf8a36582d65b007f79cbc4a3c11d7db2e4ca.css" integrity="sha256-RxADTmacf/F/gj&#43;boSz4o2WC1lsAf3nLxKPBHX2y5Mo="><link rel="stylesheet" href="/lib/katex/copy-tex.min.bf9ff4137fec38f6255419e142d0883c9c52090885d746f80eee12b273d9b3e0.css" integrity="sha256-v5/0E3/sOPYlVBnhQtCIPJxSCQiF10b4Du4SsnPZs&#43;A="><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.cd0d0b6e50ff01ff2f3a9a70d7cfb66a7c6cb9acf7a566325568be6d3bd31fc4.css" integrity="sha256-zQ0LblD/Af8vOppw18&#43;2anxsuaz3pWYyVWi&#43;bTvTH8Q="><script type="text/javascript" src="https://imagicw.disqus.com/embed.js" defer></script><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.bcff85fb5e00d68802850b393ac7792c997f722f536f38e26638c46dca8e5eb6.js" integrity="sha256-vP&#43;F&#43;14A1ogChQs5Osd5LJl/ci9TbzjiZjjEbcqOXrY="></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.615590a2ca2b667afa7c02ef396f5500b62e22795ddbb46448f90494605d09a5.js" integrity="sha256-YVWQosorZnr6fALvOW9VALYuInld27RkSPkElGBdCaU="></script><script type="text/javascript" src="/lib/lunr/lunr.min.df84a2d58ea594c04a3371b48d020b55ea10284c2ec636e4e331965d7313e29b.js" integrity="sha256-34Si1Y6llMBKM3G0jQILVeoQKEwuxjbk4zGWXXMT4ps="></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.4f78b6fca08719cbcfbcb9756da397efaf2e0701df9aa8a8c22c1595d07bdc91.js" integrity="sha256-T3i2/KCHGcvPvLl1baOX768uBwHfmqiowiwVldB73JE="></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.d8ddd4d489d4ab7b0aac9bde3a7cf6d97a304383b7738af9569c8fdb37ca100a.js" integrity="sha256-2N3U1InUq3sKrJveOnz22XowQ4O3c4r5VpyP2zfKEAo="></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.fb649fcae62177dfe63e67081ddceb830b5ce1f05a4184e9bbb7d87ac4b8f4e5.js" integrity="sha256-&#43;2SfyuYhd9/mPmcIHdzrgwtc4fBaQYTpu7fYesS49OU="></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.8a7739925f4c03586479852df840b7061948832a7fda30c8c812d2ea4dd4c4f2.js" integrity="sha256-inc5kl9MA1hkeYUt&#43;EC3BhlIgyp/2jDIyBLS6k3UxPI="></script><script type="text/javascript" src="/lib/sharer/sharer.min.9c88f86c7f0820287113f6236200459832693656e80d7556cc80a93dfbd45813.js" integrity="sha256-nIj4bH8IIChxE/YjYgBFmDJpNlboDXVWzICpPfvUWBM="></script><script type="text/javascript" src="/lib/katex/katex.min.17f5dd6b9f123dd7140abfb18521b3f4c036cd004f6f40121182a8865f140877.js" integrity="sha256-F/Xda58SPdcUCr&#43;xhSGz9MA2zQBPb0ASEYKohl8UCHc="></script><script type="text/javascript" src="/lib/katex/auto-render.min.f74776a677f0d2be0af0264058f928e2ba455d0b19bc985304660d922a43a6b2.js" integrity="sha256-90d2pnfw0r4K8CZAWPko4rpFXQsZvJhTBGYNkipDprI="></script><script type="text/javascript" src="/lib/katex/copy-tex.min.2ab2237329021bc443986c8327f6e61357fb68a54e5d233d224023718c02207d.js" integrity="sha256-KrIjcykCG8RDmGyDJ/bmE1f7aKVOXSM9IkAjcYwCIH0="></script><script type="text/javascript" src="/lib/katex/mhchem.min.5cea356d6025c5a2f18c454c83ec5674dbb04fab1cd1d75569e77788c6b6f888.js" integrity="sha256-XOo1bWAlxaLxjEVMg&#43;xWdNuwT6sc0ddVaed3iMa2&#43;Ig="></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.e55842a856a6d829feca3c3ad736c136b6c7549e9247274f78aa296259e06e24.js" integrity="sha256-5VhCqFam2Cn&#43;yjw61zbBNrbHVJ6SRydPeKopYlngbiQ="></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":12},"comment":{},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.f51938f3065a40ee841bcb558e4330e31fd26c0ea55343fff8770b88b0319a3c.js" integrity="sha256-9Rk48wZaQO6EG8tVjkMw4x/SbA6lU0P/&#43;HcLiLAxmjw="></script><script type="text/javascript">
             window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
             gtag('config', 'UA-92164716-1', { 'anonymize_ip': true });
         </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-92164716-1" async></script></body>

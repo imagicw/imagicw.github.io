@@ -66,7 +66,7 @@
     <author>作者</author>
     <guid>https://x.awo.design/2021/11/ios15-machine-learning/</guid>
     <description><![CDATA[<p>上周日晚上去上网球课，刚上车收到手机弹出的 Siri 建议，点开随即进入地图应用并且给我规划好去网球场的路线，很不巧，那天下雨，所以没有去室外场地而是室内场地。</p>
-<p>不知道是 iOS15 加强了这方面的功能，还是原本 iOS14 也有。反正，现在这个版本的 Siri 建议聪明了很多。</p>
+<p>不知道是 iOS 15 加强了这方面的功能，还是原本 iOS 14 也有。反正，现在这个版本的 Siri 建议聪明了很多。</p>
 <p>系统会根据使用者的习惯，会在你早上上车时候告诉你去公司需要多长时间，并给你选出 2 至 3 条合适的路线；会在你复制了链接后建议你用 Safari 打开链接；会告诉你在某个时间点你经常会打开什么 App，你现在是否要打开？</p>
 <p>Siri 就从一开始呆萌的只会搜索网络结果及跟你回几句嘴开始变成了一个智能小管家，这么几年的深度学习的确起了效果。</p>
 <p>在某些方面上，我也开始依赖起这个小管家。</p>
@@ -75,222 +75,6 @@
 <p>好在现在科技公司都在隐私方面下功夫，苹果推出了专门的 Privacy 页面，用以了解账户所有的数据信息，也在新版本的 iOS 系统里增加了隐私报告。</p>
 <p>希望这些隐私数据能够脱敏，在给用户提供个性化建议的同时，也不会暴露用户本身。</p>
 <p>科技是好，但也还有生活，也许有时候离开科技，才是自由。</p>
-]]></description>
-</item><item>
-    <title>《大家的日本语》学习笔记 - 助词 &amp; 副词</title>
-    <link>https://x.awo.design/2021/09/mina-no-nihonngo-particle/</link>
-    <pubDate>Sun, 05 Sep 2021 18:00:00 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://x.awo.design/2021/09/mina-no-nihonngo-particle/</guid>
-    <description><![CDATA[<div class="details admonition tip open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-lightbulb fa-fw"></i>例句中符号说明<i class="details-icon fas fa-angle-right fa-fw"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content"><ul>
-<li>～ 替代词汇及句子</li>
-<li>ー 替代数字</li>
-<li>[    ] 括号中的语句可以省略</li>
-<li>(    ) 括号中为其他表达方式</li>
-</ul>
-</div>
-        </div>
-    </div>
-<p><em>笔记更新至第7课</em></p>
-<hr>
-<h2 id="助词的省略">助词的省略</h2>
-<p>在会话中，当从前后关系就可以明白语意时，助词可以省略。</p>
-<blockquote>
-<p>このスプーン[は]、すてきですね。</p>
-<p>コーヒー[を]、もう一杯いかがですか。</p>
-</blockquote>
-<hr>
-<h2 id="助词-は">助词 は</h2>
-<p>助词「は」读作「わ」</p>
-<hr>
-<h2 id="助词-の">助词 の</h2>
-<h3 id="名词sub1sub-の-名词sub2sub">名词<sub>1</sub> の 名词<sub>2</sub></h3>
-<ul>
-<li>名词<sub>1</sub> 表示 名词<sub>2</sub> 的属性。
-<ul>
-<li>ミラーさん は IMC の 社員 です。</li>
-</ul>
-</li>
-<li>名词<sub>1</sub> 来说明 名词<sub>2</sub> 与什么事物有关。
-<ul>
-<li>これ は コンピョーター の 本 です。</li>
-</ul>
-</li>
-<li>名词<sub>1</sub> 表示 名词<sub>2</sub> 的所属/产地。
-<ul>
-<li>これ は 私 の 本 です。</li>
-<li>これ は 日本 の コンピョーター です。</li>
-</ul>
-</li>
-</ul>
-<h3 id="代替名词">代替名词</h3>
-<blockquote>
-<p>あれ は 誰 の 鞄 ですか。</p>
-<blockquote>
-<p>佐藤さんのです。</p>
-</blockquote>
-</blockquote>
-<p>在回答时，「の」替代了问句中出现的名词「鞄」，「の」放在「佐藤」后面相当于省略了「鞄」。<strong>「の」可以用于替代物品，不可用来替代人。</strong></p>
-<blockquote>
-<p>この 鞄 あなたの ですか。</p>
-<blockquote>
-<p>　いいえ、私 の じゃありません。</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>ミラーさんは IMC の 社員 ですか。</p>
-<blockquote>
-<p>✔️ はい、IMC の 社員 です。</p>
-<p>❌ <del>はい、IMC の です。</del></p>
-</blockquote>
-</blockquote>
-<hr>
-<h2 id="助词-に">助词 に</h2>
-<h3 id="名词时间--に--动词">名词（时间） + に + 动词</h3>
-<p>在表示时间的名词后加「に」，表示动作进行的时间</p>
-<blockquote>
-<p>７時２分 に　日本へ来ました。</p>
-</blockquote>
-<p>以下表示时间的名词不能加「に」：</p>
-<p><code><strong><ruby>今日<rt>きょう</rt></ruby></strong></code> <code><strong><ruby>明日<rt>あした</rt></ruby></strong></code>　<code><strong><ruby>明後日<rt>あさって</rt></ruby></strong></code> <code><strong><ruby>昨日<rt>きのう</rt></ruby></strong></code> <code><strong><ruby>一昨日<rt>おととい</rt></ruby></strong></code> <code><strong><ruby>今朝<rt>けさ</rt></ruby></strong></code> <code><strong><ruby>今晩<rt>こんばん</rt></ruby></strong></code> <code><strong><ruby>今<rt>いま</rt></ruby></strong></code> <code><strong><ruby>毎朝<rt>まいあさ</rt></ruby></strong></code> <code><strong><ruby>毎晩<rt>まいばん</rt></ruby></strong></code> <code><strong><ruby>毎日<rt>まいにち</rt></ruby></strong></code> <code><strong><ruby>先週<rt>せんしゅう</rt></ruby></strong></code> <code><strong><ruby>今週<rt>こんしゅう</rt></ruby></strong></code> <code><strong><ruby>来週<rt>らいしゅう</rt></ruby></strong></code> <code>いつ</code> <code><strong><ruby>先月<rt>せんげつ</rt></ruby></strong></code> <code><strong><ruby>今月<rt>こんげつ</rt></ruby></strong></code> <code><strong><ruby>来月<rt>らいげつ</rt></ruby></strong></code> <code><strong><ruby>今年<rt>ことし</rt></ruby></strong></code> <code><strong><ruby>来年<rt>らいねん</rt></ruby></strong></code> <code><strong><ruby>去年<rt>きょねん</rt></ruby></strong></code> 等。</p>
-<blockquote>
-<p>昨日　勉強しました。</p>
-</blockquote>
-<p>这些表示时间的名词可加可不加： <code><strong><ruby>〜曜日<rt>〜ようび</rt></ruby></strong></code> <code><strong><ruby>朝<rt>あさ</rt></ruby></strong></code> <code><strong><ruby>昼<rt>ひる</rt></ruby></strong></code> <code><strong><ruby>晩<rt>ばん</rt></ruby></strong></code> <code><strong><ruby>夜<rt>よる</rt></ruby></strong></code></p>
-<h3 id="名词人--に--动词">名词（人） + に + 动词</h3>
-<p>助词「に」表示接触点。</p>
-<blockquote>
-<p>友達　に　会います。 <code>语义上偏向去见朋友：我 =&gt; 朋友</code></p>
-<p>友達　と　会います。 <code>语义上偏向两个人去约定的地方见面：我 =&gt; 场所 &lt;= 朋友</code></p>
-<p>❌ <del>友達　を　会います。</del></p>
-</blockquote>
-<h3 id="名词sub1sub--に--名词sub2sub--动词">名词<sub>1</sub> + に + 名词<sub>2</sub> + 动词。</h3>
-<p>动词分两种：</p>
-<ul>
-<li>一种是表示<strong>提供</strong>事物、信息的意思，需要有接受这些事物、信息的对象，这一对象用助词「に」来表示。(名词<sub>1</sub> 为受方时)
-<ul>
-<li>如 <code>「あげます」</code> <code>「かします」</code> <code>「おしえます」</code> 等。</li>
-</ul>
-</li>
-<li>另外一种是表示<strong>得到</strong>事物、信息的意思，需要有提供这些事物、信息的对象，这一对象用助词「に」来表示，也可以用「から」来表示。(名词<sub>1</sub> 为授方时)
-<ul>
-<li>如 <code>「もらいます」</code>　<code>かります</code> <code>ならいます</code> 等。</li>
-</ul>
-</li>
-</ul>
-<blockquote>
-<p>[私は]木村さん　に　花を　あげました。 <code>我给木村小姐送了花。</code></p>
-<p>[私は]木村さん　に（から）　花を　もらいました。 <code>我收到了木村小姐送的花。</code></p>
-</blockquote>
-<h2 id="助词-ね">助词 ね</h2>
-<h3 id="ね">〜ね</h3>
-<p>表示说话人希望得到听话人的同意或说话人对某件事物加以确认、叮嘱的语气。</p>
-<blockquote>
-<p>毎日１０時まで勉強します。</p>
-<blockquote>
-<p>大変です ね。</p>
-</blockquote>
-</blockquote>
-<h3 id="名词场所--に--动词表示移动的">名词（场所） + に + 动词（表示移动的）</h3>
-<p>在表达移动到达的场所时，用助词「に」。与助词「へ」的差别在于，「へ」是表达移动方向，「に」是表达移动到这个场所。</p>
-<blockquote>
-<p>私は学校　に　行きます。</p>
-</blockquote>
-<hr>
-<h2 id="助词-へ">助词 へ</h2>
-<p>助词「へ」读作「え」</p>
-<h3 id="名词场所--へ--动词表示移动的">名词（场所） + へ + 动词（表示移动的）</h3>
-<p>使用表示移动的词时，移动方向用助词助词「へ」表示。</p>
-<blockquote>
-<p>京都　へ　行きます。</p>
-<p>うち　へ　帰ります。</p>
-</blockquote>
-<hr>
-<h2 id="助词-と">助词 と</h2>
-<h3 id="名词sub1sub--と--名词sub2sub">名词<sub>1</sub> + と + 名词<sub>2</sub></h3>
-<ul>
-<li>名词并列，在之间用「と」连接，表示名词<sub>1</sub>和名词<sub>2</sub>。</li>
-</ul>
-<blockquote>
-<p>　銀行の休みは土曜日　と　日曜日　です。</p>
-</blockquote>
-<h3 id="名词人动物--と--动词">名词（人/动物） + と + 动词</h3>
-<p>表示与自己一起行动的人或动物。</p>
-<blockquote>
-<p>家族　と　日本へ来ました。</p>
-</blockquote>
-<p>单独行动时，要用「一人で」且不用助词「と」。</p>
-<blockquote>
-<p>一人で　東京へ行きます。</p>
-</blockquote>
-<hr>
-<h2 id="助词-で">助词 で</h2>
-<h3 id="名词交通工具--で--动词">名词（交通工具） + で + 动词。</h3>
-<p>助词「で」表示手段、方法，接在表示交通工具的名词之后，表示与动词一起使用。</p>
-<blockquote>
-<p>　電車　で　行きます。</p>
-</blockquote>
-<p><strong>徒步行走用「<strong><ruby>歩<rt>ある</rt></ruby></strong>いて」且不用接助词「で」。</strong></p>
-<blockquote>
-<p>駅から歩いて帰りました。</p>
-</blockquote>
-<h3 id="名词场所--で--动词">名词（场所） + で + 动词。</h3>
-<p>接在场所后的助词「で」表示发生的场所。</p>
-<blockquote>
-<p>駅　で　新聞を買います。</p>
-</blockquote>
-<h3 id="名词工具手段--で--动词">名词（工具/手段） + で + 动词。</h3>
-<p>助词「で」用来表示方法、手段、工具。</p>
-<blockquote>
-<p><strong><ruby>箸<rt>はし</rt></ruby></strong>で食べます。 ｜ 用筷子吃饭。</p>
-</blockquote>
-<hr>
-<h2 id="助词-を">助词 を</h2>
-<h3 id="名词--を--动词他动词">名词 + を + 动词（他动词）</h3>
-<p>他动词的宾语用助词「を」表示。</p>
-<blockquote>
-<p>ジュース　を　飲みます。</p>
-</blockquote>
-<p><em>注：「を」只用来表示助词。</em></p>
-<h3 id="名词--を--动词">名词 + を + 动词</h3>
-<p>表示动作作用对象。</p>
-<p>动词是「します」时，可以接在很多名词之后，使其作为宾语。意思是表示做该名词所表示的内容。</p>
-<blockquote>
-<p>スッカー　を　します。 <code>踢足球</code></p>
-<p>パーティー　を　します。 <code>举办晚会。</code></p>
-<p><strong><ruby>宿題<rt>しゅくだい</rt></ruby></strong>　を　します。 <code>做作业。</code></p>
-</blockquote>
-<hr>
-<h2 id="助词-よ">助词 よ</h2>
-<p>接在词尾，用于将对方不知道的事情或说话人自己的判断等告诉对方。</p>
-<blockquote>
-<p>この電車は<strong><ruby>甲<rt>こう</rt></ruby></strong><strong><ruby>子<rt>し</rt></ruby></strong><strong><ruby>園<rt>えん</rt></ruby></strong>へ行きますか。</p>
-<blockquote>
-<p>いいえ、行きません。次の「<strong><ruby>普<rt>ふ</rt></ruby></strong><strong><ruby>通<rt>つう</rt></ruby></strong>」です よ。</p>
-</blockquote>
-</blockquote>
-<h2 id="副词-ときぢき">副词 ときぢき</h2>
-<p>修饰后面的动词或新的动词，与前句无关。意思是「有时候」。</p>
-<blockquote>
-<p>うちで本を読みます。ときどき図書館へ行きます。</p>
-</blockquote>
-<h2 id="副词-もう">副词 もう</h2>
-<h3 id="もう--动词ました">もう + 动词ました。</h3>
-<p>「もう」是「已经」的意思，与「动词ました」一起使用，表示「动词ました」已经结束。</p>
-<p>在回答时，如果行为已经结束了，进行肯定回答「はい、もう 动词 ました。」；如果行为尚未结束，进行否定回答「いいえ、动词て いません。」或者「いいえ、まだです。」。</p>
-<blockquote>
-<p>もう昼ご飯を食べましたか。</p>
-<blockquote>
-<p>[肯定回答] はい、[もう]食べました。</p>
-<p>[否定回答] いいえ、まだです。(いいえ、食べていません。)</p>
-<p>[否定回答] ❌ <del>いいえ、まだ食べません。(いいえ、食べませんでした。)</del></p>
-</blockquote>
-</blockquote>
 ]]></description>
 </item><item>
     <title>《大家的日本语》学习笔记 - 文法</title>
@@ -512,11 +296,227 @@
 </blockquote>
 ]]></description>
 </item><item>
+    <title>《大家的日本语》学习笔记 - 助词 &amp; 副词</title>
+    <link>https://x.awo.design/2021/09/mina-no-nihonngo-particle/</link>
+    <pubDate>Sun, 05 Sep 2021 18:00:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://x.awo.design/2021/09/mina-no-nihonngo-particle/</guid>
+    <description><![CDATA[<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw"></i>例句中符号说明<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><ul>
+<li>～ 替代词汇及句子</li>
+<li>ー 替代数字</li>
+<li>[    ] 括号中的语句可以省略</li>
+<li>(    ) 括号中为其他表达方式</li>
+</ul>
+</div>
+        </div>
+    </div>
+<p><em>笔记更新至第7课</em></p>
+<hr>
+<h2 id="助词的省略">助词的省略</h2>
+<p>在会话中，当从前后关系就可以明白语意时，助词可以省略。</p>
+<blockquote>
+<p>このスプーン[は]、すてきですね。</p>
+<p>コーヒー[を]、もう一杯いかがですか。</p>
+</blockquote>
+<hr>
+<h2 id="助词-は">助词 は</h2>
+<p>助词「は」读作「わ」</p>
+<hr>
+<h2 id="助词-の">助词 の</h2>
+<h3 id="名词sub1sub-の-名词sub2sub">名词<sub>1</sub> の 名词<sub>2</sub></h3>
+<ul>
+<li>名词<sub>1</sub> 表示 名词<sub>2</sub> 的属性。
+<ul>
+<li>ミラーさん は IMC の 社員 です。</li>
+</ul>
+</li>
+<li>名词<sub>1</sub> 来说明 名词<sub>2</sub> 与什么事物有关。
+<ul>
+<li>これ は コンピョーター の 本 です。</li>
+</ul>
+</li>
+<li>名词<sub>1</sub> 表示 名词<sub>2</sub> 的所属/产地。
+<ul>
+<li>これ は 私 の 本 です。</li>
+<li>これ は 日本 の コンピョーター です。</li>
+</ul>
+</li>
+</ul>
+<h3 id="代替名词">代替名词</h3>
+<blockquote>
+<p>あれ は 誰 の 鞄 ですか。</p>
+<blockquote>
+<p>佐藤さんのです。</p>
+</blockquote>
+</blockquote>
+<p>在回答时，「の」替代了问句中出现的名词「鞄」，「の」放在「佐藤」后面相当于省略了「鞄」。<strong>「の」可以用于替代物品，不可用来替代人。</strong></p>
+<blockquote>
+<p>この 鞄 あなたの ですか。</p>
+<blockquote>
+<p>　いいえ、私 の じゃありません。</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>ミラーさんは IMC の 社員 ですか。</p>
+<blockquote>
+<p>✔️ はい、IMC の 社員 です。</p>
+<p>❌ <del>はい、IMC の です。</del></p>
+</blockquote>
+</blockquote>
+<hr>
+<h2 id="助词-に">助词 に</h2>
+<h3 id="名词时间--に--动词">名词（时间） + に + 动词</h3>
+<p>在表示时间的名词后加「に」，表示动作进行的时间</p>
+<blockquote>
+<p>７時２分 に　日本へ来ました。</p>
+</blockquote>
+<p>以下表示时间的名词不能加「に」：</p>
+<p><code><strong><ruby>今日<rt>きょう</rt></ruby></strong></code> <code><strong><ruby>明日<rt>あした</rt></ruby></strong></code>　<code><strong><ruby>明後日<rt>あさって</rt></ruby></strong></code> <code><strong><ruby>昨日<rt>きのう</rt></ruby></strong></code> <code><strong><ruby>一昨日<rt>おととい</rt></ruby></strong></code> <code><strong><ruby>今朝<rt>けさ</rt></ruby></strong></code> <code><strong><ruby>今晩<rt>こんばん</rt></ruby></strong></code> <code><strong><ruby>今<rt>いま</rt></ruby></strong></code> <code><strong><ruby>毎朝<rt>まいあさ</rt></ruby></strong></code> <code><strong><ruby>毎晩<rt>まいばん</rt></ruby></strong></code> <code><strong><ruby>毎日<rt>まいにち</rt></ruby></strong></code> <code><strong><ruby>先週<rt>せんしゅう</rt></ruby></strong></code> <code><strong><ruby>今週<rt>こんしゅう</rt></ruby></strong></code> <code><strong><ruby>来週<rt>らいしゅう</rt></ruby></strong></code> <code>いつ</code> <code><strong><ruby>先月<rt>せんげつ</rt></ruby></strong></code> <code><strong><ruby>今月<rt>こんげつ</rt></ruby></strong></code> <code><strong><ruby>来月<rt>らいげつ</rt></ruby></strong></code> <code><strong><ruby>今年<rt>ことし</rt></ruby></strong></code> <code><strong><ruby>来年<rt>らいねん</rt></ruby></strong></code> <code><strong><ruby>去年<rt>きょねん</rt></ruby></strong></code> 等。</p>
+<blockquote>
+<p>昨日　勉強しました。</p>
+</blockquote>
+<p>这些表示时间的名词可加可不加： <code><strong><ruby>〜曜日<rt>〜ようび</rt></ruby></strong></code> <code><strong><ruby>朝<rt>あさ</rt></ruby></strong></code> <code><strong><ruby>昼<rt>ひる</rt></ruby></strong></code> <code><strong><ruby>晩<rt>ばん</rt></ruby></strong></code> <code><strong><ruby>夜<rt>よる</rt></ruby></strong></code></p>
+<h3 id="名词人--に--动词">名词（人） + に + 动词</h3>
+<p>助词「に」表示接触点。</p>
+<blockquote>
+<p>友達　に　会います。 <code>语义上偏向去见朋友：我 =&gt; 朋友</code></p>
+<p>友達　と　会います。 <code>语义上偏向两个人去约定的地方见面：我 =&gt; 场所 &lt;= 朋友</code></p>
+<p>❌ <del>友達　を　会います。</del></p>
+</blockquote>
+<h3 id="名词sub1sub--に--名词sub2sub--动词">名词<sub>1</sub> + に + 名词<sub>2</sub> + 动词。</h3>
+<p>动词分两种：</p>
+<ul>
+<li>一种是表示<strong>提供</strong>事物、信息的意思，需要有接受这些事物、信息的对象，这一对象用助词「に」来表示。(名词<sub>1</sub> 为受方时)
+<ul>
+<li>如 <code>「あげます」</code> <code>「かします」</code> <code>「おしえます」</code> 等。</li>
+</ul>
+</li>
+<li>另外一种是表示<strong>得到</strong>事物、信息的意思，需要有提供这些事物、信息的对象，这一对象用助词「に」来表示，也可以用「から」来表示。(名词<sub>1</sub> 为授方时)
+<ul>
+<li>如 <code>「もらいます」</code>　<code>かります</code> <code>ならいます</code> 等。</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>[私は]木村さん　に　花を　あげました。 <code>我给木村小姐送了花。</code></p>
+<p>[私は]木村さん　に（から）　花を　もらいました。 <code>我收到了木村小姐送的花。</code></p>
+</blockquote>
+<h2 id="助词-ね">助词 ね</h2>
+<h3 id="ね">〜ね</h3>
+<p>表示说话人希望得到听话人的同意或说话人对某件事物加以确认、叮嘱的语气。</p>
+<blockquote>
+<p>毎日１０時まで勉強します。</p>
+<blockquote>
+<p>大変です ね。</p>
+</blockquote>
+</blockquote>
+<h3 id="名词场所--に--动词表示移动的">名词（场所） + に + 动词（表示移动的）</h3>
+<p>在表达移动到达的场所时，用助词「に」。与助词「へ」的差别在于，「へ」是表达移动方向，「に」是表达移动到这个场所。</p>
+<blockquote>
+<p>私は学校　に　行きます。</p>
+</blockquote>
+<hr>
+<h2 id="助词-へ">助词 へ</h2>
+<p>助词「へ」读作「え」</p>
+<h3 id="名词场所--へ--动词表示移动的">名词（场所） + へ + 动词（表示移动的）</h3>
+<p>使用表示移动的词时，移动方向用助词助词「へ」表示。</p>
+<blockquote>
+<p>京都　へ　行きます。</p>
+<p>うち　へ　帰ります。</p>
+</blockquote>
+<hr>
+<h2 id="助词-と">助词 と</h2>
+<h3 id="名词sub1sub--と--名词sub2sub">名词<sub>1</sub> + と + 名词<sub>2</sub></h3>
+<ul>
+<li>名词并列，在之间用「と」连接，表示名词<sub>1</sub>和名词<sub>2</sub>。</li>
+</ul>
+<blockquote>
+<p>　銀行の休みは土曜日　と　日曜日　です。</p>
+</blockquote>
+<h3 id="名词人动物--と--动词">名词（人/动物） + と + 动词</h3>
+<p>表示与自己一起行动的人或动物。</p>
+<blockquote>
+<p>家族　と　日本へ来ました。</p>
+</blockquote>
+<p>单独行动时，要用「一人で」且不用助词「と」。</p>
+<blockquote>
+<p>一人で　東京へ行きます。</p>
+</blockquote>
+<hr>
+<h2 id="助词-で">助词 で</h2>
+<h3 id="名词交通工具--で--动词">名词（交通工具） + で + 动词。</h3>
+<p>助词「で」表示手段、方法，接在表示交通工具的名词之后，表示与动词一起使用。</p>
+<blockquote>
+<p>　電車　で　行きます。</p>
+</blockquote>
+<p><strong>徒步行走用「<strong><ruby>歩<rt>ある</rt></ruby></strong>いて」且不用接助词「で」。</strong></p>
+<blockquote>
+<p>駅から歩いて帰りました。</p>
+</blockquote>
+<h3 id="名词场所--で--动词">名词（场所） + で + 动词。</h3>
+<p>接在场所后的助词「で」表示发生的场所。</p>
+<blockquote>
+<p>駅　で　新聞を買います。</p>
+</blockquote>
+<h3 id="名词工具手段--で--动词">名词（工具/手段） + で + 动词。</h3>
+<p>助词「で」用来表示方法、手段、工具。</p>
+<blockquote>
+<p><strong><ruby>箸<rt>はし</rt></ruby></strong>で食べます。 ｜ 用筷子吃饭。</p>
+</blockquote>
+<hr>
+<h2 id="助词-を">助词 を</h2>
+<h3 id="名词--を--动词他动词">名词 + を + 动词（他动词）</h3>
+<p>他动词的宾语用助词「を」表示。</p>
+<blockquote>
+<p>ジュース　を　飲みます。</p>
+</blockquote>
+<p><em>注：「を」只用来表示助词。</em></p>
+<h3 id="名词--を--动词">名词 + を + 动词</h3>
+<p>表示动作作用对象。</p>
+<p>动词是「します」时，可以接在很多名词之后，使其作为宾语。意思是表示做该名词所表示的内容。</p>
+<blockquote>
+<p>スッカー　を　します。 <code>踢足球</code></p>
+<p>パーティー　を　します。 <code>举办晚会。</code></p>
+<p><strong><ruby>宿題<rt>しゅくだい</rt></ruby></strong>　を　します。 <code>做作业。</code></p>
+</blockquote>
+<hr>
+<h2 id="助词-よ">助词 よ</h2>
+<p>接在词尾，用于将对方不知道的事情或说话人自己的判断等告诉对方。</p>
+<blockquote>
+<p>この電車は<strong><ruby>甲<rt>こう</rt></ruby></strong><strong><ruby>子<rt>し</rt></ruby></strong><strong><ruby>園<rt>えん</rt></ruby></strong>へ行きますか。</p>
+<blockquote>
+<p>いいえ、行きません。次の「<strong><ruby>普<rt>ふ</rt></ruby></strong><strong><ruby>通<rt>つう</rt></ruby></strong>」です よ。</p>
+</blockquote>
+</blockquote>
+<h2 id="副词-ときぢき">副词 ときぢき</h2>
+<p>修饰后面的动词或新的动词，与前句无关。意思是「有时候」。</p>
+<blockquote>
+<p>うちで本を読みます。ときどき図書館へ行きます。</p>
+</blockquote>
+<h2 id="副词-もう">副词 もう</h2>
+<h3 id="もう--动词ました">もう + 动词ました。</h3>
+<p>「もう」是「已经」的意思，与「动词ました」一起使用，表示「动词ました」已经结束。</p>
+<p>在回答时，如果行为已经结束了，进行肯定回答「はい、もう 动词 ました。」；如果行为尚未结束，进行否定回答「いいえ、动词て いません。」或者「いいえ、まだです。」。</p>
+<blockquote>
+<p>もう昼ご飯を食べましたか。</p>
+<blockquote>
+<p>[肯定回答] はい、[もう]食べました。</p>
+<p>[否定回答] いいえ、まだです。(いいえ、食べていません。)</p>
+<p>[否定回答] ❌ <del>いいえ、まだ食べません。(いいえ、食べませんでした。)</del></p>
+</blockquote>
+</blockquote>
+]]></description>
+</item><item>
     <title>一些琐事</title>
-    <link>https://x.awo.design/2021/04/studing-training-learning/</link>
+    <link>https://x.awo.design/2021/04/studying-training-learning/</link>
     <pubDate>Fri, 02 Apr 2021 16:00:00 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://x.awo.design/2021/04/studing-training-learning/</guid>
+    <guid>https://x.awo.design/2021/04/studying-training-learning/</guid>
     <description><![CDATA[<p>今天突然在想一个问题「完美和不完美」。</p>
 <p>在很多时候我都在追求一定的完美，在选择学习资料上、数据整理方案、程序的算法逻辑等等，总会考虑很多，是否有不完美的地方，这固然是一件好事情，但也有时候无论如何也无法达到真正意义上的完美，总有不完美的地方。</p>
 <p>最近在上王垠老师的课，他的观点很多方面都让我有了新的认知。以前学音乐觉得音乐是完美的语言，现在看其实也有很多不完美的地方，十二平均律也不是最完美的韵律。</p>

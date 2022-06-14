@@ -46,18 +46,18 @@
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">//连接路由器
-ssh -p 22 root@10.0.0.1
-
-//进入tmp目录
-cd /tmp
-
-//下载固件
-wget http://breed.hackpascal.net/breed-mt7620-hiwifi-hc5861.bin
-
-//安装u-boot
-mtd -r write /tmp/breed-mt7620-hiwifi-hc5761.bin u-boot
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">//连接路由器
+</span></span><span class="line"><span class="cl">ssh -p 22 root@10.0.0.1
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">//进入tmp目录
+</span></span><span class="line"><span class="cl">cd /tmp
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">//下载固件
+</span></span><span class="line"><span class="cl">wget http://breed.hackpascal.net/breed-mt7620-hiwifi-hc5861.bin
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">//安装u-boot
+</span></span><span class="line"><span class="cl">mtd -r write /tmp/breed-mt7620-hiwifi-hc5761.bin u-boot
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>此时，终端会显示 <code>Rebooting</code>，等待重启完毕后再切断路由器电源，按住路由器 <code>reset</code> 按钮后接通电源，等待路由器电源灯连续闪烁后松开 <code>reset</code>。</p>
 <p>电脑会自动获取ip地址，我们通过浏览器访问 <code>192.168.1.1</code> 可以登录Breed Web恢复控制台，有了这个，我们就可以随意开车，不怕翻车啦！</p>
@@ -129,43 +129,43 @@ mtd -r write /tmp/breed-mt7620-hiwifi-hc5761.bin u-boot
 </span><span class="lnt">36
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">[global]
-	netbios name = |NAME| 
-	display charset = |CHARSET|
-	interfaces = |INTERFACES|
-	server string = |DESCRIPTION|
-	unix charset = |CHARSET|
-	workgroup = |WORKGROUP|
-	browseable = yes
-	deadtime = 30
-	domain master = |MASTER|
-	encrypt passwords = true
-	enable core files = no
-#	guest account = nobody
-#	guest ok = yes
-	invalid users = root
-	local master = yes
-	load printers = no
-	map to guest = Bad User
-	max protocol = SMB2
-	min receivefile size = 16384
-	null passwords = yes
-	obey pam restrictions = yes
-	os level = 250 
-	lm announce = yes
-	lm interval = 10 
-	dns proxy = no
-	passdb backend = smbpasswd
-	preferred master = yes
-	printable = no
-	security = user
-	smb encrypt = disabled
-	smb passwd file = /etc/samba/smbpasswd
-	socket options = TCP_NODELAY IPTOS_LOWDELAY
-	syslog = 2
-	use sendfile = yes
-	writeable = yes
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[global]
+</span></span><span class="line"><span class="cl">	netbios name = |NAME| 
+</span></span><span class="line"><span class="cl">	display charset = |CHARSET|
+</span></span><span class="line"><span class="cl">	interfaces = |INTERFACES|
+</span></span><span class="line"><span class="cl">	server string = |DESCRIPTION|
+</span></span><span class="line"><span class="cl">	unix charset = |CHARSET|
+</span></span><span class="line"><span class="cl">	workgroup = |WORKGROUP|
+</span></span><span class="line"><span class="cl">	browseable = yes
+</span></span><span class="line"><span class="cl">	deadtime = 30
+</span></span><span class="line"><span class="cl">	domain master = |MASTER|
+</span></span><span class="line"><span class="cl">	encrypt passwords = true
+</span></span><span class="line"><span class="cl">	enable core files = no
+</span></span><span class="line"><span class="cl">#	guest account = nobody
+</span></span><span class="line"><span class="cl">#	guest ok = yes
+</span></span><span class="line"><span class="cl">	invalid users = root
+</span></span><span class="line"><span class="cl">	local master = yes
+</span></span><span class="line"><span class="cl">	load printers = no
+</span></span><span class="line"><span class="cl">	map to guest = Bad User
+</span></span><span class="line"><span class="cl">	max protocol = SMB2
+</span></span><span class="line"><span class="cl">	min receivefile size = 16384
+</span></span><span class="line"><span class="cl">	null passwords = yes
+</span></span><span class="line"><span class="cl">	obey pam restrictions = yes
+</span></span><span class="line"><span class="cl">	os level = 250 
+</span></span><span class="line"><span class="cl">	lm announce = yes
+</span></span><span class="line"><span class="cl">	lm interval = 10 
+</span></span><span class="line"><span class="cl">	dns proxy = no
+</span></span><span class="line"><span class="cl">	passdb backend = smbpasswd
+</span></span><span class="line"><span class="cl">	preferred master = yes
+</span></span><span class="line"><span class="cl">	printable = no
+</span></span><span class="line"><span class="cl">	security = user
+</span></span><span class="line"><span class="cl">	smb encrypt = disabled
+</span></span><span class="line"><span class="cl">	smb passwd file = /etc/samba/smbpasswd
+</span></span><span class="line"><span class="cl">	socket options = TCP_NODELAY IPTOS_LOWDELAY
+</span></span><span class="line"><span class="cl">	syslog = 2
+</span></span><span class="line"><span class="cl">	use sendfile = yes
+</span></span><span class="line"><span class="cl">	writeable = yes
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="添加用户">添加用户</h4>
 <p>那么，禁用了root和访客访问，我怎么通过网络共享连接到硬盘呢？</p>
@@ -180,8 +180,8 @@ mtd -r write /tmp/breed-mt7620-hiwifi-hc5761.bin u-boot
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">smbpasswd imagicw 123456
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">smbpasswd imagicw 123456
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>即可完成添加用户 <code>imagicw</code>，后面的数字就是密码。</p>
 <p>此时我们还需要在共享目录允许用户里填上 <code>imagicw</code> 才算设置完成。</p>
