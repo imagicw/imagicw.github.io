@@ -7,10 +7,9 @@
 | PlayStation | Switch |
 |---|---|
 | [美国末日 重制版](#the-last-of-us-remastered--美国末日-重制版) | [塞尔达传说：旷野之息](#ゼルダの伝説-ブレス-オブ-ザ-ワイルド--塞尔达传说-旷野之息) |
-| [美国末日 第二章](##the-last-of-us-part-ii--美国末日-第二章) |  |
+| [美国末日 第二章](##the-last-of-us-part-ii--美国末日-第二章) | [歧路旅人](#octopath-traveler--歧路旅人) |
 | [战神3 重制版](#god-of-war-iii-remastered--战神3-重制版) | |
 | [神秘海域：德雷克船长的宝藏](#uncharted-drakes-fortune--神秘海域德雷克船长的宝藏) | |
-| [歧路旅人](#octopath-traveler--歧路旅人) | |
 
 
 ## 游戏
