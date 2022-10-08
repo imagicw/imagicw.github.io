@@ -1,0 +1,599 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>年度计划 - 标签 - Λ.W.log</title>
+        <link>https://x.awo.design/tags/%E5%B9%B4%E5%BA%A6%E8%AE%A1%E5%88%92/</link>
+        <description>年度计划 - 标签 - Λ.W.log</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>imagicw@hotmail.com (imagicw)</managingEditor>
+            <webMaster>imagicw@hotmail.com (imagicw)</webMaster><lastBuildDate>Sun, 14 Feb 2021 15:37:50 &#43;0800</lastBuildDate><atom:link href="https://x.awo.design/tags/%E5%B9%B4%E5%BA%A6%E8%AE%A1%E5%88%92/" rel="self" type="application/rss+xml" /><item>
+    <title>2021年年度计划</title>
+    <link>https://x.awo.design/2021/02/annual-plan-2021/</link>
+    <pubDate>Sun, 14 Feb 2021 15:37:50 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://x.awo.design/2021/02/annual-plan-2021/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/feature.jpg" referrerpolicy="no-referrer">
+            </div><h2 id="工作计划">工作计划</h2>
+<p>今年的工作重心在分公司的信息化建设，一方面是业务系统的系统化的推进，另外一方面是自研的信息系统的开发。前者要抓紧推进的，是工作的重心。后者不应该占据自身太多的时间，在时间较为空余时进行开发，也可借助开源平台进行二次开发以节约时间成本。</p>
+<p>文化建设方面，<del>公众号主要由 Jackson 负责打理</del>（基本还是我在弄😓），我负责每个月计划以及方向的制定，其他方面仍然需要保持高度的敏感性，提前准备。</p>
+<p>工会的文体活动去年已经定好计划，按照预计时间提前准备。</p>
+<p>今年需要摒弃细微末节，将时间用在重要的事情上去。同时还需要发掘相关方面的人才，使队伍壮大起来。</p>
+<h2 id="学习计划">学习计划</h2>
+<p>今年在学习方面应该要比去年更加进步一点，这不仅仅只在深度方面。所以今年我打算着重学习日语、架子鼓、吉他。其余例如开发、音乐制作、视频拍摄则依据实际需要来选择学习内容。阅读今年依然是必不可少的一环。</p>
+<h3 id="阅读-未完成">阅读 （未完成）</h3>
+<p>今年计划阅读 10本书，同一类型书籍最多不超过3本。计划表以及进度会在第一本书阅读开始时更新。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">分类</th>
+<th style="text-align:center">数量</th>
+<th style="text-align:center">完成</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">小说</td>
+<td style="text-align:center">3本</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">历史</td>
+<td style="text-align:center">2本</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">传记</td>
+<td style="text-align:center">2本</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">指导</td>
+<td style="text-align:center">2本</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">哲学</td>
+<td style="text-align:center">1本</td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<p>阅读进度：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">书名</th>
+<th style="text-align:center">分类</th>
+<th style="text-align:center">开始时间</th>
+<th style="text-align:center">完成时间</th>
+<th style="text-align:center">耗时</th>
+<th style="text-align:center">状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">学会提问</td>
+<td style="text-align:center">指导</td>
+<td style="text-align:center">2021.02.18</td>
+<td style="text-align:center">?</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">▶️ 进行</td>
+</tr>
+<tr>
+<td style="text-align:left">丑陋的中国人</td>
+<td style="text-align:center">历史（不能算历史）</td>
+<td style="text-align:center">2021.03.16</td>
+<td style="text-align:center">2022.01.07</td>
+<td style="text-align:center">7小时23分</td>
+<td style="text-align:center">✅ 完成</td>
+</tr>
+</tbody>
+</table>
+<h3 id="日语-未完成">日语 （未完成）</h3>
+<p>日语计划今年至少要完成 N3 的考试，最好是能够考到 N2。有必要的话，会找老师上课。</p>
+<p>自学计划是打算将《大家的日本语》两册书学完，根据学习的情况再看是否需要《标准日本语》作为补充。</p>
+<p>考试报名时间弄错了，没报上。目前只完成到初级的第七课。</p>
+<h3 id="计算机科学基础课-完成">计算机科学基础课 （完成）</h3>
+<p>今年报了王垠老师的《计算机科学基础课》，要将这课程内容好好吸收，希望能够理解课程的所有内容。</p>
+<p>学完了，笔记以及练习还需要整理和消化。</p>
+<p>虽然练习都做了出来，链表、树、解释器、类型检查还有 Parser 还需要加强理解，在实际案例中能够运用到这些内容。</p>
+<h3 id="架子鼓-完成">架子鼓 （完成）</h3>
+<p>年后先去检查耳朵，确保学习期间能够尽可能的保护耳朵「买了静音耳塞」。之后去报班。</p>
+<p>5月9日报了一年的架子鼓班（50节课），我发现我练架子鼓蛮专注的，可能是因为在练歌？下次长时间练基本功的时候再来发表感想。</p>
+<p>课程进度：32/50 （因为疫情，有几个月琴行停课）</p>
+<p>已学内容：</p>
+<ul>
+<li>单跳 / 双跳 / 倚音 / 开合镲</li>
+<li>《改变自己》《星空》《不再犹豫》《君が好きだと叫びたい》《Cold Pants》</li>
+</ul>
+<h3 id="吉他-未完成">吉他 （未完成）</h3>
+<p>吉他完成指弹练习曲前12首，时间充足的情况下尽量能够多完成。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">曲目</th>
+<th style="text-align:center">分类</th>
+<th style="text-align:center">开始时间</th>
+<th style="text-align:center">完成时间</th>
+<th style="text-align:center">耗时</th>
+<th style="text-align:center">状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">练习曲4</td>
+<td style="text-align:center">练习曲</td>
+<td style="text-align:center">2021.02.14</td>
+<td style="text-align:center">2021.03.20</td>
+<td style="text-align:center">9 hour</td>
+<td style="text-align:center">✅ 完成</td>
+</tr>
+<tr>
+<td style="text-align:left">练习曲5</td>
+<td style="text-align:center">练习曲</td>
+<td style="text-align:center">2021.03.21</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">▶️ 进行</td>
+</tr>
+</tbody>
+</table>
+<h3 id="乐队排练表演">乐队排练/表演</h3>
+<ul>
+<li><i class="far fa-check-square fa-fw"></i> 周杰伦《稻香》/ MV / 吉他 / 2021.02.05 / <a href="/2021/03/dao-xiang-cover/" rel="">📹 视频</a></li>
+<li><i class="far fa-check-square fa-fw"></i> 伍佰《Last Dance》 / Live / 键盘 / 2021.02.14 / <a href="https://mp.weixin.qq.com/s/CRA_PAKAzO976wKwBjc0Hg" target="_blank" rel="noopener noreffer">📹 视频</a></li>
+<li><i class="far fa-check-square fa-fw"></i> 五月天《星空》 / Live / 吉他 / 2021.04.09 / 无视频</li>
+<li><i class="far fa-check-square fa-fw"></i> 五月天《星空》 / Live / 架子鼓 / 2021.08.14 / <a href="https://mp.weixin.qq.com/s/SEaeCNo8JyNfqjLvydFodw" target="_blank" rel="noopener noreffer">📹 视频</a> 现场收音，效果不是很好。另我的节奏也有点不太稳。</li>
+<li><i class="far fa-check-square fa-fw"></i> Coldplay 《Yellow》 / MV / 架子鼓 / <a href="/2022/01/yellow-cover/" rel="">📹 视频</a></li>
+</ul>
+<h3 id="其他">其他</h3>
+<p>开发、音乐制作、视频拍摄等会根据实际情况在此更新。</p>
+<p>开发：</p>
+<ul>
+<li>拼柜模块</li>
+<li>检针模块</li>
+<li>海外订柜模块（开发中）</li>
+</ul>
+<h2 id="身心计划">身心计划</h2>
+<p>这方面计划由健身私教、书法练习、情绪管理及自省组成。</p>
+<p>健身是身体方面的强化；书法是心灵方面的洗涤；情绪的管理以及自省来改善不完美的自己。</p>
+<h3 id="健身">健身</h3>
+<ul>
+<li>Phase One (total 44, ¥ 6,000)
+<ul>
+<li>02.22 ~ 02.28 / 3 courses</li>
+<li>03.01 ~ 03.07 / 4 courses</li>
+<li>03.08 ~ 03.14 / 3 courses</li>
+<li>03.15 ~ 03.21 / 4 courses</li>
+<li>03.22 ~ 03.28 / 1 courses</li>
+<li>04.12 ~ 04.18 / 4 courses</li>
+<li>04.19 ~ 04.25 / 3 courses</li>
+<li>04.26 ~ 05.02 / 3 courses</li>
+<li>05.03 ~ 05.09 / 2 courses</li>
+<li>05.10 ~ 05.16 / 3 courses</li>
+<li>05.17 ~ 05.23 / 4 courses</li>
+<li>05.24 ~ 05.30 / 2 course 老师出差</li>
+<li>05.31 ~ 06.06 / 2 courses</li>
+<li>06.06 ~ 06.13 / 4 courses</li>
+<li>06.14 ~ 06.20 / 2 courses 一期结束</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>2021，不念过往，不问未来，珍惜现在，加油W.</p>
+]]></description>
+</item><item>
+    <title>2020年年度计划</title>
+    <link>https://x.awo.design/2020/01/annual-plan-2020/</link>
+    <pubDate>Thu, 02 Jan 2020 15:37:50 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://x.awo.design/2020/01/annual-plan-2020/</guid>
+    <description><![CDATA[<p>2019年的主题是 <strong>“Learn More.”</strong>，我觉得践行的不是很好，时间精力有限，学习不同的东西固然可以，无法专注、深入并不能达到很好的效果。这个主题适合作为五年、十年这样长周期的计划（也可能是实力不够，需要时间来凑，😂）。</p>
+<p>简单地想了一下，2020年主题定为 <strong>“Do 1 thing PERFECT.”</strong>。一来改一改我这么久以来不断尝新，捡芝麻丢西瓜的习惯，二来也想看一看，专注于一件事情并做到完美，对于自己有多少提升。</p>
+<p><strong>2020年，最重要的要将5年计划制定出来。</strong></p>
+<p>2020年乃至长时间内，要阅读，要提升自己，要管理好自己的情绪。</p>
+<p>oh 对，年底要对一年总结。</p>
+<p>无论有多难，也没有生活艰难。在世一场，就是来面临苦难的。任青春成诗，那已是过去的30年，余生，请好好热爱。</p>
+<hr>
+<p>年度关键词：<code>主动</code> <code>专注</code> <code>敏感</code> <code>细致</code>。</p>
+<p>活动记录以视频记录为主，照片记录为辅，文字记录为次。</p>
+<p>主要工作内容：</p>
+<ul>
+<li>
+<p><strong>公司企划</strong></p>
+<ul>
+<li>文化渗透内容的创意、设计及执行</li>
+<li>装扮及活动</li>
+<li>团支部的一些事情</li>
+<li>一些其他事情</li>
+</ul>
+</li>
+<li>
+<p><strong>分公司信息化</strong></p>
+<ul>
+<li>数据汇总汇报</li>
+<li>日常系统维护</li>
+<li>信息化建设</li>
+</ul>
+</li>
+<li>
+<p><strong>分公司文化</strong></p>
+<ul>
+<li>小红袜</li>
+<li>乐跑</li>
+<li>团建活动</li>
+<li>节日文化活动</li>
+</ul>
+</li>
+<li>
+<p><strong>分公司行政工作</strong></p>
+<ul>
+<li>车辆审批</li>
+<li>机票订票</li>
+<li>安排单据签批</li>
+<li>PPT制作</li>
+<li>其他领导安排的工作</li>
+</ul>
+</li>
+</ul>
+<h2 id="工作计划">工作计划</h2>
+<p>年前对于以上工作一一剖析，具体分析问题，调整好应对2020年的这场硬仗。</p>
+<p>目前的工作主要是行政岗位的工作，需要一定的统筹安排能力，19年前所有的工作方式以及内容主要集中在使用个人能力及技能方面，在统筹方面有短板，加之明年同事将不再负责年会活动，故<strong>2020年要重点锻炼统筹协调能力</strong>。</p>
+<p>做事情方面，尽量考虑全面，多做一点准备，哪怕多准备了之后没有用到也好过于准备不足之后再回来安排。明明考虑到了的事情，却没有去做，最后发现考虑的是对的，那是不应该发生的，今后要杜绝这方面的问题。</p>
+<p>主动做事，即使是别人统筹安排的，提醒ta或者替他考虑好事情，注重团队协作。2020年要从个人包揽大部分工作的模式改为团队合作的方式，加强沟通能力、协作能力、做事做人Nice一点。</p>
+<p>学会拒绝，除了只有我能做的事情、急事、重要的事情之外，尽量拒绝简单的、不重要的事情。可以婉转一点。</p>
+<p>汇报工作、回答问题摒除不确定的词语，例如好像、可能、大概等。</p>
+<p>将工作时和工作外状态区分出来，工作上严谨认真，不涉及工作外的私交，对工作不对人。</p>
+<hr>
+<h2 id="学习计划">学习计划</h2>
+<p><strong>语言</strong></p>
+<p>英语 - ⏸️ 搁置ing</p>
+<p>英语6级单词，3000个单词。</p>
+<p>日语 - ⏸️ 搁置ing</p>
+<p>打算年底报考日语N3考试，目前要争取每周有3-5小时学习时间，力争一次考过。<del>6月底开始</del> <del>8-1日正式开始</del></p>
+<p><a href="https://fullstackopen.com/" target="_blank" rel="noopener noreffer">全栈公开课2020课程</a></p>
+<p>近期因为开发公司的一个项目，接触到了 <code>react</code> 框架，所以打算以边学边记笔记的方式把这个公开课学完。</p>
+<ul>
+<li><i class="far fa-check-square fa-fw"></i> Part 0 Web 应用的基础设施 <code>2 hours - 20201018</code></li>
+<li><i class="far fa-check-square fa-fw"></i> Part 1 React 入门 <code>8 hours - 20201021</code>
+<ul>
+<li><i class="far fa-check-square fa-fw"></i> a React 简介	<code>1 hours</code></li>
+<li><i class="far fa-check-square fa-fw"></i> b Javascript  <code>1.5 hours</code></li>
+<li><i class="far fa-check-square fa-fw"></i> c 组件状态，事件处理 <code>2.5 hours</code></li>
+<li><i class="far fa-check-square fa-fw"></i> d 深入 React 应用调试 <code>3 hours</code></li>
+</ul>
+</li>
+<li><i class="far fa-check-square fa-fw"></i> Part 2 与服务端通信 <code>10 hours 22 minites - 20201110</code>
+<ul>
+<li><i class="far fa-check-square fa-fw"></i> a 从渲染集合到模块学习 <code>52 minutes</code></li>
+<li><i class="far fa-check-square fa-fw"></i> b 表单 <code>2 hours</code></li>
+<li><i class="far fa-check-square fa-fw"></i> c 从服务器获取数据 <code>3.5 hours</code></li>
+<li><i class="far fa-check-square fa-fw"></i> d 在服务端将数据 Alert 出来 <code> 3 hours</code></li>
+<li><i class="far fa-check-square fa-fw"></i> e 给 React 应用加点样式 <code>1 hour</code></li>
+</ul>
+</li>
+<li><i class="far fa-check-square fa-fw"></i> Part 3 用NodeJS和Express写服务端程序 <code>11 hours - 20201209</code>
+<ul>
+<li><i class="far fa-check-square fa-fw"></i> a Node.js 与 Express <code>2 hours</code></li>
+<li><i class="far fa-check-square fa-fw"></i> b 把应用部署到网上 <code>1 hour</code></li>
+<li><i class="far fa-check-square fa-fw"></i> c 将数据存入 MongoDB <code>7 hours</code></li>
+<li><i class="far fa-check-square fa-fw"></i> d ESLint 与代码检查 <code>1 hour</code></li>
+</ul>
+</li>
+<li><i class="far fa-square fa-fw"></i> Part 4
+<ul>
+<li><i class="far fa-check-square fa-fw"></i> a 从后端结构到测试入门 <code>1.5 hours</code></li>
+<li><i class="far fa-square fa-fw"></i> b 测试后端应用 <code>2 + </code></li>
+</ul>
+</li>
+<li><i class="far fa-square fa-fw"></i> Part 5</li>
+<li><i class="far fa-square fa-fw"></i> Part 6</li>
+<li><i class="far fa-square fa-fw"></i> Part 7</li>
+<li><i class="far fa-square fa-fw"></i> Part 8</li>
+<li><i class="far fa-square fa-fw"></i> Part 9</li>
+<li><i class="far fa-square fa-fw"></i> Part 10</li>
+</ul>
+<p><strong>阅读</strong></p>
+<p>年内争取读完10本书，大致类目定位如下：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">分类</th>
+<th style="text-align:center">数量</th>
+<th style="text-align:center">完成</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">小说</td>
+<td style="text-align:center">3本</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">历史</td>
+<td style="text-align:center">2本</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">传记</td>
+<td style="text-align:center">2本</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">指导</td>
+<td style="text-align:center">2本</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">哲学</td>
+<td style="text-align:center">1本</td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<p>[ progress: ■■■■■■■■&mdash;&mdash;&mdash;&mdash; 40% ]</p>
+<p>阅读进度：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">书名</th>
+<th style="text-align:center">分类</th>
+<th style="text-align:center">开始时间</th>
+<th style="text-align:center">完成时间</th>
+<th style="text-align:center">耗时</th>
+<th style="text-align:center">状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">偷影子的人</td>
+<td style="text-align:center">小说</td>
+<td style="text-align:center">2020.01.28</td>
+<td style="text-align:center">2020.02.10</td>
+<td style="text-align:center">14d</td>
+<td style="text-align:center">✅ 完成</td>
+</tr>
+<tr>
+<td style="text-align:left">学会提问</td>
+<td style="text-align:center">指导</td>
+<td style="text-align:center">2020.01.02</td>
+<td style="text-align:center">?</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">▶️ 进行</td>
+</tr>
+<tr>
+<td style="text-align:left">游戏改变世界</td>
+<td style="text-align:center">指导</td>
+<td style="text-align:center">2020.03.23</td>
+<td style="text-align:center">?</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">⏸️ 搁置</td>
+</tr>
+<tr>
+<td style="text-align:left">拍电影时我在想的事</td>
+<td style="text-align:center">传记</td>
+<td style="text-align:center">2020.07.08</td>
+<td style="text-align:center">2020.07.21</td>
+<td style="text-align:center">14d</td>
+<td style="text-align:center">✅ 完成</td>
+</tr>
+<tr>
+<td style="text-align:left">人间失格</td>
+<td style="text-align:center">小说</td>
+<td style="text-align:center">2020.06.24</td>
+<td style="text-align:center">2020.07.25</td>
+<td style="text-align:center">6h 15m</td>
+<td style="text-align:center">✅ 完成</td>
+</tr>
+<tr>
+<td style="text-align:left">十日谈</td>
+<td style="text-align:center">小说</td>
+<td style="text-align:center">2020.07.28</td>
+<td style="text-align:center">2020.08.22</td>
+<td style="text-align:center">16h 22m</td>
+<td style="text-align:center">✅ 完成</td>
+</tr>
+<tr>
+<td style="text-align:left">罗马人的故事 I 罗马不是一天造成的</td>
+<td style="text-align:center">历史</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">?</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">🔜 计划</td>
+</tr>
+<tr>
+<td style="text-align:left">罗马人的故事 II 汉尼拔战记</td>
+<td style="text-align:center">历史</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">?</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">🔜 计划</td>
+</tr>
+<tr>
+<td style="text-align:left">形而上学</td>
+<td style="text-align:center">哲学</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">?</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">🔜 计划</td>
+</tr>
+</tbody>
+</table>
+<p>从人间失格开始，后续的书籍都使用计时软件统计，时间上会更为准确。</p>
+<p><strong>练字</strong> - ⏸️ 搁置ing</p>
+<p>目前使用的田英章的字帖，主要是临帖为主，计划是每周至少3小时的时间在练习。</p>
+<p>从3月23日开始，至今（7.27）共计投入23小时，未完成每周制定的计划，需要注意。</p>
+<p><strong>乐器</strong> - ⏸️ 搁置ing</p>
+<p>吉他学习南泽大介的指弹练习曲余下的22首全部练完。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">曲目</th>
+<th style="text-align:center">分类</th>
+<th style="text-align:center">开始时间</th>
+<th style="text-align:center">完成时间</th>
+<th style="text-align:center">耗时</th>
+<th style="text-align:center">状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">练习曲3</td>
+<td style="text-align:center">练习曲</td>
+<td style="text-align:center">2020.03.10</td>
+<td style="text-align:center">2020.04.28</td>
+<td style="text-align:center">49d</td>
+<td style="text-align:center">✅ 完成</td>
+</tr>
+<tr>
+<td style="text-align:left">练习曲4</td>
+<td style="text-align:center">练习曲</td>
+<td style="text-align:center">2020.04.28</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">▶️ 进行</td>
+</tr>
+</tbody>
+</table>
+<p>[ progress: ■&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash; 4.5% ]</p>
+<hr>
+<h2 id="身心计划">身心计划</h2>
+<p><strong>锻炼</strong> ✅ 完成</p>
+<p>报一个私教班，维持健康的身体。
+规律饮食，保持体重。</p>
+<p>已报 <code>2020.05.08 —— 2020.12.15</code>，基本保持每周2-4次的私教训练。</p>
+<ul>
+<li>
+<p>May (total 11)</p>
+<ul>
+<li>05.04 - 05.10 / 2 times</li>
+<li>05.11 - 05.17 / 3 times</li>
+<li>05.18 - 05.24 / 4 times</li>
+<li>05.25 - 05.31 / 2 times</li>
+</ul>
+</li>
+<li>
+<p>June (total 11)</p>
+<ul>
+<li>06.01 - 06.07 / 3 times</li>
+<li>06.08 - 06.14 / 2 times</li>
+<li>06.15 - 06.21 / 3 times</li>
+<li>06.22 - 06.28 / 3 times</li>
+</ul>
+</li>
+<li>
+<p>July (total 14)</p>
+<ul>
+<li>06.29 - 07.05 / 3 times</li>
+<li>07.06 - 07.12 / 2 times</li>
+<li>07.13 - 07.19 / 4 times</li>
+<li>07.20 - 07.26 / 4 times</li>
+<li>07.27 - 08.02 / 1 times (教练周四至周日出差，课程暂停)</li>
+</ul>
+</li>
+<li>
+<p>August (total 6)</p>
+<ul>
+<li>08.03 - 08.09 / 3 times</li>
+<li>08.10 - 08.15 / 3 times (第一期到期)</li>
+</ul>
+</li>
+<li>
+<p>September (total 8)</p>
+<ul>
+<li>09.14 - 09.20 / 3 times (第二期开始)</li>
+<li>09.21 - 09.27 / 3 times</li>
+<li>09.28 - 09.30 / 2 times</li>
+</ul>
+</li>
+<li>
+<p>October (total 12)</p>
+<ul>
+<li>10.01 - 10.04 / 1 times</li>
+<li>10.05 - 10.11 / 2 times</li>
+<li>10.12 - 10.18 / 3 times</li>
+<li>10.19 - 10.25 / 3 times</li>
+<li>10.26 - 10.31 / 3 times</li>
+</ul>
+</li>
+<li>
+<p>November (total 12)</p>
+<ul>
+<li>11.01 - 11.08 / 3 times</li>
+<li>11.09 - 11.15 / 3 times</li>
+<li>11.16 - 11.22 / 2 times</li>
+<li>11.23 - 11.30 / 4 times</li>
+</ul>
+</li>
+<li>
+<p>December (total 8)</p>
+<ul>
+<li>12.01 - 12.06 / 4 times</li>
+<li>12.07 - 12.15 / 4 times</li>
+</ul>
+</li>
+</ul>
+<p><strong>TOTAL 82, ¥ 11,500, ¥ 141 per lesson</strong></p>]]></description>
+</item><item>
+    <title>2019年年度计划</title>
+    <link>https://x.awo.design/2019/07/annual-plan-2019/</link>
+    <pubDate>Fri, 26 Jul 2019 18:00:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://x.awo.design/2019/07/annual-plan-2019/</guid>
+    <description><![CDATA[<p>前几次的年度计划执行的不太理想，作为一个杂事王，我都不好意思放上前几年的计划。</p>
+<p>今年已经过了一半了，估摸着还是计划一下吧。</p>
+<p>降低一些预期，毕竟我没那么优秀。</p>
+<p>今年具体规划 <code>阅读</code> <code>健身</code> <code>开发</code> <code>乐器</code> <code>游戏</code> 这几个方面，希望今年有一点进步吧。</p>
+<p>以下是整个计划内容，每个月月底审视当月完成情况以及制定下个月的任务。</p>
+<p>加油！</p>
+<p><code>2019.11.22更新 ⬇️</code>
+又到年底了，年会事情开始多起来了，目标看似要完成不了了～
+哎～</p>
+<p><code>2019.12.17更新⬇️</code>
+年会结束了，看看能不能再完成点什么～</p>
+<hr>
+<h2 id="阅读">阅读</h2>
+<h3 id="书单">书单</h3>
+<ul>
+<li>《佐藤可士和的超沟通术》 <code>2019.8.3 done</code></li>
+<li>《稀缺》</li>
+<li>《荒木经惟的天才写真术》 <code>2019.8.3 done</code></li>
+<li>《大家的日本语·初级1》</li>
+<li>《人间失格》</li>
+<li>《游戏改变生活》</li>
+</ul>
+<hr>
+<h2 id="健身">健身</h2>
+<h3 id="减重">减重</h3>
+<p>今年体重要减到62.5kg，目前
+68.4kg / <code>2019.07.31</code> 
+67.8kg / <code>2019.08.05</code>
+64.2kg / <code>2019.11.22</code>
+62.9kg / <code>2019.11.30</code>
+62.4kg / <code>2019.12.11 done</code></p>
+<p>失败了可是要罚杰伦新专辑的。</p>
+<p><code>2019.12.17更新</code>
+总算是完成了，可是周董怎么还没发专辑～</p>
+<hr>
+<h2 id="开发">开发</h2>
+<h3 id="盛天乐跑小程序">盛天乐跑小程序</h3>
+<p>-[ ] 完成成就系统的开发
+-[ ] 完成兑换商店的开发</p>
+<hr>
+<h2 id="乐器">乐器</h2>
+<h3 id="吉他">吉他</h3>
+<p>把南泽大介的指弹练习曲练完</p>
+<ul>
+<li>练习曲1 / <code>2019.08.02 done</code></li>
+<li>练习曲2 / <code>2019.09.21 done</code></li>
+<li>练习曲3</li>
+</ul>
+<p><code>2019.11.22新增</code></p>
+<ul>
+<li>《平凡之路》 / <code>2019.10.12 done</code></li>
+<li>《说好不哭》</li>
+</ul>
+<hr>
+<h2 id="游戏">游戏</h2>
+<p>《巫师3》应该要把他玩通关吧。</p>]]></description>
+</item></channel>
+</rss>

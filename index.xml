@@ -1,0 +1,757 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Λ.W.log</title>
+        <link>https://x.awo.design/</link>
+        <description>A blog.</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>imagicw@hotmail.com (imagicw)</managingEditor>
+            <webMaster>imagicw@hotmail.com (imagicw)</webMaster><lastBuildDate>Wed, 01 Jun 2022 20:20:00 &#43;0800</lastBuildDate>
+            <atom:link href="https://x.awo.design/index.xml" rel="self" type="application/rss+xml" />
+        <item>
+    <title>《New Boy》Cover by Red Nose</title>
+    <link>https://x.awo.design/2022/06/new-boy-cover/</link>
+    <pubDate>Wed, 01 Jun 2022 20:20:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://x.awo.design/2022/06/new-boy-cover/</guid>
+    <description><![CDATA[<div class="bilibili"><iframe src="//player.bilibili.com/player.html?bvid=BV1x34y1L71Z&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe></div>
+
+<p>「是的，我看见到处是阳光」，这首歌在盘尼西林改编之后有了不一样的味道，喜欢这样的摇摆节奏。</p>
+<p>也祝大朋友们，儿童节快乐。</p>
+]]></description>
+</item><item>
+    <title>《Yellow》Cover by Red Nose</title>
+    <link>https://x.awo.design/2022/01/yellow-cover/</link>
+    <pubDate>Wed, 26 Jan 2022 20:20:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://x.awo.design/2022/01/yellow-cover/</guid>
+    <description><![CDATA[<div class="bilibili"><iframe src="//player.bilibili.com/player.html?bvid=BV15L4y1t7Yi&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe></div>
+
+<p>Red Nose 的由来是因为这支 MV，因为当时在林子里拍摄，风很大，篝火火力全开也无法使我们暖和，在 NG 了几遍之后，大家也都冻成了红鼻子😂。</p>
+]]></description>
+</item><item>
+    <title>2021年年度总结</title>
+    <link>https://x.awo.design/2022/01/annual-report-2021/</link>
+    <pubDate>Wed, 05 Jan 2022 21:55:30 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://x.awo.design/2022/01/annual-report-2021/</guid>
+    <description><![CDATA[<p>一年真的很快就过去了，其实时间一直在往前，而回归的月份让人误以为又是一个重新开始。</p>
+<p>2021年总体来说差强人意，阅读没有持续，日语一开始还是比较积极地在学习的，后来因为程序开发占用掉了学习时间，四季度基本上搁置至今，也许今年应该找一个老师，就像架子鼓一样。</p>
+<p>一整年的感觉就是时间不够用，下半年明显感觉到缺少休息带来的身体方面的酸痛，肩颈背变得僵硬。2022年还是需要劳逸结合，时间方面也要合理规划。</p>
+<h2 id="回顾">回顾</h2>
+<p>今年年尝试了总体策划一场活动，在过程中遇到了任务分配不合理，人员没有充分利用，时间规划不清晰的问题，好在最后活动相较顺利的举办，也算是一次经验累积吧。</p>
+<p>得益于上半年的计算机基础课的学习，在公司信息化平台其他模块开发的时候，运用了一些学到的知识：抽象、递归等，深知对所学知识还需要充分消化，在2022年应该还需要结合实际来运用这些知识。</p>
+<h3 id="全年完成的计划">全年完成的计划：</h3>
+<ul>
+<li><i class="far fa-check-square fa-fw"></i> 33节架子鼓学习</li>
+<li><i class="far fa-check-square fa-fw"></i> 健身</li>
+<li><i class="far fa-check-square fa-fw"></i> 计算机科学基础课</li>
+<li><i class="far fa-check-square fa-fw"></i> 日语学习 7课 （勉强算吧）</li>
+</ul>
+<h3 id="未完成的计划">未完成的计划：</h3>
+<ul>
+<li><i class="far fa-square fa-fw"></i> 阅读</li>
+<li><i class="far fa-square fa-fw"></i> 吉他</li>
+</ul>
+<h3 id="项目完成情况">项目完成情况：</h3>
+<ul>
+<li><i class="far fa-check-square fa-fw"></i> 100% 检针模块</li>
+<li><i class="far fa-square fa-fw"></i> 40% 的海外订柜模块</li>
+</ul>
+<h2 id="期许">期许</h2>
+<p>2022年，希望自己能够坚持阅读，坚持做好一两件重要（重大）的事、分清主次，能够做到独立思考。</p>
+<p>继续加油。</p>
+]]></description>
+</item><item>
+    <title>iOS15 的深度学习与隐私</title>
+    <link>https://x.awo.design/2021/11/ios15-machine-learning/</link>
+    <pubDate>Tue, 23 Nov 2021 20:22:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://x.awo.design/2021/11/ios15-machine-learning/</guid>
+    <description><![CDATA[<p>上周日晚上去上网球课，刚上车收到手机弹出的 Siri 建议，点开随即进入地图应用并且给我规划好去网球场的路线，很不巧，那天下雨，所以没有去室外场地而是室内场地。</p>
+<p>不知道是 iOS 15 加强了这方面的功能，还是原本 iOS 14 也有。反正，现在这个版本的 Siri 建议聪明了很多。</p>
+<p>系统会根据使用者的习惯，会在你早上上车时候告诉你去公司需要多长时间，并给你选出 2 至 3 条合适的路线；会在你复制了链接后建议你用 Safari 打开链接；会告诉你在某个时间点你经常会打开什么 App，你现在是否要打开？</p>
+<p>Siri 就从一开始呆萌的只会搜索网络结果及跟你回几句嘴开始变成了一个智能小管家，这么几年的深度学习的确起了效果。</p>
+<p>在某些方面上，我也开始依赖起这个小管家。</p>
+<p>但有时想一想，这样的数据很隐私，何时在何地你会做什么事情。若这样的数据被泄漏、盗取，就可以精准定位用户画像，甚至可以跟踪到具体位置。</p>
+<p>科技带来便利的同时，也同样暴露了隐私。</p>
+<p>好在现在科技公司都在隐私方面下功夫，苹果推出了专门的 Privacy 页面，用以了解账户所有的数据信息，也在新版本的 iOS 系统里增加了隐私报告。</p>
+<p>希望这些隐私数据能够脱敏，在给用户提供个性化建议的同时，也不会暴露用户本身。</p>
+<p>科技是好，但也还有生活，也许有时候离开科技，才是自由。</p>
+]]></description>
+</item><item>
+    <title>《大家的日本语》学习笔记 - 文法</title>
+    <link>https://x.awo.design/2021/09/mina-no-nihonngo-grammar/</link>
+    <pubDate>Sun, 05 Sep 2021 18:00:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://x.awo.design/2021/09/mina-no-nihonngo-grammar/</guid>
+    <description><![CDATA[<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw"></i>例句中符号说明<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><ul>
+<li>～ 替代词汇及句子</li>
+<li>ー 替代数字</li>
+<li>[    ] 括号中的语句可以省略</li>
+<li>(    ) 括号中为其他表达方式</li>
+</ul>
+</div>
+        </div>
+    </div>
+<p><em>笔记更新至第7课</em></p>
+<hr>
+<p>助词「は」读作「わ」</p>
+<h2 id="肯定句">肯定句</h2>
+<h3 id="名词sub1sub--助词-は--名词sub2sub--です">名词<sub>1</sub> + 助词 は + 名词<sub>2</sub> + です。</h3>
+<blockquote>
+<p>私　は　マイク・ミラー　です。</p>
+</blockquote>
+<ul>
+<li>名词<sub>1</sub> + 助词 も + 名词<sub>2</sub> + です / ですか。</li>
+</ul>
+<p>「も」用于将相同的事物作为前提加以陈述时。</p>
+<blockquote>
+<p>サントスさん　は　会社員　です。</p>
+<blockquote>
+<p>ワンさん　も　会社員　です。</p>
+</blockquote>
+</blockquote>
+<h3 id="名词sub1sub--は--场所--です">名词<sub>1</sub> + は + 场所 + です。</h3>
+<p>用来表示场所、物体或人所在的地方。</p>
+<blockquote>
+<p>お手洗い　は　あそこ　です。</p>
+<p>電話　は　２階　です。</p>
+</blockquote>
+<h3 id="名词场所sub1sub--へ--行きます--来ます--帰ります">名词（场所）<sub>1</sub> + へ + 行きます / 来ます / 帰ります。</h3>
+<p>使用表示移动的词时，移动方向用助词「へ」（读作「え」）表示。</p>
+<blockquote>
+<p>京都　へ　行きます。</p>
+<p>日本　へ　きました。</p>
+<p>うち　へ　帰ります。</p>
+</blockquote>
+<h3 id="时间--です">时间 + です。</h3>
+<ul>
+<li>今９時１５分　です。</li>
+</ul>
+<p>询问时间在「時」「ふん」之前加「なん」。</p>
+<ul>
+<li>「分」读法：
+<ul>
+<li>「ふん」：前面数字是 <code>2</code>、<code>5</code>、<code>7</code>、<code>9</code> 时。</li>
+<li>「ぷん」：前面数字是 <code>1</code>「いっ」、<code>3</code>、<code>4</code>、<code>6</code>「るっ」、<code>8</code>「はっ」、<code>10</code>「じゅっ（じっ）」 时。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="否定句">否定句</h2>
+<h3 id="名词sub1sub--助词-は--名词sub2sub--じゃではありません">名词<sub>1</sub> + 助词 は + 名词<sub>2</sub> + じゃ(では)ありません。</h3>
+<p><code>ではありません</code> 是正式场合的用法。</p>
+<p>「じゃありません」和「ではありません」是「です」的否定形式。</p>
+<blockquote>
+<p>私　は　学生　じゃありません。</p>
+<p>私　は　医者　ではありません。</p>
+</blockquote>
+<h3 id="疑问词--も--行きません">疑问词 + も + 行きません。</h3>
+<p>对疑问词所问范畴内的一切全部加以否定时，在疑问词后加「も」，且动词使用其否定形。</p>
+<blockquote>
+<p>どこ[へ]　も　いきません。　/ 哪儿也不去。</p>
+<p>何　も　食べません。 / 什么也不吃。</p>
+<p>誰もき　ま　せんでした。 / 谁也没来。</p>
+</blockquote>
+<hr>
+<h2 id="疑问句">疑问句</h2>
+<h3 id="一般疑问句">一般疑问句</h3>
+<h4 id="名词sub1sub--助词-は--名词sub2sub--ですか">名词<sub>1</sub> + 助词 は + 名词<sub>2</sub> + ですか。</h4>
+<blockquote>
+<p>マイク・ミラーさん　は　会社員　ですか。</p>
+<blockquote>
+<p>「肯定回答」はい、[私は] 会社員です。</p>
+<p>「否定回答」いいえ、[私は]　会社員　じゃありません。</p>
+</blockquote>
+</blockquote>
+<ul>
+<li>そうです / 違います</li>
+</ul>
+<p>在名词句中，在回答询问是否的疑问句时，使用以下回答。</p>
+<blockquote>
+<p>それ　は　辞書 ですか。</p>
+<blockquote>
+<p>「肯定回答」はい、そうです。 / 「简单回答」 そう。</p>
+<p>「否定回答」いいえ、違います。 / 「或者直接告诉正确答案」いいえ、本です。</p>
+</blockquote>
+</blockquote>
+<ul>
+<li>そうですか</li>
+</ul>
+<p>在听到新信息时，用这句话来表示知道了（有点不太确定的那种感觉）。句尾语调为降调。</p>
+<blockquote>
+<p>この傘はあなたのですか。</p>
+<blockquote>
+<p>いいえ、違います。佐藤さんのです。</p>
+</blockquote>
+<p>そうですか。</p>
+</blockquote>
+<ul>
+<li>〜か</li>
+</ul>
+<p>「か」是说话人在得到自己所不知道的新信息之后，表示认可、理解时的表达方式。这与「そうですか」的「か」用法相同。</p>
+<blockquote>
+<p>日曜日京都へ行きました。</p>
+<blockquote>
+<p>京都ですか。いいですね。</p>
+</blockquote>
+</blockquote>
+<ul>
+<li>そうですね</li>
+</ul>
+<p>对对方说的事情表示赞同或有同感。</p>
+<p>「そうですか」是说话人在得到新信息之后表示认可、理解。</p>
+<blockquote>
+<p>明日　は　日曜日　ですね。</p>
+<blockquote>
+<p>あ、そうですね。</p>
+</blockquote>
+</blockquote>
+<h4 id="名词--は--疑问词--ですか">名词 + は + 疑问词 + ですか。</h4>
+<blockquote>
+<p>お手洗い　は　どこ　ですが。</p>
+<p>エレベーター　は　どちら　ですか。</p>
+</blockquote>
+<h4 id="何なに-をしますか"><strong><ruby>何<rt>なに</rt></ruby></strong> を　しますか。</h4>
+<p>询问要做什么。</p>
+<blockquote>
+<p>月曜日　何　をしますか。</p>
+<blockquote>
+<p>京都へ行きます。</p>
+</blockquote>
+</blockquote>
+<h4 id="动词--ませんか">动词 + ませんか。</h4>
+<p>表示邀请听话人一起来做某事。</p>
+<blockquote>
+<p>一緒に　京都へ行きませんか。 ｜ 一起去京都吗？（不一起去京东吗？）</p>
+</blockquote>
+<h4 id="动词--ましょう">动词 + ましょう。</h4>
+<p>表示积极地提议、邀请。也可以表示积极的响应对方的提议、邀请。</p>
+<blockquote>
+<p>ちょっと休み　ましょう。</p>
+<p>一緒に昼ごはんを食べませんか。</p>
+<blockquote>
+<p>ええ、食べましょう。</p>
+</blockquote>
+</blockquote>
+<p><em>注：「动词ませんか」和「动词ましょう」同为邀请对方的表达方式，前者更加尊重对方。</em></p>
+<p>####　词/句 + は + 〜ごで + なんですか。</p>
+<p>询问某个词或者句子用～语怎么说。</p>
+<blockquote>
+<p>「ありがとう」は　英語　何ですか。</p>
+<blockquote>
+<p>「Thank You」です。</p>
+</blockquote>
+</blockquote>
+<h3 id="选择疑问句">选择疑问句</h3>
+<h4 id="かか">〜か、〜か。</h4>
+<p>两个或两个以上的并列疑问句进行选择回答的疑问句。此类疑问句回答不用加上「はい」或「いええ」，直接回复选择。</p>
+<blockquote>
+<p>それは「９」です　か、「７」です　か。</p>
+<blockquote>
+<p>「９」です。</p>
+</blockquote>
+</blockquote>
+<hr>
+<h2 id="疑问词">疑问词</h2>
+<h3 id="どこ--どちら">どこ / どちら</h3>
+<p>「どこ」是询问场所的疑问词。
+「どちら」是询问方向的疑问词，也用于询问场所，语气较「どこ」郑重。</p>
+<h3 id="いつ">いつ</h3>
+<p>询问时间时，除了「<strong><ruby>何時<rt>なんじ</rt></ruby></strong>」等询问词之外，还可以使用「いつ」，「いつ」之后不接助词「に」。</p>
+<blockquote>
+<p>いつ　日本　へ　来ましたか。</p>
+<blockquote>
+<p>３月２５日　に　来ました。</p>
+</blockquote>
+</blockquote>
+<h3 id="何">何</h3>
+<p>「なに」和「なん」意思相同，但以下情况使用「なん」；</p>
+<ul>
+<li>后续单词的词头为「た」「だ」「な」时。
+<ul>
+<li>それは　なん　ですか。</li>
+<li>なん　の本ですか。</li>
+</ul>
+</li>
+</ul>
+<p><em>注：「なんで」除了可以询问手段、方法之外，还可以用于询问理由。<strong>想明确表示在询问手段、方法，可以用「なにで」。</strong></em></p>
+<ul>
+<li>带有量词时
+<ul>
+<li>テレーズちゃんは　なん　歳ですか。</li>
+</ul>
+</li>
+</ul>
+<p>以上两种以外情况使用「なに」。</p>
+<hr>
+<h2 id="其他">其他</h2>
+<h3 id="名词sub1sub--から--名词sub2sub--まで">名词<sub>1</sub> + から + 名词<sub>2</sub> + まで</h3>
+<p>「から」表示起点（时间、场所），「まで」表示重点（时间、场所），他们经常一起使用，也可以单独使用。</p>
+<blockquote>
+<p>銀行　は　９時から　３時まで　です。</p>
+</blockquote>
+]]></description>
+</item><item>
+    <title>《大家的日本语》学习笔记 - 助词 &amp; 副词</title>
+    <link>https://x.awo.design/2021/09/mina-no-nihonngo-particle/</link>
+    <pubDate>Sun, 05 Sep 2021 18:00:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://x.awo.design/2021/09/mina-no-nihonngo-particle/</guid>
+    <description><![CDATA[<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw"></i>例句中符号说明<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><ul>
+<li>～ 替代词汇及句子</li>
+<li>ー 替代数字</li>
+<li>[    ] 括号中的语句可以省略</li>
+<li>(    ) 括号中为其他表达方式</li>
+</ul>
+</div>
+        </div>
+    </div>
+<p><em>笔记更新至第7课</em></p>
+<hr>
+<h2 id="助词的省略">助词的省略</h2>
+<p>在会话中，当从前后关系就可以明白语意时，助词可以省略。</p>
+<blockquote>
+<p>このスプーン[は]、すてきですね。</p>
+<p>コーヒー[を]、もう一杯いかがですか。</p>
+</blockquote>
+<hr>
+<h2 id="助词-は">助词 は</h2>
+<p>助词「は」读作「わ」</p>
+<hr>
+<h2 id="助词-の">助词 の</h2>
+<h3 id="名词sub1sub-の-名词sub2sub">名词<sub>1</sub> の 名词<sub>2</sub></h3>
+<ul>
+<li>名词<sub>1</sub> 表示 名词<sub>2</sub> 的属性。
+<ul>
+<li>ミラーさん は IMC の 社員 です。</li>
+</ul>
+</li>
+<li>名词<sub>1</sub> 来说明 名词<sub>2</sub> 与什么事物有关。
+<ul>
+<li>これ は コンピョーター の 本 です。</li>
+</ul>
+</li>
+<li>名词<sub>1</sub> 表示 名词<sub>2</sub> 的所属/产地。
+<ul>
+<li>これ は 私 の 本 です。</li>
+<li>これ は 日本 の コンピョーター です。</li>
+</ul>
+</li>
+</ul>
+<h3 id="代替名词">代替名词</h3>
+<blockquote>
+<p>あれ は 誰 の 鞄 ですか。</p>
+<blockquote>
+<p>佐藤さんのです。</p>
+</blockquote>
+</blockquote>
+<p>在回答时，「の」替代了问句中出现的名词「鞄」，「の」放在「佐藤」后面相当于省略了「鞄」。<strong>「の」可以用于替代物品，不可用来替代人。</strong></p>
+<blockquote>
+<p>この 鞄 あなたの ですか。</p>
+<blockquote>
+<p>　いいえ、私 の じゃありません。</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>ミラーさんは IMC の 社員 ですか。</p>
+<blockquote>
+<p>✔️ はい、IMC の 社員 です。</p>
+<p>❌ <del>はい、IMC の です。</del></p>
+</blockquote>
+</blockquote>
+<hr>
+<h2 id="助词-に">助词 に</h2>
+<h3 id="名词时间--に--动词">名词（时间） + に + 动词</h3>
+<p>在表示时间的名词后加「に」，表示动作进行的时间</p>
+<blockquote>
+<p>７時２分 に　日本へ来ました。</p>
+</blockquote>
+<p>以下表示时间的名词不能加「に」：</p>
+<p><code><strong><ruby>今日<rt>きょう</rt></ruby></strong></code> <code><strong><ruby>明日<rt>あした</rt></ruby></strong></code>　<code><strong><ruby>明後日<rt>あさって</rt></ruby></strong></code> <code><strong><ruby>昨日<rt>きのう</rt></ruby></strong></code> <code><strong><ruby>一昨日<rt>おととい</rt></ruby></strong></code> <code><strong><ruby>今朝<rt>けさ</rt></ruby></strong></code> <code><strong><ruby>今晩<rt>こんばん</rt></ruby></strong></code> <code><strong><ruby>今<rt>いま</rt></ruby></strong></code> <code><strong><ruby>毎朝<rt>まいあさ</rt></ruby></strong></code> <code><strong><ruby>毎晩<rt>まいばん</rt></ruby></strong></code> <code><strong><ruby>毎日<rt>まいにち</rt></ruby></strong></code> <code><strong><ruby>先週<rt>せんしゅう</rt></ruby></strong></code> <code><strong><ruby>今週<rt>こんしゅう</rt></ruby></strong></code> <code><strong><ruby>来週<rt>らいしゅう</rt></ruby></strong></code> <code>いつ</code> <code><strong><ruby>先月<rt>せんげつ</rt></ruby></strong></code> <code><strong><ruby>今月<rt>こんげつ</rt></ruby></strong></code> <code><strong><ruby>来月<rt>らいげつ</rt></ruby></strong></code> <code><strong><ruby>今年<rt>ことし</rt></ruby></strong></code> <code><strong><ruby>来年<rt>らいねん</rt></ruby></strong></code> <code><strong><ruby>去年<rt>きょねん</rt></ruby></strong></code> 等。</p>
+<blockquote>
+<p>昨日　勉強しました。</p>
+</blockquote>
+<p>这些表示时间的名词可加可不加： <code><strong><ruby>〜曜日<rt>〜ようび</rt></ruby></strong></code> <code><strong><ruby>朝<rt>あさ</rt></ruby></strong></code> <code><strong><ruby>昼<rt>ひる</rt></ruby></strong></code> <code><strong><ruby>晩<rt>ばん</rt></ruby></strong></code> <code><strong><ruby>夜<rt>よる</rt></ruby></strong></code></p>
+<h3 id="名词人--に--动词">名词（人） + に + 动词</h3>
+<p>助词「に」表示接触点。</p>
+<blockquote>
+<p>友達　に　会います。 <code>语义上偏向去见朋友：我 =&gt; 朋友</code></p>
+<p>友達　と　会います。 <code>语义上偏向两个人去约定的地方见面：我 =&gt; 场所 &lt;= 朋友</code></p>
+<p>❌ <del>友達　を　会います。</del></p>
+</blockquote>
+<h3 id="名词sub1sub--に--名词sub2sub--动词">名词<sub>1</sub> + に + 名词<sub>2</sub> + 动词。</h3>
+<p>动词分两种：</p>
+<ul>
+<li>一种是表示<strong>提供</strong>事物、信息的意思，需要有接受这些事物、信息的对象，这一对象用助词「に」来表示。(名词<sub>1</sub> 为受方时)
+<ul>
+<li>如 <code>「あげます」</code> <code>「かします」</code> <code>「おしえます」</code> 等。</li>
+</ul>
+</li>
+<li>另外一种是表示<strong>得到</strong>事物、信息的意思，需要有提供这些事物、信息的对象，这一对象用助词「に」来表示，也可以用「から」来表示。(名词<sub>1</sub> 为授方时)
+<ul>
+<li>如 <code>「もらいます」</code>　<code>かります</code> <code>ならいます</code> 等。</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>[私は]木村さん　に　花を　あげました。 <code>我给木村小姐送了花。</code></p>
+<p>[私は]木村さん　に（から）　花を　もらいました。 <code>我收到了木村小姐送的花。</code></p>
+</blockquote>
+<h2 id="助词-ね">助词 ね</h2>
+<h3 id="ね">〜ね</h3>
+<p>表示说话人希望得到听话人的同意或说话人对某件事物加以确认、叮嘱的语气。</p>
+<blockquote>
+<p>毎日１０時まで勉強します。</p>
+<blockquote>
+<p>大変です ね。</p>
+</blockquote>
+</blockquote>
+<h3 id="名词场所--に--动词表示移动的">名词（场所） + に + 动词（表示移动的）</h3>
+<p>在表达移动到达的场所时，用助词「に」。与助词「へ」的差别在于，「へ」是表达移动方向，「に」是表达移动到这个场所。</p>
+<blockquote>
+<p>私は学校　に　行きます。</p>
+</blockquote>
+<hr>
+<h2 id="助词-へ">助词 へ</h2>
+<p>助词「へ」读作「え」</p>
+<h3 id="名词场所--へ--动词表示移动的">名词（场所） + へ + 动词（表示移动的）</h3>
+<p>使用表示移动的词时，移动方向用助词助词「へ」表示。</p>
+<blockquote>
+<p>京都　へ　行きます。</p>
+<p>うち　へ　帰ります。</p>
+</blockquote>
+<hr>
+<h2 id="助词-と">助词 と</h2>
+<h3 id="名词sub1sub--と--名词sub2sub">名词<sub>1</sub> + と + 名词<sub>2</sub></h3>
+<ul>
+<li>名词并列，在之间用「と」连接，表示名词<sub>1</sub>和名词<sub>2</sub>。</li>
+</ul>
+<blockquote>
+<p>　銀行の休みは土曜日　と　日曜日　です。</p>
+</blockquote>
+<h3 id="名词人动物--と--动词">名词（人/动物） + と + 动词</h3>
+<p>表示与自己一起行动的人或动物。</p>
+<blockquote>
+<p>家族　と　日本へ来ました。</p>
+</blockquote>
+<p>单独行动时，要用「一人で」且不用助词「と」。</p>
+<blockquote>
+<p>一人で　東京へ行きます。</p>
+</blockquote>
+<hr>
+<h2 id="助词-で">助词 で</h2>
+<h3 id="名词交通工具--で--动词">名词（交通工具） + で + 动词。</h3>
+<p>助词「で」表示手段、方法，接在表示交通工具的名词之后，表示与动词一起使用。</p>
+<blockquote>
+<p>　電車　で　行きます。</p>
+</blockquote>
+<p><strong>徒步行走用「<strong><ruby>歩<rt>ある</rt></ruby></strong>いて」且不用接助词「で」。</strong></p>
+<blockquote>
+<p>駅から歩いて帰りました。</p>
+</blockquote>
+<h3 id="名词场所--で--动词">名词（场所） + で + 动词。</h3>
+<p>接在场所后的助词「で」表示发生的场所。</p>
+<blockquote>
+<p>駅　で　新聞を買います。</p>
+</blockquote>
+<h3 id="名词工具手段--で--动词">名词（工具/手段） + で + 动词。</h3>
+<p>助词「で」用来表示方法、手段、工具。</p>
+<blockquote>
+<p><strong><ruby>箸<rt>はし</rt></ruby></strong>で食べます。 ｜ 用筷子吃饭。</p>
+</blockquote>
+<hr>
+<h2 id="助词-を">助词 を</h2>
+<h3 id="名词--を--动词他动词">名词 + を + 动词（他动词）</h3>
+<p>他动词的宾语用助词「を」表示。</p>
+<blockquote>
+<p>ジュース　を　飲みます。</p>
+</blockquote>
+<p><em>注：「を」只用来表示助词。</em></p>
+<h3 id="名词--を--动词">名词 + を + 动词</h3>
+<p>表示动作作用对象。</p>
+<p>动词是「します」时，可以接在很多名词之后，使其作为宾语。意思是表示做该名词所表示的内容。</p>
+<blockquote>
+<p>スッカー　を　します。 <code>踢足球</code></p>
+<p>パーティー　を　します。 <code>举办晚会。</code></p>
+<p><strong><ruby>宿題<rt>しゅくだい</rt></ruby></strong>　を　します。 <code>做作业。</code></p>
+</blockquote>
+<hr>
+<h2 id="助词-よ">助词 よ</h2>
+<p>接在词尾，用于将对方不知道的事情或说话人自己的判断等告诉对方。</p>
+<blockquote>
+<p>この電車は<strong><ruby>甲<rt>こう</rt></ruby></strong><strong><ruby>子<rt>し</rt></ruby></strong><strong><ruby>園<rt>えん</rt></ruby></strong>へ行きますか。</p>
+<blockquote>
+<p>いいえ、行きません。次の「<strong><ruby>普<rt>ふ</rt></ruby></strong><strong><ruby>通<rt>つう</rt></ruby></strong>」です よ。</p>
+</blockquote>
+</blockquote>
+<h2 id="副词-ときぢき">副词 ときぢき</h2>
+<p>修饰后面的动词或新的动词，与前句无关。意思是「有时候」。</p>
+<blockquote>
+<p>うちで本を読みます。ときどき図書館へ行きます。</p>
+</blockquote>
+<h2 id="副词-もう">副词 もう</h2>
+<h3 id="もう--动词ました">もう + 动词ました。</h3>
+<p>「もう」是「已经」的意思，与「动词ました」一起使用，表示「动词ました」已经结束。</p>
+<p>在回答时，如果行为已经结束了，进行肯定回答「はい、もう 动词 ました。」；如果行为尚未结束，进行否定回答「いいえ、动词て いません。」或者「いいえ、まだです。」。</p>
+<blockquote>
+<p>もう昼ご飯を食べましたか。</p>
+<blockquote>
+<p>[肯定回答] はい、[もう]食べました。</p>
+<p>[否定回答] いいえ、まだです。(いいえ、食べていません。)</p>
+<p>[否定回答] ❌ <del>いいえ、まだ食べません。(いいえ、食べませんでした。)</del></p>
+</blockquote>
+</blockquote>
+]]></description>
+</item><item>
+    <title>一些琐事</title>
+    <link>https://x.awo.design/2021/04/studying-training-learning/</link>
+    <pubDate>Fri, 02 Apr 2021 16:00:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://x.awo.design/2021/04/studying-training-learning/</guid>
+    <description><![CDATA[<p>今天突然在想一个问题「完美和不完美」。</p>
+<p>在很多时候我都在追求一定的完美，在选择学习资料上、数据整理方案、程序的算法逻辑等等，总会考虑很多，是否有不完美的地方，这固然是一件好事情，但也有时候无论如何也无法达到真正意义上的完美，总有不完美的地方。</p>
+<p>最近在上王垠老师的课，他的观点很多方面都让我有了新的认知。以前学音乐觉得音乐是完美的语言，现在看其实也有很多不完美的地方，十二平均律也不是最完美的韵律。</p>
+<p>说到上课，我惊讶于王垠老师可以将知识点用很容易理解的方式讲出来，抽丝剥茧，入门者很容易理解，但内容又不是浅层次的，课后练习很容易看出来是经过认真设计的，能够深入去理解知识点的。</p>
+<p>今天刷到微博，大意就是在交易市场上大家都愿意亏损当学费，而不愿意花几万元去学习技术。花几万元去学习技术，我觉得门槛虽然高一点，但是能够系统的学习到知识（当然不是说费用高的就是好的），我认为这样的学费其实是很便宜的。</p>
+]]></description>
+</item><item>
+    <title>《稻香》乐队Cover</title>
+    <link>https://x.awo.design/2021/03/dao-xiang-cover/</link>
+    <pubDate>Tue, 16 Mar 2021 16:23:50 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://x.awo.design/2021/03/dao-xiang-cover/</guid>
+    <description><![CDATA[<div class="bilibili"><iframe src="//player.bilibili.com/player.html?bvid=BV17o4y1R76j&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe></div>
+
+<p>原本计划 2020 年要在公司层面寻找人员组成公司的乐队的，后来因为疫情搁置了，年底的时候分公司有小伙伴告诉我她学了 Bass，正好大冰龙带着他吉他 Demo 想要来投稿公众号，一拍即合，干脆整个乐队吧。</p>
+<p>大家一起排练、改编和录音，于是就有了周杰伦《稻香》的 Cover。</p>
+]]></description>
+</item><item>
+    <title>2021年年度计划</title>
+    <link>https://x.awo.design/2021/02/annual-plan-2021/</link>
+    <pubDate>Sun, 14 Feb 2021 15:37:50 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://x.awo.design/2021/02/annual-plan-2021/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/feature.jpg" referrerpolicy="no-referrer">
+            </div><h2 id="工作计划">工作计划</h2>
+<p>今年的工作重心在分公司的信息化建设，一方面是业务系统的系统化的推进，另外一方面是自研的信息系统的开发。前者要抓紧推进的，是工作的重心。后者不应该占据自身太多的时间，在时间较为空余时进行开发，也可借助开源平台进行二次开发以节约时间成本。</p>
+<p>文化建设方面，<del>公众号主要由 Jackson 负责打理</del>（基本还是我在弄😓），我负责每个月计划以及方向的制定，其他方面仍然需要保持高度的敏感性，提前准备。</p>
+<p>工会的文体活动去年已经定好计划，按照预计时间提前准备。</p>
+<p>今年需要摒弃细微末节，将时间用在重要的事情上去。同时还需要发掘相关方面的人才，使队伍壮大起来。</p>
+<h2 id="学习计划">学习计划</h2>
+<p>今年在学习方面应该要比去年更加进步一点，这不仅仅只在深度方面。所以今年我打算着重学习日语、架子鼓、吉他。其余例如开发、音乐制作、视频拍摄则依据实际需要来选择学习内容。阅读今年依然是必不可少的一环。</p>
+<h3 id="阅读-未完成">阅读 （未完成）</h3>
+<p>今年计划阅读 10本书，同一类型书籍最多不超过3本。计划表以及进度会在第一本书阅读开始时更新。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">分类</th>
+<th style="text-align:center">数量</th>
+<th style="text-align:center">完成</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">小说</td>
+<td style="text-align:center">3本</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">历史</td>
+<td style="text-align:center">2本</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">传记</td>
+<td style="text-align:center">2本</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">指导</td>
+<td style="text-align:center">2本</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">哲学</td>
+<td style="text-align:center">1本</td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<p>阅读进度：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">书名</th>
+<th style="text-align:center">分类</th>
+<th style="text-align:center">开始时间</th>
+<th style="text-align:center">完成时间</th>
+<th style="text-align:center">耗时</th>
+<th style="text-align:center">状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">学会提问</td>
+<td style="text-align:center">指导</td>
+<td style="text-align:center">2021.02.18</td>
+<td style="text-align:center">?</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">▶️ 进行</td>
+</tr>
+<tr>
+<td style="text-align:left">丑陋的中国人</td>
+<td style="text-align:center">历史（不能算历史）</td>
+<td style="text-align:center">2021.03.16</td>
+<td style="text-align:center">2022.01.07</td>
+<td style="text-align:center">7小时23分</td>
+<td style="text-align:center">✅ 完成</td>
+</tr>
+</tbody>
+</table>
+<h3 id="日语-未完成">日语 （未完成）</h3>
+<p>日语计划今年至少要完成 N3 的考试，最好是能够考到 N2。有必要的话，会找老师上课。</p>
+<p>自学计划是打算将《大家的日本语》两册书学完，根据学习的情况再看是否需要《标准日本语》作为补充。</p>
+<p>考试报名时间弄错了，没报上。目前只完成到初级的第七课。</p>
+<h3 id="计算机科学基础课-完成">计算机科学基础课 （完成）</h3>
+<p>今年报了王垠老师的《计算机科学基础课》，要将这课程内容好好吸收，希望能够理解课程的所有内容。</p>
+<p>学完了，笔记以及练习还需要整理和消化。</p>
+<p>虽然练习都做了出来，链表、树、解释器、类型检查还有 Parser 还需要加强理解，在实际案例中能够运用到这些内容。</p>
+<h3 id="架子鼓-完成">架子鼓 （完成）</h3>
+<p>年后先去检查耳朵，确保学习期间能够尽可能的保护耳朵「买了静音耳塞」。之后去报班。</p>
+<p>5月9日报了一年的架子鼓班（50节课），我发现我练架子鼓蛮专注的，可能是因为在练歌？下次长时间练基本功的时候再来发表感想。</p>
+<p>课程进度：32/50 （因为疫情，有几个月琴行停课）</p>
+<p>已学内容：</p>
+<ul>
+<li>单跳 / 双跳 / 倚音 / 开合镲</li>
+<li>《改变自己》《星空》《不再犹豫》《君が好きだと叫びたい》《Cold Pants》</li>
+</ul>
+<h3 id="吉他-未完成">吉他 （未完成）</h3>
+<p>吉他完成指弹练习曲前12首，时间充足的情况下尽量能够多完成。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">曲目</th>
+<th style="text-align:center">分类</th>
+<th style="text-align:center">开始时间</th>
+<th style="text-align:center">完成时间</th>
+<th style="text-align:center">耗时</th>
+<th style="text-align:center">状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">练习曲4</td>
+<td style="text-align:center">练习曲</td>
+<td style="text-align:center">2021.02.14</td>
+<td style="text-align:center">2021.03.20</td>
+<td style="text-align:center">9 hour</td>
+<td style="text-align:center">✅ 完成</td>
+</tr>
+<tr>
+<td style="text-align:left">练习曲5</td>
+<td style="text-align:center">练习曲</td>
+<td style="text-align:center">2021.03.21</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">▶️ 进行</td>
+</tr>
+</tbody>
+</table>
+<h3 id="乐队排练表演">乐队排练/表演</h3>
+<ul>
+<li><i class="far fa-check-square fa-fw"></i> 周杰伦《稻香》/ MV / 吉他 / 2021.02.05 / <a href="/2021/03/dao-xiang-cover/" rel="">📹 视频</a></li>
+<li><i class="far fa-check-square fa-fw"></i> 伍佰《Last Dance》 / Live / 键盘 / 2021.02.14 / <a href="https://mp.weixin.qq.com/s/CRA_PAKAzO976wKwBjc0Hg" target="_blank" rel="noopener noreffer">📹 视频</a></li>
+<li><i class="far fa-check-square fa-fw"></i> 五月天《星空》 / Live / 吉他 / 2021.04.09 / 无视频</li>
+<li><i class="far fa-check-square fa-fw"></i> 五月天《星空》 / Live / 架子鼓 / 2021.08.14 / <a href="https://mp.weixin.qq.com/s/SEaeCNo8JyNfqjLvydFodw" target="_blank" rel="noopener noreffer">📹 视频</a> 现场收音，效果不是很好。另我的节奏也有点不太稳。</li>
+<li><i class="far fa-check-square fa-fw"></i> Coldplay 《Yellow》 / MV / 架子鼓 / <a href="/2022/01/yellow-cover/" rel="">📹 视频</a></li>
+</ul>
+<h3 id="其他">其他</h3>
+<p>开发、音乐制作、视频拍摄等会根据实际情况在此更新。</p>
+<p>开发：</p>
+<ul>
+<li>拼柜模块</li>
+<li>检针模块</li>
+<li>海外订柜模块（开发中）</li>
+</ul>
+<h2 id="身心计划">身心计划</h2>
+<p>这方面计划由健身私教、书法练习、情绪管理及自省组成。</p>
+<p>健身是身体方面的强化；书法是心灵方面的洗涤；情绪的管理以及自省来改善不完美的自己。</p>
+<h3 id="健身">健身</h3>
+<ul>
+<li>Phase One (total 44, ¥ 6,000)
+<ul>
+<li>02.22 ~ 02.28 / 3 courses</li>
+<li>03.01 ~ 03.07 / 4 courses</li>
+<li>03.08 ~ 03.14 / 3 courses</li>
+<li>03.15 ~ 03.21 / 4 courses</li>
+<li>03.22 ~ 03.28 / 1 courses</li>
+<li>04.12 ~ 04.18 / 4 courses</li>
+<li>04.19 ~ 04.25 / 3 courses</li>
+<li>04.26 ~ 05.02 / 3 courses</li>
+<li>05.03 ~ 05.09 / 2 courses</li>
+<li>05.10 ~ 05.16 / 3 courses</li>
+<li>05.17 ~ 05.23 / 4 courses</li>
+<li>05.24 ~ 05.30 / 2 course 老师出差</li>
+<li>05.31 ~ 06.06 / 2 courses</li>
+<li>06.06 ~ 06.13 / 4 courses</li>
+<li>06.14 ~ 06.20 / 2 courses 一期结束</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>2021，不念过往，不问未来，珍惜现在，加油W.</p>
+]]></description>
+</item><item>
+    <title>2020年年度总结</title>
+    <link>https://x.awo.design/2021/01/annual-report-2020/</link>
+    <pubDate>Fri, 15 Jan 2021 15:37:50 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://x.awo.design/2021/01/annual-report-2020/</guid>
+    <description><![CDATA[<p>2020年虽然说是疫情年，但这一年依旧是忙碌的一年。</p>
+<p>从年初网店运营以及产品的拍照，到六一活动的筹备，以及下半年的集装箱拼柜系统的开发，基本都是无缝衔接。</p>
+<h2 id="自省">自省</h2>
+<p>「Do One Thing Perfect」上半年践行的不是很好，拍照、修图、店铺装修以及运营每个部分都分散了我的精力，并不能专注于一件事，另外一方面在这个团队的协作方面存在了一些问题：</p>
+<ul>
+<li>大家都没有做网店的经验</li>
+<li>由于我们主业是做B端客户的，大家对于做 C 端认为只是一个临时阶段</li>
+<li>对于一些同事来说，做与不做或者效率高低对于 ta 没有直接影响。</li>
+</ul>
+<p>所以，当主业正常之后，大家都各自回归原来的岗位了，并没有产生出一个互联网销售团队。</p>
+<p>下半年是信息化工作为主，在开发之初没有选择熟悉的架构，该用现代化的开发方式，选用了 JS 语言来开发。在前期花了不少功夫来快速入门 React, Antd Pro, Koa 以及 TypeORM。</p>
+<p>选择现代化框架虽然是正确的，但是因为需要快速入门而研读各类手册及教程给了我不小的压力。所以在入门之后，就在边学习「全栈公开课2020」边进行程序开发。</p>
+<p>第一版的系统在一个月内上线，虽然自己在开发系统时考虑了很多便利性的功能，但是因为业务仍需要重复工作将数据录入至系统，所以业务员使用的意愿不是很强烈。这反映出了前期的调研不够严谨和充分。这也导致第二版系统几乎要重做。</p>
+<p><strong>严谨而充分的调研，会减少错误的劳动。</strong></p>
+<p>2020年的计划完成情况较上一年好：</p>
+<ul>
+<li>阅读完成了 4本书，完成率 40%。</li>
+<li>吉他完成了 1首练习曲，完成率 4.54%。</li>
+<li>练字仅上半年坚持，持续了23小时。</li>
+<li>健身从五月份开始，基本上完成了任务，一共上了 82节私教课。</li>
+<li>全栈公开课完成了 3个章节</li>
+</ul>
+<p>阅读和练字有一方面原因是因为午休时间减少了，但主要原因依然是执行力不够。</p>
+<p>全栈公开课本应该在12月底全部完成的，因为第二版的开发影响了进度，在2021年要全部学完的。</p>
+<h2 id="plus">PLUS</h2>
+<ul>
+<li>加入了「公司工会文体组」</li>
+<li>修复了「公司官网」的木马</li>
+<li>喝醉了 2次</li>
+</ul>
+<h2 id="结语">结语</h2>
+<p>这一年依旧是因为事情比较杂和多，对于一年的主题「Do One Thing Perfect」践行的不够理想，仅在下半年做的还可以，没有畏惧新事物带来的压力，持续学习和开发。在阅读、健身、学习方面完成的较好，练字及器乐方面完成的不够理想。总体来说今年算是及格吧。</p>
+<p>在 2021年，摒弃一些细微末节，重心放在学习以及沟通方面的提升吧。</p>
+<p>一生很短，遗憾很多，人生在不断失去，人生也在不断获得。未来的自己一定不要辜负现在你受到的伤痛，爱所爱的人，也要爱自己。</p>
+]]></description>
+</item></channel>
+</rss>

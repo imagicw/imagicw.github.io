@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>我是如何将路由器打造成我的下载中心的 - Λ.W.log</title><meta name="Description" content="A blog."><meta property="og:title" content="我是如何将路由器打造成我的下载中心的" />
+<meta property="og:description" content="前言
+本来购买极路由是为了改善无线质量的，后来仅仅改变无线质量已经不能满足我，加上我之前的电脑CPU和显卡陆续烧坏，闲置了几块硬盘，于是就想折腾起路由器来让我闲置硬盘用起来。
+本笔记主要是记录我如何折腾路由器的经历与心得。
+准备
+
+极路由3（已开通开发者权限）
+网线一根
+电脑一台
+移动硬盘
+
+极路由3需要在路由器界面申请开发者权限，这样才能使用ssh。请注意，开启ssh后会失去官方保修服务！请谨慎。
+如何申请，请自行摸索或者百度谷歌Bing一下。
+我使用的平台是MacOS 10.12，其他平台操作方法类似。
+刷机有风险，请小心开车。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://x.awo.design/2017/03/how-i-made-my-hiwifi-into-download-center/" /><meta property="og:image" content="https://x.awo.design/img/W.jpg"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2017-03-27T20:31:02+08:00" />
+<meta property="article:modified_time" content="2017-03-27T20:31:02+08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://x.awo.design/img/W.jpg"/>
+
+<meta name="twitter:title" content="我是如何将路由器打造成我的下载中心的"/>
+<meta name="twitter:description" content="前言
+本来购买极路由是为了改善无线质量的，后来仅仅改变无线质量已经不能满足我，加上我之前的电脑CPU和显卡陆续烧坏，闲置了几块硬盘，于是就想折腾起路由器来让我闲置硬盘用起来。
+本笔记主要是记录我如何折腾路由器的经历与心得。
+准备
+
+极路由3（已开通开发者权限）
+网线一根
+电脑一台
+移动硬盘
+
+极路由3需要在路由器界面申请开发者权限，这样才能使用ssh。请注意，开启ssh后会失去官方保修服务！请谨慎。
+如何申请，请自行摸索或者百度谷歌Bing一下。
+我使用的平台是MacOS 10.12，其他平台操作方法类似。
+刷机有风险，请小心开车。"/>
+<meta name="application-name" content="Λ.W.log">
+<meta name="apple-mobile-web-app-title" content="Λ.W.log"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://x.awo.design/2017/03/how-i-made-my-hiwifi-into-download-center/" /><link rel="next" href="https://x.awo.design/2019/07/annual-plan-2019/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.055364f5be272caa092b0e6654c165828707f8ab971e2656383a6d6392bc345e.css" integrity="sha256-BVNk9b4nLKoJKw5mVMFlgocH&#43;KuXHiZWODptY5K8NF4="><link rel="stylesheet" href="/css/style.min.1e2694bed152fa2922dbe909a441838ed693d88b1330f97485bfa8ed78da42df.css" integrity="sha256-HiaUvtFS&#43;iki2&#43;kJpEGDjtaT2IsTMPl0hb&#43;o7XjaQt8="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.876d023d9d10c97941b80c3b03e2a5b94631ff7a4af9cee5604a6a2d39718d84.css" integrity="sha256-h20CPZ0QyXlBuAw7A&#43;KluUYx/3pK&#43;c7lYEpqLTlxjYQ="><link rel="stylesheet" href="/lib/animate/animate.min.3c770e90f98eb21b0c042fafb49755af93306fbaf42e449524f94fae9fc83295.css" integrity="sha256-PHcOkPmOshsMBC&#43;vtJdVr5Mwb7r0LkSVJPlPrp/IMpU="><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "我是如何将路由器打造成我的下载中心的",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/x.awo.design\/2017\/03\/how-i-made-my-hiwifi-into-download-center\/"
+        },"genre": "posts","keywords": "OpenWrt, Aria2","wordcount":  3002 ,
+        "url": "https:\/\/x.awo.design\/2017\/03\/how-i-made-my-hiwifi-into-download-center\/","datePublished": "2017-03-27T20:31:02+08:00","dateModified": "2017-03-27T20:31:02+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "imagicw"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Λ.W.log">🎛 A.W.Log</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/categories/notes"> 笔记 </a><a class="menu-item" href="/books/"> 阅读 </a><a class="menu-item" href="/games/"> 游戏 </a><a class="menu-item" href="/drummer/"> 鼓手 </a><a class="menu-item" href="/10000/"> 一万次悲伤 </a><a class="menu-item" href="/about/"> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Λ.W.log">🎛 A.W.Log</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/categories/notes" title="">笔记</a><a class="menu-item" href="/books/" title="">阅读</a><a class="menu-item" href="/games/" title="">游戏</a><a class="menu-item" href="/drummer/" title="">鼓手</a><a class="menu-item" href="/10000/" title="">一万次悲伤</a><a class="menu-item" href="/about/" title="">关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">我是如何将路由器打造成我的下载中心的</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://awo.design" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>imagicw</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/notes/"><i class="far fa-folder fa-fw"></i>笔记</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2017-03-27">2017-03-27</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3002 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 6 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#准备">准备</a></li>
+    <li><a href="#解锁u-boot">解锁u-boot</a></li>
+    <li><a href="#openwrt">Openwrt</a>
+      <ul>
+        <li><a href="#下载openwrt">下载Openwrt</a></li>
+        <li><a href="#安装openwrt">安装Openwrt</a></li>
+        <li><a href="#基本设置">基本设置</a>
+          <ul>
+            <li><a href="#pppoe拨号">PPPOE拨号</a></li>
+            <li><a href="#无线设置">无线设置</a></li>
+          </ul>
+        </li>
+        <li><a href="#挂载点">挂载点</a></li>
+        <li><a href="#samba共享">Samba共享</a>
+          <ul>
+            <li><a href="#设置">设置</a></li>
+            <li><a href="#添加用户">添加用户</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#aria2">Aria2</a>
+      <ul>
+        <li><a href="#安装">安装</a></li>
+        <li><a href="#配置">配置</a></li>
+        <li><a href="#ui">UI</a>
+          <ul>
+            <li><a href="#使用现成的">使用现成的</a></li>
+            <li><a href="#github部署">GitHub部署</a></li>
+            <li><a href="#chrome插件推荐">Chrome插件（推荐）</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#ddns">DDNS</a>
+      <ul>
+        <li><a href="#安装-1">安装</a></li>
+        <li><a href="#配置-1">配置</a>
+          <ul>
+            <li><a href="#设置动态域名">设置动态域名</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#后记">后记</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="前言">前言</h2>
+<p>本来购买极路由是为了改善无线质量的，后来仅仅改变无线质量已经不能满足我，加上我之前的电脑CPU和显卡陆续烧坏，闲置了几块硬盘，于是就想折腾起路由器来让我闲置硬盘用起来。</p>
+<p>本笔记主要是记录我如何折腾路由器的经历与心得。</p>
+<h2 id="准备">准备</h2>
+<ul>
+<li>极路由3（已开通开发者权限）</li>
+<li>网线一根</li>
+<li>电脑一台</li>
+<li>移动硬盘</li>
+</ul>
+<p><strong>极路由3需要在路由器界面申请开发者权限，这样才能使用ssh。请注意，开启ssh后会失去官方保修服务！请谨慎。</strong></p>
+<p>如何申请，请自行摸索或者百度谷歌Bing一下。</p>
+<p>我使用的平台是MacOS 10.12，其他平台操作方法类似。</p>
+<p><strong>刷机有风险，请小心开车。</strong></p>
+<hr>
+<h2 id="解锁u-boot">解锁u-boot</h2>
+<p>极路由的u-boot会验证固件版本，需要解锁才能安装第三方固件，同时为了避免刷固件失败造成变砖的情况，刷上不死u-boot可以有效避免悲剧发生。</p>
+<p>首先需要在 <a href="http://www.right.com.cn/forum/thread-161906-1-1.html" target="_blank" rel="noopener noreffer">http://www.right.com.cn/forum/thread-161906-1-1.html</a> 找到对应的u-boot。</p>
+<p>偷懒不看帖子的小伙伴可以直接在这里寻找 <a href="http://breed.hackpascal.net/" target="_blank" rel="noopener noreffer">http://breed.hackpascal.net/</a> ，极路由3是 <code>HC5861</code>，对应的u-boot就是 <code>breed-mt7620-hiwifi-hc5861.bin</code>，对应的下载地址就是 <code>http://breed.hackpascal.net/breed-mt7620-hiwifi-hc5861.bin</code>。</p>
+<p>接下来就是要用ssh连接到路由器啦，我的路由器地址是 <code>10.0.0.1</code>，那我们打开终端（Terminal）开始使用命令吧。</p>
+<p><em>以下命令的中文仅是提示，请勿复制至命令行！请一个命令执行完再执行下一个命令。</em></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">//连接路由器
+</span></span><span class="line"><span class="cl">ssh -p 22 root@10.0.0.1
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">//进入tmp目录
+</span></span><span class="line"><span class="cl">cd /tmp
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">//下载固件
+</span></span><span class="line"><span class="cl">wget http://breed.hackpascal.net/breed-mt7620-hiwifi-hc5861.bin
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">//安装u-boot
+</span></span><span class="line"><span class="cl">mtd -r write /tmp/breed-mt7620-hiwifi-hc5761.bin u-boot
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>此时，终端会显示 <code>Rebooting</code>，等待重启完毕后再切断路由器电源，按住路由器 <code>reset</code> 按钮后接通电源，等待路由器电源灯连续闪烁后松开 <code>reset</code>。</p>
+<p>电脑会自动获取ip地址，我们通过浏览器访问 <code>192.168.1.1</code> 可以登录Breed Web恢复控制台，有了这个，我们就可以随意开车，不怕翻车啦！</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="01-Breedweb-console.jpg"
+        data-srcset="/2017/03/how-i-made-my-hiwifi-into-download-center/01-Breedweb-console.jpg, 01-Breedweb-console.jpg 1.5x, /2017/03/how-i-made-my-hiwifi-into-download-center/01-Breedweb-console.jpg 2x"
+        data-sizes="auto"
+        alt="/2017/03/how-i-made-my-hiwifi-into-download-center/01-Breedweb-console.jpg"
+        title="Breed Web控制台" /></p>
+<hr>
+<h2 id="openwrt">Openwrt</h2>
+<h3 id="下载openwrt">下载Openwrt</h3>
+<p>我使用的是 「<a href="http://downloads.pandorabox.org.cn/" target="_blank" rel="noopener noreffer">Pandorabox</a>」的 <a href="http://downloads.pandorabox.com.cn/pandorabox-16-10-stable/targets/ralink/mt7620/PandoraBox-ralink-mt7620-mt7620a-evb-2017-01-03-git-6c24a7a-squashfs-sysupgrade.bin" target="_blank" rel="noopener noreffer">PandoraBox-ralink-mt7620-mt7620a-evb-2017-01-03-git-6c24a7a-squashfs-sysupgrade.bin</a> 的固件，固件位于 <code>pandorabox-16-10-stable/targets/ralink/mt7620/</code> 目录下。</p>
+<p>我没有选择 <a href="http://downloads.pandorabox.com.cn/pandorabox-16-10-stable/targets/ralink/mt7620/PandoraBox-ralink-mt7620-hc5861-2017-01-03-git-6c24a7a-squashfs-sysupgrade.bin" target="_blank" rel="noopener noreffer">PandoraBox-ralink-mt7620-hc5861-2017-01-03-git-6c24a7a-squashfs-sysupgrade.bin</a> 版本的原因是因为这个版本的USB挂载有问题，我也不知道如何解决。<em>（你们有解决方案烦请告诉我！万分感谢！）</em></p>
+<p>懒人可以点击上方固件名字下载。</p>
+<h3 id="安装openwrt">安装Openwrt</h3>
+<p>下载完成后，进入Breed恢复控制台，选择「固件更新」，在右边「常规固件」下方勾选「固件」并上传刚刚下完的固件 <code>PandoraBox-ralink-mt7620-hc5861-2017-01-03-git-6c24a7a-squashfs-sysupgrade.bin</code>，同时勾选「自动重启」后点击「上传」按钮。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="01-Breedweb-upgrade.jpg"
+        data-srcset="/2017/03/how-i-made-my-hiwifi-into-download-center/01-Breedweb-upgrade.jpg, 01-Breedweb-upgrade.jpg 1.5x, /2017/03/how-i-made-my-hiwifi-into-download-center/01-Breedweb-upgrade.jpg 2x"
+        data-sizes="auto"
+        alt="/2017/03/how-i-made-my-hiwifi-into-download-center/01-Breedweb-upgrade.jpg"
+        title="Breed Web 控制台" /></p>
+<p>重启完成后，等待更新成功。浏览器访问 <code>192.168.1.1</code> 即可进入路由器登录界面，Pandorabox的初始密码是 <code>admin</code>，输入密码后即可进入。</p>
+<h3 id="基本设置">基本设置</h3>
+<p>PandoraBox固件内置了两种主题，习惯于Openwrt的 <code>Bootstrap</code> 主题的可以 <code>系统 - 系统 - 语言与界面</code>下更改主题为 <code>Bootstrap</code>。</p>
+<h4 id="pppoe拨号">PPPOE拨号</h4>
+<p>在 <code>网络</code> 菜单下找到 <code>接口</code>并进入，找到接口 <code>WAN</code> 并编辑，协议改成 <code>PPPOE</code> 并<code>切换协议</code>，填入宽带帐号密码并<code>保存&amp;应用</code>。</p>
+<h4 id="无线设置">无线设置</h4>
+<p>在 <code>网络</code> 菜单下找到 <code>无线</code> 并进入，有2.4G和5G两个无线接口，自行修改相应的无线即可。</p>
+<p>我为了方便，将2.4G和5G的SSID和密码设置都是相同的。</p>
+<hr>
+<h3 id="挂载点">挂载点</h3>
+<p>设置位于 <code>系统 - 挂载点</code>。</p>
+<p>这个版本的固件会自动挂载USB连接的硬盘（U盘）设备，默认的挂载位置 <code>/mnt</code>，挂载名为 <code>sda1</code>，当然你挂载的硬盘比较多，之后的硬盘的挂载名会是 <code>sda2</code> <code>sda3</code>，以此类推。</p>
+<h3 id="samba共享">Samba共享</h3>
+<p>Samba共享是为了让网内的电脑能够方便地访问挂载的硬盘中的内容。当然，你也可以从路由器上拔下硬盘，连接到电脑上。</p>
+<h4 id="设置">设置</h4>
+<p>找到 <code>服务 - 网络共享</code>，全局设置根据个人喜好设置即可。</p>
+<p>共享目录中将 <code>/mnt/sda1</code> 硬盘共享出去即可，如果你希望可以匿名访问，请勾选 <code>允许匿名访问</code> 选项，并可以跳过以下内容（包括<strong>添加用户</strong>）</p>
+<p>编辑模板，为了安全，将模板做以下修改，主要是更改访客访问以及root访问的权限，禁止这2类用户访问。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[global]
+</span></span><span class="line"><span class="cl">	netbios name = |NAME| 
+</span></span><span class="line"><span class="cl">	display charset = |CHARSET|
+</span></span><span class="line"><span class="cl">	interfaces = |INTERFACES|
+</span></span><span class="line"><span class="cl">	server string = |DESCRIPTION|
+</span></span><span class="line"><span class="cl">	unix charset = |CHARSET|
+</span></span><span class="line"><span class="cl">	workgroup = |WORKGROUP|
+</span></span><span class="line"><span class="cl">	browseable = yes
+</span></span><span class="line"><span class="cl">	deadtime = 30
+</span></span><span class="line"><span class="cl">	domain master = |MASTER|
+</span></span><span class="line"><span class="cl">	encrypt passwords = true
+</span></span><span class="line"><span class="cl">	enable core files = no
+</span></span><span class="line"><span class="cl">#	guest account = nobody
+</span></span><span class="line"><span class="cl">#	guest ok = yes
+</span></span><span class="line"><span class="cl">	invalid users = root
+</span></span><span class="line"><span class="cl">	local master = yes
+</span></span><span class="line"><span class="cl">	load printers = no
+</span></span><span class="line"><span class="cl">	map to guest = Bad User
+</span></span><span class="line"><span class="cl">	max protocol = SMB2
+</span></span><span class="line"><span class="cl">	min receivefile size = 16384
+</span></span><span class="line"><span class="cl">	null passwords = yes
+</span></span><span class="line"><span class="cl">	obey pam restrictions = yes
+</span></span><span class="line"><span class="cl">	os level = 250 
+</span></span><span class="line"><span class="cl">	lm announce = yes
+</span></span><span class="line"><span class="cl">	lm interval = 10 
+</span></span><span class="line"><span class="cl">	dns proxy = no
+</span></span><span class="line"><span class="cl">	passdb backend = smbpasswd
+</span></span><span class="line"><span class="cl">	preferred master = yes
+</span></span><span class="line"><span class="cl">	printable = no
+</span></span><span class="line"><span class="cl">	security = user
+</span></span><span class="line"><span class="cl">	smb encrypt = disabled
+</span></span><span class="line"><span class="cl">	smb passwd file = /etc/samba/smbpasswd
+</span></span><span class="line"><span class="cl">	socket options = TCP_NODELAY IPTOS_LOWDELAY
+</span></span><span class="line"><span class="cl">	syslog = 2
+</span></span><span class="line"><span class="cl">	use sendfile = yes
+</span></span><span class="line"><span class="cl">	writeable = yes
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="添加用户">添加用户</h4>
+<p>那么，禁用了root和访客访问，我怎么通过网络共享连接到硬盘呢？</p>
+<p>我们需要专门添加一个用户，设置相应访问权限，这样就不用担心因为root的权限高而引起的安全问题。</p>
+<p>首先我们需要 <code>ssh</code> 到路由器上。</p>
+<p>然后我们 <code>cd</code> 到 <code>/etc</code> 目录下，通过 <code>vi passwd</code> 命令来编辑用户表，按下 <code>i</code> 键即可编辑，在文本的最后一行加入以下内容后，保存即可。<em>（什么，你不知道怎么保存？那你只能请教百度谷歌Bing先生们了）</em></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="01-passwd.jpg"
+        data-srcset="/2017/03/how-i-made-my-hiwifi-into-download-center/01-passwd.jpg, 01-passwd.jpg 1.5x, /2017/03/how-i-made-my-hiwifi-into-download-center/01-passwd.jpg 2x"
+        data-sizes="auto"
+        alt="/2017/03/how-i-made-my-hiwifi-into-download-center/01-passwd.jpg"
+        title="passwd 文件" /></p>
+<p>好了，这样我们就新建了一个叫imagicw的用户了，并赋予其 <code>用户组</code> 的权限。</p>
+<p>此时，我们还需要把这个用户添加至smbpasswd，输入以下命令</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">smbpasswd imagicw 123456
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>即可完成添加用户 <code>imagicw</code>，后面的数字就是密码。</p>
+<p>此时我们还需要在共享目录允许用户里填上 <code>imagicw</code> 才算设置完成。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="01-share-dir-settings.jpg"
+        data-srcset="/2017/03/how-i-made-my-hiwifi-into-download-center/01-share-dir-settings.jpg, 01-share-dir-settings.jpg 1.5x, /2017/03/how-i-made-my-hiwifi-into-download-center/01-share-dir-settings.jpg 2x"
+        data-sizes="auto"
+        alt="/2017/03/how-i-made-my-hiwifi-into-download-center/01-share-dir-settings.jpg"
+        title="passwd 文件" /></p>
+<hr>
+<h2 id="aria2">Aria2</h2>
+<h3 id="安装">安装</h3>
+<p>在 <code>系统</code> 下的 <code>软件包</code> 中安装 <code>aria2</code>  <code>luci-app-aria2</code>及 <code>luci-i18n-aria2-zh-cn</code>。</p>
+<p>当然喜欢手动配置文件的可以不安装 <code>luci-app-aria2</code>及 <code>luci-i18n-aria2-zh-cn</code>，具体就不赘述了。</p>
+<h3 id="配置">配置</h3>
+<p>然后在 <code>服务</code> 下的 <code>Aria2 配置</code> 配置 Aria2服务。</p>
+<p><strong>Aria2 全局设置</strong></p>
+<p>认证方式可选择 <code>用户名密码</code> 或者 <code>令牌</code> 的方式。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="01-aria2-global-settings.jpg"
+        data-srcset="/2017/03/how-i-made-my-hiwifi-into-download-center/01-aria2-global-settings.jpg, 01-aria2-global-settings.jpg 1.5x, /2017/03/how-i-made-my-hiwifi-into-download-center/01-aria2-global-settings.jpg 2x"
+        data-sizes="auto"
+        alt="/2017/03/how-i-made-my-hiwifi-into-download-center/01-aria2-global-settings.jpg"
+        title="Aria2 全局设置" /></p>
+<p><strong>Aria2 文件及目录设置</strong></p>
+<p>我专门给硬盘设置了一个 <code>Downloads</code> 文件夹，便(qiang)于(po)管(zheng)理。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="01-aria2-files-settings.jpg"
+        data-srcset="/2017/03/how-i-made-my-hiwifi-into-download-center/01-aria2-files-settings.jpg, 01-aria2-files-settings.jpg 1.5x, /2017/03/how-i-made-my-hiwifi-into-download-center/01-aria2-files-settings.jpg 2x"
+        data-sizes="auto"
+        alt="/2017/03/how-i-made-my-hiwifi-into-download-center/01-aria2-files-settings.jpg"
+        title="Aria2 文件及目录设置" /></p>
+<h3 id="ui">UI</h3>
+<p>Aria2是轻量级的下载工具，基本上都是用命令行的方式下载，这样并不能很直观的管理下载，此时我们就需要用户图形界面（UI）的帮助了。</p>
+<h4 id="使用现成的">使用现成的</h4>
+<p>网上有许多 <code>Aria2</code> 的WebUI，在各大搜索引擎搜索可以找到，常见的有 <code>YAAW</code> 和 <code>WebUI Aria2</code>。懒人也可以直接访问：<a href="http://ziahamza.github.io/webui-aria2/" target="_blank" rel="noopener noreffer">WebUI Aria2</a>。</p>
+<h4 id="github部署">GitHub部署</h4>
+<p>在<code>GitHub</code>中Fork「<a href="https://github.com/ziahamza/webui-aria2" target="_blank" rel="noopener noreffer">Webui-Aria2</a>」即可，具体就不赘述了。</p>
+<h4 id="chrome插件推荐">Chrome插件（推荐）</h4>
+<p>这里推荐的是 <a href="https://github.com/acgotaku/YAAW-for-Chrome" target="_blank" rel="noopener noreffer">YAAW for Chrome</a>，作者是<a href="https://blog.icehoney.me/" target="_blank" rel="noopener noreffer">雪月秋水</a>。</p>
+<p>如果你是重度Chrome使用者的话，这个插件完完全全可以代替迅雷、QQ旋风等下载工具。</p>
+<p>设置界面如下：</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="01-chrome-yaaw-settings.jpg"
+        data-srcset="/2017/03/how-i-made-my-hiwifi-into-download-center/01-chrome-yaaw-settings.jpg, 01-chrome-yaaw-settings.jpg 1.5x, /2017/03/how-i-made-my-hiwifi-into-download-center/01-chrome-yaaw-settings.jpg 2x"
+        data-sizes="auto"
+        alt="/2017/03/how-i-made-my-hiwifi-into-download-center/01-chrome-yaaw-settings.jpg"
+        title="yaaw 设置" /></p>
+<hr>
+<h2 id="ddns">DDNS</h2>
+<h3 id="安装-1">安装</h3>
+<p>在 <code>系统</code> 下的 <code>软件包</code> 中安装 <code>ddns-scripts</code> <code>luci-app-ddns</code> <code>luci-i18n-ddns-zh-cn</code>。</p>
+<h3 id="配置-1">配置</h3>
+<p>然后在 <code>服务</code> 下的 <code>动态DNS</code>下修改myddns_ipv4。</p>
+<h4 id="设置动态域名">设置动态域名</h4>
+<p>我使用的是花生壳的服务，按照下图设置。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="01-ddns-settings.jpg"
+        data-srcset="/2017/03/how-i-made-my-hiwifi-into-download-center/01-ddns-settings.jpg, 01-ddns-settings.jpg 1.5x, /2017/03/how-i-made-my-hiwifi-into-download-center/01-ddns-settings.jpg 2x"
+        data-sizes="auto"
+        alt="/2017/03/how-i-made-my-hiwifi-into-download-center/01-ddns-settings.jpg"
+        title="DDNS 基本设置" /></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="01-ddns-advanced-settings.jpg"
+        data-srcset="/2017/03/how-i-made-my-hiwifi-into-download-center/01-ddns-advanced-settings.jpg, 01-ddns-advanced-settings.jpg 1.5x, /2017/03/how-i-made-my-hiwifi-into-download-center/01-ddns-advanced-settings.jpg 2x"
+        data-sizes="auto"
+        alt="/2017/03/how-i-made-my-hiwifi-into-download-center/01-ddns-advanced-settings.jpg"
+        title="DDNS 高级设置" /></p>
+<p>在计时器设定里面你可以设置更新周期，我设置了检查时间周期为<code>1小时</code>，强制更新周期是<code>72小时</code>。</p>
+<hr>
+<h2 id="后记">后记</h2>
+<p>此次折腾路由器走了不少弯路，一直在<code>PandoraBox</code>和 <a href="https://github.com/rssnsj" target="_blank" rel="noopener noreffer">rssnj</a> 大神的固件，一开始 <code>rssnj</code> 的固件除了5G无法使用，一切正常，但使用了一阵子来看，但凡路由器重启过一次，挂载就会失效，其次是没有5G的日子，100M的宽带真的是摆设。</p>
+<p>于是我又折腾起了 <code>PandoraBox</code>，为什么是又呢，因为之前用过，但是碍于挂载不了USB硬盘，只好作罢，这次是因为发现了上文所说的版本，总算是完成了下载中心的搭设。</p>
+<p>连续用了几天，暂时也没出现什么大问题。</p>
+<p>虽然有些不太完满（LED的显示问题），但也无伤大雅。谨以此文，来安慰熬夜折腾的自己。</p>
+<div class="details admonition info open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-info-circle fa-fw"></i>参考<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><a href="https://www.binss.me/blog/install-openwrt-on-hiwifi-router/" target="_blank" rel="noopener noreffer">极路由刷OpenWrt最强攻略——从救砖、刷Breed、编译固件到安装配置</a></div>
+        </div>
+    </div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2017-03-27</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://x.awo.design/2017/03/how-i-made-my-hiwifi-into-download-center/" data-title="我是如何将路由器打造成我的下载中心的" data-hashtags="OpenWrt,Aria2"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://x.awo.design/2017/03/how-i-made-my-hiwifi-into-download-center/" data-hashtag="OpenWrt"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://x.awo.design/2017/03/how-i-made-my-hiwifi-into-download-center/" data-title="我是如何将路由器打造成我的下载中心的" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://x.awo.design/2017/03/how-i-made-my-hiwifi-into-download-center/" data-title="我是如何将路由器打造成我的下载中心的"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://x.awo.design/2017/03/how-i-made-my-hiwifi-into-download-center/" data-title="我是如何将路由器打造成我的下载中心的"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://x.awo.design/2017/03/how-i-made-my-hiwifi-into-download-center/" data-title="我是如何将路由器打造成我的下载中心的"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/openwrt/">OpenWrt</a>,&nbsp;<a href="/tags/aria2/">Aria2</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+            <a href="/2019/07/annual-plan-2019/" class="next" rel="next" title="2019年年度计划">2019年年度计划<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="disqus_thread" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://disqus.com/?ref_noscript">Disqus</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.101.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2017 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://awo.design" target="_blank">imagicw</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.4710034e669c7ff17f823f9ba12cf8a36582d65b007f79cbc4a3c11d7db2e4ca.css" integrity="sha256-RxADTmacf/F/gj&#43;boSz4o2WC1lsAf3nLxKPBHX2y5Mo="><link rel="stylesheet" href="/lib/katex/copy-tex.min.bf9ff4137fec38f6255419e142d0883c9c52090885d746f80eee12b273d9b3e0.css" integrity="sha256-v5/0E3/sOPYlVBnhQtCIPJxSCQiF10b4Du4SsnPZs&#43;A="><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.cd0d0b6e50ff01ff2f3a9a70d7cfb66a7c6cb9acf7a566325568be6d3bd31fc4.css" integrity="sha256-zQ0LblD/Af8vOppw18&#43;2anxsuaz3pWYyVWi&#43;bTvTH8Q="><script type="text/javascript" src="https://imagicw.disqus.com/embed.js" defer></script><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.bcff85fb5e00d68802850b393ac7792c997f722f536f38e26638c46dca8e5eb6.js" integrity="sha256-vP&#43;F&#43;14A1ogChQs5Osd5LJl/ci9TbzjiZjjEbcqOXrY="></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.615590a2ca2b667afa7c02ef396f5500b62e22795ddbb46448f90494605d09a5.js" integrity="sha256-YVWQosorZnr6fALvOW9VALYuInld27RkSPkElGBdCaU="></script><script type="text/javascript" src="/lib/lunr/lunr.min.df84a2d58ea594c04a3371b48d020b55ea10284c2ec636e4e331965d7313e29b.js" integrity="sha256-34Si1Y6llMBKM3G0jQILVeoQKEwuxjbk4zGWXXMT4ps="></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.8bf5075cc3aed1c2afbef7ff48ab1454488952d4411fc08ade78a56a2b86177b.js" integrity="sha256-i/UHXMOu0cKvvvf/SKsUVEiJUtRBH8CK3nilaiuGF3s="></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.df40c83b86d7cea2122cd35d56db3e6e4bc34b09a62755f0f3c48b5e9c66a8a4.js" integrity="sha256-30DIO4bXzqISLNNdVts&#43;bkvDSwmmJ1Xw88SLXpxmqKQ="></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.fb649fcae62177dfe63e67081ddceb830b5ce1f05a4184e9bbb7d87ac4b8f4e5.js" integrity="sha256-&#43;2SfyuYhd9/mPmcIHdzrgwtc4fBaQYTpu7fYesS49OU="></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.8a7739925f4c03586479852df840b7061948832a7fda30c8c812d2ea4dd4c4f2.js" integrity="sha256-inc5kl9MA1hkeYUt&#43;EC3BhlIgyp/2jDIyBLS6k3UxPI="></script><script type="text/javascript" src="/lib/sharer/sharer.min.9c88f86c7f0820287113f6236200459832693656e80d7556cc80a93dfbd45813.js" integrity="sha256-nIj4bH8IIChxE/YjYgBFmDJpNlboDXVWzICpPfvUWBM="></script><script type="text/javascript" src="/lib/katex/katex.min.17f5dd6b9f123dd7140abfb18521b3f4c036cd004f6f40121182a8865f140877.js" integrity="sha256-F/Xda58SPdcUCr&#43;xhSGz9MA2zQBPb0ASEYKohl8UCHc="></script><script type="text/javascript" src="/lib/katex/auto-render.min.f74776a677f0d2be0af0264058f928e2ba455d0b19bc985304660d922a43a6b2.js" integrity="sha256-90d2pnfw0r4K8CZAWPko4rpFXQsZvJhTBGYNkipDprI="></script><script type="text/javascript" src="/lib/katex/copy-tex.min.2ab2237329021bc443986c8327f6e61357fb68a54e5d233d224023718c02207d.js" integrity="sha256-KrIjcykCG8RDmGyDJ/bmE1f7aKVOXSM9IkAjcYwCIH0="></script><script type="text/javascript" src="/lib/katex/mhchem.min.5cea356d6025c5a2f18c454c83ec5674dbb04fab1cd1d75569e77788c6b6f888.js" integrity="sha256-XOo1bWAlxaLxjEVMg&#43;xWdNuwT6sc0ddVaed3iMa2&#43;Ig="></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.e55842a856a6d829feca3c3ad736c136b6c7549e9247274f78aa296259e06e24.js" integrity="sha256-5VhCqFam2Cn&#43;yjw61zbBNrbHVJ6SRydPeKopYlngbiQ="></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":12},"comment":{},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.f51938f3065a40ee841bcb558e4330e31fd26c0ea55343fff8770b88b0319a3c.js" integrity="sha256-9Rk48wZaQO6EG8tVjkMw4x/SbA6lU0P/&#43;HcLiLAxmjw="></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'UA-92164716-1', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-92164716-1" async></script></body>
+</html>
