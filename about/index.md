@@ -19,7 +19,8 @@ Zzz...
 
 可以通过以下方式支持我，谢谢！
 
-  - 购买 [Bandwagon](https://bandwagonhost.com/aff.php?aff=67187) 的主机
+  - 购买 [Vultr](https://www.vultr.com/?ref=7210906) 的主机，获取主机 [$100 试用金（14天）](https://www.vultr.com/?ref=9097233-8H)
+  - 通过 [Buy Me Coffee](https://www.buymeacoffee.com/imagicw) 赞助 or [Support My Wishlist](https://www.buymeacoffee.com/imagicw/wishlist)
   - 通过 Crypto 支持
     - BitCoin
       - segwit: `bc1qzm7whmlfa4jf9axru6ht5gnvv4hph7lx6pjlrj`
