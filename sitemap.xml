@@ -2,16 +2,17 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
+            <loc>https://x.awo.design/2022/11/xiang-qu-hai-bian-cover/</loc><lastmod>2022-11-09T20:20:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://x.awo.design/categories/</loc><lastmod>2022-11-09T20:20:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://x.awo.design/tags/mv/</loc><lastmod>2022-11-09T20:20:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://x.awo.design/posts/</loc><lastmod>2022-11-09T20:20:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://x.awo.design/tags/</loc><lastmod>2022-11-09T20:20:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://x.awo.design/</loc><lastmod>2022-11-09T20:20:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://x.awo.design/categories/life/</loc><lastmod>2022-11-09T20:20:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://x.awo.design/tags/%E9%9F%B3%E4%B9%90/</loc><lastmod>2022-11-09T20:20:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://x.awo.design/drummer/</loc><lastmod>2022-06-26T22:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://x.awo.design/books/</loc><lastmod>2022-06-14T09:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://x.awo.design/2022/06/new-boy-cover/</loc><lastmod>2022-06-01T20:20:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://x.awo.design/categories/</loc><lastmod>2022-06-01T20:20:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://x.awo.design/tags/mv/</loc><lastmod>2022-06-01T20:20:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://x.awo.design/posts/</loc><lastmod>2022-06-01T20:20:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://x.awo.design/tags/</loc><lastmod>2022-06-01T20:20:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://x.awo.design/</loc><lastmod>2022-06-01T20:20:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://x.awo.design/categories/life/</loc><lastmod>2022-06-01T20:20:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://x.awo.design/tags/%E9%9F%B3%E4%B9%90/</loc><lastmod>2022-06-01T20:20:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://x.awo.design/games/</loc><lastmod>2022-03-02T17:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://x.awo.design/2022/01/yellow-cover/</loc><lastmod>2022-01-26T20:20:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://x.awo.design/2022/01/annual-report-2021/</loc><lastmod>2022-01-05T21:55:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
@@ -24,7 +25,7 @@
             <loc>https://x.awo.design/tags/%E6%97%A5%E8%AF%AD/</loc><lastmod>2021-09-13T19:57:13&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://x.awo.design/2021/04/studying-training-learning/</loc><lastmod>2021-04-02T16:00:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://x.awo.design/2021/03/dao-xiang-cover/</loc><lastmod>2021-03-16T16:23:50&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://x.awo.design/10000/</loc><lastmod>2022-12-08T10:29:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
+            <loc>https://x.awo.design/10000/</loc><lastmod>2023-01-06T16:16:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://x.awo.design/2021/02/annual-plan-2021/</loc><lastmod>2021-12-17T11:25:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://x.awo.design/categories/plan/</loc><lastmod>2021-12-17T11:25:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://x.awo.design/tags/%E5%B9%B4%E5%BA%A6%E8%AE%A1%E5%88%92/</loc><lastmod>2021-12-17T11:25:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
