@@ -90,6 +90,24 @@ BOSS 战很有意思，各个武器我拳套和流亡刀用的多一点，其他
 
 ---
 
+### UNCHARTED: AMONG THIEVES / 神秘海域：盗亦有道
+
+{{<figure src="/img/games/Uncharted-Among-Thieves.jpg" title="UNCHARTED: AMONG THIEVES">}}
+
+**「主观评分」：** 8/10
+
+**「游玩平台」：** PS4
+
+**「游玩感受」：**
+
+故事开局采用倒叙手法好评！
+
+射击感虽然比第一代好一些，但还是有点奇怪，打野人的时候更明显，野人没有中弹反馈感。
+
+
+
+---
+
 ### ゼルダの伝説 ブレス オブ ザ ワイルド / 塞尔达传说 旷野之息
 
 {{<figure src="/img/games/The-Legend-of-Zelda-Breath-of-The-Wild.jpg" title="THE LEGEND OF ZELDA: BREATH OF THE WILD">}}
