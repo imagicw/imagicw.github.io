@@ -4043,7 +4043,7 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;按钮被点击&#39;</span><span class="p">)}</span><span class="err">按钮&lt;/</span><span class="na">button</span><span class="p">&gt;</span>
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;按钮被点击&#39;</span><span class="p">)}</span><span class="na">按钮</span><span class="err">&lt;/</span><span class="na">button</span><span class="p">&gt;</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>当这个组件渲染出来时，<code>按钮被点击</code> 会在 console 控制台被打印出来，但点击按钮后不会发生任何事情，<code>console.log</code> 函数调用只在渲染组件时被执行。</p>
